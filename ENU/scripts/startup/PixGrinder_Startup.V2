@@ -1,0 +1,20 @@
+-- PixGrinder 1st Startup Script !!! --
+-- V2 --
+-- Now asks user wether to save at scene opening --
+
+
+	clearListener()
+
+	myPath = "$userScripts/PixGrinder/AutoSave_PDA_V8.ms"
+
+	fn myTestFn thePath=
+	(
+	-- 	sleep 5
+		if querybox ("Do you want to launch Autosave ?") == true then fileIn thePath else messageBox("Remember to use CTRL+S to start Autosave Script")
+	)
+	callbacks.addScript #filePostOpen "myTestFn myPath" id:#FelipeCallback persistent:false
+	print "PixGrinder Startup Done"
+
+
+
+-- callbacks.removeScripts id:#FelipeCallback
