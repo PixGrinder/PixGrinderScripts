@@ -1,0 +1,366 @@
+callbacks.show #filePreOpen
+callbacks.show #filePreOpenProcess
+callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
+callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
+
+------------------------------------------------------
+
+
+
+
+-- myMod = $.modifiers[1]
+myMod = Poly_Select()
+
+-- for obj in selection do addModifier obj Poly_Select()
+for obj in selection do addModifier obj (Poly_Select())
+
+
+
+------------------------------------------------------
+
+
+(
+	x1 = getClassInstances StandardMaterial
+	x2 = for obj in x1 where matchpattern obj.name pattern:"*hole*" == true collect obj
+	meditmaterials[1] = x2[1]
+)
+
+
+------------------------------------------------------
+
+
+(
+	clearListener()
+	i = 1
+	for obj in objects where custAttributes.count obj == 1 do 
+	(
+-- 		print (i as string+";"+obj.name +";" + substring obj.compLoc.hotspot.name (obj.name.count+2) obj.compLoc.hotspot.name.count)
+		format (i as string+";"+obj.name +";" + substring obj.compLoc.hotspot.name (obj.name.count+2) obj.compLoc.hotspot.name.count+"\n")
+		i = i+1
+	)
+)
+
+
+
+-- substring obj.compLoc.hotspot.name (obj.name.count+2) obj.compLoc.hotspot.name.count
+
+
+
+------------------------------------------------------
+
+(
+	pda = #(2.0,10.0,18.0)
+	pda_res = #()
+	for obj in cameras do
+	(
+		if findItem pda obj.pos.z == 0 do append pda_res obj
+	)
+
+
+	ClearSelection()
+	select pda_res
+)
+
+
+
+------------------------------------------------------
+
+
+
+(
+	x1 = for obj in objects where custAttributes.count obj == 1 collect obj
+	x2 = for obj in x1 where obj.compLoc.fov > 80.0 collect obj
+	clearSelection()
+	select x2
+)
+
+
+for obj in selection do 
+(
+	obj.compLoc.fov = 80.0
+	obj.compLoc.hotspot.fov = 80.0
+)
+
+
+
+------------------------------------------------------
+
+(
+	x1 = for obj in objects where custAttributes.count obj == 1 collect obj
+	x2 = for obj in x1 where obj.compLoc.fov > 80.0 collect obj
+	clearSelection()
+	select x2
+)
+
+
+for obj in selection do 
+(
+	obj.compLoc.fov = 80.0
+	obj.compLoc.hotspot.fov = 80.0
+)
+
+
+------------------------------------------------------
+
+(
+	x1 = getClassInstances StandardMaterial
+	x2 = meditmaterials [1]
+
+	x3 = for obj in x1 where obj.diffuseMap != undefined and obj.diffuseMap.name == x2.name collect obj
+
+	meditmaterials[2] = x3[1]
+)
+
+
+
+
+------------------------------------------------------
+
+
+x1 = for obj in selection where obj.parent == undefined and obj.children.count == 0 collect obj
+clearSelection()
+select x1
+
+
+------------------------------------------------------
+
+show $.compLoc
+  .hotspot : node
+  .fov : integer
+  .hidden : maxObject array
+  .transparent : maxObject array
+  .animated : maxObject array
+
+$.compLoc.hidden[1].node
+
+fn fixComponents myVar= 
+(
+	pda = #()
+	print myVar.compLoc.hidden.count
+	for i = 1 to myVar.compLoc.hidden.count do
+	(
+		if myVar.compLoc.hidden[i].node == undefined do 
+		(
+			print ("hidden pb : " + myVar.name)
+			append pda i
+		)
+
+	) 
+
+	for obj in pda do deleteItem myVar.compLoc.hidden obj
+
+	print myVar.compLoc.hidden.count
+
+
+	pda = #()
+	print myVar.compLoc.transparent.count
+	for i = 1 to myVar.compLoc.transparent.count do
+	(
+		if myVar.compLoc.transparent[i].node == undefined do 
+		(
+			append pda i
+			print ("transp pb : " + myVar.name)
+		)
+
+	) 
+
+	for obj in pda do deleteItem myVar.compLoc.transparent obj
+
+	print myVar.compLoc.transparent.count
+)
+
+clearListener()
+for obj in objects where custAttributes.count == 1 do fixComponents obj
+
+----------------------------------------------------
+
+
+
+
+(
+	myTemp = getClassInstances StandardMaterial
+	myTemp2 = for obj in myTemp where obj.opacity != 100.0 collect obj
+	print myTemp2.count
+	for i = 1 to myTemp2.count do meditmaterials[i] = myTemp2[i]
+)
+
+
+-----------------------------------------------------
+
+(
+	-- $.compLoc.hotspot.name
+
+	myComploc = for obj in objects where custAttributes.count obj > 0 collect obj
+
+	myResult = for obj in myComploc where matchpattern obj.compLoc.hotspot.name pattern:"*overhead*" == true collect obj
+
+	clearListener()
+
+	for obj in myResult do print obj.name
+
+	--selec myResult
+
+
+)
+
+
+
+
+(
+-- 	ss = StringStream ""
+
+	oldEuler = $.rotation as eulerAngles
+	quat = eulerToQuat (eulerAngles (oldEuler.x + 90.0) oldEuler.y oldEuler.z)
+	
+
+
+)
+
+
+
+(
+-- 	ss = StringStream ""
+
+	oldEuler = $.rotation as eulerAngles
+	oldEuler.x = oldEuler.x + 90.0
+	oldEuler.y = oldEuler.y
+	oldEuler.z = oldEuler.z
+	oldEuler
+
+
+	quat = eulerToQuat oldEuler
+	
+
+
+)
+
+
+(
+	clearListener()
+	ss = StringStream ""
+
+	oldEuler = $.rotation as eulerAngles
+	oldEuler.x = oldEuler.x + 90.0
+	oldEuler.y = oldEuler.y
+	oldEuler.z = oldEuler.z
+	oldEuler
+	quat = eulerToQuat oldEuler
+	
+	format "%, %, %, %" quat.x -quat.y quat.z -quat.w to:ss
+	
+-- 	if hasTarget then cam.targeted = true
+		
+	ss as string
+)
+
+
+
+---------------------------------------------------
+
+
+x1 = for obj in selection collect obj.name
+
+myTest = ""
+for obj in x1 do append myTest (obj+", ")
+myTest
+
+
+
+
+
+
+-------------------------------------------------------
+-- Layers rename
+
+
+		for i = 1 to (layermanager.count-1) do 
+		(
+			x = layermanager.getLayer i
+			print x.name
+			if matchpattern x.name pattern:"anim_" == true do x.name
+		)
+
+
+		x = "anim_youpla"
+x.name = "test"
+
+
+-------------------------------------------------------
+
+-- remove Custom Attribs
+
+
+try (for obj in objects do custAttributes.delete obj 1) catch ()
+delete cameras
+
+
+-------------------------------------------------------
+
+
+-- transfer names
+
+if selection.count != 2 then messagebox("Please select only 2 objects") else 
+(
+selection[2].name = selection[1].name 
+delete selection[1]
+)
+
+-------------------------------------------------------
+
+
+-- Transfer Comploc Custom Attributes
+
+clearListener()
+if selection.count != 2 then messagebox("Please select only 2 objects") else 
+(
+	if custAttributes.count selection[2] > 0 do custAttributes.delete selection[2] 1 baseObject:true
+	custAttributes.add selection[2] _cl.compLocCA BaseObject:true
+	selection[2].compLoc.hotspot = selection[1].compLoc.hotspot
+	selection[2].compLoc.fov = selection[1].compLoc.fov
+	selection[2].compLoc.hidden = selection[1].compLoc.hidden
+	selection[2].compLoc.transparent = selection[1].compLoc.transparent
+	selection[2].compLoc.animated = selection[1].compLoc.animated
+	custAttributes.delete selection[1] 1 baseObject:true
+	selection[2].name = selection[1].name 
+	delete selection[1]
+)
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------
+
+
+-- AutoSave Startup Script --
+
+clearListener()
+fn mytestfn=
+(
+-- 	sleep 5
+	messagebox ("AutoSave is launched !")
+	fileIn "$userScripts/PixGrinder/AutoSave_PDA_V7.ms"
+)
+callbacks.addScript #filePostOpen "mytestfn()" id:#FelipeCallback persistent:false
+
+
+
+
+-- callbacks.removeScripts id:#FelipeCallback
+
+
+-------------------------------------------------------
+
+
+-- rename all materials
+
+(
+	stdMats = getClassInstances StandardMaterial
+	for obj in stdMats do obj.name = ("Demo_"+obj.name)
+)

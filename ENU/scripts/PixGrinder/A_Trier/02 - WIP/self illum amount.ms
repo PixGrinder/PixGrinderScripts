@@ -1,0 +1,1 @@
+for i = 1 to $.material.count do $.material[i].selfillumAmount = 0p9
