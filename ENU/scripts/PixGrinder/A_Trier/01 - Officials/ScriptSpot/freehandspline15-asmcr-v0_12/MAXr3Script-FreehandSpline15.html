@@ -1,0 +1,247 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (WinNT; I) [Netscape]">
+   <title>FreehandSpline</title>
+</head>
+<body text="#000000" bgcolor="#C0C0C0" link="#0000AA" vlink="#000066">
+&nbsp;
+<table>
+<tr>
+<td><img SRC="fhs-profile.gif" height=195 width=240></td>
+
+<td>
+<h1>
+<i>FreehandSpline</i></h1>
+
+<h3>
+MaxScript Release 1.5 Source (2/18/1999) MAX 2.5 ONLY</h3>
+Copyright (c) 1999 by Borislav Petrov, Bobo's Rendert**ls.&nbsp;</td>
+</tr>
+</table>
+
+<hr>
+<h3>
+<font face="Arial"><font color="#000099">SHORT DESCRIPTION</font></font></h3>
+<font face="Arial">FreehandSpline (FHS) lets you draw freeform splines
+with the mouse or tablet similar to drawing with a pencil.</font>
+<br><font face="Arial">It lets you quickly create complex shapes with control
+over form and quality.</font>
+<br><font face="Arial">(The image above was created in just about 20 seconds
+without any additional tweaking of the splines)</font>
+<p>
+<hr>
+<h3>
+<font face="Arial"><font color="#000099">HOW DOES IT WORK?</font></font></h3>
+<font face="Arial,Helvetica">FHS converts the mouse world coordinates into
+spline knot (vertex) points with user-defined precision.</font>
+<br><font face="Arial,Helvetica">When the distance of mouse to the last
+point drawn exceeds the user-specified Min.Segment Length,</font>
+<br><font face="Arial,Helvetica">the next point is generated. FHS allows
+for multiple splines in a single shape, open/closed splines, curve/line
+segments, renderable splines, and extruded or meshed contours.</font>
+<br>
+<hr>
+<h3>
+<font face="Arial"><font color="#000099">FEATURES AND USAGE</font></font></h3>
+
+
+<p><img SRC="fhs-menu15.gif" align=left>
+
+<b><font face="Arial">Version 1.5 (2/18/99)</font></b>
+
+<ul>
+
+<li>
+<font face="Arial,Helvetica">NEW: Implemented Bezier Vertex type as option. <br>
+NOTE that the splines are drawn as usual, but if the "Bezier Verts" checkbutton is pressed, the vertex types
+will be converted to Beziers AFTER the curve has been finished. This means that default 
+tangents will be generated based on the Curve vertices, and you cannot mix Bezier and Smooth
+types while drawing (but you can edit them afterwards in Modify tab/Editable Spline).
+This function lets you go straight to Sub-Object level and edit tangents WITHOUT an additional step of converting
+vertex types manually.</font></li>
+</ul>
+<p>
+<p>
+<b><font face="Arial">Version 1.4 (2/18/99)</font></b>
+<ul>
+
+<li>
+<font face="Arial,Helvetica">NEW: Added the option to select between CURVE
+and LINE segments.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">By default, you can draw everything with curve
+segments with user-defined Interpolation steps.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">You can switch between Curve and Line modes
+while drawing by pressing the [k] and [l] buttons, or by pressing [p] to
+pause and checking the respective buttons in the utility's rollout.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">The Interpolation Steps value corresponds
+to the Interpolation Steps in the Editable Spline object. It is used to
+specify the internal divisions between two vertices. If you set the value
+to 0 (right-click on spinner arrows), the splines are drawn as in the older
+Versions of FreehandSpline. Values in the Utility are limited to 10.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">After drawing a shape, and before starting
+a new shape, you can change the Interpolation Steps interactively for the
+last shape created. (But you can edit it later in Modify tab, too)</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">You can convert a FreehandSpline Shape to
+a Bezier curve by just going to Modify/Sub-Object/Vertex, selecting all
+vertices, right-clicking them and changing the Type to Bezier. I will probably
+implement Bezier splines in the next Version.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">NEW: All settings except the user color are
+saved on closing the utility, and are loaded next time you start. The settings
+a written to the file "FHSPLINE.INI" in your Scripts directory.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">There is a new [Reset To Defaults] button
+to return to the default state.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">In Version 1.4, if you press [START DRAWING]
+and right-click immediately to cancel, NO SPLINE will be created. In older
+versions, there was a "null" spline with a name but no segments.</font></li>
+</ul>
+<b><font face="Arial"></font></b>
+<p><br><b><font face="Arial">Version 1.3 (2/18/99)</font></b>
+<br>&nbsp;
+<ul>
+<li>
+<font face="Arial,Helvetica">Start the script in MAX 2.5. In MAX 2.0, the
+script will disable itself and will refuse to run.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">By default, the Min.Seg.Length is set to 10.0.
+It defines the min. distance between two vertices in the spline. Higher
+values give lower quality - longer linear segments, fewer vertices.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press the [START DRAWING] button.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Click in the Top or Perspective viewport to
+start drawing a spline</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Move the mouse - a spline trail will appear
+behind the mouse, following each mouse movement.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">The MAXScript Listener will report the current
+drawing mode and provide help with the available commands.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press the left or right mouse button to END
+drawing. Optionally, you may press any other keyboard key not assigned
+a command.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press the [d] key to take Pen Up. This will
+finish the drawing of the current spline, and will let you move the mouse
+normally around without drawing. You can change settings like the Min.Seg.
+Length or Extrude Amount. With the next mouse click in the viewport, a
+NEW SPLINE in the SAME SHAPE will be created. The previous spline will
+remain open.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press the [p] key to take the Pen Up. This
+will just pause the drawing of the current spline, and will let you change
+settings in the control panel before continuing with the generation of
+the SAME SPLINE from the last point drawn.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press the [c] key to close the current spline
+in the shape. With the next klick, a NEW SPLINE in the SAME SHAPE will
+be started. This command is similar to [d], but it closes the previous
+spline before starting another.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press the [SPACE BAR] to close the last spline
+and END drawing of the shape.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press [m] to close the last spline drawn,
+and convert the shape to a flat mesh. If there are open splines in the
+shape, you will be prompted to confirm the operation. The utility uses
+a Normal modfier to force mesh conversion. You can remove the modfier from
+the stack to revert to EditableSpline anytime.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Press [e] to close the last spline drawn and
+extrude the shape at the amount set in the Extrude Options/Extrude Amount.
+No check for closed shapes will be done.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">The whole drawing operation can be undone
+with a single Undo button click.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">By default, all shapes will be made renderable
+and will receive the Spline Thickness set in the utility panel.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">By default, all shapes will use the custom
+color set in the utility panel. You can change the color or uncheck the
+checkbox to let the spline use MAX's default wirecolor assignments.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">All splines will have linear segments and
+Smooth vertex settings. You can edit the resulting splines as usual.</font></li>
+<p>
+<li>
+<font face="Arial,Helvetica">Every shape will have a unique name with the
+base prefix "FHS_Shape" followed by a number.</font></li>
+</ul>
+
+<h3>
+<font face="Arial"><font color="#000099">BUGS:</font></font></h3>
+
+<ul>
+<li>
+<font face="Arial">Version 1.3 fixes a problem with the spline topology.
+All splines in a shape except the first used to have the first vertex doubled.
+This led to some strange behaviour with the Outline command.</font></li>
+
+<li>
+<font face="Arial">Known limitation: Currently, splines created in the
+front and side views will not extrude correctly because the local Z axis
+of each vertex is aligned to the World's Z.</font></li>
+
+<li>
+<font face="Arial">Known limitation: The MAXScript Listener MUST be open
+for the keyboard commands to be interpreted correctly.</font></li>
+
+<li>
+<font face="Arial">Known limitation: The mouse does not report valid world
+position values when over a floating window (like the Listener)</font></li>
+</ul>
+
+<hr WIDTH="100%">
+<h3>
+<font face="Arial"><font color="#000099">CREDITS</font></font></h3>
+
+<li>
+<font face="Arial">Thanks to Orion Abbot-Davies for the great idea.</font></li>
+
+<h3>
+
+<hr WIDTH="100%"></h3>
+
+<h3>
+<font face="Arial"><font color="#000099">DOWNLOAD FreehandSpline</font></font></h3>
+<font face="Arial"><a href="fhspline15.zip">Version 1.5 Source</a></font>
+<br>&nbsp;
+<p>
+<hr>
+</body>
+</html>

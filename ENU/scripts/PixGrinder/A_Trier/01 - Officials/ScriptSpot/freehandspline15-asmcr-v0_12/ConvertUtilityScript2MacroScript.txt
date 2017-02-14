@@ -1,0 +1,21 @@
+Topic:  Re: Moving a Max Script to the Toolbar (8 of 9), Read 26 times   
+Conf:  MAXScript - General  
+From:  Swami Lama swami@cfl.rr.com  
+Date:  Saturday, September 02, 2000 06:25 AM  
+
+>Thanks so much for the help!
+You're so welcome!
+
+>By the way, does it cover converting a utility script to a macroscript in
+the manuals?
+No.
+
+>If not is there a brief tutorial or explanation on doing so anywhere?
+Not to my knowledge. Maybe I'll have to write one...
+In the meantime, compare the two scripts in the zip.
+Essentially,
+- replace the 'utility' command with 'macroScript' and it's associated parameters
+- create a 'NewRolloutFloater' at the beginning of the macroScript block.
+- use 'addRollout' at the end of the MacroScript block to, well, add the rollouts to the floater.
+
+Give it a try...
