@@ -1,0 +1,16 @@
+- Copier et fusionner le dossier "3ds Max 2012" là ou 3dsmax 2012 est installé.
+
+- Lancer 3dsmax 2012
+
+- Click droit dans l'interface (zone grise sans icone)
+
+- Customize
+
+- Catégory -> FelipeScripts
+
+- Glisser/Déposer le(s) scripts désirés dans une barre d'outils
+
+
+
+
+
