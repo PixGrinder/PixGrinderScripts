@@ -1,0 +1,9 @@
+﻿Pour installer, copier les dossiers dans (en remplacant [USER]):
+2010: C:\Users\[USER]\AppData\Local\Autodesk\3dsMax\2010 - 64bit\enu\
+2016: C:\Users\[USER]\AppData\Local\Autodesk\3dsMax\2016 - 64bit\ENU\
+
+Dans max, pour ajouter les macros:
+Customize > Customize User Interface > Toolbars > Catégory > SugzTools
+
+Fichier "GfxConflictManager.xml":
+\\CANTAL\Affaires\SSA\AHVMT\3-Production\Software\GfxConflictManager\GfxConflictManager.xml
