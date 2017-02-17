@@ -1,3 +1,22 @@
+-- classof meditmaterials[1]
+-- meditmaterials[1].count
+(
+	MultiMat = for obj in objects where classof obj.material == MultiMaterial collect obj
+	SingleMat = for obj in MultiMat where obj.material.count == 1 collect obj
+
+-- 	select SingleMat
+
+	for obj in SingleMat do 
+	(
+		myTemp = obj.material[1]
+		obj.material = myTemp
+	)
+)
+
+
+
+------------------------------------------------------
+
 callbacks.show #filePreOpen
 callbacks.show #filePreOpenProcess
 callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb

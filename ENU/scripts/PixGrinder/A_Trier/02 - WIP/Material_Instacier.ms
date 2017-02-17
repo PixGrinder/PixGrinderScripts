@@ -1,7 +1,12 @@
--- Materials Instancier v14
--- by Philippe DASSONVILLE
--- http://www.pixgrinder.com
--- dassonphil@gmail.com
+
+---------------------------------------------------------------------
+
+-- PixGrinder Scripts --
+-- Materials Instancier --
+-- Tries to instance Identical materials in scene --
+-- V 1.14 --
+
+---------------------------------------------------------------------
 
 (	
 	clearListener()
@@ -95,6 +100,116 @@
 			
 			progressEnd()
 		)
+
+
+	)
+)
+
+
+
+
+-- Brouillon
+--------------------------
+
+
+
+
+
+
+
+-- Step X : MultiMats
+(
+	clearListener()
+
+	fn myComp v1 v2 =
+	(
+		if (v1[1] as string) > (v2[1] as string) then  1 else 0
+	)
+
+
+	allStd = getClassInstances StandardMaterial
+
+	BitmapList = #()
+-- 	for obj in allStd where obj.diffuseMap != undefined and obj.diffuseMap.filename != undefined do append BitmapList #(obj, FilenameFromPath obj.diffuseMap.filename)
+	for obj in allStd where obj.diffuseMap != undefined and obj.diffuseMap.filename != undefined do appendifUnique BitmapList #(FilenameFromPath obj.diffuseMap.filename, obj)
+
+	qsort BitmapList myComp
+
+	for obj in BitmapList do print ( (obj[1] as string) + "   -   " + (obj[2] as string))
+	BitmapList.count
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Step 1 : Instance Standard with Bitmap
+
+(
+			sceneMats = getClassInstances StandardMaterial -- collecter tous les materiaux standards dans la scene
+			print ("Startup : sceneMats.count = "+sceneMats.count as string)
+
+			myGeo = for obj in objects where classof obj.material == StandardMaterial and classof obj.material.diffusemap == BitmapTexture collect obj -- Tous les objets ayant un materiau Standard
+			print ("myGeo.count = "+myGeo.count as string)
+
+			select myGeo
+
+)
+
+
+
+-- Step 3 : MultiMaterial Instancing
+(
+
+	fn myComp v1 v2 =
+	(
+		if v1[1] > v2[1] then  1 else 0
+	)
+
+
+	myMult = getClassInstances Multimaterial
+	myMultiObj = for obj in objects where classof obj.material == MultiMaterial and obj.material.count >1 collect obj
+	
+
+	myMultAr = #()
+
+	for obj in myMult do 
+	(
+		myMultCount = obj.count
+		myCompAr = #()
+		for i = 1 to obj.count do 
+		(
+			try (append myCompAr (getFilenameFile obj[i].diffuseMap.filename)) catch()
+		)
+		append myMultAr #(myMultCount, myCompAr, obj)
+	)
+
+	qsort myMultAr myComp
+	clearListener()
+	for i = 1 to myMultAr.count do print myMultAr[i]
+
+)
+
+
+
+
+x1 = selection as array
+
+
+
+-- OLD
+---------------------
+
 
 		(	
 			-- Step 3
@@ -221,5 +336,3 @@
 			
 			MessageBox ("Materials Optimization completed \r             ( Motherfucker !)")
 		)
-	)
-)
