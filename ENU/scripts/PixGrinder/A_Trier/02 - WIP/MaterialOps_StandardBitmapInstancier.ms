@@ -1,4 +1,4 @@
--- Bitmap Mat Instancier -- 
+-- MaterialOps - Standard Bitmap Materials Instancier -- 
 
 
 
