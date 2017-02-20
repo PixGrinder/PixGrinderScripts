@@ -26,8 +26,8 @@
 	-- lister tous les objets avec multimatériaux
 	allObj = for obj in objects where classof obj.material == MultiMaterial collect obj
 	print ("Number of objects with Multimaterials : " + allObj.count as string)
-	clearSelection()
-	select allObj
+-- 	clearSelection()
+-- 	select allObj
 
 
 	-- trier tous les MultiMateriaux par nombre de sous-matériaux
@@ -48,7 +48,7 @@
 	)
 
 
-	clearListener()
+-- 	clearListener()
 
 	qsort pda sortMatList
 
@@ -93,7 +93,7 @@
 
 
 
-	clearListener()
+-- 	clearListener()
 
 	qsort myObjBmList sortMatList
 
@@ -106,12 +106,12 @@
 
 	for w = 1 to myLists.count do
 	(
-		tempVar = for obj in pda where obj[3] == myLists[w] collect obj[2] -- myTemp = tous les matériaux qui ont la texture pda[k]
+		tempVar = for obj in pda where (obj[3] == myLists[w]) collect obj[2]
 
-		print (tempVar[1] as string)
-		-- youpla = tempVar[1]
+-- 		meditmaterials[1] = tempVar[1]
 
-		for obj in myObjBmList where obj[3] == myLists[w] do obj[2].material = tempVar[1]
+		objectsTemp = for obj in myObjBmList where obj[3] == myLists[w] collect obj[2]
+		for obj in objectsTemp do obj.material = tempVar[1]
 
 	)
 
@@ -119,9 +119,36 @@
 	allMulti = getClassInstances MultiMaterial
 	print blublurf
 	Print ("Number of Multimaterials AFTER script : " + allMulti.count as string)
+
+
 )
 
 
+
+
+
+w = 2
+
+
+
+
+clearListener()
+for obj in tempVar do print obj
+
+meditmaterials[1] = tempVar[1]
+
+
+
+myProut = for obj in myObjBmList where obj[3] == myLists[w] collect obj[2]
+
+
+select myProut
+
+for obj in selection do print obj.material
+
+
+
+--------------------------------------------------------------------------------------
 
 -- myLists = liste des listes de bitmaps uniques
 
@@ -134,7 +161,79 @@
 
 
 
-classof myObjBmList[10][3]
+-- debug 1
 
 
-classof myLists[10]
+(
+w = 5
+
+tempVar = for obj in pda where obj[3] == myLists[w] collect obj[2] -- myTemp = tous les matériaux qui ont la texture pda[k]
+
+
+for obj in tempVar do print obj
+
+meditmaterials[1] = tempVar[1]
+
+)
+
+
+-- debug 2
+
+
+Felipe = for obj in myObjBmList where obj[3] == myLists[w] do obj[2].material = tempVar[1]
+
+
+select myObjBmList[10][2]
+myObjBmList[10][2].material = tempVar[1]
+myObjBmList[10][3]
+
+tempVar[1]
+ATA_24-30_BatteryContactor_1_MultiMat
+
+
+
+
+
+clearListener()
+for obj in myObjBmList do print obj[3]
+
+
+myLists.count
+
+
+
+
+
+	for w = 1 to myLists.count do
+	(
+		tempVar = for obj in pda where obj[3] == myLists[w] collect obj[2] -- myTemp = tous les matériaux qui ont la texture pda[k]
+
+		-- print (tempVar[1] as string)
+		-- youpla = tempVar[1]
+		meditmaterials[1] = tempVar[1]
+
+		for obj in myObjBmList where obj[3] == myLists[w] do obj[2].material = tempVar[1]
+
+	)
+
+
+
+
+
+
+
+
+-- debug 3
+
+	for w = 1 to myLists.count do
+	(
+		for obj in pda where (obj[3] == myLists[w]) do
+		(
+			print ("true : " + obj[2] as string)
+		)
+	)
+
+
+
+
+myObjBmList[1][2].material
