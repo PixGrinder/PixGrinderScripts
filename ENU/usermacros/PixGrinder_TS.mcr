@@ -426,6 +426,15 @@
 	)
 
 
-
+	macroScript SelectSmallObjects
+	category:"-- PixGrinder --"
+	toolTip:"Select small objects"
+	buttonText:"Select small objects"
+	-- icon:#("Splines",3)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Select_Small_Objects.ms"
+	)
 
 )

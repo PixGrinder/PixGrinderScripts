@@ -5,235 +5,148 @@
 
 (
 
-	clearListener()
+	-- clearListener()
 
-	fn sortMatList v1 v2 =
 	(
-		if v1[1] > v2[1] then 1 else -1
-	)
+		
 
-	fn stringCompare v1 v2 =
-	(
-		if v1.count > v2.count then 1 else -1
-	)
-
-
-	-- lister tous les multimatériaux de la scene
-	allMulti = getClassInstances MultiMaterial
-	blublurf = ("Number of Multimaterials before script : " + allMulti.count as string)
-
-
-	-- lister tous les objets avec multimatériaux
-	allObj = for obj in objects where classof obj.material == MultiMaterial collect obj
-	print ("Number of objects with Multimaterials : " + allObj.count as string)
--- 	clearSelection()
--- 	select allObj
-
-
-	-- trier tous les MultiMateriaux par nombre de sous-matériaux
-	pda = #()
-	for obj in allMulti do 
-	(
-		myTempA = #()
-		for i = 1 to obj.count do 
+		fn sortMatList v1 v2 =
 		(
-			if classof obj[i].diffuseMap == BitmapTexture and filenamefrompath obj[i].diffuseMap.filename != "" then
+			if v1[1] > v2[1] then 1 else -1
+		)
+
+		fn stringCompare v1 v2 =
+		(
+			if v1.count > v2.count then 1 else -1
+		)
+
+
+		-- lister tous les multimatériaux de la scene
+		allMulti = getClassInstances MultiMaterial
+		blublurf = ("Number of Multimaterials before script : " + allMulti.count as string)
+
+
+		-- lister tous les objets avec multimatériaux
+		allObj = for obj in objects where classof obj.material == MultiMaterial collect obj
+		print ("Number of objects with Multimaterials : " + allObj.count as string)
+		-- 	clearSelection()
+		-- 	select allObj
+	)
+
+
+	(
+		-- trier tous les MultiMateriaux par nombre de sous-matériaux
+		pda = #()
+		for obj in allMulti do 
+		(
+			myTempA = #()
+			for i = 1 to obj.count do 
 			(
-				append myTempA (filenamefrompath obj[i].diffuseMap.filename)
-			) else append myTempA "Color"
-		)
-		myTempA = myTempA as string
-		append pda #(obj.count,obj,myTempA)
-		-- myTempA = #()
-	)
-
-
--- 	clearListener()
-
-	qsort pda sortMatList
-
-
-	-- pda = stockage de tous les MultiMateriaux : (nb submats - MultiMateriau - liste des bitmaps)
-
-
-
-	-- Stockage des listes de bitmaps      -- myLists = liste des listes de bitmaps uniques
-	-----------------------------------
-	myLists = #()
-	for obj in pda do appendIfUnique myLists obj[3]
-
-	qsort myLists stringCompare
-
-	-- 	for obj in myLists do print (obj.count as string +"     "+ obj)
-	-- 	for obj in myLists do print ((obj as string).count as string + " : "+obj)
-
-	-- classof myLists[3]
-
-
-
-
-	
-	-- faire des listes de bitmaps pour chaque objet de la scene qui a un multimateriaux  -- myObjBmList = (nb submateriaux / objet / liste des bitmaps)
-	-------------------------------------------------------------------------------------
-	myObjBmList = #()
-	for obj in allObj do
-	(
-		objTemp = #()
-		for i = 1 to obj.material.count do
-		(
-				if classof obj.material[i].diffuseMap == BitmapTexture and filenamefrompath obj.material[i].diffuseMap.filename != "" then
+				if classof obj[i].diffuseMap == BitmapTexture and filenamefrompath obj[i].diffuseMap.filename != "" then
 				(
-					append objTemp (filenamefrompath obj.material[i].diffuseMap.filename)
-				) else append objTemp "Color"
+					append myTempA (filenamefrompath obj[i].diffuseMap.filename)
+				) else append myTempA (obj[i].diffuse as string)
+			)
+			myTempA = myTempA as string
+			append pda #(obj.count,obj,myTempA)
 		)
 
-		objTemp = objTemp as string
-		append myObjBmList #(obj.material.count,obj,objTemp)
-	)
+		qsort pda sortMatList
 
+		-- for obj in pda do print (obj[1] as string + "  -  " +obj[2] as string + "  -  " + obj[3] as string)
+		pda.count
 
-
--- 	clearListener()
-
-	qsort myObjBmList sortMatList
-
-
-
-	-- 	for obj in myObjBmList do print obj
-
-
-
-
-	for w = 1 to myLists.count do
-	(
-		tempVar = for obj in pda where (obj[3] == myLists[w]) collect obj[2]
-
--- 		meditmaterials[1] = tempVar[1]
-
-		objectsTemp = for obj in myObjBmList where obj[3] == myLists[w] collect obj[2]
-		for obj in objectsTemp do obj.material = tempVar[1]
+		-- pda = stockage de tous les MultiMateriaux : (nb submats - MultiMateriau - liste des bitmaps)
 
 	)
 
-	
-	allMulti = getClassInstances MultiMaterial
-	print blublurf
-	Print ("Number of Multimaterials AFTER script : " + allMulti.count as string)
 
 
-)
-
-
-
-
-
-w = 2
-
-
-
-
-clearListener()
-for obj in tempVar do print obj
-
-meditmaterials[1] = tempVar[1]
-
-
-
-myProut = for obj in myObjBmList where obj[3] == myLists[w] collect obj[2]
-
-
-select myProut
-
-for obj in selection do print obj.material
-
-
-
---------------------------------------------------------------------------------------
-
--- myLists = liste des listes de bitmaps uniques
-
--- pda = stockage de tous les MultiMateriaux : (nb submats - MultiMateriau - liste des bitmaps)
-
--- myObjBmList = (nb submateriaux / objet / liste des bitmaps) 
-
-
--- myTemp = tous les matériaux qui ont la texture pda[k]
-
-
-
--- debug 1
-
-
-(
-w = 5
-
-tempVar = for obj in pda where obj[3] == myLists[w] collect obj[2] -- myTemp = tous les matériaux qui ont la texture pda[k]
-
-
-for obj in tempVar do print obj
-
-meditmaterials[1] = tempVar[1]
-
-)
-
-
--- debug 2
-
-
-Felipe = for obj in myObjBmList where obj[3] == myLists[w] do obj[2].material = tempVar[1]
-
-
-select myObjBmList[10][2]
-myObjBmList[10][2].material = tempVar[1]
-myObjBmList[10][3]
-
-tempVar[1]
-ATA_24-30_BatteryContactor_1_MultiMat
-
-
-
-
-
-clearListener()
-for obj in myObjBmList do print obj[3]
-
-
-myLists.count
-
-
-
-
-
-	for w = 1 to myLists.count do
 	(
-		tempVar = for obj in pda where obj[3] == myLists[w] collect obj[2] -- myTemp = tous les matériaux qui ont la texture pda[k]
+		-- Stockage des listes de bitmaps      -- myLists = liste des listes de bitmaps uniques
+		-----------------------------------
+		myLists = #()
+		for obj in pda do appendIfUnique myLists obj[3]
 
-		-- print (tempVar[1] as string)
-		-- youpla = tempVar[1]
-		meditmaterials[1] = tempVar[1]
-
-		for obj in myObjBmList where obj[3] == myLists[w] do obj[2].material = tempVar[1]
+		qsort myLists stringCompare
 
 	)
 
+	--for obj in myLists do print obj
 
 
-
-
-
-
-
--- debug 3
-
-	for w = 1 to myLists.count do
 	(
-		for obj in pda where (obj[3] == myLists[w]) do
+		myTri= #()
+		for obj in myLists do
 		(
-			print ("true : " + obj[2] as string)
+			myTriTemp = #()
+			for mat in pda do
+			(
+				if matchpattern obj pattern:mat[3] == true then append myTriTemp mat[2]
+			)
+			append myTri #(obj, myTriTemp[1])
 		)
+
+	)
+
+
+	print "myTri : " 
+	for obj in myTri do print obj
+
+
+	-- Listes en cours : 
+
+ -- allMulti 		= tous les mutlimatériaux de la scene
+ -- allObj			= tous les objets possédant un multimatériaux
+ -- pda 			= NB_submats / MultiMateriau / liste des bitmaps   -- Pour tous les multimatériaux
+ -- myLists			= Listes de bitmaps uniques 
+ -- myTri 			= ( liste de bitmaps uniques / Multimatériau Unique )
+ -- allObjMultis 	= nombre de sousMateriaux / objet 3D / liste de bitmaps
+
+
+
+
+	allObjMultis = #()
+	for obj in allObj do -- pour chaque objet qui a un multimaterial
+	(
+		myTempB = #()
+		for i = 1 to obj.material.count do  -- pour chaque sous matériau
+		(
+			if classof obj.material[i].diffuseMap == BitmapTexture and filenamefrompath obj.material[i].diffuseMap.filename != "" then -- si le sous materiau a une bitmap en diffuse
+			(
+				append myTempB (filenamefrompath obj.material[i].diffuseMap.filename) -- ajouter les noms de bitmaps dans myTempB
+			) else append myTempB (obj.material[i].diffuse as string) -- sinon ajouter "Color" dans myTempB
+		)
+		myTempB = myTempB as string -- Conversion de myTempB en "String"
+		append allObjMultis #(obj.material.count, obj, myTempB)  -- allObjMultis = nombre de sousMateriaux / objet 3D / liste de bitmaps
 	)
 
 
 
 
-myObjBmList[1][2].material
+
+	for obj in allObjMultis do -- pour chaque tableau d'infos des objets 3D
+	(
+		for mat in myTri do -- pour chaque tableau d'infos des multimateriaux uniques
+		(
+			if matchpattern (obj[3] as string) pattern:(mat[1] as string) == true then obj[2].material = mat[2]
+		)
+	)
+
+
+
+	print ("myLists.count : "  + myLists.count as string)
+	print (blublurf)
+	allMulti = getClassInstances MultiMaterial
+	print ("Number of Multimaterials AFTER script : " + allMulti.count as string)
+)
+
+----------------------------------
+	--  OLD FUNCTION
+	-- 	for obj in allObjMultis do -- pour chaque tableau d'infos des objets 3D
+	-- 	(
+	-- 		for mat in myTri do -- pour chaque tableau d'infos des multimateriaux uniques
+	-- 		(
+	-- 			if obj[3] == mat[1] then obj[2].material = mat[2]
+	-- 		)
+	-- 	)

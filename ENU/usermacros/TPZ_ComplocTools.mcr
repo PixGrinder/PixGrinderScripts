@@ -45,4 +45,17 @@
 	)
 
 
+	macroScript ConflictManagerLauncher
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"ConflictManagerLauncher"
+	buttonText:"ConflictManagerLauncher"
+	icon:#("MaxScript",2)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder_TPZ_Tools/ConflictManagerLauncher.ms"
+	)
+
+
+
 )
