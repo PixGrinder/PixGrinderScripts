@@ -7,7 +7,7 @@
 
 	-- clearListener()
 
-	(
+	
 		
 
 		fn sortMatList v1 v2 =
@@ -31,10 +31,10 @@
 		print ("Number of objects with Multimaterials : " + allObj.count as string)
 		-- 	clearSelection()
 		-- 	select allObj
-	)
+	
 
 
-	(
+	
 		-- trier tous les MultiMateriaux par nombre de sous-matériaux
 		pda = #()
 		for obj in allMulti do 
@@ -54,15 +54,14 @@
 		qsort pda sortMatList
 
 		-- for obj in pda do print (obj[1] as string + "  -  " +obj[2] as string + "  -  " + obj[3] as string)
-		pda.count
+		-- pda.count
 
 		-- pda = stockage de tous les MultiMateriaux : (nb submats - MultiMateriau - liste des bitmaps)
-
-	)
-
+	
 
 
-	(
+
+	
 		-- Stockage des listes de bitmaps      -- myLists = liste des listes de bitmaps uniques
 		-----------------------------------
 		myLists = #()
@@ -70,12 +69,12 @@
 
 		qsort myLists stringCompare
 
-	)
+	
 
 	--for obj in myLists do print obj
 
 
-	(
+	
 		myTri= #()
 		for obj in myLists do
 		(
@@ -87,13 +86,7 @@
 			append myTri #(obj, myTriTemp[1])
 		)
 
-	)
-
-
-	print "myTri : " 
-	for obj in myTri do print obj
-
-
+	
 	-- Listes en cours : 
 
  -- allMulti 		= tous les mutlimatériaux de la scene
@@ -121,15 +114,19 @@
 		append allObjMultis #(obj.material.count, obj, myTempB)  -- allObjMultis = nombre de sousMateriaux / objet 3D / liste de bitmaps
 	)
 
+	for obj in allObjMultis do print (obj[3])
 
 
-
-
-	for obj in allObjMultis do -- pour chaque tableau d'infos des objets 3D
+	-- OPERATION D'INSTANCIATION FINALE !! --
+	for a = 1 to allObjMultis.count do -- pour chaque tableau d'infos des objets 3D
 	(
-		for mat in myTri do -- pour chaque tableau d'infos des multimateriaux uniques
+		for b = 1 to myTri.count do -- pour chaque tableau d'infos des multimateriaux uniques
 		(
-			if matchpattern (obj[3] as string) pattern:(mat[1] as string) == true then obj[2].material = mat[2]
+			if ((allObjMultis[a][3] as string) == (myTri[b][1] as string)) do 
+			(
+				select (allObjMultis[a][2])
+				selection[1].material = myTri[b][2]
+			)
 		)
 	)
 
@@ -137,16 +134,26 @@
 
 	print ("myLists.count : "  + myLists.count as string)
 	print (blublurf)
-	allMulti = getClassInstances MultiMaterial
-	print ("Number of Multimaterials AFTER script : " + allMulti.count as string)
+	blurf = getClassInstances MultiMaterial
+	print ("Number of Multimaterials AFTER script : " + blurf.count as string)
 )
+--------------------------------------
 
-----------------------------------
-	--  OLD FUNCTION
-	-- 	for obj in allObjMultis do -- pour chaque tableau d'infos des objets 3D
-	-- 	(
-	-- 		for mat in myTri do -- pour chaque tableau d'infos des multimateriaux uniques
-	-- 		(
-	-- 			if obj[3] == mat[1] then obj[2].material = mat[2]
-	-- 		)
-	-- 	)
+-- Debug --
+
+
+clearListener()
+a = 1
+b = b+1 
+print ("a = " + a as string)
+print ("b = " + b as string)
+print (allObjMultis[a][3] as string)
+print (myTri[b][1] as string)
+
+
+(allObjMultis[a][3] as string) == (myTri[b][1] as string)
+
+select (allObjMultis[a][2])
+meditmaterials[1] = (myTri[b][2])
+(allObjMultis[a][2].material) = (myTri[b][2])
+meditmaterials[1] == meditmaterials[2]
