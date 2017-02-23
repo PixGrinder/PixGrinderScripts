@@ -4,6 +4,15 @@
 
 
 (
+	
+	fn updateMatInfos =
+	(
+		-- Force to update Scene Materials informations by saving an empty maxFile --
+		tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
+		saveNodes #() tempFile
+		deleteFile tempFile
+	)
+
 	-- x1 = tous les matériaux standards de la scene
 	x1 = getClassInstances standardMaterial
 	myStart = x1.count as string
@@ -30,6 +39,11 @@
 		obj.material = matTemp
 	)
 
+	updateMatInfos()
+	-- RE myObjMult = tous les objets de la scene qui ont un multi matériaux
+	myObjMult = for obj in objects where classof obj.material == Multimaterial collect obj 
+
+
 
 	for k = 1 to pda.count do
 	(
@@ -43,21 +57,12 @@
 		(
 			for i = 1 to obj.material.count do
 			(
-				if classof obj.material[i].diffusemap == BitmapTexture and obj.material[i].diffusemap.filename != undefined and (filenamefrompath obj.material[i].diffuseMap.filename) == pda[k] do obj.material[i] = myTemp[1]
+				if classof obj.material[i].diffusemap == BitmapTexture and obj.material[i].diffusemap.filename != "" and (filenamefrompath obj.material[i].diffuseMap.filename) == pda[k] do obj.material[i] = myTemp[1]
 			)
 		)
 	)
 
-	
-	-- Force to update Scene Materials informations by saving an empty maxFile --
-
-	tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
-	saveNodes #() tempFile
-	deleteFile tempFile
-
-	-----------------------------------------------------------------------------
-
-
+	updateMatInfos()
 	x1 = getClassInstances standardMaterial
 	print ("Nb matériaux Standards before batch : " + myStart)
 	print ("Nb matériaux Standards AFTER batch : " + (x1.count as string) )
