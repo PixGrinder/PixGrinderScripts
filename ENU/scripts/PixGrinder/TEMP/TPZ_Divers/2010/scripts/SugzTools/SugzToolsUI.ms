@@ -1,0 +1,67 @@
+try (
+	-- Unregistered and destroy dialog if it already exists
+	cui.UnRegisterDialogBar SgzRoll 
+	destroyDialog SgzRoll
+) catch()
+
+
+rollout SgzRoll "SugzTools" width:200 height:830
+(
+	subrollout SubRoll "" width:200 height:830
+	
+	-- Set Position
+	on SgzRoll open do try(SetDialogPos SgzRoll (execute (getIniSetting _sgz._ini "MainUi" "dialogPos"))) catch()
+	on SgzRoll moved pos do setIniSetting _sgz._ini "MainUi" "dialogPos" (pos as string)
+		
+	rollout AutoSaveRoll "AutoSave"
+	(
+		include "$sugzTools\AutoSave\AutoSave.ms"
+	)
+
+	rollout ModelingRoll "Modeling"
+	(
+		include "$sugzTools\Modeling.ms"
+	)
+
+	rollout SelectionRoll "Selection"
+	(
+		include "$sugzTools\Selection.ms"
+	)
+
+	rollout DetachRoll "Detach" 
+	(
+		include "$sugzTools\Detach.ms"	
+	)
+
+	rollout GfxCMRoll "GFX Conflict Manager" 
+	(
+		button showBtn "GFX Conflict Manager" width:175
+		on showBtn pressed do _sgz._gfxCm.UI()
+	)
+
+	rollout OptionsRoll "Options" rolledup:true
+	(
+		include "$sugzTools\SugzToolsUI_Options.ms"	
+	)
+
+)
+
+
+createDialog SgzRoll
+AddSubRollout SgzRoll.SubRoll SgzRoll.AutoSaveRoll
+AddSubRollout SgzRoll.SubRoll SgzRoll.ModelingRoll
+AddSubRollout SgzRoll.SubRoll SgzRoll.SelectionRoll
+AddSubRollout SgzRoll.SubRoll SgzRoll.DetachRoll
+AddSubRollout SgzRoll.SubRoll SgzRoll.GfxCMRoll
+AddSubRollout SgzRoll.SubRoll SgzRoll.OptionsRoll
+
+SgzRoll.SubRoll.pos = [0,0] -- Set the subrollout pos inside the rollout
+cui.RegisterDialogBar SgzRoll minSize:[205,840]		-- register the dialog
+
+-- Set the dock state
+case execute (getIniSetting _sgz._ini "MainUi" "dockState") of 
+(
+	2: cui.DockDialogBar SgzRoll #cui_dock_left
+	3: cui.DockDialogBar SgzRoll #cui_dock_right
+)
+
