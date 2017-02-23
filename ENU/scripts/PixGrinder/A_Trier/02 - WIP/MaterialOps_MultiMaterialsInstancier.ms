@@ -1,5 +1,5 @@
 -- MaterialOps - MultiMaterials Instancier -- 
-
+-- v 1.0 --
 
 
 
@@ -28,7 +28,7 @@
 
 		-- lister tous les objets avec multimatériaux
 		allObj = for obj in objects where classof obj.material == MultiMaterial collect obj
-		print ("Number of objects with Multimaterials : " + allObj.count as string)
+		-- print ("Number of objects with Multimaterials : " + allObj.count as string)
 		-- 	clearSelection()
 		-- 	select allObj
 	
@@ -114,46 +114,49 @@
 		append allObjMultis #(obj.material.count, obj, myTempB)  -- allObjMultis = nombre de sousMateriaux / objet 3D / liste de bitmaps
 	)
 
-	for obj in allObjMultis do print (obj[3])
+	-- for obj in allObjMultis do print (obj[3])
 
 
 	-- OPERATION D'INSTANCIATION FINALE !! --
-	for a = 1 to allObjMultis.count do -- pour chaque tableau d'infos des objets 3D
+
+	for mat in allObjMultis do -- pour chaque tableau d'infos des objets 3D
 	(
-		for b = 1 to myTri.count do -- pour chaque tableau d'infos des multimateriaux uniques
+		for lst in myTri do -- pour chaque tableau d'infos des multimateriaux uniques
 		(
-			if ((allObjMultis[a][3] as string) == (myTri[b][1] as string)) do 
-			(
-				select (allObjMultis[a][2])
-				selection[1].material = myTri[b][2]
-			)
+			if mat[3] == lst[1] then mat[2].material = lst[2] 
 		)
 	)
 
 
 
+
+	-- 	for a = 1 to allObjMultis.count do -- pour chaque tableau d'infos des objets 3D
+	-- 	(
+	-- 		for b = 1 to myTri.count do -- pour chaque tableau d'infos des multimateriaux uniques
+	-- 		(
+	-- 			if ((allObjMultis[a][3] as string) == (myTri[b][1] as string)) do 
+	-- 			(
+	-- 				select (allObjMultis[a][2])
+	-- 				selection[1].material = myTri[b][2]
+	-- 			)
+	-- 		)
+	-- 	)
+
+
+
+	-- Force to update Scene Materials informations by saving an empty maxFile --
+
+	tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
+	saveNodes #() tempFile
+	deleteFile tempFile
+
+	-----------------------------------------------------------------------------
+
+	clearListener()
 	print ("myLists.count : "  + myLists.count as string)
 	print (blublurf)
 	blurf = getClassInstances MultiMaterial
-	print ("Number of Multimaterials AFTER script : " + blurf.count as string)
+	blurf = ("Number of Multimaterials AFTER script : " + (blurf.count as string))
+	--print (blurf)
+
 )
---------------------------------------
-
--- Debug --
-
-
-clearListener()
-a = 1
-b = b+1 
-print ("a = " + a as string)
-print ("b = " + b as string)
-print (allObjMultis[a][3] as string)
-print (myTri[b][1] as string)
-
-
-(allObjMultis[a][3] as string) == (myTri[b][1] as string)
-
-select (allObjMultis[a][2])
-meditmaterials[1] = (myTri[b][2])
-(allObjMultis[a][2].material) = (myTri[b][2])
-meditmaterials[1] == meditmaterials[2]
