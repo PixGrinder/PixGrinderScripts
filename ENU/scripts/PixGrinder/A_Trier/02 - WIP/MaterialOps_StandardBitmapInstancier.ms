@@ -1,5 +1,5 @@
 -- MaterialOps - Standard Bitmap Materials Instancier -- 
-
+-- v 1.0 --
 
 
 
@@ -23,10 +23,7 @@
 	for obj in x2 do appendifunique pda (filenameFromPath obj.diffusemap.filename)
 
 
-	blurf = for obj in myObjMult where obj.material.count == 1 collect obj
-	clearSelection()
-	select blurf
-
+	-- Nettoyage des multimatériaux possédant 1 seul sous-matériau
 	for obj in myObjMult where obj.material.count == 1 do 
 	(
 		matTemp = obj.material[1]
@@ -34,39 +31,14 @@
 	)
 
 
-
-
-
-	clearListener()						-- affichage de toutes les bitmaps utilisées dans la scene
-	for obj in pda do print obj 		-- affichage de toutes les bitmaps utilisées dans la scene
-
-
-	--- find all materials with pda[1] (1st bitmap) -- SORT BY SPECULAR LATER
-
-	print pda[1]
-
-	-- SORT BY SPECULAR LATER
-	-- fn sortBySpecu v1 v2=
-	-- (
-	-- 	if v1.specularLevel > v2.specularLevel then 1 else -1
-	-- )
-	-- SORT BY SPECULAR LATER
-
 	for k = 1 to pda.count do
 	(
 		myTemp = for obj in x2 where (filenamefrompath obj.diffusemap.filename) == pda[k] collect obj -- myTemp = tous les matériaux qui ont la texture pda[k]
-
-		clearListener() 					-- afficher tous les matériaux de myTemp
-		for obj in myTemp do print obj		-- afficher tous les matériaux de myTemp
-
-		-- myRef = myTemp[1]  -- myRef = le 1er matériau de la liste myTemp -- SORT BY SPECULAR LATER
-
+		
 		-- traitement des objets à matériau simple
 		for obj in myObjStd where (filenamefrompath obj.material.diffuseMap.filename) == pda[k] do obj.material = myTemp[1]
 
-
 		-- traitement des objets à matériau multiple
-
 		for obj in myObjMult do 
 		(
 			for i = 1 to obj.material.count do
@@ -74,12 +46,16 @@
 				if classof obj.material[i].diffusemap == BitmapTexture and obj.material[i].diffusemap.filename != undefined and (filenamefrompath obj.material[i].diffuseMap.filename) == pda[k] do obj.material[i] = myTemp[1]
 			)
 		)
-
-		for obj in myTemp do print obj		-- afficher tous les matériaux de myTemp
-
 	)
 
+	
+	-- Force to update Scene Materials informations by saving an empty maxFile --
 
+	tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
+	saveNodes #() tempFile
+	deleteFile tempFile
+
+	-----------------------------------------------------------------------------
 
 
 	x1 = getClassInstances standardMaterial
