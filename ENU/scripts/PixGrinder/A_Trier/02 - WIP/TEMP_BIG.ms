@@ -1,3 +1,12 @@
+--- select objects with Unwrap modifier
+
+	(
+		mySelec = for obj in geometry where obj.modifiers[1] != undefined and obj.modifiers[1].name == "Unwrap UVW" collect obj
+		clearSelection()
+		select mySelec
+	)
+
+select (getNodebyName "ATA_32-12_LGDiscBrakeLH")
 
 -----------------------------------------------------------------------------
 
@@ -45,6 +54,9 @@ if csom_floater != undefined then CloseRolloutFloater csom_floater
 csom_floater = newRolloutFloater "CollapseSubObjectMaterial v1.21" 270 366
 addRollout csom_rollout csom_floater
 )
+
+
+
 -----------------------------------------------------------------------------
 
 
