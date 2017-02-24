@@ -62,7 +62,7 @@ struct PrimitivesManagerStc
 			)
 			
 			-- avoid the line to goes back to origin
-			if not isCreatingObject Line then max modify mode
+			-- if not isCreatingObject Line then max modify mode
 		)
 	),
 	
