@@ -1,3 +1,39 @@
+
+(
+
+	mySearch = "_chromeBrillantDore"
+
+	mySearch = "*" + mySearch + "*"
+
+	x1 = getClassInstances StandardMaterial
+
+	x2 = for obj in x1 where (matchPattern obj.name pattern:mySearch == true )collect obj
+
+	meditmaterials[1] = x2[1]
+
+	MatEditor.Open()
+
+)
+
+-----------------------------------------------------------------------------
+
+for i = 1 to $.compLoc.hidden.count do print $.compLoc.hidden[i].node.name 
+
+
+for i = 1 to $.compLoc.transparent.count do print $.compLoc.transparent[i].node.name
+
+
+x28 = for bla in $.compLoc.transparent collect (bla.node.name)
+print x28 as string
+
+
+for i = 1 to $.compLoc.transparent.count do print $.compLoc.transparent[i].node
+deleteItem $.compLoc.transparent 1
+
+for i = 1 to $.animated.hidden.count do print $.compLoc.animated[i].node.name 
+
+-----------------------------------------------------------------------------
+
 --- select objects with Unwrap modifier
 
 	(
@@ -6,7 +42,7 @@
 		select mySelec
 	)
 
-select (getNodebyName "ATA_32-12_LGDiscBrakeLH")
+
 
 -----------------------------------------------------------------------------
 

@@ -23,9 +23,6 @@
 	VertexLimit = 501
 	
 
-	-- myCable = selection[1]
-	
-
 	while myCond == true do
 	(
 		if classof myCable != Editable_Poly and classof myCable != Editable_mesh do 
@@ -37,7 +34,7 @@
 		temp1 = polyop.getVertSelection myCable
 
 
-		if subobjectlevel != 1 or (temp1 as array).count < 5 do
+		if subobjectlevel != 1 or (temp1 as array).count < 3 do
 		(
 			exit with (MessageBox("Need to select cable end vertices"))
 			myCond = false
@@ -46,9 +43,9 @@
 
 		select myCable
 
-		exit with (messageBox ("EveryThing OK Till Now !!! "))
+-- 		exit with (messageBox ("EveryThing OK Till Now !!! "))
 		
-		myCond = false
+-- 		myCond = false
 
 		converttopoly myCable
 		
@@ -109,6 +106,8 @@
 		myShape.pivot = myShape.center
 		select myShape	
 		
+
+		myCond = false
 	)
 )
 

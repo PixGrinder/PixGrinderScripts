@@ -199,7 +199,7 @@
 	silentErrors:true
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/Cable_Retopology_V3.ms"
+		Include "$userScripts/PixGrinder/Cable_Retopology.ms"
 	)
 	
 	macroScript LocksToggler
