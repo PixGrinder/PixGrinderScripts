@@ -437,4 +437,17 @@
 		Include "$userScripts/PixGrinder/Select_Small_Objects.ms"
 	)
 
+
+	macroScript CornerVertex
+	category:"-- PixGrinder --"
+	toolTip:"Corner"
+	buttonText:"Corner"
+	-- icon:#("Splines",3)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Corner_Vertex.ms"
+	)
+
+
 )
