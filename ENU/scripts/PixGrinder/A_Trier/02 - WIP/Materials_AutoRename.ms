@@ -4,7 +4,7 @@
 -- PixGrinder Scripts --
 -- Materials Auto Rename --
 -- Renames Materials and Bitmap Textures with materials bitmap name--
--- V 1.1 --
+-- V 1.2 --
 
 ---------------------------------------------------------------------
 
@@ -34,7 +34,26 @@
 	for obj in objects where classof obj.material == MultiMaterial do obj.material.name = (myPrefix + "MultiMat_" + obj.name )
 
 
+	--- Adding Transparency feature ---
+
+	for obj in StdColor where obj.opacity < 100.0 do 
+	(
+		i=1
+		obj.name = (myPrefix + "TranspColor_" + (i as string))
+		i = i+1
+	)
+
+		for obj in StdBitmap where obj.opacityMap != undefined do 
+	(
+		pda_y = getFilenameFile obj.diffuseMap.filename
+		--pda_z = replace pda_y (pda_y.count-3) 4 ""
+		obj.name = (myPrefix+"TranspBitmap_"+pda_y)
+	)
+
+
+
 )
+
 
 
 

@@ -1,5 +1,22 @@
 
 (
+x1 = for obj in selection[1].compLoc.hidden collect obj.node
+select x1
+)
+
+-----------------------------------------------------------------------------
+
+sysInfo.username
+
+$userScripts
+
+symbolicPaths.getPathValue "$userScripts"
+
+
+
+-----------------------------------------------------------------------------
+
+(
 
 	mySearch = "_chromeBrillantDore"
 
