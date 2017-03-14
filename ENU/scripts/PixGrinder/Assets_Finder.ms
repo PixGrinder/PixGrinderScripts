@@ -4,7 +4,8 @@
 -- PixGrinder Scripts --
 -- Assets Finder --
 -- Finds things in 3dsmax scene (objects/textures/materials/...) --
--- V 4.0 --
+-- V 4.1 --
+-- Cameras excluded from search --
 
 ---------------------------------------------------------------------
 
@@ -30,8 +31,8 @@
 		max select none
 		for obj in objects do
 		(
-			if matchpattern obj.name pattern:("*"+mySearch+"*") == true do appendifunique pda obj
-			
+			if matchpattern obj.name pattern:("*"+mySearch+"*") == true and superclassof obj != camera and classof obj != Targetobject do appendifunique pda obj
+			-- v4.1 - Added exceptions for excluding cameras from selection --
 		)
 
 		select pda

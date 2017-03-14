@@ -24,6 +24,7 @@
 	global tempString = ""
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
 	
+	
 
 	fn  SaveStartup = 
 	(
