@@ -377,7 +377,7 @@
 	silentErrors:true
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/Assets_Finder_v4.ms"
+		Include "$userScripts/PixGrinder/Assets_Finder.ms"
 	)
 	
 	

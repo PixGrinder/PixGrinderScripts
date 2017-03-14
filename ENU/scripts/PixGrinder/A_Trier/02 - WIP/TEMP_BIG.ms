@@ -1,4 +1,11 @@
 
+-- ForceUpdate Bitamp 2v --
+
+obj = selection[1]
+if classof obj.material == standardmaterial and obj.material.diffusemap != undefined and classof obj.material.diffusemap == BitmapTexture
+
+-----------------------------------------------------------------------------
+
 (
 x1 = for obj in selection[1].compLoc.hidden collect obj.node
 select x1
