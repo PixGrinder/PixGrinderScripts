@@ -1,4 +1,54 @@
 
+
+for obj in $.compLoc.hidden do print obj.node
+
+$.compLoc.hidden[5].node
+deleteItem $.compLoc.hidden 5
+
+clearListener()
+for obj in $.compLoc.transparent do print obj.node
+
+$.compLoc.transparent[24].node
+deleteItem $.compLoc.transparent 24
+
+--------------------------------------------
+
+-- Comploc auto add nodes
+(
+	clearListener()
+	mySort = #()
+	mySelec = #()
+	theNode1 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_LH_sub28"
+	theNode2 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_RH_sub28"
+-- 	theNode3 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_07"
+-- 	theNode4 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_06"
+
+
+	for obj in objects do
+	(
+		try
+		(
+			for attrib in obj.compLoc.hidden do
+			(
+				if attrib.node.name == "ATA_53-50_TransmissionDeckCowlings_LH" or attrib.node.name == "ATA_53-50_TransmissionDeckCowlings_RH" do append mySelec obj
+			)
+		) catch ()
+	)
+
+	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode1 forwardTransformChangeMsgs:false)
+	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode2 forwardTransformChangeMsgs:false)
+-- 	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode3 forwardTransformChangeMsgs:false)
+-- 	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode4 forwardTransformChangeMsgs:false)
+-- 	max hide inv
+-- 	select mySelec
+)
+
+
+
+
+
+-----------------------------------------------------------------------------
+
 -- ForceUpdate Bitamp 2v --
 
 obj = selection[1]
