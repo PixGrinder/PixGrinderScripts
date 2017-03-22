@@ -1,8 +1,9 @@
 -- mass xref scene !!
+-- v4
 (
 	clearListener()
 	test = 1 
-	initPath = "c:"+"\\"
+	initPath = getDir #scene
 	pda = #()
 	
 	if Maxfilepath.count != 0 do initPath = Maxfilepath

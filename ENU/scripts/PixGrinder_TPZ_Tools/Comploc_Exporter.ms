@@ -28,6 +28,7 @@
 
 	currentScene = maxfilePath + maxFileName
 	myStdPath = "D:\11_Comploc\Assets\Variants\AS365\Graphics"+"\\"
+-- 	myStdPath = "D:\REVERT_COMPLOC\Assets\Variants\AS365\Graphics"+"\\"
 -- 	global exp_path = getSavePath caption:"Export Files To : " initialDir:myStdPath
 -- 	global exp_path = append exp_path "\\"
 	exp_path = getSavePath caption:"Export Files To : " initialDir:myStdPath

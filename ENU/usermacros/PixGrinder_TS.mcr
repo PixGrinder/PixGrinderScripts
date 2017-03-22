@@ -332,7 +332,7 @@
 	silentErrors:true
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/XrefScene_multi_v3.ms"
+		Include "$userScripts/PixGrinder/XrefScene_multi.ms"
 	)
 	
 	macroScript BS_CollapseMultiMaterial
