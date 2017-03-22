@@ -1,4 +1,11 @@
 
+move selection [0.0,0.0,9.75]
+
+--------------------------------------------
+
+getDir #scene
+
+--------------------------------------------
 
 for obj in $.compLoc.hidden do print obj.node
 
@@ -8,8 +15,8 @@ deleteItem $.compLoc.hidden 5
 clearListener()
 for obj in $.compLoc.transparent do print obj.node
 
-$.compLoc.transparent[24].node
-deleteItem $.compLoc.transparent 24
+$.compLoc.transparent[2].node
+deleteItem $.compLoc.transparent 2
 
 --------------------------------------------
 
@@ -18,13 +25,13 @@ deleteItem $.compLoc.transparent 24
 	clearListener()
 	mySort = #()
 	mySelec = #()
-	theNode1 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_LH_sub28"
-	theNode2 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_RH_sub28"
+	theNode1 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_RH_sub28"
+	theNode2 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_LH_sub28"
 -- 	theNode3 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_07"
 -- 	theNode4 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_06"
 
 
-	for obj in objects do
+	for obj in selection do
 	(
 		try
 		(
@@ -32,11 +39,11 @@ deleteItem $.compLoc.transparent 24
 			(
 				if attrib.node.name == "ATA_53-50_TransmissionDeckCowlings_LH" or attrib.node.name == "ATA_53-50_TransmissionDeckCowlings_RH" do append mySelec obj
 			)
-		) catch ()
+		) catch (print obj.name)
 	)
 
-	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode1 forwardTransformChangeMsgs:false)
-	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode2 forwardTransformChangeMsgs:false)
+	for obj in mySelec do append obj.CompLoc.hidden (nodeTransformMonitor node:theNode1 forwardTransformChangeMsgs:false)
+	for obj in mySelec do append obj.CompLoc.hidden (nodeTransformMonitor node:theNode2 forwardTransformChangeMsgs:false)
 -- 	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode3 forwardTransformChangeMsgs:false)
 -- 	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode4 forwardTransformChangeMsgs:false)
 -- 	max hide inv
@@ -45,6 +52,11 @@ deleteItem $.compLoc.transparent 24
 
 
 
+for obj in selection[1].compLoc.hidden do print obj.node
+
+$.compLoc.Hidden.count
+
+select mySelec
 
 
 -----------------------------------------------------------------------------
