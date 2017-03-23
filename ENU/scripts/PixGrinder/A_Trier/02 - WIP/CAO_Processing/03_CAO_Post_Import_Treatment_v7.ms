@@ -7,7 +7,7 @@
 	clearListener()
 	
 -- 	myInput = "D:\10 - Helicopters\AS365VMT\AH_AS365_3Dfiles\WRL\v6\2016-10-05-3D"+"\\"
-	myStdPath = "c:"+"\\"
+	myStdPath = "D:\10 - Helicopters\H225VMT\MAX\CAO\Process"+"\\"
 	myInput = getSavePath caption:"Choose MAX Files to process : " initialDir:myStdPath
 	myInput = myInput +"\\"
 	files = getFiles (myInput+"*.max")

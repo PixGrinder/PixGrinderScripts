@@ -1,4 +1,12 @@
 
+
+
+
+myTest = newRolloutFloater "Gueshni Toolbox" 320 950 2500 5
+cui.RegisterDialogBar
+
+--------------------------------------------
+
 move selection [0.0,0.0,9.75]
 
 --------------------------------------------
@@ -20,10 +28,16 @@ deleteItem $.compLoc.transparent 2
 
 --------------------------------------------
 
+custAttributes.get selection[1] 1 != undefined
+
+
+
+--------------------------------------------
+$.compLoc.Hidden.count
 -- Comploc auto add nodes
 (
 	clearListener()
-	mySort = #()
+	mySort = for obj in selection where custAttributes.get obj 1 != undefined collect obj
 	mySelec = #()
 	theNode1 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_RH_sub28"
 	theNode2 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_LH_sub28"
@@ -31,24 +45,26 @@ deleteItem $.compLoc.transparent 2
 -- 	theNode4 = getNodeByName "ATA_53-50_TransmissionDeckCowlings_06"
 
 
-	for obj in selection do
+	for obj in mySort do
 	(
-		try
+
+		for attrib in obj.compLoc.hidden do
 		(
-			for attrib in obj.compLoc.hidden do
-			(
-				if attrib.node.name == "ATA_53-50_TransmissionDeckCowlings_LH" or attrib.node.name == "ATA_53-50_TransmissionDeckCowlings_RH" do append mySelec obj
-			)
-		) catch (print obj.name)
+			if matchpattern attrib.node.name pattern:"*TransmissionDeckCowling*" == true do append mySelec obj
+		)
+
 	)
 
-	for obj in mySelec do append obj.CompLoc.hidden (nodeTransformMonitor node:theNode1 forwardTransformChangeMsgs:false)
-	for obj in mySelec do append obj.CompLoc.hidden (nodeTransformMonitor node:theNode2 forwardTransformChangeMsgs:false)
+	for obj in mySelec do appendifunique obj.CompLoc.hidden (nodeTransformMonitor node:theNode1 forwardTransformChangeMsgs:false)
+	for obj in mySelec do appendifunique obj.CompLoc.hidden (nodeTransformMonitor node:theNode2 forwardTransformChangeMsgs:false)
 -- 	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode3 forwardTransformChangeMsgs:false)
 -- 	for obj in mySelec do append obj.hidden (nodeTransformMonitor node:theNode4 forwardTransformChangeMsgs:false)
 -- 	max hide inv
 -- 	select mySelec
 )
+
+$.compLoc.Hidden.count
+
 
 
 

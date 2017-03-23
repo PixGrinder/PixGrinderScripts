@@ -3,9 +3,11 @@
 
 (
 	clearListener()
-	myStdPath = "c:"+"\\"
+	myStdPath = "D:\10 - Helicopters\H225VMT\CAO\2017-03-21-3D"+"\\"
+-- 	myStdPath = "c:"+"\\"
 	exp_path = getSavePath caption:"Choose Input WRL Files : " initialDir:myStdPath
-	myInput = exp_path + "\\"
+	myInput = getDir #scene
+-- 	myInput = exp_path + "\\"
 	exp_path = getSavePath caption:"Choose Max Files Output : " initialDir:myInput
 	myOutput = exp_path + "\\"
 

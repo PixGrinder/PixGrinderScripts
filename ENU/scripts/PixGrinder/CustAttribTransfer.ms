@@ -14,8 +14,9 @@
 		selection[2].compLoc.transparent = selection[1].compLoc.transparent
 		selection[2].compLoc.animated = selection[1].compLoc.animated
 		custAttributes.delete selection[1] 1 baseObject:true
-		selection[2].name = selection[1].name 
-		delete selection[1]
+		selection[2].name = selection[1].name
+		selection[1].name = selection[1].name+"sub01"
+		-- delete selection[1]
 	)
 
 )

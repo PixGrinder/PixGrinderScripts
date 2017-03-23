@@ -8,6 +8,7 @@
 	(
 -- 		print (i as string+";"+obj.name +";" + substring obj.compLoc.hotspot.name (obj.name.count+2) obj.compLoc.hotspot.name.count)
 -- 		format (i as string+";"+obj.name +";" + substring obj.compLoc.hotspot.name (obj.name.count+2) obj.compLoc.hotspot.name.count+"\n")
+		--print obj.name -- a virer quand tout fonctionne !!!
 		theCam = substring obj.compLoc.hotspot.name (obj.name.count+2) obj.compLoc.hotspot.name.count
 		theFOV = (obj.comploc.hotspot.fov as integer)
 
