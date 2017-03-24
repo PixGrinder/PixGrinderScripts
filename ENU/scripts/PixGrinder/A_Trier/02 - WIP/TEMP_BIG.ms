@@ -1,9 +1,30 @@
+	rollout SplineTools "SplineTools"
+	(
+		button btn1 "" width:27 height:27 pos:[5,5] images:#("Splines_24i.bmp", "Splines_24a.bmp", 11, 11, 1,1,1) tooltip:"CableRetopology"
+		
+		on btn1 pressed do macros.run "-- PixGrinder --" "CableRetopology"
+	)
+
+
+-- 	global pixGrindWindow = newRolloutFloater "PixGrinder Tools" 50 50 100 100 
+-- 	addRollout systm pixGrindWindow 
+
+createDialog SplineTools 120 34 760 250 style:#(#style_titlebar, #style_border, #style_toolwindow, #style_resizing, #style_sysmenu)
+-- 	destroyDialog systm
+-- global pixGrindWindow = undefined
+
+
+cui.RegisterDialogBar SplineTools
 
 
 
 
-myTest = newRolloutFloater "Gueshni Toolbox" 320 950 2500 5
-cui.RegisterDialogBar
+
+
+x1 = cui.getConfigFile()
+format x1
+
+cui.setAppTitle maxfilename
 
 --------------------------------------------
 

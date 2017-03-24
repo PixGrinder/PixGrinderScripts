@@ -15,4 +15,6 @@ filePos()
 
 print "Youpi" to "d:/AS365.txt"
 
-close HelicoList
+close(HelicoList)
+
+openFile HelicoList

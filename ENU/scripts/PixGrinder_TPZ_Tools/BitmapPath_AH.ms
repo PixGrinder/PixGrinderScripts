@@ -1,5 +1,5 @@
 -- Helicopters Projects - redirect Bitmaps --
--- v2.0 --
+-- v2.1 --
 
 
 
@@ -20,7 +20,8 @@
 		label theLabel "Choose path to commit bitmaps to" offset:[0,5] align:#center
 		edittext thePath text:("..\..\..\Textures_Common"+"\\") fieldWidth:250 align:#center offset:[0,5]
 		button comitPath "OK" offset:[0,5] width:75
-		on comitPath pressed do assignPath thePath.text 
+		on comitPath pressed do assignPath thePath.text
+		on thePath entered txtTemp do assignPath thePath.text
 	)
 
 	createDialog myCustPath 350 100 1024 256
