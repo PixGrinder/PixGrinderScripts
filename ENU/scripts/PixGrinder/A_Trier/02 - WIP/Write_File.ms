@@ -5,7 +5,7 @@ global myConfig
 myConfig = openFile "D:/03_Max_UI/myShelf_TOMERGE_01.cuix" mode:"r"
 myTemp = ""
 
-while not eof do 
+while not eof myConfig do 
 (
 	append myTemp (readLine myConfig)
 	append myTemp "\r"

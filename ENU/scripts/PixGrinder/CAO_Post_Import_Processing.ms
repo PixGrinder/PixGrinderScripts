@@ -1,5 +1,11 @@
 -- CAO Post Import Processing -- 
--- v7.0 --
+-- v7.1 --
+
+
+
+-----------------------------------------------------------------------------
+--   !!!   CONFIGURE VALUES IN ProcessCAO FUNCTION TO PREVENT ERRORS   !!! --
+-----------------------------------------------------------------------------
 
 
 (
@@ -7,7 +13,8 @@
 	clearListener()
 	
 -- 	myInput = "D:\10 - Helicopters\AS365VMT\AH_AS365_3Dfiles\WRL\v6\2016-10-05-3D"+"\\"
-	myStdPath = "D:\10 - Helicopters\H225VMT\MAX\CAO\Process"+"\\"
+-- 	myStdPath = "D:\10 - Helicopters\H225VMT\MAX\CAO\Process"+"\\"
+	myStdPath = "c:"+"\\"
 	myInput = getSavePath caption:"Choose MAX Files to process : " initialDir:myStdPath
 	myInput = myInput +"\\"
 	files = getFiles (myInput+"*.max")
