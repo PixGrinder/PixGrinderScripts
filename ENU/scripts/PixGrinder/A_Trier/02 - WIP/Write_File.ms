@@ -1,5 +1,5 @@
 --------- WIP ----------------------
--- v 0.3 --
+-- v 0.4 --
 
 clearListener()
 global myConfig
@@ -26,41 +26,24 @@ copyFile cfActualFile cfBackup
 cfFile = openFile cfActualFile mode:"a+"
 
 seek cfFile 0
-while skipToString cfFile "Window>" != undefined do skipToString cfFile "Window>"
-filepos cfFile
+-- while skipToString cfFile "</Window>" != undefined do 
+-- (
+-- 	print (filepos cfFile)
+-- 	skipToString cfFile "</Window>"
+-- )
+
+skipToString cfFile "</CUIWindows>"
+myPos = filepos cfFile - 13
+
+seek cfFile myPos
+
 
 format "\r \r" to:cfFile
-
-
 format myTemp to:cfFile
+format "\r \r" to:cfFile
 close cfFile
 
 
--------------------------------------------------------------------------
 
-if doesFileExist "d:/AS365.txt" == false then 
-(
-	HelicoList = createFile "d:/AS365.txt"
-	print "File Created"
-) else (
-	HelicoList = openFile "d:/AS365.txt" mode:"a+"
-	print "File Opened"
-)
-
-
-
-format "Youpla" to:HelicoList
-
-close HelicoList
-
-readLine HelicoList
-
-filePos HelicoList
-
-readValue "youp"
-
-readToken "youp"
-
-seek HelicoList #eof
-seek HelicoList 0
+-- UTILISER DES VARIABLES POUR RE-ECRIRE COMPLETEMENT LE FICHIER CONFIG !! --
 
