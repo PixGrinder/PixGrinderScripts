@@ -1,4 +1,5 @@
 --------- WIP ----------------------
+-- v 0.3 --
 
 clearListener()
 global myConfig
@@ -12,20 +13,30 @@ while not eof myConfig do
 )
 close myConfig
 
-format myTemp
+-- format myTemp
 
 
 
+cfActualPath = cui.getDir()
+cfActualFile = cui.getConfigFile()
+cfBackup = substituteString cfActualFile ".cuix" ".OLD"
+
+copyFile cfActualFile cfBackup
+
+cfFile = openFile cfActualFile mode:"a+"
+
+seek cfFile 0
+while skipToString cfFile "Window>" != undefined do skipToString cfFile "Window>"
+filepos cfFile
+
+format "\r \r" to:cfFile
 
 
+format myTemp to:cfFile
+close cfFile
 
 
-
-
-
-
-
-
+-------------------------------------------------------------------------
 
 if doesFileExist "d:/AS365.txt" == false then 
 (
