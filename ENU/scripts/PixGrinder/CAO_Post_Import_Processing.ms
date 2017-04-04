@@ -1,5 +1,5 @@
 -- CAO Post Import Processing -- 
--- v7.1 --
+-- v8.0 --
 
 
 
@@ -18,9 +18,7 @@
 	myInput = getSavePath caption:"Choose MAX Files to process : " initialDir:myStdPath
 	myInput = myInput +"\\"
 	files = getFiles (myInput+"*.max")
-
-	
-	
+	global myParams
 
 
 	fn sortByDate file1 file2=
@@ -48,12 +46,12 @@
 	)
 	
 	
-	fn ProcessCAO myFile =
+	fn ProcessCAO myFile a b c d e f g =
 	(
 		loadMaxFile myFile useFileUnits:false quiet:true
-		ScaleRatio = 10
-		myOffset = [0,0,0]
-		myRot = (eulerAngles 0 0 0)
+		ScaleRatio = g
+		myOffset = [a,b,c]
+		myRot = (eulerAngles d e f)
 		myProg = 0
 		
 		
@@ -115,18 +113,53 @@
 	)
 	
 	
-	qsort files sortByDate
-	
 
-	for i = 1 to files.count do
+	rollout myParams "CAO Offset parameters"
 	(
-		SysUnit()
-		ProcessCAO files[i]
-		max select none
-		max zoomext sel all
-		completeRedraw()
-		saveMaxFile files[i] useNewFile:true quiet:true
+		label txtPos "Position Offset :" offset:[0,15]
+		edittext pX text:"0" fieldWidth:35 across:3 offset:[75,25]
+		edittext pY text:"0" fieldWidth:35 across:3 offset:[45,25]
+		edittext pZ text:"0" fieldWidth:35 across:3 offset:[10,25]
+
+
+		label txtRot "Rotation Offset :" offset:[0,15]
+		edittext rX text:"0" fieldWidth:35 across:3 offset:[75,25]
+		edittext rY text:"0" fieldWidth:35 across:3 offset:[45,25]
+		edittext rZ text:"0" fieldWidth:35 across:3 offset:[10,25]
+
+		label txtScale "Scale Offset :" offset:[0,15]
+		edittext sX text:"0" fieldWidth:35 align:#center
+
+		button processButton "OK" width: 150
+
+		on processButton pressed do
+		(
+			qsort files sortByDate
+			a1 = (pX.text as float)
+			a2 = (pY.text as float)
+			a3 = (pZ.text as float)			
+			a4 = (rX.text as float)
+			a5 = (rY.text as float)
+			a6 = (rZ.text as float)
+			a7 = (sX.text as float)
+
+
+			for i = 1 to files.count do
+			(
+				SysUnit()
+				ProcessCAO files[i] a1 a2 a3 a4 a5 a6 a7
+				max select none
+				max zoomext sel all
+				completeRedraw()
+				saveMaxFile files[i] useNewFile:true quiet:true
+			)
+		)
+
 	)
-	
+
+	try (destroyDialog myParams) catch ()
+	createDialog myParams 450 450 512 256
+
+
 
 )

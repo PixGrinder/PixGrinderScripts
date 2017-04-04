@@ -1,3 +1,10 @@
+
+clearListener()
+for obj in objects where obj.parent != undefined do print obj.name
+
+
+----------------------------------------------
+
 	rollout SplineTools "SplineTools"
 	(
 		button btn1 "" width:27 height:27 pos:[5,5] images:#("Splines_24i.bmp", "Splines_24a.bmp", 11, 11, 1,1,1) tooltip:"CableRetopology"
