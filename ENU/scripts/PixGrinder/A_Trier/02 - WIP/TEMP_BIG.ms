@@ -1,4 +1,10 @@
 
+x1 = getFiles "D:\10 - Helicopters\H225VMT\MAX\CAO\*.max"
+for obj in x1 do format (fileNameFromPath obj + "\r")
+
+
+----------------------------------------------
+
 clearListener()
 for obj in objects where obj.parent != undefined do print obj.name
 
