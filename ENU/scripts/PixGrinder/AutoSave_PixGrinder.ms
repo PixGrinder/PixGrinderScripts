@@ -13,7 +13,7 @@
 
 (
 	clearListener()
-	global myMinutes = 10.0
+	global myMinutes = 1.0
 	global TimeInterval = myMinutes*1000*60
 	global myMax = 50
 	global myTotal = myMax - 1
@@ -23,13 +23,12 @@
 	global pda_temp = #()
 	global tempString = ""
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
-	global ASQuery
+	global ASPrompt
 	
 	
 
 	fn  SaveStartup = 
 	(
-		--myFolder = maxfilepath + substituteString maxfilename ".max" ""+"_autoback"
 		myFolder = maxfilepath+"_BACKUP_\\" + substituteString maxfilename ".max" ""+"_autoback"
 		if myNumer <= myTotal then myNumer = myNumer +1 else myNumer = 1
 		myFormatNumer = formattedPrint myNumer format:"03d"
@@ -46,21 +45,40 @@
 	(
 		if getSaveRequired() == true do 
 		(
-			if (queryBox "Auto-save current scene ?" title:"AutoSave Dialog" beep:true) == true then SaveStartup() else 
-			(
-				print "Autosave skipped !"
-				dotnet.removeEventHandler pdaTimer "tick" myAutoSave
-				dotnet.addEventHandler pdaTimer "tick" myAutoSave
-			)
+			try (destroyDialog ASPrompt) catch ()
+			createDialog ASPrompt 300 100
 		)
 	)
 	
+
+	rollout ASPrompt "AutoSave Prompt"
+	(
+		label myQuestion "Auto-save current scene ?" offset:[0,10]
+		button pixYes "Yes"  width:100 across:2 offset:[0,20]
+		button pixNo "No"  width:100 across:2 offset:[0,20]
+
+		on pixYes pressed do 
+		(
+			SaveStartup()
+			destroyDialog ASPrompt
+		)
+
+
+		on pixNo pressed do
+		(
+			print "Autosave skipped !"
+			dotnet.removeEventHandler pdaTimer "tick" myAutoSave
+			dotnet.addEventHandler pdaTimer "tick" myAutoSave
+			destroyDialog ASPrompt
+		)
+	)
+
+
 		
 	if maxfilename.count == 0 then 
 	(
 		messageBox ("Please, save the current Scene before launching this script")
 	) else (
-		--print "launch the script !!!"
 		autoSave.Enable = False
 		myFolder = maxfilepath + "_BACKUP_\\"+ substituteString maxfilename ".max" ""+"_autoback"
 		makeDir myFolder
@@ -100,17 +118,26 @@
 		--pdaTimer.stop()
 	) 
 )
+------------------------------------------------------------------
 
+-- try (destroyDialog ASPrompt) catch ()
+-- rollout ASPrompt "AutoSave Prompt"
+-- (
+-- 	label myQuestion "Auto-save current scene ?" offset:[0,10]
+-- 	button pixYes "Yes"  width:100 across:2 offset:[0,20]
+-- 	button pixNo "No"  width:100 across:2 offset:[0,20]
 
-try (destroyDialog ASPrompt) catch ()
-rollout ASPrompt "AutoSave Prompt"
-(
-	label myQuestion "Auto-save current scene ?" offset:[0,10]
-	button pixYes "Yes"  width:100 across:2 offset:[0,20]
-	button pixNo "No"  width:100 across:2 offset:[0,20]
-)
-createDialog ASPrompt
+-- 	on pixYes pressed do SaveStartup()
 
-try (closeRolloutFloater ASQuery) catch ()
-ASQuery = newRolloutFloater "TEST" 300 120 dialogBar:true
-addRollout ASPrompt ASQuery
+-- 	on pixNo pressed do
+-- 	(
+-- 		print "Autosave skipped !"
+-- 		dotnet.removeEventHandler pdaTimer "tick" myAutoSave
+-- 		dotnet.addEventHandler pdaTimer "tick" myAutoSave
+-- 	)
+-- )
+-- createDialog ASPrompt 300 100
+
+-- try (closeRolloutFloater ASQuery) catch ()
+-- ASQuery = newRolloutFloater "TEST" 300 120 dialogBar:true
+-- addRollout ASPrompt ASQuery
