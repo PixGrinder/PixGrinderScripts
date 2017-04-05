@@ -16,7 +16,7 @@
 	silentErrors:false
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/AutoSave_PDA_V8_2.ms"
+		Include "$userScripts/PixGrinder/AutoSave_PixGrinder.ms"
 	)
 
 
