@@ -24,6 +24,8 @@
 	global tempString = ""
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
 	global ASPrompt
+	pixScreenSize = getMAXWindowSize()
+
 	
 	
 
@@ -46,7 +48,7 @@
 		if getSaveRequired() == true do 
 		(
 			try (destroyDialog ASPrompt) catch ()
-			createDialog ASPrompt 300 100
+			createDialog ASPrompt 300 100  ((pixScreenSize[1]*3/5) as integer) ((pixScreenSize[2]/10) as integer)
 		)
 	)
 	
