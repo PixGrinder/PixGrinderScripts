@@ -5,12 +5,12 @@
 -- Doublon_Finder.ms --
 -- Doublon_Finder --
 -- Selects double names in the 3d scene--
--- V 1.0 --
+-- V 1.2 --
 
 ---------------------------------------------------------------------
 (
 	clearListener()
-	max select none
+	clearSelection()
 	pda = #()
 	for obj in objects do
 	(
@@ -21,8 +21,9 @@
 		)
 		
 	)
-	max select none
+	clearSelection()
 	print pda.count
 	for obj in pda do print obj.name -- added
 	select pda
+	if pda.count == 0 then messageBox("No Double Names in this scene")
 )

@@ -4,7 +4,8 @@
 -- PixGrinder Scripts --
 -- AutoSave --
 -- Tries to make 3dsmax Autosave to act like Maya AutoSave --
--- V 8.3 --
+-- Total Remake --
+-- V 9.0 --
 
 ---------------------------------------------------------------------
 
@@ -13,69 +14,16 @@
 
 (
 	clearListener()
-	global myMinutes = 10.0
-	global TimeInterval = myMinutes*1000*60
-	global myMax = 50
-	global myTotal = myMax - 1
-	global myNumer = 1
-	global myFormatNumer = ""
-	global myDates = #()
-	global pda_temp = #()
-	global tempString = ""
-	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
-	global ASPrompt
-	pixScreenSize = getMAXWindowSize()
+	myTotal = pixLib_MaximumAutoSaveFiles - 1
 
+	myDates = #()
+	pda_temp = #()
 	
 	
 
-	fn  SaveStartup = 
-	(
-		myFolder = maxfilepath+"_BACKUP_\\" + substituteString maxfilename ".max" ""+"_autoback"
-		if myNumer <= myTotal then myNumer = myNumer +1 else myNumer = 1
-		myFormatNumer = formattedPrint myNumer format:"03d"
-		if (getFiles (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")).count == 1 do deleteFile (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
-		MyPrintTime = localTime
-		print MyPrintTime
-		saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
-		copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
-		print ("Saved file : " + substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
-	)
+
+
 	
-	
-	fn myAutoSave = 
-	(
-		if getSaveRequired() == true do 
-		(
-			try (destroyDialog ASPrompt) catch ()
-			createDialog ASPrompt 300 100  ((pixScreenSize[1]*3/5) as integer) ((pixScreenSize[2]/10) as integer)
-		)
-	)
-	
-
-	rollout ASPrompt "AutoSave Prompt"
-	(
-		label myQuestion "Auto-save current scene ?" offset:[0,10]
-		button pixYes "Yes"  width:100 across:2 offset:[0,20]
-		button pixNo "No"  width:100 across:2 offset:[0,20]
-
-		on pixYes pressed do 
-		(
-			SaveStartup()
-			destroyDialog ASPrompt
-		)
-
-
-		on pixNo pressed do
-		(
-			print "Autosave skipped !"
-			dotnet.removeEventHandler pdaTimer "tick" myAutoSave
-			dotnet.addEventHandler pdaTimer "tick" myAutoSave
-			destroyDialog ASPrompt
-		)
-	)
-
-
 		
 	if maxfilename.count == 0 then 
 	(
@@ -109,12 +57,9 @@
 			tst = substring x2 (x2.count-6) 3
 			myNumer =  tst as integer
 		)
-		
-		
-		dotnet.removeEventHandler pdaTimer "tick" myAutoSave
-		dotnet.addEventHandler pdaTimer "tick" myAutoSave
-		pdaTimer.interval = TimeInterval
-		pdaTimer.start()
+
+		pixTimer.stop()
+		pixTimer.start()
 		
 		SaveStartup()
 		--pdaTimer.stop()
@@ -143,3 +88,45 @@
 -- try (closeRolloutFloater ASQuery) catch ()
 -- ASQuery = newRolloutFloater "TEST" 300 120 dialogBar:true
 -- addRollout ASPrompt ASQuery
+
+
+
+
+
+
+
+	global ASPrompt
+	pixScreenSize = getMAXWindowSize()
+
+
+	fn myAutoSave = 
+	(
+		if getSaveRequired() == true do 
+		(
+			try (destroyDialog ASPrompt) catch ()
+			createDialog ASPrompt 300 100  ((pixScreenSize[1]*3/5) as integer) ((pixScreenSize[2]/10) as integer)
+		)
+	)
+	
+
+	rollout ASPrompt "AutoSave Prompt"
+	(
+		label myQuestion "Auto-save current scene ?" offset:[0,10]
+		button pixYes "Yes"  width:100 across:2 offset:[0,20]
+		button pixNo "No"  width:100 across:2 offset:[0,20]
+
+		on pixYes pressed do 
+		(
+			SaveIncrement()
+			destroyDialog ASPrompt
+		)
+
+
+		on pixNo pressed do
+		(
+			print "Autosave skipped !"
+			dotnet.removeEventHandler pdaTimer "tick" myAutoSave
+			dotnet.addEventHandler pdaTimer "tick" myAutoSave
+			destroyDialog ASPrompt
+		)
+	)

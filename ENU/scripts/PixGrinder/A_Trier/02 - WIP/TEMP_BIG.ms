@@ -1,4 +1,26 @@
 
+
+for obj in objects where matchpattern obj.layer.name pattern:"CAO_ATA_H225_21_COCKPIT_with_ACS_secured" == true do delete obj
+
+
+----------------------------------------------
+
+(
+	x1 = for obj in geometry where obj.material == undefined collect obj
+	clearSelection()
+	select x1
+)
+
+----------------------------------------------
+
+(
+clearListener()
+for obj in selection do format (obj.name + "\r")
+)
+
+
+----------------------------------------------
+
 x1 = getFiles "D:\10 - Helicopters\H225VMT\MAX\CAO\*.max"
 for obj in x1 do format (fileNameFromPath obj + "\r")
 
