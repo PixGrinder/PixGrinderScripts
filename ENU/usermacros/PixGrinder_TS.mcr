@@ -320,7 +320,7 @@
 	silentErrors:true
 	autoUndoEnabled:true
 	(
-		Include "$userScripts/PixGrinder/Symetry_Y_v1.ms"
+		Include "$userScripts/PixGrinder/Symmetry_Y.ms"
 	)
 	
 	

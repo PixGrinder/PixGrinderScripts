@@ -1,5 +1,5 @@
 -- Quad Color File
--- Created automatically by D:\3dsmax_2016_08 Scheme 
+-- Created automatically by D:\03_Max_UI\3dsmax_2016_08 Scheme 
 -- To restore Quad Menu to these settings, simply run this script.
 
 -- Quad number 1 colors 
