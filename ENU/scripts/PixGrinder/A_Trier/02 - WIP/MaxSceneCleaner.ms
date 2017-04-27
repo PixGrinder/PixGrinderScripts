@@ -32,3 +32,5 @@
 	Include "$userScripts/PixGrinder_TPZ_Tools/BitmapPath_AH.ms"
 
 )
+
+x1 = LayerManager.getLayerFromName "NG_Structure_adelete"
