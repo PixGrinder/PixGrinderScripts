@@ -5,21 +5,28 @@
 -- Attach100.ms --
 -- Attach100 --
 -- Attaches poly objects by 100--
--- V 0.1 --
+-- V 0.4 --
 
 ---------------------------------------------------------------------
 
 
 
 (
-	thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
-	a = thePolys.count
-	while polyop.getNumFaces thePolys[a] > 10000 do a = a-1
-	for i =1 to 100 do
+	attachNb = 50
+	a=1
+	while a > 0 do
 	(
-		polyop.attach thePolys[a] thePolys[i]
+		thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
+		a = thePolys.count
+		while (polyop.getNumFaces thePolys[a] > 10000) do a = a-1
+		print (a as string)
+		if a < 1 then exit -- with messagebox ("Scene processed !")
+		for i =1 to attachNb do
+		(
+			try (polyop.attach thePolys[a] thePolys[i]) catch ()
+		)
 	)
 
-	messagebox ("Name : "+thePolys[a].name+"\rFaces : "+polyop.getNumFaces thePolys[a] as string)
-
+	messagebox ("Scene processed !")
 )
+
