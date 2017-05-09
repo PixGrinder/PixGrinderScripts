@@ -5,63 +5,31 @@
 -- Attach100.ms --
 -- Attach100 --
 -- Attaches poly objects by 100--
--- V 0.6 --
+-- V 1.0 --
 
 ---------------------------------------------------------------------
 
-/*
 
 (
-	attachNb = 50
-	a=1
-	while a > 0 do
-	(
-		thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
-		a = thePolys.count
-		while (polyop.getNumFaces thePolys[a] > 10000) do a = a-1
-		print (a as string)
-		if a < 1 then exit -- with messagebox ("Scene processed !")
-		for i =1 to attachNb do
-		(
-			try (polyop.attach thePolys[a] thePolys[i]) catch ()
-		)
-	)
-
-	messagebox ("Scene processed !")
-)
-
-
-
-(
-	attachNb = 50
-	theStep = 1
+	t1 = localTime
+	clearListener()
+	ObjNb = 50
+	for obj in geometry do convertToPoly obj
 	thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
-	myTimes = thePolys.count / attachNb
-
-	for i = 1 to (myTimes-1) do
+	if ObjNb > thePolys.count then messageBox ("ObjNb value is too high !") else
 	(
-		for j = 1 to attachNb do
+		theStep = thePolys.count / ObjNb
+		theStart = for i = 1 to (theStep-1) collect thePolys[i]
+		for i = 1 to theStart.count do
 		(
-			print theStep as string
-			try (polyop.attach thePolys[theStep] thePolys[theStep+j]) catch ()
-			theStep = theStep + attachNb
+			thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
+			try (for j = (theStep+1) to (theStep+ObjNb) do polyop.attach theStart[i] thePolys[j]) catch ()
 		)
+		
+		--for i = 2 to geometry.count do polyop.attach geometry[1] geometry[i]
+		t2 = localTime
+		format (t1+"\r"+t2+"\r"+"Objects count : "+(objects.count as string)+"\r")
+		messageBox ("The End !")
 	)
 )
-objects.count
 
-*/
-
-
-(
-	thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
-	theStart = for i = 1 to 50 collect thePolys[i]
-
-
-	for i = 1 to theStart.count do
-	(
-		thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
-		try (for j = 51 to 101 do polyop.attach theStart[i] thePolys[j]) catch ()
-	)
-	messageBox ("The End !")
-)
