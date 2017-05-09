@@ -1,4 +1,43 @@
 
+(
+	--for obj in geometry do convertToPoly obj
+	myStart = 1
+	j = 1
+	thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
+-- 	while (polyop.getNumFaces thePolys[j]) < 60000 do
+-- 	(
+-- 		myStart = j
+-- 		j=j+1
+-- 	)
+	if (polyop.getNumFaces thePolys[j]) < 10000 then myStart = j  else myStart = j+1
+	pda = for i = myStart to (myStart+100) collect thePolys[i]
+	-- select pda[1]
+	for i = 2 to pda.count do polyop.attach pda[1] pda[i]
+
+)
+
+
+----------------------------------------------
+
+(
+	thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
+	a = thePolys.count
+	if polyop.getNumFaces thePolys[a] > 10000 then a = a-1
+	for i =1 to 100 do
+	(
+		
+		polyop.attach thePolys[a] thePolys[i]
+	)
+
+	messagebox (polyop.getNumFaces thePolys[a] as string)
+
+)
+
+----------------------------------------------
+
+_pixGrinderLib.NmDisplay
+
+
 
 for obj in objects where matchpattern obj.layer.name pattern:"CAO_ATA_H225_21_COCKPIT_with_ACS_secured" == true do delete obj
 
