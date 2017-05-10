@@ -4,8 +4,8 @@
 -- PixGrinder Scripts --
 -- Attach100.ms --
 -- Attach100 --
--- Attaches poly objects by 100--
--- V 1.1 --
+-- Attaches poly objects by 50 --
+-- V 1.2 --
 
 ---------------------------------------------------------------------
 
@@ -28,7 +28,7 @@
 			try (for j = (theStep+1) to (theStep+ObjNb) do polyop.attach theStart[i] thePolys[j]) catch ()
 		)
 		
-		for blurf = 2 to (geometry.count) do try (polyop.attach geometry[1] geometry[blurf]) catch ()
+		--for blurf = 2 to (geometry.count) do try (polyop.attach geometry[1] geometry[blurf]) catch ()
 		t2 = localTime
 		format (t1+"\r"+t2+"\r"+"Objects count : "+(objects.count as string)+"\r")
 		messageBox ("The End !")
