@@ -3,7 +3,7 @@
 -- PixGrinder Scripts --
 -- CAO Post Import Processing  --
 -- Optimizes CAO Placement / hierarchy n Geometry after brut import --
--- V 8.1 --
+-- V 8.2 --
 
 ---------------------------------------------------------------------
 
@@ -12,6 +12,13 @@
 
 	clearListener()
 	
+
+	----------------------------------------------------------------------
+	-- TPZ Specific
+		callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb 
+	-- TPZ Specific
+	----------------------------------------------------------------------
+
 -- 	myInput = "D:\10 - Helicopters\AS365VMT\AH_AS365_3Dfiles\WRL\v6\2016-10-05-3D"+"\\"
 -- 	myStdPath = "D:\10 - Helicopters\H225VMT\MAX\CAO\Process"+"\\"
 	myStdPath = "c:"+"\\"
@@ -160,6 +167,11 @@
 	try (destroyDialog myParams) catch ()
 	createDialog myParams 450 450 512 256
 
+	----------------------------------------------------------------------
+	-- TPZ Specific
+		callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
+	-- TPZ Specific
+	----------------------------------------------------------------------
 
 
 )
