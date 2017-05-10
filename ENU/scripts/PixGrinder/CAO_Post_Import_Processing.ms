@@ -1,11 +1,11 @@
--- CAO Post Import Processing -- 
--- v8.0 --
+---------------------------------------------------------------------
 
+-- PixGrinder Scripts --
+-- CAO Post Import Processing  --
+-- Optimizes CAO Placement / hierarchy n Geometry after brut import --
+-- V 8.1 --
 
-
------------------------------------------------------------------------------
---   !!!   CONFIGURE VALUES IN ProcessCAO FUNCTION TO PREVENT ERRORS   !!! --
------------------------------------------------------------------------------
+---------------------------------------------------------------------
 
 
 (
@@ -119,7 +119,7 @@
 		label txtPos "Position Offset :" offset:[0,15]
 		edittext pX text:"0" fieldWidth:35 across:3 offset:[75,25]
 		edittext pY text:"0" fieldWidth:35 across:3 offset:[45,25]
-		edittext pZ text:"0" fieldWidth:35 across:3 offset:[10,25]
+		edittext pZ text:"12.5" fieldWidth:35 across:3 offset:[10,25]
 
 
 		label txtRot "Rotation Offset :" offset:[0,15]
@@ -128,7 +128,7 @@
 		edittext rZ text:"0" fieldWidth:35 across:3 offset:[10,25]
 
 		label txtScale "Scale Offset :" offset:[0,15]
-		edittext sX text:"0" fieldWidth:35 align:#center
+		edittext sX text:"10" fieldWidth:35 align:#center
 
 		button processButton "OK" width: 150
 

@@ -22,14 +22,14 @@
 (
 	thePolys = for obj in geometry where classof obj == Editable_Poly collect obj
 	a = thePolys.count
-	if polyop.getNumFaces thePolys[a] > 10000 then a = a-1
+	while polyop.getNumFaces thePolys[a] > 10000 do a = a-1
 	for i =1 to 100 do
 	(
 		
 		polyop.attach thePolys[a] thePolys[i]
 	)
 
-	messagebox (polyop.getNumFaces thePolys[a] as string)
+	messagebox ("Name : "+thePolys[a].name+"\rFaces : "+polyop.getNumFaces thePolys[a] as string)
 
 )
 
