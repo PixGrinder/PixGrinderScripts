@@ -18,18 +18,19 @@
 
 	myDates = #()
 	pda_temp = #()
-	
+	myTest = true
 	
 
 
 
 	
-		
-	if maxfilename.count == 0 then 
+	while myTest == true do	
 	(
-		messageBox ("Please, save the current Scene before launching this script")
-	) else (
-		autoSave.Enable = False
+		if maxfilename.count == 0 then exit with messageBox ("Please, save the current Scene before launching this script")
+
+
+	(
+		autoSave.Enable = False;
 		myFolder = maxfilepath + "_BACKUP_\\"+ substituteString maxfilename ".max" ""+"_autoback"
 		makeDir myFolder
 		files = getFiles (myFolder+"\\*.max")

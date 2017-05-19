@@ -450,4 +450,61 @@
 	)
 
 
+	macroScript DoublonFinder
+	category:"-- PixGrinder --"
+	toolTip:"DoublonFinder"
+	buttonText:"DoublonFinder"
+	-- icon:#("Splines",3)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Doublon_Finder.ms"
+	)
+
+	macroScript UV1Detector
+	category:"-- PixGrinder --"
+	toolTip:"UV 1 Detector"
+	buttonText:"UV 1 Detector"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/UV1_Detector.ms"
+	)
+	
+	macroScript FullNameDisplay
+	category:"-- PixGrinder --"
+	toolTip:"Full Name Display"
+	buttonText:"Full Name Display"
+	icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/FullNameDisplay.ms"
+	)
+
+
+	macroScript Attach100
+	category:"-- PixGrinder --"
+	toolTip:"Attach100"
+	buttonText:"Attach100"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Attach100.ms"
+	)
+
+	macroScript listSelected
+	category:"-- PixGrinder --"
+	toolTip:"List Selected"
+	buttonText:"List Selected"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/listSelected.ms"
+	)
+
+
 )
