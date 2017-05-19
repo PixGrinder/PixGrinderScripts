@@ -8,7 +8,7 @@
 
 	-- global files
 	global pda_filesVault
-	global myMinutes = 0.2
+	global myMinutes = 0.1
 	global TimeInterval = myMinutes*1000*60
 	global myMax = 50
 	global myTotal = myMax - 1
@@ -19,6 +19,8 @@
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
 	global pda_TimerInit = true
 	global myFolder = ""
+	global ASPrompt
+	global pixScreenSize = getMAXWindowSize()
 	-- global tempString = ""
 	-- global myDates = #()
 
@@ -38,54 +40,51 @@
 		-- pda_TheStart = true
 		--messagebox ("AutoSave is launched !")
 		--fileIn "$userScripts/PixGrinder/XF/AutoSave_WIP.ms"
-		pda_AutoSaveProcess()
+		pda_AutoSaveProcess pdaTimer pda_AutoSave
 		if QueryBox("Save current scene ? ") == true then pda_SaveAction()
 		format "myAutoSaveOpenFile function executed\r"
 	)
 
 
-	fn pda_AutoSaveProcess =
+	fn pda_AutoSaveProcess x1 x2=
 	(
-			if maxfilename.count == 0 then 
+		try (destroyDialog ASPrompt) catch ()
+		if maxfilename.count == 0 then 
+		(
+			createDialog ASPrompt 300 100  ((pixScreenSize[1]*3/5) as integer) ((pixScreenSize[2]/10) as integer)
+		) else (
+			-- autoSave.Enable = False
+			myFolder = maxfilepath + "_BACKUP_\\"+ substituteString maxfilename ".max" ""+"_autoback"
+			if doesFileExist myFolder == false then makeDir myFolder
+			pda_filesVault = getFiles (myFolder+"\\*.max")
+			if pda_filesVault.count == 0 then pda_doCopy = true else pda_doCopy = false
+			if pda_doCopy == true then
 			(
-				if QueryBox ("Do you want to save current scene ?") == true then 
-				(
-					pda_myChosenFolder = getMAXSaveFileName()
-					if  pda_myChosenFolder != undefined then saveMaxFile pda_myChosenFolder clearNeedSaveFlag:true useNewFile:true
-				)
+				copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".max")
+				pda_doCopy = false
 			) else (
-				-- autoSave.Enable = False
-				myFolder = maxfilepath + "_BACKUP_\\"+ substituteString maxfilename ".max" ""+"_autoback"
-				if doesFileExist myFolder == false then makeDir myFolder
-				pda_filesVault = getFiles (myFolder+"\\*.max")
-				if pda_filesVault.count == 0 then pda_doCopy = true else pda_doCopy = false
-				if pda_doCopy == true then
+				for i = 1 to pda_filesVault.count do
 				(
-					copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".max")
-					pda_doCopy = false
-				) else (
-					for i = 1 to pda_filesVault.count do
+					x1 = getFileModDate pda_filesVault[i]
+					myArray = filterstring x1 "/ : "
+					if myArray[myArray.count] == "PM" do 
 					(
-						x1 = getFileModDate pda_filesVault[i]
-						myArray = filterstring x1 "/ : "
-						if myArray[myArray.count] == "PM" do 
-						(
-							if (myArray[4] as integer) != 12 do myArray[4] = (myArray[4] as integer + 12) as string
-						)
-						if myArray[1].count == 1 do  myArray[1] = "0" + myArray[1]
-						if myArray[2].count == 1 do  myArray[2] = "0" + myArray[2]
-						if myArray[4].count == 1 do  myArray[4] = "0" + myArray[4]
-						x1 = myArray[3]+myArray[1]+myArray[2]+myArray[4]+myArray[5]+myArray[6]+myArray[7]+(filenamefrompath pda_filesVault[i])
-						append pda_temp x1
+						if (myArray[4] as integer) != 12 do myArray[4] = (myArray[4] as integer + 12) as string
 					)
-					sort pda_temp
-					x2 = pda_temp[pda_temp.count]
-					tst = substring x2 (x2.count-6) 3
-					myNumer =  tst as integer
-					if myNumer <= myTotal then myNumer = myNumer +1 else myNumer = 1
-					myFormatNumer = formattedPrint myNumer format:"03d"
+					if myArray[1].count == 1 do  myArray[1] = "0" + myArray[1]
+					if myArray[2].count == 1 do  myArray[2] = "0" + myArray[2]
+					if myArray[4].count == 1 do  myArray[4] = "0" + myArray[4]
+					x1 = myArray[3]+myArray[1]+myArray[2]+myArray[4]+myArray[5]+myArray[6]+myArray[7]+(filenamefrompath pda_filesVault[i])
+					append pda_temp x1
 				)
+				sort pda_temp
+				x2 = pda_temp[pda_temp.count]
+				tst = substring x2 (x2.count-6) 3
+				myNumer =  tst as integer
+				if myNumer <= myTotal then myNumer = myNumer +1 else myNumer = 1
+				myFormatNumer = formattedPrint myNumer format:"03d"
 			)
+		)
 	
 
 	)
@@ -105,10 +104,39 @@
 	(
 		if pda_TimerInit == true then pda_TimerInit = false else
 		(
-			pda_AutoSaveProcess()
+			pda_AutoSaveProcess pdaTimer pda_AutoSave
 			if maxfilename.count != 0 then pda_SaveAction()
 		)
 	)
+
+
+	-- Rollouts
+	------------
+
+	rollout ASPrompt "AutoSave Prompt"
+	(
+		label myQuestion "Auto-save current scene ?" offset:[0,10]
+		button pixYes "Yes"  width:100 across:2 offset:[0,20]
+		button pixNo "No"  width:100 across:2 offset:[0,20]
+
+		on pixYes pressed do 
+		(
+			pda_theMaxSave = getSaveFileName()
+			if pda_theMaxSave != undefined then saveMaxFile pda_theMaxSave clearNeedSaveFlag:true useNewFile:true
+			destroyDialog ASPrompt
+		)
+
+
+		on pixNo pressed do
+		(
+			print "Autosave skipped !"
+			dotnet.removeEventHandler pdaTimer "tick" pda_AutoSave
+			dotnet.addEventHandler pdaTimer "tick" pda_AutoSave
+			destroyDialog ASPrompt
+		)
+	)
+
+
 
 
 	-- Deactivate 3dsmax autosave 
