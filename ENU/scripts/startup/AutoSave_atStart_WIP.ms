@@ -8,7 +8,7 @@
 
 	-- global files
 	global pda_filesVault
-	global myMinutes = 0.1
+	global myMinutes = 0.02
 	global TimeInterval = myMinutes*1000*60
 	global myMax = 50
 	global myTotal = myMax - 1
@@ -46,8 +46,10 @@
 	)
 
 
-	fn pda_AutoSaveProcess x1 x2=
+	fn pda_AutoSaveProcess =
 	(
+		
+		pdaTimer.Stop()
 		try (destroyDialog ASPrompt) catch ()
 		if maxfilename.count == 0 then 
 		(
@@ -102,10 +104,13 @@
 
 	fn pda_AutoSave = 
 	(
-		if pda_TimerInit == true then pda_TimerInit = false else
+		if getSaveRequired() == true then
 		(
-			pda_AutoSaveProcess pdaTimer pda_AutoSave
-			if maxfilename.count != 0 then pda_SaveAction()
+			if pda_TimerInit == true then pda_TimerInit = false else
+			(
+				pda_AutoSaveProcess
+				if maxfilename.count != 0 then pda_SaveAction()
+			)
 		)
 	)
 
@@ -123,6 +128,7 @@
 		(
 			pda_theMaxSave = getSaveFileName()
 			if pda_theMaxSave != undefined then saveMaxFile pda_theMaxSave clearNeedSaveFlag:true useNewFile:true
+			pdaTimer.Start()
 			destroyDialog ASPrompt
 		)
 
@@ -132,6 +138,7 @@
 			print "Autosave skipped !"
 			dotnet.removeEventHandler pdaTimer "tick" pda_AutoSave
 			dotnet.addEventHandler pdaTimer "tick" pda_AutoSave
+			pdaTimer.Start()
 			destroyDialog ASPrompt
 		)
 	)
@@ -153,7 +160,7 @@
 	-----------
 	dotnet.addEventHandler pdaTimer "tick" pda_AutoSave
 	pdaTimer.interval = TimeInterval
-	pdaTimer.start()
+	pdaTimer.Start()
 
 
 
