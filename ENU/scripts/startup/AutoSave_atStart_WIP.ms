@@ -8,7 +8,7 @@
 
 	-- global files
 	global pda_filesVault
-	global myMinutes = 0.2
+	global myMinutes = 10
 	global TimeInterval = myMinutes*1000*60
 	global myMax = 50
 	global myTotal = myMax - 1
@@ -125,7 +125,7 @@
 
 	rollout ASPrompt "AutoSave Prompt"
 	(
-		label myQuestion "Auto-save current scene ?" offset:[0,10]
+		label myQuestion "Save current scene ?" offset:[0,10]
 		button pixYes "Yes"  width:100 across:2 offset:[0,20]
 		button pixNo "No"  width:100 across:2 offset:[0,20]
 
