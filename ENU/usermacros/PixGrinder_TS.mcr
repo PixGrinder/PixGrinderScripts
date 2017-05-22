@@ -16,7 +16,7 @@
 	silentErrors:false
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/AutoSave_PixGrinder.ms"
+		FileIn "$userScripts/PixGrinder/AutoSave_PixGrinder.ms"
 	)
 
 
