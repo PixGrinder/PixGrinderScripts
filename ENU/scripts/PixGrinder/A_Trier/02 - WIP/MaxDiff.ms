@@ -1,5 +1,5 @@
 -- MaxDiff --
--- v 0.02 --
+-- v 0.03 --
 
 
 clearListener()
@@ -15,38 +15,46 @@ fn pdaMySortAr a b=
 )
 
 
-
-pda_ComparedFiles = getFiles "D:\Temp\Compare\*.max"
-
-mySt1= substituteString pda_ComparedFiles[1] ".max" ".csv"
-mySt2= substituteString pda_ComparedFiles[2] ".max" ".csv"
-
-the1stFile = createFile mySt1
-close the1stFile
-the2ndFile = createFile mySt2
-close the2ndFile
-
-the1stFile = openFile mySt1 mode:"w"
-loadMaxFile pda_ComparedFiles[1] useFileUnits:true quiet:true
-
----
--- obj=objects[1] -- A VIRER !!!
--- obj=objects[2] -- A VIRER !!!
----
-
-for obj in objects do 
+fn myLogFiles comparedFile theNumber=
 (
-	--format "%;%;%\r" obj.name obj.position obj.rotation to:the1stFile
-	theVolTemp = obj.max-obj.min
-	theVol = abs(theVolTemp[1]*theVolTemp[2]*theVolTemp[3])
-	theDist = distance [0,0,0] obj.position
-	append myAr1 #(obj.name,theVol,theDist,obj.pivot,obj.position)
+	print theNumber
+	mySt = substituteString comparedFile[theNumber] ".max" ".csv"
+	theFile = createFile mySt
+-- 	close theFile
+-- 	theFile = openFile mySt mode:"w"
+-- 	loadMaxFile comparedFile[theNumber] useFileUnits:true quiet:true
+-- 	myAr = #()
+-- 	for obj in objects do 
+-- 	(
+-- 		--format "%;%;%\r" obj.name obj.position obj.rotation to:the1stFile
+-- 		theVolTemp = obj.max-obj.min
+-- 		theVol = abs(theVolTemp[1]*theVolTemp[2]*theVolTemp[3])
+-- 		theDist = distance [0,0,0] obj.position
+-- 		append myAr #(obj.name,theVol,theDist,obj.pivot,obj.position)
+-- 	)
+-- 	qsort myAr pdaMySortAr
+-- 	format "Name;Bounding Box;Distance to Origin;Pivot;Position\r" to:the1stFile
+-- 	for obj in myAr do format "%;%;%;%;%\r" obj[1] obj[2] obj[3] obj[4] obj[5] to:theFile
+-- 	close theFile
+-- 	resetMaxFile() #noPrompt
 )
 
-qsort myAr1 pdaMySortAr
-clearListener()
-format "Name;Bounding Box;Distance to Origin;Pivot;Position\r" to:the1stFile
-for obj in myAr1 do format "%;%;%;%;%\r" obj[1] obj[2] obj[3] obj[4] obj[5] to:the1stFile
-close the1stFile
+
+
+
+pda_ComparedFiles = getFiles "D:\Temp\Compare\*.max"
+-- mySt1= substituteString pda_ComparedFiles[1] ".max" ".csv"
+-- mySt2= substituteString pda_ComparedFiles[2] ".max" ".csv"
+myLogFiles pda_ComparedFiles 1
+myLogFiles pda_ComparedFiles 2
+
+messageBox("The End")
+
+
+
+
+
+
+
 
 
