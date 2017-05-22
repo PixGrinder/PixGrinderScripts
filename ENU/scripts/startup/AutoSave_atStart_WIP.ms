@@ -8,12 +8,12 @@
 
 	-- global files
 	global pda_filesVault
-	global myMinutes = 0.5
+	global myMinutes = 0.02
 	global TimeInterval = myMinutes*1000*60
 	global myMax = 50
 	global myTotal = myMax - 1
 	global myNumer = 1
-	global myFormatNumer = ""
+	global myFormatNumer = "001"
 	global pda_temp = #()
 	global pda_doCopy = false
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
@@ -49,10 +49,11 @@
 	fn pda_AutoSaveProcess =
 	(
 		
-		--pdaTimer.Stop()
+		
 		try (destroyDialog ASPrompt) catch ()
 		if maxfilename.count == 0 then 
 		(
+			pdaTimer.Stop()
 			createDialog ASPrompt 300 100  ((pixScreenSize[1]*3/5) as integer) ((pixScreenSize[2]/10) as integer)
 		) else (
 			-- autoSave.Enable = False
@@ -109,10 +110,8 @@
 		(
 			--if pda_TimerInit == true then pda_TimerInit = false else
 			-- (
-				pdaTimer.Stop()
 				pda_AutoSaveProcess()
 				if maxfilename.count != 0 then pda_SaveAction()
-				pdaTimer.Start()
 			-- )
 		)
 	)
@@ -131,7 +130,7 @@
 		(
 			pda_theMaxSave = getSaveFileName()
 			if pda_theMaxSave != undefined then saveMaxFile pda_theMaxSave clearNeedSaveFlag:true useNewFile:true
-			--pdaTimer.Start()
+			pdaTimer.Start()
 			destroyDialog ASPrompt
 		)
 
@@ -141,7 +140,7 @@
 			print "Autosave skipped !"
 			dotnet.removeEventHandler pdaTimer "tick" pda_AutoSave
 			dotnet.addEventHandler pdaTimer "tick" pda_AutoSave
-			--pdaTimer.Start()
+			pdaTimer.Start()
 			destroyDialog ASPrompt
 		)
 	)
@@ -166,51 +165,5 @@
 	pdaTimer.Start()
 
 
-
-
-
-
---------------------
-
-
-
-/*
--- Original Script
-
-	if maxfilename.count == 0 then 
-	(
-		messageBox ("Please, save the current Scene before launching this script")
-	) else (
-		--print "launch the script !!!"
-		autoSave.Enable = False
-		myFolder = maxfilepath + "_BACKUP_\\"+ substituteString maxfilename ".max" ""+"_autoback"
-		if doesFileExist myFolder == false then makeDir myFolder
-		files = getFiles (myFolder+"\\*.max")
-		if files.count == 0 then 
-		(
-			copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".max") 
-		) else (
-			for i = 1 to files.count do
-			(
-				x1 = getFileModDate files[i]
-				myArray = filterstring x1 "/ : "
-				if myArray[myArray.count] == "PM" do 
-				(
-					if (myArray[4] as integer) != 12 do myArray[4] = (myArray[4] as integer + 12) as string
-				)
-				if myArray[1].count == 1 do  myArray[1] = "0" + myArray[1]
-				if myArray[2].count == 1 do  myArray[2] = "0" + myArray[2]
-				if myArray[4].count == 1 do  myArray[4] = "0" + myArray[4]
-				x1 = myArray[3]+myArray[1]+myArray[2]+myArray[4]+myArray[5]+myArray[6]+myArray[7]+(filenamefrompath files[i])
-				append pda_temp x1
-			)
-			sort pda_temp
-			x2 = pda_temp[pda_temp.count]
-			tst = substring x2 (x2.count-6) 3
-			myNumer =  tst as integer
-		)
-	)
-
-*/
 
 
