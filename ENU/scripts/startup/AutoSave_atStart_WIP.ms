@@ -8,7 +8,7 @@
 
 	-- global files
 	global pda_filesVault
-	global myMinutes = 0.02
+	global myMinutes = 0.5
 	global TimeInterval = myMinutes*1000*60
 	global myMax = 50
 	global myTotal = myMax - 1
@@ -17,7 +17,7 @@
 	global pda_temp = #()
 	global pda_doCopy = false
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
-	global pda_TimerInit = true
+	-- global pda_TimerInit = true
 	global myFolder = ""
 	global ASPrompt
 	global pixScreenSize = getMAXWindowSize()
@@ -49,7 +49,7 @@
 	fn pda_AutoSaveProcess =
 	(
 		
-		pdaTimer.Stop()
+		--pdaTimer.Stop()
 		try (destroyDialog ASPrompt) catch ()
 		if maxfilename.count == 0 then 
 		(
@@ -104,13 +104,16 @@
 
 	fn pda_AutoSave = 
 	(
+		format "%%" localTime "\r"
 		if getSaveRequired() == true then
 		(
-			if pda_TimerInit == true then pda_TimerInit = false else
-			(
-				pda_AutoSaveProcess
+			--if pda_TimerInit == true then pda_TimerInit = false else
+			-- (
+				pdaTimer.Stop()
+				pda_AutoSaveProcess()
 				if maxfilename.count != 0 then pda_SaveAction()
-			)
+				pdaTimer.Start()
+			-- )
 		)
 	)
 
@@ -128,7 +131,7 @@
 		(
 			pda_theMaxSave = getSaveFileName()
 			if pda_theMaxSave != undefined then saveMaxFile pda_theMaxSave clearNeedSaveFlag:true useNewFile:true
-			pdaTimer.Start()
+			--pdaTimer.Start()
 			destroyDialog ASPrompt
 		)
 
@@ -138,7 +141,7 @@
 			print "Autosave skipped !"
 			dotnet.removeEventHandler pdaTimer "tick" pda_AutoSave
 			dotnet.addEventHandler pdaTimer "tick" pda_AutoSave
-			pdaTimer.Start()
+			--pdaTimer.Start()
 			destroyDialog ASPrompt
 		)
 	)
