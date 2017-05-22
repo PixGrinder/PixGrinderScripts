@@ -1,6 +1,13 @@
--- PixGrinder 1st Startup Script !!! --
 
+---------------------------------------------------------------------
 
+-- PixGrinder Scripts --
+-- AutoSaveStartup --
+-- PixGrinderAutoSaveStartup.ms --
+-- Tries to make 3dsmax Autosave to act like Maya AutoSave --
+-- V 10.0 --
+
+---------------------------------------------------------------------
 
 
 -- Variables Definitions : 
@@ -43,7 +50,6 @@
 			pdaTimer.Stop()
 			createDialog ASPrompt 300 100  ((pixScreenSize[1]*3/5) as integer) ((pixScreenSize[2]/10) as integer)
 		) else (
-			-- autoSave.Enable = False
 			myFolder = maxfilepath + "_BACKUP_\\"+ substituteString maxfilename ".max" ""+"_autoback"
 			if doesFileExist myFolder == false then makeDir myFolder
 			pda_filesVault = getFiles (myFolder+"\\*.max")
@@ -101,22 +107,16 @@
 		format "%%" localTime "\r"
 		if getSaveRequired() == true then
 		(
-			--if pda_TimerInit == true then pda_TimerInit = false else
-			-- (
 				pda_AutoSaveProcess()
 				if maxfilename.count != 0 then pda_SaveAction()
-			-- )
 		)
 	)
 
 
 	fn myAutoSaveOpenFile=
 	(
-		print "youpi"
 		pda_AutoSaveProcess()
-		print "youpla"
 		if QueryBox("Save current scene ? ") == true then pda_SaveAction()
-		format "myAutoSaveOpenFile function executed\r"
 	)
 
 
