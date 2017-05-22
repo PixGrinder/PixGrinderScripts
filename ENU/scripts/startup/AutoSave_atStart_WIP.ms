@@ -8,21 +8,19 @@
 
 	-- global files
 	global pda_filesVault
-	global myMinutes = 0.02
+	global myMinutes = 0.2
 	global TimeInterval = myMinutes*1000*60
 	global myMax = 50
 	global myTotal = myMax - 1
 	global myNumer = 1
-	global myFormatNumer = "001"
+	global myFormatNumer = formattedPrint myNumer format:"03d"
 	global pda_temp = #()
 	global pda_doCopy = false
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
-	-- global pda_TimerInit = true
 	global myFolder = ""
 	global ASPrompt
 	global pixScreenSize = getMAXWindowSize()
-	-- global tempString = ""
-	-- global myDates = #()
+
 
 		
 
@@ -33,17 +31,6 @@
 
 --  Functions :
 ----------------
-
-	fn myAutoSaveOpenFile=
-	(
-	-- 	sleep 5
-		-- pda_TheStart = true
-		--messagebox ("AutoSave is launched !")
-		--fileIn "$userScripts/PixGrinder/XF/AutoSave_WIP.ms"
-		pda_AutoSaveProcess pdaTimer pda_AutoSave
-		if QueryBox("Save current scene ? ") == true then pda_SaveAction()
-		format "myAutoSaveOpenFile function executed\r"
-	)
 
 
 	fn pda_AutoSaveProcess =
@@ -86,6 +73,12 @@
 				myNumer =  tst as integer
 				if myNumer <= myTotal then myNumer = myNumer +1 else myNumer = 1
 				myFormatNumer = formattedPrint myNumer format:"03d"
+				if pda_filesVault.count == 0 then
+				(
+					myNumer = 1
+					myFormatNumer = "001"
+				)
+
 			)
 		)
 	
@@ -114,6 +107,16 @@
 				if maxfilename.count != 0 then pda_SaveAction()
 			-- )
 		)
+	)
+
+
+	fn myAutoSaveOpenFile=
+	(
+		print "youpi"
+		pda_AutoSaveProcess()
+		print "youpla"
+		if QueryBox("Save current scene ? ") == true then pda_SaveAction()
+		format "myAutoSaveOpenFile function executed\r"
 	)
 
 
