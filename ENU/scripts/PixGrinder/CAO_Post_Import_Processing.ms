@@ -3,7 +3,7 @@
 -- PixGrinder Scripts --
 -- CAO Post Import Processing  --
 -- Optimizes CAO Placement / hierarchy n Geometry after brut import --
--- V 8.2 --
+-- V 8.3 --
 
 ---------------------------------------------------------------------
 
@@ -18,17 +18,21 @@
 		callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb 
 	-- TPZ Specific
 	----------------------------------------------------------------------
-
--- 	myInput = "D:\10 - Helicopters\AS365VMT\AH_AS365_3Dfiles\WRL\v6\2016-10-05-3D"+"\\"
--- 	myStdPath = "D:\10 - Helicopters\H225VMT\MAX\CAO\Process"+"\\"
+	wantedPath  = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-22-3D\\H225-22_05_2017"
 	myStdPath = "c:"+"\\"
+	if doesFileExist wantedPath == true then myStdPath = wantedPath
 	myInput = getSavePath caption:"Choose MAX Files to process : " initialDir:myStdPath
 	myInput = myInput +"\\"
 	files = getFiles (myInput+"*.max")
+	myProcessDir = myInput + "Processed" + "\\"
+	MakeDir myProcessDir
+	-- obj = files[1]
+	for obj in files do copyfile obj (myProcessDir+(filenamefrompath obj))
+	files = getFiles (myProcessDir +"*.max")
 	global myParams
 
 
-	fn sortByDate file1 file2=
+	fn sortBySize file1 file2=
 	(
 		if getFileSize file1 > getFileSize file2 then 1 else -1
 	)
@@ -141,7 +145,7 @@
 
 		on processButton pressed do
 		(
-			qsort files sortByDate
+			qsort files sortBySize
 			a1 = (pX.text as float)
 			a2 = (pY.text as float)
 			a3 = (pZ.text as float)			
