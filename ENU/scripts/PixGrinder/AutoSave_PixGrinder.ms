@@ -5,11 +5,11 @@
 -- AutoSave --
 -- Tries to make 3dsmax Autosave to act like Maya AutoSave --
 -- !!! Requires startup script to work !!!  : "PixGrinderAutoSaveStartup.ms" --
--- V 10.0 --
+-- V 10.1 --
 
 ---------------------------------------------------------------------
 	
 
 (
-	pda_AutoSave()
+	pda_AutoSaveNoPrompt()
 )

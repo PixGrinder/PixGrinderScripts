@@ -5,7 +5,7 @@
 -- AutoSaveStartup --
 -- PixGrinderAutoSaveStartup.ms --
 -- Tries to make 3dsmax Autosave to act like Maya AutoSave --
--- V 10.0 --
+-- V 10.1 --
 
 ---------------------------------------------------------------------
 
@@ -26,6 +26,7 @@
 	global pdaTimer = dotNetObject "System.Windows.Forms.Timer"
 	global myFolder = ""
 	global ASPrompt
+	global ReallySavePrompt
 	global pixScreenSize = getMAXWindowSize()
 
 
@@ -105,10 +106,20 @@
 	fn pda_AutoSave = 
 	(
 		format "%%" localTime "\r"
+		try (destroyDialog ReallySavePrompt) catch()
 		if getSaveRequired() == true then
 		(
-				pda_AutoSaveProcess()
-				if maxfilename.count != 0 then pda_SaveAction()
+				pdaTimer.Stop()
+				createDialog ReallySavePrompt 300 100  ((pixScreenSize[1]*3/5) as integer) ((pixScreenSize[2]/10) as integer)
+		)
+	)
+
+	fn pda_AutoSaveNoPrompt = 
+	(
+		if getSaveRequired() == true then
+		(
+			pda_AutoSaveProcess()
+			pda_SaveAction()
 		)
 	)
 
@@ -141,10 +152,34 @@
 		on pixNo pressed do
 		(
 			print "Autosave skipped !"
-			dotnet.removeEventHandler pdaTimer "tick" pda_AutoSave
-			dotnet.addEventHandler pdaTimer "tick" pda_AutoSave
+			pda_AutoSaveProcess()
+			pda_SaveAction()
 			pdaTimer.Start()
 			destroyDialog ASPrompt
+		)
+	)
+
+
+	rollout ReallySavePrompt "AutoSave Prompt"
+	(
+		label myQuestionRS "Really Save ?" offset:[0,10]
+		button pixRS_Yes "Yes"  width:100 across:2 offset:[0,20]
+		button pixRS_No "No"  width:100 across:2 offset:[0,20]
+
+		on pixRS_Yes pressed do 
+		(
+			pdaTimer.Start()
+			pda_AutoSaveProcess()
+			pda_SaveAction()
+			destroyDialog ReallySavePrompt
+		)
+
+
+		on pixRS_No pressed do
+		(
+			print "Autosave skipped !"
+			pdaTimer.Start()
+			destroyDialog ReallySavePrompt
 		)
 	)
 
