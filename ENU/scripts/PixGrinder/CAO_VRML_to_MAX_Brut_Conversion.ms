@@ -1,13 +1,21 @@
 -- VRML to Max 
--- V 4.0 
+-- V 4.1
 
 (
+	wantedPath = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-22-3D\\H225-22_05_2017"
 	myStdPath = "c:"+"\\"
+	if doesFileExist wantedPath == true then myStdPath = wantedPath
+	
 	exp_path = getSavePath caption:"Choose Input WRL Files : " initialDir:myStdPath
+
 	myInput = exp_path + "\\"
-	exp_path = getSavePath caption:"Choose Max Files Output : " initialDir:myInput
-	myOutput = exp_path + "\\"
--- 	myOutput = "D:\10 - Helicopters\AS365VMT\AH_AS365_3Dfiles\WRL\v4"+"\\"
+
+
+	fn sortBySize file1 file2=
+	(
+		if getFileSize file1 > getFileSize file2 then 1 else -1
+	)
+
 
 
 	fn SysUnit =
@@ -22,6 +30,7 @@
 
 
 	files = getFiles (myInput+"*.wrl")
+	qsort files sortBySize
 
 
 	for i = 1 to files.count do
@@ -36,7 +45,7 @@
 		y1 = "CAO_ATA_" + getFilenameFile files[i]
 		myLayer = LayerManager.newLayerFromName y1
 		for obj in objects do myLayer.addnode obj
-		x1 = myOutput+(getFilenameFile files[i])+".max"
+		x1 = myInput+(getFilenameFile files[i])+".max"
 		max select none
 		max zoomext sel all
 		saveMaxFile x1 useNewFile:true --quiet:<bool>
