@@ -15,7 +15,7 @@
 
 	----------------------------------------------------------------------
 	-- TPZ Specific
-		callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb 
+		callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
 	-- TPZ Specific
 	----------------------------------------------------------------------
 	wantedPath  = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-22-3D\\H225-22_05_2017"

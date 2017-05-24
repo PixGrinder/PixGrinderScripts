@@ -477,10 +477,10 @@
 	toolTip:"Full Name Display"
 	buttonText:"Full Name Display"
 	icon:#("Splines",5)
-	silentErrors:true
+	silentErrors:false
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/FullNameDisplay.ms"
+		FileIn "$userScripts/PixGrinder/FullNameDisplay.ms"
 	)
 
 
@@ -504,6 +504,17 @@
 	autoUndoEnabled:false
 	(
 		Include "$userScripts/PixGrinder/listSelected.ms"
+	)
+
+	macroScript listHierarchy
+	category:"-- PixGrinder --"
+	toolTip:"List Hierarchy"
+	buttonText:"List Hierarchy"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/List_Hierarchy.ms"
 	)
 
 
