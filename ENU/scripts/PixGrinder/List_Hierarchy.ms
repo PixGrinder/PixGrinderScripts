@@ -6,7 +6,7 @@
 -- List Hierarchy --
 -- List_Hierarchy.ms --
 -- Lists selected hierarchy in the Listener --
--- V 1.0 --
+-- V 2.0 --
 -- Mail : dassonphil@gmail.com --
 
 ---------------------------------------------------------------------
@@ -31,7 +31,7 @@ fn testHier node level=
 		theArray = for obj in node.children collect obj
 		qsort theArray sortByName
 		theLevel = theLevel+1
-		for bla in node.children do testHier bla theLevel
+		for bla in theArray do testHier bla theLevel
 	)
 
 )
