@@ -517,5 +517,18 @@
 		Include "$userScripts/PixGrinder/List_Hierarchy.ms"
 	)
 
+	macroScript listHierarchy
+	category:"-- PixGrinder --"
+	toolTip:"List To File"
+	buttonText:"ListToFile"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/ListSelectedToFile.ms"
+	)
+
+
+
 
 )
