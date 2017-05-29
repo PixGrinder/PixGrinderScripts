@@ -1,5 +1,5 @@
 -- VRML to Max 
--- V 4.1
+-- V 4.2
 
 (
 	wantedPath = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-22-3D\\H225-22_05_2017"
@@ -46,6 +46,8 @@
 		myLayer = LayerManager.newLayerFromName y1
 		for obj in objects do myLayer.addnode obj
 		x1 = myInput+(getFilenameFile files[i])+".max"
+		max vpt persp user
+
 		max select none
 		max zoomext sel all
 		saveMaxFile x1 useNewFile:true --quiet:<bool>

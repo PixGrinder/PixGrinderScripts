@@ -1,4 +1,10 @@
 
+x1 = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-24_3D\\H225-Package 8 -24_05_2017\\"
+x2 = getfiles (x1+"*.max")
+
+----------------------------------------------
+
+
 (
 	--for obj in geometry do convertToPoly obj
 	myStart = 1
