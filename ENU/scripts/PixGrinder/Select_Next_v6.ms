@@ -8,27 +8,27 @@
 	
 	if objects.count == 0 do myStartCond = 3
 	
-	if Selector == undefined do
+	global pda_mySelector
+
+
+	rollout pda_mySelector "Selector" 
 	(
-	-- rollout : 
-		rollout Selector "Selector" 
+		radiobuttons myRad labels:#("Zoom On", "Zoom Off") default:1
+		
+		on myRad changed state do 
 		(
-			radiobuttons myRad labels:#("Zoom On", "Zoom Off") default:1
-			
-			on myRad changed state do 
+			if myRad.state == 2 then
 			(
-				if myRad.state == 2 then
-				(
-					myRad.state = 2 
-					myCond = 2
-				) else (
-					myRad.state = 1
-					myCond = 1
-				)
-				
+				myRad.state = 2 
+				myCond = 2
+			) else (
+				myRad.state = 1
+				myCond = 1
 			)
+			
 		)
 	)
+
 	
 	
 	fn SelNext myVar = 
@@ -53,30 +53,24 @@
 		)
 	)
 	
-	fn myDg x1= 
-	(
-		print "myDg was used"
-		--if Selector != undefined and Selector.isDisplayed == false do createDialog Selector
-		if x1.isDisplayed == false do createDialog Selector
-	)
 	
+	try (destroyDialog pda_mySelector) catch ()
+	createDialog pda_mySelector
 	
-	
+
+
 	if myStartCond == 1 do
 	(
 		print "myStartCond = 1"
 		print "myCond = " + (myCond as string)
-		myDg Selector
-		SelNext Selector.myRad.state
+		SelNext pda_mySelector.myRad.state
 	)
 	
 	if myStartCond == 2 do
 	(
 		print "myStartCond = 2"
 		select objects[1]
-		myDg Selector
-		--if Selector != undefined and Selector.isDisplayed == false do createDialog Selector
-		SelNext Selector.myRad.state
+		SelNext pda_mySelector.myRad.state
 	)
 	
 	if myStartCond == 3 do
@@ -91,3 +85,12 @@
 		
 
 )
+
+-- Total reBuild --
+---------------------------------------------------------------------------
+
+x1 = finditem (objects as array) selection[1]
+if x1 < objects.count then select objects[x1+1] else select objects[1]
+max zoomext sel all
+
+---------------------------------------------------------------------------
