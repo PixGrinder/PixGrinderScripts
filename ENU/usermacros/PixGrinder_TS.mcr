@@ -528,7 +528,16 @@
 		Include "$userScripts/PixGrinder/ListSelectedToFile.ms"
 	)
 
-
+	macroScript listHierarchy
+	category:"-- PixGrinder --"
+	toolTip:"Select Small Objects"
+	buttonText:"Select Small Objects"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Small_Objects_Select.ms"
+	)
 
 
 )

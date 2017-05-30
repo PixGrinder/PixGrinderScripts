@@ -5,7 +5,8 @@
 -- AutoSaveStartup --
 -- PixGrinderAutoSaveStartup.ms --
 -- Tries to make 3dsmax Autosave to act like Maya AutoSave --
--- V 10.1 --
+-- Removed Query on file open --
+-- V 10.2 --
 
 ---------------------------------------------------------------------
 
@@ -126,8 +127,10 @@
 
 	fn myAutoSaveOpenFile=
 	(
+		myNumer = 1
+		myFormatNumer = "001"
 		pda_AutoSaveProcess()
-		if QueryBox("Save current scene ? ") == true then pda_SaveAction()
+		--if QueryBox("Save current scene ? ") == true then pda_SaveAction()
 	)
 
 

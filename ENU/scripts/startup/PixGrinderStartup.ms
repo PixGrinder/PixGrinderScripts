@@ -12,6 +12,7 @@
 -- FullNameDisplay.ms --
 -- global pixGrinder_Globals_objSelect
 global pixGrinder_Globals_NmDisplay
+global pda_MyRollout
 global pixGrinder_Globals_myBackupName = ""
 
 
