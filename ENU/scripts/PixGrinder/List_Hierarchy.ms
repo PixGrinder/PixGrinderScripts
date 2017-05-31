@@ -6,7 +6,7 @@
 -- List Hierarchy --
 -- List_Hierarchy.ms --
 -- Lists selected hierarchy in the Listener --
--- V 3.0 --
+-- V 3.1 --
 -- Mail : pixgrinder@gmail.com --
 
 ---------------------------------------------------------------------
@@ -46,9 +46,10 @@
 
 	if doesFileExist myFile == true or myFile == undefined then
 	(
-		messageBox("Text File already exists. Please back it up or rename it before re-using this script")
-		Hiddendoscommand ("explorer.exe /select, "+ "\"" +myFile+"\"")
 		theCondition = false
+		messageBox("Text File already exists. Please back it up or rename it before re-using this script")
+		--close theFile
+		Hiddendoscommand ("explorer.exe /select, "+ "\"" +myFile+"\"")
 	)
 
 
