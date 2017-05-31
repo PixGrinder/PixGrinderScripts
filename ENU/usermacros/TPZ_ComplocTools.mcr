@@ -19,7 +19,16 @@
 		Include "$userScripts/PixGrinder_TPZ_Tools/Comploc_Exporter.ms"
 	)
 
-
+	macroScript Rotation_Activator
+	category:"-- PixGrinder --"
+	toolTip:"Rotation_Activator"
+	buttonText:"Rotation_Activator"
+	icon:#("FileLinkActionItems",1)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Rotation_Activator.mse"
+	)
 
 	macroScript CustAttribTransfert
 	category:"-- PixGrinder - TPZ Tools --"

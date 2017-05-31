@@ -102,27 +102,6 @@
 		Include "$userScripts/PixGrinder/Duplicator_v2.mse"
 	)
 	
-	macroScript Select_Hierarcy
-	category:"-- PixGrinder --"
-	toolTip:"Select Hierarchy"
-	buttonText:"Select Hierarchy"
-	icon:#("PixGrinder",16)
-	silentErrors:true
-	autoUndoEnabled:true
-	(
-		Include "$userScripts/PixGrinder/Select_Hierarchy.mse"
-	)
-	
-	macroScript Rotation_Activator
-	category:"-- PixGrinder --"
-	toolTip:"Rotation_Activator"
-	buttonText:"Rotation_Activator"
-	icon:#("FileLinkActionItems",1)
-	silentErrors:true
-	autoUndoEnabled:false
-	(
-		Include "$userScripts/PixGrinder/Rotation_Activator.mse"
-	)
 	
 	macroScript CleanLayers
 	category:"-- PixGrinder --"
