@@ -255,7 +255,7 @@
 	silentErrors:false
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/Pivot_Alignator_V3.ms"
+		Include "$userScripts/PixGrinder/Pivot_Alignator.ms"
 	)
 	
 	macroScript MaterialRemove
