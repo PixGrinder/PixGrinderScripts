@@ -6,7 +6,7 @@
 -- List Hierarchy --
 -- List_Hierarchy.ms --
 -- Lists selected hierarchy in the Listener --
--- V 2.0 --
+-- V 2.1 --
 -- Mail : pixgrinder@gmail.com --
 
 ---------------------------------------------------------------------
@@ -36,7 +36,24 @@ fn testHier node level=
 
 )
 
-theStart = for obj in selection where obj.parent == undefined collect obj
+theStart = for obj in selection where finditem (selection as array) obj.parent == 0 collect obj
+qsort theStart sortByName
 
 for obj in theStart do testHier obj 1
 )
+
+
+
+
+
+-- 	myFile = (substituteString (maxFilePath+maxFileName) ".max" "")+"_objectsList.txt"
+-- 	if doesFileExist myFile == true then
+-- 	(
+-- 		messageBox("Text File already exists. Please back it up or rename it before re-using this script")
+-- 		Hiddendoscommand ("explorer.exe /select, "+ "\"" +myFile+"\"")
+-- 	) else (
+-- 		theFile = createFile myFile
+-- 		for obj in myTempAr do format "%\r" obj to:theFile
+-- 		close theFile
+-- 		Hiddendoscommand ("explorer.exe /select, "+ "\"" +myFile+"\"")
+-- 	)
