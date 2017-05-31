@@ -4,7 +4,7 @@
 -- Pivot Alignator --
 -- Pivot_Alignator.ms --
 -- Align 1 object's pivot to one clicked normal --
--- V 4.2 --
+-- V 4.4 --
 -- Mail : pixgrinder@gmail.com --
 
 ---------------------------------------------------------------------
@@ -28,6 +28,7 @@
 		
 		pda_cur = selection[1]
 		pda_par = pda_cur.parent
+		pda_bkFace = pda_cur.backFaceCull
 		if pda_cur.children.count !=0 then 
 		(
 			pda_chil = for ite in pda_cur.children collect ite
@@ -83,6 +84,7 @@
 			-- select pda_dum
 			pda_cur.parent = undefined
 			pda_cur.pivot = pda_cur.center
+			pda_cur.backFaceCull = true
 			resetXForm pda_cur
 			redrawViews()
 			if querybox("Invert Normals ?") == true then 
@@ -98,6 +100,7 @@
 			pda_cur.parent = pda_par
 			if pda_chil != undefined then for obj in pda_chil do obj.parent = pda_cur
 			collapseStack pda_cur
+			pda_cur.backFaceCull = pda_bkFace
 			select pda_cur
 			max rotate
 			toolMode.transformCenter()
