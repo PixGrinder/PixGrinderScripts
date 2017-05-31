@@ -484,7 +484,7 @@
 		Include "$userScripts/PixGrinder/List_Hierarchy.ms"
 	)
 
-	macroScript listHierarchy
+	macroScript listToFile
 	category:"-- PixGrinder --"
 	toolTip:"List To File"
 	buttonText:"ListToFile"
@@ -495,7 +495,7 @@
 		Include "$userScripts/PixGrinder/ListSelectedToFile.ms"
 	)
 
-	macroScript listHierarchy
+	macroScript selectSmallObjects
 	category:"-- PixGrinder --"
 	toolTip:"Select Small Objects"
 	buttonText:"Select Small Objects"
