@@ -4,7 +4,7 @@
 -- Pivot Alignator --
 -- Pivot_Alignator.ms --
 -- Align 1 object's pivot to one clicked normal --
--- V 4.0 --
+-- V 4.1 --
 -- Mail : pixgrinder@gmail.com --
 
 ---------------------------------------------------------------------
@@ -28,8 +28,13 @@
 		
 		pda_cur = selection[1]
 		pda_par = pda_cur.parent
+		if pda_cur.children.count !=0 then 
+		(
+			pda_chil = for ite in pda_cur.children collect ite
+			for bla in pda_chil do bla.parent = undefined
+		)
 		sZ = (distance pda_cur.max pda_cur.min)/5
-		pda_dum = point name:"Avirer" box:true constantscreensize:false axistripod:true size:sZ isselected:true
+		pda_dum = point name:"Avirer" box:false constantscreensize:false axistripod:true size:sZ isselected:true
 		fn get_normal_function_Ins msg ir obj faceNum shift ctrl alt =
 		(
 			if msg == #freeMove then
@@ -91,6 +96,7 @@
 			pda_RotatePivotOnly pda_cur pda_dum.transform.rotation
 			delete pda_dum
 			pda_cur.parent = pda_par
+			if pda_chil != undefined then for obj in pda_chil do obj.parent = pda_cur
 			collapseStack pda_cur
 			select pda_cur
 			max move
