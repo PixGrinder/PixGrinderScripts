@@ -35,7 +35,6 @@
 
 		on myOK pressed do
 		(
-			print "qqchose"
 			clearSelection()
 			if myRad.state == 1 then selectSmallObj (selection as array) theTreshold.value else selectSmallObj (geometry as array) theTreshold.value
 			--destroyDialog pda_MyRollout

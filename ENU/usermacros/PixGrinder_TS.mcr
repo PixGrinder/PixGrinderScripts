@@ -2,7 +2,7 @@
 -- PixGrinder.mcr
 -- MacroScripts File
 -- By Philippe DASSONVILLE ( pixgrinder@gmail.com )
--- 05/04/2016
+-- 31/05/2016
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
@@ -58,7 +58,7 @@
 		Include "$userScripts/PixGrinder/Collapse.mse"
 	)
 	
-	macroScript ResetXForm
+	macroScript ResetXFormPixGrinder
 	category:"-- PixGrinder --"
 	toolTip:"ResetXForm on Selection"
 	buttonText:"ResetXForm"
@@ -77,7 +77,7 @@
 	silentErrors:true
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/Select_Prev_v6.ms"
+		FileIn "$userScripts/PixGrinder/Select_Prev.ms"
 	)
 	
 	macroScript Select_Next_Object
@@ -85,10 +85,10 @@
 	toolTip:"Select Next Object"
 	buttonText:"Select Next Object"
 	icon:#("PixGrinder",2)
-	silentErrors:true
+	silentErrors:false
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/Select_Next_v6.ms"
+		FileIn "$userScripts/PixGrinder/Select_Next.ms"
 	)
 	
 	macroScript Duplicator
@@ -224,7 +224,7 @@
 		Include "$userScripts/PixGrinder/polyquad2.ms"
 	)
 	
-	macroScript PivotCenter
+	macroScript PivotCenterPixGrinder
 	category:"-- PixGrinder --"
 	toolTip:"PivotCenter"
 	buttonText:"PivotCenter"

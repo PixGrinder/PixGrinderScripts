@@ -1,96 +1,35 @@
+---------------------------------------------------------------------
+
+-- PixGrinder Scripts --
+-- Select Next --
+-- Select_Next.ms --
+-- Selects next object --
+-- V 7.0  --
+-- Interface Rollout Added with choice to zoom on selected object (or not) --
+-- Requires "PixGrinderStartup.ms"  v 1.1 to Work !!! --
+
+
+---------------------------------------------------------------------
+
+
 (
-	clearListener()
-	
-	myStartCond = 1
-	myCond = 1
-	
-	if selection.count == 0 do myStartCond = 2
-	
-	if objects.count == 0 do myStartCond = 3
-	
-	global pda_mySelector
 
+	if pda_mySelectorFloater == undefined then pda_myBoxOpen = false
+	if pda_mySelectorFloater != undefined and pda_mySelectorFloater.open == false then pda_myBoxOpen = false
 
-	rollout pda_mySelector "Selector" 
+	if pda_myBoxOpen == false then
 	(
-		radiobuttons myRad labels:#("Zoom On", "Zoom Off") default:1
-		
-		on myRad changed state do 
-		(
-			if myRad.state == 2 then
-			(
-				myRad.state = 2 
-				myCond = 2
-			) else (
-				myRad.state = 1
-				myCond = 1
-			)
-			
-		)
+		pda_mySelectorFloater = newRolloutFloater "SelectNext" 200 60 150 150
+		addRollout pda_mySelector pda_mySelectorFloater
+		pda_myBoxOpen = true
 	)
 
-	
-	
-	fn SelNext myVar = 
-	(
-		mySel = getCurrentSelection()
-		max select all
-		all = getCurrentSelection()
-		v = findItem all mySel[1]
-		nt = all.count
-		
-		if v+1 > nt then 
-		(
-			select all[1]
-		)  else (
-		v=v+1
-		select all[v]
-		)	
-		
-		if myVar == 1 then 
-		(
-			max zoomext sel all
-		)
-	)
-	
-	
-	try (destroyDialog pda_mySelector) catch ()
-	createDialog pda_mySelector
-	
-
-
-	if myStartCond == 1 do
-	(
-		print "myStartCond = 1"
-		print "myCond = " + (myCond as string)
-		SelNext pda_mySelector.myRad.state
-	)
-	
-	if myStartCond == 2 do
-	(
-		print "myStartCond = 2"
-		select objects[1]
-		SelNext pda_mySelector.myRad.state
-	)
-	
-	if myStartCond == 3 do
-	(
-		print "myStartCond = 3"
-		messageBox ("No objects in the scene !!")
-	)
-
-	
-
-	
-		
-
+	-- Total reBuild --
+	---------------------------------------------------------------------------
+	if selection.count == 0 then (x1 = 1) else (x1 = finditem (objects as array) selection[1])
+	if x1 < objects.count then select objects[x1+1] else select objects[1]
+	if pda_mySelector.myRad.state == 1 then max zoomext sel all
+	---------------------------------------------------------------------------
 )
 
--- Total reBuild --
----------------------------------------------------------------------------
 
-x1 = finditem (objects as array) selection[1]
-if x1 < objects.count then select objects[x1+1] else select objects[1]
-max zoomext sel all
-
----------------------------------------------------------------------------

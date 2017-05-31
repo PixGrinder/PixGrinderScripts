@@ -5,19 +5,20 @@
 -- PixGrinderStartup --
 -- PixGrinderStartup.ms --
 -- Initialisations for PixGrinder Scripts --
--- V 1.0 --
+-- V 1.1 --
 
 ---------------------------------------------------------------------
 
 -- FullNameDisplay.ms --
 -- global pixGrinder_Globals_objSelect
-global pixGrinder_Globals_NmDisplay
-global pda_MyRollout
-global pixGrinder_Globals_myBackupName = ""
+	global pixGrinder_Globals_NmDisplay
+	global pixGrinder_Globals_myBackupName = ""
+	global pda_myBoxOpen = true
+	global pda_mySelectorFloater
+	global pda_mySelector
 
 
--- global pixGrinder_Globals_myEventA
--- callbacks.addScript #filePostOpen "myAutoSaveOpenFile()" id:#FelipeCallback persistent:false
+
 
 	rollout pixGrinder_Globals_NmDisplay "Name Display"
 	(
@@ -46,6 +47,15 @@ global pixGrinder_Globals_myBackupName = ""
 		on myName changed txtTemp do if selection[1] != undefined then selection[1].name = txtTemp
 	)
 
+	rollout pda_mySelector "Selector" 
+	(
+		radiobuttons myRad labels:#("Zoom On", "Zoom Off") default:2
+	)
+
+
+
+
+
 
 
 fn pixGrinder_Globals_selectChanged = 
@@ -60,12 +70,7 @@ fn pixGrinder_Globals_selectChanged =
 
 )
 
--- pixGrinder_Globals_myEventA = NodeEventCallback selectionChanged:pixGrinder_Globals_selectChanged
 
-
-
-
-
-
-callbacks.addScript #selectionSetChanged "pixGrinder_Globals_selectChanged()" id:#pixGrinder_selectChanged  persistent:false
+	callbacks.addScript #selectionSetChanged "pixGrinder_Globals_selectChanged()" id:#pixGrinder_selectChanged  persistent:false
+	
 
