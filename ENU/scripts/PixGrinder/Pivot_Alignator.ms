@@ -4,7 +4,7 @@
 -- Pivot Alignator --
 -- Pivot_Alignator.ms --
 -- Align 1 object's pivot to one clicked normal --
--- V 4.1 --
+-- V 4.2 --
 -- Mail : pixgrinder@gmail.com --
 
 ---------------------------------------------------------------------
@@ -99,7 +99,14 @@
 			if pda_chil != undefined then for obj in pda_chil do obj.parent = pda_cur
 			collapseStack pda_cur
 			select pda_cur
+			max rotate
+			toolMode.transformCenter()
+			setRefCoordSys #local
+			max scale
+			toolMode.transformCenter()
+			setRefCoordSys #local
 			max move
+			toolMode.transformCenter()
 			setRefCoordSys #local
 		)
 	) 
