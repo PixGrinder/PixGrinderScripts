@@ -15,11 +15,12 @@
 	
 	x1 = for obj in myStd where obj.diffusemap != undefined and obj.diffuseColor != (color 255 255 255) collect obj
 	print x1.count
+	for bla in x1 do bla.diffuseColor = (color 255 255 255)
 	x2 = standardMaterial name:"StandardMat"
 	for i = 1 to 24 do meditmaterials[i] = x2
-	for i = 1 to x1.count do meditmaterials[i] = x1[i]
+	if x1.count >24 then myMax = 24 else myMax = x1.count
+	for i = 1 to myMax do meditmaterials[i] = x1[i]
 	print "DiffuseToWhite.ms completed"
 	MatEditor.Open()
-
 )
 
