@@ -14,7 +14,8 @@
 	StdBitmap = for obj in StdMaterials where classof obj.diffuseMap == BitmapTexture and obj.diffuseMap.filename != undefined collect obj
 	StdColor = for obj in StdMaterials where obj.diffuseMap == undefined collect obj
 	BmTex = getClassInstances BitmapTexture
-	myPrefix = "AS365_"
+-- 	myPrefix = "AS365_"
+	myPrefix = "H225_"
 
 	for obj in StdBitmap do 
 	(

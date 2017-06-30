@@ -22,7 +22,7 @@
 		append pda myString
 		-- i = i+myString.count
 	)
-	print pda.count
+	format "%%\r" "Lines in text file : " pda.count
 
 ---------------------------------------
 	
@@ -63,12 +63,12 @@
 
 -- Affichage dans le listener des noms de composants manquants dans la scene 3D
 
-	print ("Missing : ")
-	for ola in myDiff do print ola
+	format ("Missing : \r")
+	for ola in myDiff do format "%\r" ola
 
 ---------------------------------------
 
-	print myDiff.count  -- Affichage du nombre de composants manquants
+	format "%\r" myDiff.count  -- Affichage du nombre de composants manquants
 	select compOk  -- selection des composants présents
 	close x1 -- fermeture du fichier texte
 )

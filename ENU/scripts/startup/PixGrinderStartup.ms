@@ -23,15 +23,23 @@
 	rollout pixGrinder_Globals_NmDisplay "Name Display"
 	(
 
-		
-		edittext myName "Name:" text:"" fieldWidth:350 offset:[-5,10] -- height:20
-		button NmBtn "OK" offset:[120,20] across:2 align:#left width:50
-		button NmBtnCancel "Cancel" offset:[25,20] align:#left width:50
+		label nmLbl "NAME" align:#center offset:[0,5]
+		edittext myName "" text:"" fieldWidth:350 align:#center  offset:[0,5] -- height:20
+		button NmBtn "OK" offset:[55,15] across:3 align:#left width:50
+		button NmBtnCopy "Copy" offset:[40,15] across:3 align:#left width:50
+		button NmBtnCancel "Cancel" offset:[25,15] align:#left width:50
 		on NmBtn pressed do 
 		(
 			if selection[1] != undefined then selection[1].name = myName.text
 			destroyDialog pixGrinder_Globals_NmDisplay
 		)
+
+		on NmBtnCopy pressed do 
+		(
+			if selection[1] != undefined then setclipboardText selection[1].name
+		)
+
+
 		on NmBtnCancel pressed do 
 		(
 			
@@ -51,10 +59,6 @@
 	(
 		radiobuttons myRad labels:#("Zoom On", "Zoom Off") default:2
 	)
-
-
-
-
 
 
 

@@ -14,7 +14,7 @@
 -- pda1 = pickObject() filter:geometry
 
 (
-	global mySet = "LiveryObjects"
+	global mySet = "Temp_101"
 	global x=1
 	global pda1 = #()
 	global pda2 = #()

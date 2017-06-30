@@ -1,4 +1,30 @@
 
+
+x1 = for obj in objects where obj.isHidden == false and matchpattern obj.name pattern:"ATA_??-??_*" == true collect obj
+clearListener()
+for obj in x1 do format "%\r" obj.name
+
+----------------------------------------------
+
+
+
+-- Copier le nom de l'objet dans le presse papiers de windows
+setclipboardText $.name
+
+
+
+----------------------------------------------
+
+(
+
+	theItems = for obj in objects where matchpattern obj.name pattern:"ATA_??-??_*"== true collect obj
+	clearSelection()
+	select theItems
+
+)
+
+----------------------------------------------
+
 x1 = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-24_3D\\H225-Package 8 -24_05_2017\\"
 x2 = getfiles (x1+"*.max")
 for obj in x2 do format (filenamefromPath obj + "\r")

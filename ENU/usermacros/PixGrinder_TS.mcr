@@ -44,7 +44,16 @@
 		Include "$userScripts/PixGrinder/NamesTransfer.ms"
 	)
 
-
+	macroScript MaterialTransfer
+	category:"-- PixGrinder --"
+	toolTip:"Material Transfert"
+	buttonText:"Material Transfert"
+	--icon:#("FileLinkActionItems",9)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/MaterialTransfert.ms"
+	)
 
 
 	macroScript Collapse_Selected

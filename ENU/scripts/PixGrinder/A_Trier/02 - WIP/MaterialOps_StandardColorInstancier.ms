@@ -18,9 +18,7 @@
 	-- myObjMult = tous les objets de la scene qui ont un multi matériaux
 	myObjMult = for obj in objects where classof obj.material == Multimaterial collect obj
 
-	-- pda =  liste de toutes les couleurs diffuse utilisées dans la scène
-	pda = #()
-	for obj in x2 do appendifunique pda (obj.diffuse as string)
+
 
 	-- Nettoyage des multimatériaux possédant 1 seul sous-matériau
 	for obj in myObjMult where obj.material.count == 1 do 
@@ -28,6 +26,10 @@
 		matTemp = obj.material[1]
 		obj.material = matTemp
 	)
+
+	-- pda =  liste de toutes les couleurs diffuse utilisées dans la scène
+	pda = #()
+	for obj in x2 do appendifunique pda (obj.diffuse as string)
 
 	-- RE myObjMult = tous les objets de la scene qui ont un multi matériaux
 	myObjMult = for obj in objects where classof obj.material == Multimaterial collect obj
