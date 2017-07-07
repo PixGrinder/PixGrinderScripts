@@ -18,8 +18,8 @@
 	myStart = x1.count as string
 
 
-	-- x2 = tous les materiaux standards qui ont une image en diffuseMap
-	x2 = for obj in x1 where classof obj.diffusemap == BitmapTexture and obj.diffusemap.filename != undefined collect obj    
+	-- x2 = tous les materiaux standards qui ont une image en diffuseMap -- et 100% opacité
+	x2 = for obj in x1 where classof obj.diffusemap == BitmapTexture and obj.diffusemap.filename != undefined and obj.opacity == 100 collect obj    
 
 	-- myObjStd = tous les objets de la scene qui ont un matériau standard avec texture en diffuse
 	myObjStd = for obj in objects where classof obj.material == StandardMaterial and classof obj.material.diffusemap == BitmapTexture and obj.material.diffusemap.filename != undefined collect obj 

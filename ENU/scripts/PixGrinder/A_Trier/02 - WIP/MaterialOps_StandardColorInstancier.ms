@@ -10,7 +10,7 @@
 
 
 	-- x2 = tous les materiaux standards sans diffuseMap
-	x2 = for obj in x1 where obj.diffusemap == undefined collect obj
+	x2 = for obj in x1 where obj.diffusemap == undefined and obj.opacity == 100 collect obj -- added material filter : only mats with opacity = 100
 
 	-- myObjStd = tous les objets de la scene qui ont un matériau standard sans diffuseMap
 	myObjStd = for obj in objects where classof obj.material == StandardMaterial and obj.material.diffusemap == undefined collect obj
