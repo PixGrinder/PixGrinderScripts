@@ -515,5 +515,38 @@
 		Include "$userScripts/PixGrinder/Small_Objects_Select.ms"
 	)
 
+	macroScript FindMatFromSlot
+	category:"-- PixGrinder --"
+	toolTip:"Find Material From Slot"
+	buttonText:"FindMatFromSlot"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Material_SlotFinder.ms"
+	)
+
+	macroScript SelectByList
+	category:"-- PixGrinder --"
+	toolTip:"Select by List"
+	buttonText:"SelectByList"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Select_by_List.ms"
+	)
+
+	macroScript NormalFlip
+	category:"-- PixGrinder --"
+	toolTip:"Normals - Quick Flip"
+	buttonText:"QuickFlip"
+	-- icon:#("Splines",5)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Normals_QuickFlip.ms"
+	)
+
 
 )
