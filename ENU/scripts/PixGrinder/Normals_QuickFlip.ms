@@ -4,7 +4,7 @@
 -- Normal - Quick Flip Shortcut --
 -- Normals_QuickFlip.ms --
 -- Assign to Shift+N key to quickly flip one objects normals
--- V 0.1 --
+-- V 0.2 --
 
 ---------------------------------------------------------------------
 
@@ -16,5 +16,6 @@
 		addModifier obj myMod
 		collapseStack obj
 	)
+	redrawViews()
 )
 
