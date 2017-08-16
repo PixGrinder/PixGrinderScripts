@@ -1,6 +1,6 @@
 /*##############################################################################
 CompLoc Component
-Version 3.04
+Version 3.05
 Script By Clément "Sugz" Plantec
 plantec.clement@gmail.com
 
@@ -17,9 +17,12 @@ SugzTools Spreadsheet Parser Library
 # To do list:
  - Put the function to load the CSV,  add component and its relatives in the strcut instead of the Rollout to use them in the excel import
  - Always break instance when setting object as component
+ - Create general function to add scene component, hidden, transparent and animated relative (fo the copy paste)
+ - Transparent: radiobutton to decide to use xray or to hide (or simple checkbox with hide)
 
 # History:
 3.0:
+	- Add ExcludedObjects to store objects that need to stay hidden when changing relatives objects 
 	- Add CreateHotspotList and ExportHotspotList macros
 	- Remove the Update scene function as it became irrelevant
 	- Delete the relativeName parameter in the custom attribute as it doesn't work to when mergin scene together...
@@ -48,6 +51,16 @@ _csv = SpreadsheetParserLibraryStc()
 try(destroyDialog _cl.CLView) catch()
 -- try (destroyDialog _hotspot.HotspotListView) catch()
 
+struct TempRelativesStc
+(
+	canPast = false,
+	hotspot,
+	fov,
+	hidden,
+	transparent,
+	animated
+)
+
 
 struct CompLocComponentStc
 (
@@ -59,15 +72,18 @@ struct CompLocComponentStc
 	transparentCol = "Transparent Container",
 	hiddenCol = "Panel to hide",
 	animatedCol = "Animation",
+	hotspotLayer = "zzz_Hotspots",
 	
 	compLocCA = undefined,				-- The comploc custom attribute
 	CLView = undefined,					-- The rollout
 	requiredComponents = #(),			-- The required compononts for a given ata
 	sceneComponents = #(),				-- The scene objects whose have the comploc custom attribute
 	hotspotHT = #(),					-- The hotspot hashtable (name, position) 
+	excludedObjects = #(),				-- The objects to keep hidden
+	brokenComponents = #(),				-- The scene components with undefined relative
 	
-	
-	
+
+
 	/* Set the hotspot hashtable ############################################################################################*/
 	fn SetHotspotHT =
 	(
@@ -118,16 +134,16 @@ struct CompLocComponentStc
 			parameters params rollout:view
 			(
 				hotspot type:#node
-				fov type:#integer default:40
+				fov type:#integer default:80
 				hidden type:#maxObjectTab tabSizeVariable:true
 				transparent type:#maxObjectTab tabSizeVariable:true
 				animated type:#maxObjectTab tabSizeVariable:true
 					
 				on hotspot set val do if val != undefined then this.view.hotspotLbl.text = substring (val.name) ((GetNode()).name.count + 2) -1
 				on fov set val do this.view.fovLbl.text = this.fov as string
-				on hidden tabChanged arg1 arg2 arg3 do this.view.hiddenLbx.items = for obj in hidden collect obj.node.name
-				on transparent tabChanged arg1 arg2 arg3 do this.view.transparentLbx.items = for obj in transparent collect obj.node.name
-				on animated tabChanged arg1 arg2 arg3 do this.view.animatedLbx.items = for obj in animated collect obj.node.name
+				on hidden tabChanged arg1 arg2 arg3 do this.view.hiddenLbx.items = for obj in hidden where obj.node != undefined collect obj.node.name
+				on transparent tabChanged arg1 arg2 arg3 do this.view.transparentLbx.items = for obj in transparent where obj.node != undefined collect obj.node.name
+				on animated tabChanged arg1 arg2 arg3 do this.view.animatedLbx.items = for obj in animated where obj.node != undefined collect obj.node.name
 			)
 			 
 			rollout view "CompLoc Component"
@@ -140,14 +156,13 @@ struct CompLocComponentStc
 				listbox animatedLbx "Animated Objects" height:3 width:150 align:#center offset:[0,5]
 				
 			
-				
 				on view open do 
 				(
 					if this.hotspot != undefined then hotspotLbl.text = substring (this.hotspot.name) ((GetNode()).name.count + 2) -1
 					fovLbl.text = this.fov as string
-					hiddenLbx.items = for obj in this.hidden collect obj.node.name
-					transparentLbx.items = for obj in this.transparent collect obj.node.name
-					animatedLbx.items = for obj in this.animated collect obj.node.name
+					hiddenLbx.items = for obj in this.hidden where obj.node != undefined collect obj.node.name
+					transparentLbx.items = for obj in this.transparent where obj.node != undefined collect obj.node.name
+					animatedLbx.items = for obj in this.animated where obj.node != undefined collect obj.node.name
 				)
 				
 				
@@ -168,16 +183,19 @@ struct CompLocComponentStc
 		Return:
 		Further Infos:
 		</Function>*/
-		
-		if (queryBox "Are you sure you want to remove the comploc custom attribute on every object of the scene ?" title:"Comploc Scene Cleaner" beep:false) then
+
+		if selection.count > 0 then 
 		(
-			myModif = selection as array
-			_ca.RemoveCA #compLoc nodeList:myModif
-			for obj in myModif do
+			if (queryBox "Are you sure you want to remove the comploc custom attribute on every object of the selection ?" title:"Comploc Scene Cleaner" beep:false) then
 			(
-				x2 = for cam in cameras where matchpattern cam.name pattern:(obj.name+"*") == true collect cam
-				delete x2
+				for obj in selection where (_ca.CheckForCustAttr obj #compLoc)[1] do (if obj.hotspot != undefined then delete obj.hotspot)
+				_ca.RemoveCA #compLoc nodeList:selection
 			)
+		)
+		else if (queryBox "Are you sure you want to remove the comploc custom attribute on every object of the scene ?" title:"Comploc Scene Cleaner" beep:false) then
+		(
+			_ca.RemoveCA #compLoc nodeList:sceneComponents
+			delete (for cam in cameras where cam.layer.name == _cl.hotspotLayer collect cam)
 		)
 			
 	),
@@ -199,35 +217,46 @@ struct CompLocComponentStc
 		if not (doesFileExist path) then makeDir path
 		
 		toolmode.commandmode = #select
-		for obj in sceneComponents do 
+		for obj in sceneComponents while NOT keyboard.escPressed do
 		(
-			-- Unhide and unxray everything 
-			objects.isHidden = objects.xray = false
-			
-			-- Hide hotspots and covers if needed
-			if obj.layer.name == "H135_covers"
-				then (for o in objects where o.layer.name == "Hotspots" collect o).isHidden = true
-				else (for o in objects where o.layer.name == "Hotspots" or o.layer.name == "H135_covers" collect o).isHidden = true
-			
-			-- Select the object to get its wiewport selection outline and switch to its hotspot view
-			select obj
-			viewport.setCamera obj.hotspot
-			sliderTime = 0f
-			
-			-- Set hidden and xray objects and go the the last animationo frame if needed
-			(for relative in obj.hidden collect relative.node).isHidden = true
-			(for relative in obj.transparent collect relative.node).xray = true
-			if obj.animated.count != 0 then sliderTime = 50f
-			
-			-- Save the screenshot as bitmap 
-			redrawViews()
-			ssBitmap3 = viewport.getViewportDib()
-			ssBitmap3.filename = path + obj.name + ".jpg"
-			save ssBitmap3 quiet:true
+			try 
+			(
+				-- Unhide and unxray everything 
+				objects.isHidden = objects.xray = false
+				
+				-- Hide hotspots and covers if needed
+				if findItem excludedObjects obj != 0 then 
+					(for obj in objects where matchPattern obj.layer.name pattern:"zzz_*" collect obj).isHidden = true
+				else 
+				(
+					excluded = join #() _cl.excludedObjects
+					join excluded (for obj in objects where matchPattern obj.layer.name pattern:"zzz_*" collect obj)
+					(for obj in objects where findItem excluded obj != 0 collect obj).isHidden = true
+				)
+				
+				-- Select the object to get its wiewport selection outline and switch to its hotspot view
+				select obj
+				if obj != undefined then (if isKindOf obj helper then select (_sgz._sel.GetHierarchy children:true))
+
+				viewport.setCamera obj.hotspot
+				sliderTime = 0f
+				
+				-- Set hidden and xray objects and go the the last animationo frame if needed
+				(for relative in obj.hidden collect relative.node).isHidden = true
+				(for relative in obj.transparent collect relative.node).xray = true
+				if obj.animated.count != 0 then sliderTime = 50f
+				
+				-- Save the screenshot as bitmap 
+				redrawViews()
+				ssBitmap3 = viewport.getViewportDib()
+				ssBitmap3.filename = path + obj.name + ".jpg"
+				save ssBitmap3 quiet:true
+			) 
+			catch(print obj.name)
 		)
 		
 		objects.isHidden = objects.xray = false
-		(for o in objects where o.layer.name == "Hotspots" or o.layer.name == "H135_covers" collect o).isHidden = true
+		(for o in objects where o.layer.name == _cl.hotspotLayer or o.layer.name == "H135_covers" collect o).isHidden = true
 		sliderTime = 0f
 		
 	),
@@ -280,6 +309,37 @@ struct CompLocComponentStc
 		p = cam.pos
 		
 		format "%, %, %" (-p[1]/10) (p[3]/10) (-p[2]/10) to:ss
+		
+		if hasTarget then cam.targeted = true
+			
+		ss as string
+	),
+
+
+
+	/* Get a formated rotation of the hotspot to export it ############################################################################################*/
+	fn GetHotspotQuat cam = 
+	(
+		/*<Function>
+		Description:
+		Arguments:
+		Return:
+		Infos:
+		</Function>*/
+		
+		hasTarget = false
+		if cam.targeted then 
+		(
+			hasTarget = true 
+			cam.targeted = false
+		)
+		
+		ss = StringStream ""
+
+		oldEuler = cam.rotation as eulerAngles
+		quat = eulerToQuat (eulerAngles (oldEuler.x + 90.0) oldEuler.y oldEuler.z)
+		
+		format "%, %, %, %" quat.x -quat.y quat.z -quat.w to:ss
 		
 		if hasTarget then cam.targeted = true
 			
@@ -340,17 +400,16 @@ struct CompLocComponentStc
 				
 			-- Write values
 			i = 2
-			for component in sceneComponents do 
+			for component in _cl.sceneComponents do 
 			(
 				format "%: %\n" (i-1) component.name
 				
 				(_csv.excel.application.Range("A" + i as string)).value = component.name
--- 				(_csv.excel.application.Range("B" + i as string)).value = GetHotspot component.hotspot
-				(_csv.excel.application.Range("B" + i as string)).value = substring component.hotspot.name (component.hotspot.name.count+2) component.name.count
+				(_csv.excel.application.Range("B" + i as string)).value = _cl.GetHotspot component.hotspot
 				(_csv.excel.application.Range("C" + i as string)).value = component.fov as string
-				(_csv.excel.application.Range("D" + i as string)).value = GetRelatives component.transparent
-				(_csv.excel.application.Range("E" + i as string)).value = GetRelatives component.hidden
-				(_csv.excel.application.Range("F" + i as string)).value = GetRelatives component.animated
+				(_csv.excel.application.Range("D" + i as string)).value = _cl.GetRelatives component.transparent
+				(_csv.excel.application.Range("E" + i as string)).value = _cl.GetRelatives component.hidden
+				(_csv.excel.application.Range("F" + i as string)).value = _cl.GetRelatives component.animated
 				
 				i += 1
 			)
@@ -364,19 +423,19 @@ struct CompLocComponentStc
 		)
 		
 	),
-
-
--- (
--- 	x1 = $.name
--- 	x2 = $.hotSpot.name
--- 	substring x2 (x1.count+2) x2.count
-
--- )
-
+	
+	/* Use a backgroundworker to avoid blocking the UI when exporting the excel list ############################################################################################*/
+	fn ExcelExportBackgroundWorker = 
+	(
+		clearListener()
+		Worker = DotNetObject "CSharpUtilities.SynchronizingBackgroundWorker"
+		dotNet.addEventHandler Worker "DoWork" ExcelExport
+		if not Worker.IsBusy do Worker.RunWorkerAsync()
+	),
 	
 	
 	
-	/* Export to a excel file the component and related objects list ############################################################################################*/
+	/* Import from an excel file the components and related objects list ############################################################################################*/
 	fn ExcelImport =
 	(
 		/*<Function>
@@ -404,6 +463,9 @@ struct CompLocComponentStc
 				obj = getNodeByName str
 				if obj != undefined then 
 				(
+					-- make the object unique to avoid instance
+					InstanceMgr.MakeObjectsUnique obj #individual
+					
 					custAttributes.add obj compLocCA BaseObject:true
 				
 					-- create its hotspot
@@ -416,9 +478,9 @@ struct CompLocComponentStc
 					cam.targeted = true
 					cam.target.pos = obj.center
 					
-					LayerManager.newLayerFromName "Hotspots"
-					(LayerManager.getLayerFromName "Hotspots").addNode cam
-					(LayerManager.getLayerFromName "Hotspots").addNode (cam.target)
+					LayerManager.newLayerFromName _cl.hotspotLayer
+					(LayerManager.getLayerFromName _cl.hotspotLayer).addNode cam
+					(LayerManager.getLayerFromName _cl.hotspotLayer).addNode (cam.target)
 					
 					obj.hotspot = cam
 					obj.fov = hotspotFov
@@ -469,16 +531,16 @@ struct CompLocComponentStc
 		
 		-- Set the hotspot hashtable and layer
 		if _cl.hotspotHT.count == 0 then _cl.SetHotspotHT()
-		LayerManager.newLayerFromName "Hotspots"
+		LayerManager.newLayerFromName _cl.hotspotLayer
 		
 		for item in hotspotHT do 
 		(
 			cam = Physical_Camera name: item[1] pos:item[2]
  			cam.wireColor = color 28 149 177
- 			(LayerManager.getLayerFromName "Hotspots").addNode cam
+ 			(LayerManager.getLayerFromName _cl.hotspotLayer).addNode cam
  			-- pt = Point name: item[1] pos:item[2] Box:on cross:off size:5
  			-- pt.wireColor = color 28 149 177
-			-- (LayerManager.getLayerFromName "Hotspots").addNode pt
+			-- (LayerManager.getLayerFromName _cl.hotspotLayer).addNode pt
 		)
 	
 	),
@@ -498,7 +560,6 @@ struct CompLocComponentStc
 		folder = getSavePath caption:"Choose a folder to save the Hotspots.csv" initialDir:maxFilePath
 		if folder != udnefined then 
 		(
-
 			file = (folder + "\\" + (getFilenameFile maxFileName) + ".csv")
 			excel = CreateOLEObject "Excel.Application"
 			excel.application.Workbooks.Add
@@ -506,13 +567,17 @@ struct CompLocComponentStc
 			
 			(excel.application.Range("A1")).value = "Hotspot name"
 			(excel.application.Range("B1")).value = "Hotspot position"
+			(excel.application.Range("C1")).value = "Hotspot default rotation"
+			(excel.application.Range("D1")).value = "Hotspot rotation"
+			
 
 			i = 2
-			cams = _sgz._extMxs.SortObjects(for cam in cameras where not isKindOf cam Targetobject and cam.layer.name == "Hotspots" collect cam)
+			cams = _sgz._extMxs.SortObjects(for cam in cameras where not isKindOf cam Targetobject and cam.layer.name == _cl.hotspotLayer collect cam)
 			for cam in cams do 
 			(
 				(excel.application.Range("A" + i as string)).value = cam.name
-				(excel.application.Range("B" + i as string)).value = GetHotspotPos cam 
+				(excel.application.Range("B" + i as string)).value = GetHotspotPos cam
+				(excel.application.Range("D" + i as string)).value = GetHotspotQuat cam
 				i += 1
 			)
 			
@@ -536,48 +601,125 @@ struct CompLocComponentStc
 			Check if scene components has no undefined relatives
 		</Function>*/
 		
+		clearListener()
+		brokenComponents = #()
 		somethingIsWrong = false
 		for component in sceneComponents do 
 		(
 			str = ""
-			if component.hotspot == undefined do str += "\thotspot: "+ component.hotspot as string + "\n" 
-			for obj in component.transparent where obj.node == undefined do str += "\ttransparent: "+ obj.node as string +"\n" 
-			for obj in component.hidden where obj.node == undefined do str += "\thidden: " + obj.node as string + "\n" 
-			for obj in component.animated where obj.node == undefined do str += "\tanimated: " + obj.node as string + "\n" 
+			hiddenCount = (for obj in component.hidden where obj.node == undefined collect obj).count
+			transparentCount = (for obj in component.transparent where obj.node == undefined collect obj).count
+			animatedCount = (for obj in component.transparent where obj.node == undefined collect obj).count
+
+			if component.hotspot == undefined do str += "\thotspot: undefined\n"
+			if hiddenCount != 0 then str += "\thidden: " + hiddenCount as string + " undefined\n" 
+			if transparentCount != 0 then str += "\ttransparent: " + transparentCount as string + " undefined\n" 
+			if animatedCount != 0 then str += "\tanimated: " + animatedCount as string + " undefined\n" 
 			
 			if str != "" then 
 			(
-				format "Component: %\n%\n" component str
+				format "% :\n%\n" component.name str
 				somethingIsWrong = true
+				append brokenComponents component
 			)
 		)
 		
 		if not somethingIsWrong then format "Everything's fine dude :D\n"
-
 	),
 	
 	
 	
 	/* Check if scene components has undefined relatives ############################################################################################*/
-	fn ComponentChecker = 
+	fn ComponentFixer = 
 	(
 		/*<Function>
 		Description:
-			Check if scene components has no undefined relatives
+			Fix scene components with undefined relatives
 		</Function>*/
 		
-		for component in sceneComponents do 
+		ComponentChecker()
+		for component in brokenComponents do 
 		(
-			objs = for obj in component.transparent where obj.node != undefined collect obj
-			component.transparent = objs
-			
-			objs = for obj in component.hidden where obj.node != undefined collect obj
-			component.hidden = objs
-			
-			objs = for obj in component.animated where obj.node != undefined collect obj
-			component.animated = objs
-		)
+			format "Fixing: %\n" component
 
+			oldNodes = for h in component.hidden where h.node == undefined collect h
+			for oldNode in oldNodes do deleteItem (component.hidden) (findItem (component.hidden) oldNode)
+
+			oldNodes = for h in component.transparent where h.node == undefined collect h
+			for oldNode in oldNodes do deleteItem (component.transparent) (findItem (component.transparent) oldNode)
+
+			oldNodes = for h in component.animated where h.node == undefined collect h
+			for oldNode in oldNodes do deleteItem (component.animated) (findItem (component.animated) oldNode)
+		)
+	),
+
+
+
+	fn OpenExcludedObjects = 
+	(
+	   /*<Function>
+		Description:
+		Arguments:
+		Return:
+		Infos:
+		</Function>*/
+		
+		global ExcludedObjectsRol
+		
+		try(destroyDialog ExcludedObjectsRol) catch()
+		Rollout ExcludedObjectsRol "Excluded Objects"
+		(
+			listbox excludedLbx width:240 height:32 align:#center offset:[0,0]
+			button addBtn "Add" width:76 align:#left offset:[-9,-3] 
+			button removeBtn "Remove" width:76 align:#center offset:[0,-26] 
+			button clearBtn "Clear" width:77 align:#right offset:[8,-26] 
+
+
+			fn SetList = 
+			(
+			   /*<Function>
+				Description:
+				Arguments:
+				Return:
+				Infos:
+				</Function>*/
+				
+				items = #()
+				for obj in _cl.excludedObjects where isValidNode obj do append items obj.name
+				excludedLbx.items = items
+				
+			)
+
+
+			on ExcludedObjectsRol open do SetList()
+
+
+			on addBtn pressed do
+			(
+				if not _sgz._sel.IsSelectionEmpty() then 
+				(
+					for obj in selection do appendIfUnique _cl.excludedObjects obj
+					SetList()
+				)
+			)
+
+
+			on removeBtn pressed do
+			(
+				index = excludedLbx.selection
+				if relativeIndex != 0 then deleteItem _cl.excludedObjects index
+				SetList()
+			)
+
+
+			on clearBtn pressed do
+			(
+				_cl.excludedObjects = #()
+				SetList()
+			)
+
+		)
+		createDialog ExcludedObjectsRol 250 455 style:#(#style_titlebar, #style_sysmenu, #style_toolwindow)
 	),
 	
 	
@@ -590,10 +732,11 @@ struct CompLocComponentStc
 		local red = dnColor.FromArgb 255 150 40 40
 		local green = dnColor.FromArgb 255 30 100 30
 		local orange = dnColor.FromArgb 255 158 92 12
+		local tempRelatives = TempRelativesStc()
 		
-		label requiredComponentsLbl "Required Components :" width:200 pos:[9,5]
-		dropdownlist requiredComponentsFilterDdl items:#("All") width:60 align:#left offset:[174,-22]
-		dotNetControl requiredComponentsLbx "listView" width:240 height:338 align:#left offset:[-7,-5]
+		label requiredComponentsLbl "Required Components :" width:200 pos:[9,7]
+		dropdownlist requiredComponentsFilterDdl items:#("All") width:60 align:#left offset:[174,-20]
+		dotNetControl requiredComponentsLbx "listView" width:240 height:363 align:#left offset:[-7,0]
 		label requiredHotspotLbl "Hotspot: " align:#left offset:[-7,2]
 		label requiredHotspotNameLbl width:110 height:16 style_sunkenedge:true align:#left offset:[40,-19]
 		label requiredFovLbl "FOV: " align:#left offset:[180,-20] 
@@ -605,20 +748,26 @@ struct CompLocComponentStc
 		button getCsvFileBtn "..." width:25 height:17 align:#left offset:[180,-22] tooltip:"Set the spreadsheet path" 
 		button loadCsvFileBtn "L" width:25 height:17 align:#left offset:[208,-22] tooltip:"Load the spreadsheet" enabled:false
 		
-		label sceneComponentsLbl "Scene Components :" pos:[256,5]
-		dropdownlist sceneComponentsFilterDdl items:#("All") width:60 align:#center offset:[91,-22]
-		listbox sceneComponentsLbx  width:240 height:28 align:#center offset:[0,-5]
+		dropdownlist sceneComponentsDdl items:#("Scene Components :", "Broken Components :") width:150 pos:[256,5]
+		dropdownlist sceneComponentsFilterDdl items:#("All") width:60 align:#center offset:[91,-27]
+		listbox sceneComponentsLbx  width:240 height:30 align:#center offset:[0,-1]
 		button addComponentBtn "Add" width:56  align:#center offset:[-92,-3] 
 		button removeComponentBtn "Remove" width:56  align:#center offset:[-31,-26] 
 		button reloadComponentsBtn "Reload" width:56  align:#center offset:[31,-26] 
 		button selectComponentBtn "Select" width:56  align:#center offset:[92,-26] 
+
+		button excludeObjectsbtn "Excluded Objects" width:115 pos:[505,7]
+		button copyBtn "Copy" width:60 align:#right offset:[-55,-26]
+		button pasteBtn "Paste" width:60 align:#right offset:[7,-26] 
 		
-		label hotspotLbl "Hotspot :" pos:[506,5]
-		button getHotspotCsvFileBtn "..." width:25 height:15 align:#right offset:[7,-18] tooltip:"Set the hotspot file" 
-		dropdownlist hotspotDdl width:170 align:#right offset:[-63,-1]
+		label hotspotLbl "Hotspot :" align:#right offset:[-185,7] --pos:[506,7]
+		button getHotspotCsvFileBtn "..." width:25 height:17 align:#right offset:[7,-19] tooltip:"Set the hotspot file" 
+		dropdownlist hotspotDdl width:170 align:#right offset:[-63,0]
 		spinner fovSpn width:60 range:[10,110,40] type:#integer align:#right offset:[7,-25] 
+
+		--button excludeObjectsbtn "Excluded Objects" width:240 align:#right offset:[7,7]
 		
-		label hiddenLbl "Hidden Objects :" align:#right offset:[-151,10] 
+		label hiddenLbl "Hidden Objects :" align:#right offset:[-151,7] 
 		checkbox hiddenChk checked:true width:15 align:#right offset:[7,-19] 
 		listbox hiddenLbx width:240 height:8 align:#right offset:[7,-1]
 		button addHiddenBtn "Add" width:76 align:#right offset:[-156,-3] 
@@ -639,9 +788,9 @@ struct CompLocComponentStc
 		button clearAnimatedBtn "Clear" width:77 align:#right offset:[7,-26] 
 		
 
-		/* Functions ############################################################################################*/
+		/* Functions #####################################################################################################################################################################################*/
 			
-		/* Initialize the look and feeel fo the listviews ***************************************************************************************************************************************************************/
+		/* Initialize the look and feeel fo the listviews *************************************************************************************************************************************************/
 		fn InitListViews = 
 		(
 			for lv in #(requiredComponentsLbx) do 
@@ -661,7 +810,7 @@ struct CompLocComponentStc
 		
 		
 		
-		/* Set the required components listbox ***************************************************************************************************************************************************************/
+		/* Set the required components listbox ********************************************************************************************************************************************************/
 		fn FillRequiredComponentsList filter = 
 		(
 			-- Get the required components for a given ata
@@ -727,8 +876,8 @@ struct CompLocComponentStc
 		
 		
 		
-		/* Get all scene components and set the scene component listbox ***************************************************************************************************************************************************************/
-		fn FillSceneComponentsList filter:false = 
+		/* Get all scene components and set the scene component listbox **************************************************************************************************************************************/
+		fn FillSceneComponentsList filter:false broken:false = 
 		(
 			_cl.sceneComponents = _sgz._extMxs.SortObjects (_ca.GetObjsWithCA #compLoc)
 			
@@ -736,7 +885,8 @@ struct CompLocComponentStc
 			(
 				atas = #()
 				items = #()
-				for obj in _cl.sceneComponents do
+				components = if broken then _cl.brokenComponents else _cl.sceneComponents
+				for obj in components do
 				(
 					-- Get the ATA number by firltering the object name
 					str = ""
@@ -775,6 +925,11 @@ struct CompLocComponentStc
 			Return:
 			Further Infos:
 			</Function>*/
+
+
+			-- Collect excluded objects 
+			excluded = join #() _cl.excludedObjects
+			join excluded (for obj in objects where matchPattern obj.layer.name pattern:"zzz_*" collect obj)
 			
 			
 			if _cl.sceneComponents.count != 0 and sceneComponentsLbx.selection != 0 then 
@@ -788,101 +943,67 @@ struct CompLocComponentStc
 				fovSpn.value = component.fov
 				
 				-- Set hidden
-				hiddenLbx.items = for obj in component.hidden collect obj.node.name
-				(for obj in objects where obj.layer.name != "H135_covers" and obj.layer.name != "Hotspots" collect obj).isHidden = false
-				for obj in component.hidden do obj.node.isHidden = (hiddenChk.state)
+				hiddens = for obj in component.hidden where obj.node != undefined collect obj
+				hiddenLbx.items = for obj in hiddens collect obj.node.name
+				(for obj in objects where findItem excluded obj == 0 collect obj).isHidden = false
+				for obj in hiddens do obj.node.isHidden = (hiddenChk.state)
 						
 				-- Set transparent 
-				transparentLbx.items = for obj in component.transparent collect obj.node.name
-				(for obj in objects where not obj.layer.name == "H135_covers" collect obj).xray = false
-				for obj in component.transparent do obj.node.xray = (transparentChk.state)
-
+				transparents = for obj in component.transparent where obj.node != undefined collect obj
+				transparentLbx.items = for obj in transparents collect obj.node.name
+				(for obj in objects where findItem excluded obj == 0 collect obj).xray = false
+				for obj in transparents do obj.node.xray = (transparentChk.state)
 				
 				-- Set animated
-				animatedLbx.items = for obj in component.animated collect obj.node.name
+				animatedLbx.items = for obj in component.animated where obj.node != undefined collect obj.node.name
+
+				-- Check if the component is fine
+				if component.hotspot == undefined OR 
+					(for obj in component.hidden where obj.node == undefined collect obj).count != 0 OR
+					(for obj in component.transparent where obj.node == undefined collect obj).count != 0 OR
+					(for obj in component.transparent where obj.node == undefined collect obj).count != 0
+					then _sgz._extMxs.Prompt "This component include undefined relative node..."
 			)
 			
 			else
 			(
 				hiddenLbx.items = transparentLbx.items = animatedLbx.items = #()
-				arr = for obj in objects where obj.layer.name != "H135_covers" and obj.layer.name != "Hotspots" collect obj
+
+				arr = for obj in objects where findItem excluded obj == 0 collect obj
 				arr.isHidden = arr.xray = false
 				
 			)
 		)
 		
 		
-		
-		/* Events ############################################################################################*/
-		on CLView open do 
+
+		/* Select a component from one of the list ***************************************************************************************************************************************************************/
+		fn SelectComponent objName =
 		(
-			InitListViews()
-			if _cl.hotspotHT.count == 0 then _cl.SetHotspotHT()
-			hotspotDdl.items = for item in _cl.hotspotHT collect item[1]
-			FillSceneComponentsList()
-			SetRelatives()
+			/*<Function>
+			Description:
+				Select a component from one of the list
+			Arguments:
+			Return:
+			Further Infos:
+			</Function>*/
+
+			select (component = getNodeByName objName)
+			if component != undefined then 
+				if isKindOf component helper then select (_sgz._sel.GetHierarchy children:true)
 		)
-		
-		
-		/* Filter the required component by ATA number ############################################################################################*/
-		on requiredComponentsFilterDdl selected item do FillRequiredComponentsList (item != 1)
-		
-		
-		
-		/* Set the csv path and load the file ***************************************************************************************************************************************************************/
-		on getCsvFileBtn pressed do LoadCSV()
-		
-		
-		
-		/* Reload the required component list ***************************************************************************************************************************************************************/
-		on loadCsvFileBtn pressed do FillRequiredComponentsList (requiredComponentsFilterDdl.selection != 1)
-		
-		
-		
-		/* Get the assigned hotspot and FOV from required component ***************************************************************************************************************************************************************/
-		on requiredComponentsLbx MouseDown s e do
+
+
+		-- Add an object to the scene component -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+		fn AddComponent =
 		(
-			if (requiredComponentsLbx.Items.Count != 0) then
-			(
-				hit = requiredComponentsLbx.HitTest (dotNetObject "System.Drawing.Point" e.x e.y)
-				try
-				(
-					requiredHotspotNameLbl.text = " " + (_csv.GetColumn (_csv.GetColumnIndex _cl.hotspotCol) columnFilter:(_csv.GetColumnIndex _cl.namesCol) filter:(hit.item.text))[1]
-					requiredFovValueLbl.text = " " + (_csv.GetColumn (_csv.GetColumnIndex _cl.fovCol) columnFilter:(_csv.GetColumnIndex _cl.namesCol) filter:(hit.item.text))[1]
-				) catch()
-			)
-		)
-		
-		
-		
-		/* Select the required component from the listbox ***************************************************************************************************************************************************************/
-		on requiredComponentsLbx MouseDoubleClick s e do
-		(
-			if (requiredComponentsLbx.Items.Count != 0) then
-			(
-				hit = requiredComponentsLbx.HitTest (dotNetObject "System.Drawing.Point" e.x e.y)
-				try
-				(
-					obj = getNodeByName (hit.item.text)
-					if obj != undefined then select obj
-				) catch()
-			)
-		)
-		
-		
-		
-		/* Filter the scene component by ATA number ############################################################################################*/
-		on sceneComponentsFilterDdl selected item do 
-		(
-			FillSceneComponentsList filter:(item != 1)
-			SetRelatives()
-		)
+		   /*<Function>
+			Description:
+			Arguments:
+			Return:
+			Infos:
+			</Function>*/
 			
-		
-			
-		/* Add scene component ***************************************************************************************************************************************************************/
-		on addComponentBtn pressed do
-		(
 			for obj in selection do 
 			(
 				wrongName = "\"" + obj.name + "\" name doesn't start with \"ATA_XX\"... "
@@ -897,17 +1018,17 @@ struct CompLocComponentStc
 					else if not (_ca.CheckForCustAttr obj #comploc)[1] then 
 					(
 						-- make the object unique to avoid instance
-						convertToPoly obj
+						InstanceMgr.MakeObjectsUnique obj #individual
 						
 						custAttributes.add obj _cl.compLocCA BaseObject:true
 						cam = Physical_Camera name:(obj.name + "_" + _cl.hotspotHT[1][1]) pos:_cl.hotspotHT[1][2] specify_fov:on
-						cam.fov = 40
+						cam.fov = 80
 						cam.targeted = true
 						cam.target.pos = obj.center
 						
-						LayerManager.newLayerFromName "Hotspots"
-						(LayerManager.getLayerFromName "Hotspots").addNode cam
-						(LayerManager.getLayerFromName "Hotspots").addNode (cam.target)
+						LayerManager.newLayerFromName _cl.hotspotLayer
+						(LayerManager.getLayerFromName _cl.hotspotLayer).addNode cam
+						(LayerManager.getLayerFromName _cl.hotspotLayer).addNode (cam.target)
 						
 						obj.hotspot = cam
 						
@@ -924,11 +1045,133 @@ struct CompLocComponentStc
 			SetRelatives()
 			
 			if csvFileTxt.text != "Set the spreadsheet path" then FillRequiredComponentsList (requiredComponentsFilterDdl.selection != 1)
+			
+		)
+
+
+
+		-- Add Relative object to a scene component -----------------------------------------------------------------------------------------------------------------------------------------------------------
+		fn AddRelative component relatives relativeType = 
+		(
+		   /*<Function>
+			Description:
+			Arguments:
+			Return:
+			Infos:
+			</Function>*/
+
+			arr = case relativeType of 
+			(
+				#hidden: component.hidden
+				#transparent: component.transparent
+				#animated: component.animated
+			)
+			
+			for obj in relatives where obj != component do 
+			(
+				canAdd = true
+				for relative in arr while canAdd do if relative.node == obj then canAdd = false
+
+				if canAdd then 
+				(
+					append arr (nodeTransformMonitor node:obj forwardTransformChangeMsgs:false)
+
+					if relativeType == #hidden then obj.isHidden = hiddenChk.checked
+					if relativeType == #transparent then obj.xray = transparentChk.checked
+				)
+			)
+			
+			SetRelatives()
+			
+		)
+
+
+
+		
+		/* Events ###########################################################################################################################################################################################*/
+		on CLView open do 
+		(
+			InitListViews()
+			if _cl.hotspotHT.count == 0 then _cl.SetHotspotHT()
+			hotspotDdl.items = for item in _cl.hotspotHT collect item[1]
+			FillSceneComponentsList()
+			SetRelatives()
+		)
+		
+		
+		/* Filter the required component by ATA number ***************************************************************************************************************************************************************/
+		on requiredComponentsFilterDdl selected item do FillRequiredComponentsList (item != 1)
+		
+		
+		
+		/* Set the csv path and load the file ***************************************************************************************************************************************************************/
+		on getCsvFileBtn pressed do LoadCSV()
+		
+		
+		
+		/* Reload the required component list ***************************************************************************************************************************************************************/
+		on loadCsvFileBtn pressed do FillRequiredComponentsList (requiredComponentsFilterDdl.selection != 1)
+		
+		
+		
+		/* Get the assigned hotspot and FOV from required component ***********************************************************************************************************************************************/
+		on requiredComponentsLbx MouseDown s e do
+		(
+			if (requiredComponentsLbx.Items.Count != 0) then
+			(
+				hit = requiredComponentsLbx.HitTest (dotNetObject "System.Drawing.Point" e.x e.y)
+				try
+				(
+					requiredHotspotNameLbl.text = " " + (_csv.GetColumn (_csv.GetColumnIndex _cl.hotspotCol) columnFilter:(_csv.GetColumnIndex _cl.namesCol) filter:(hit.item.text))[1]
+					requiredFovValueLbl.text = " " + (_csv.GetColumn (_csv.GetColumnIndex _cl.fovCol) columnFilter:(_csv.GetColumnIndex _cl.namesCol) filter:(hit.item.text))[1]
+				) catch()
+			)
 		)
 		
 		
 		
-		/* Remove scene component ***************************************************************************************************************************************************************/
+		/* Select the required component from the listbox *********************************************************************************************************************************************************/
+		on requiredComponentsLbx MouseDoubleClick s e do
+		(
+			if (requiredComponentsLbx.Items.Count != 0) then
+			(
+				hit = requiredComponentsLbx.HitTest (dotNetObject "System.Drawing.Point" e.x e.y)
+				try (SelectComponent (hit.item.text)) catch()
+			)
+		)
+
+
+
+		/* Filter the scene component by ATA number ***************************************************************************************************************************************************************/
+		on sceneComponentsDdl selected item do 
+		(
+			if item == 2
+				then FillSceneComponentsList filter:(sceneComponentsFilterDdl.selection != 1) broken:true
+				else FillSceneComponentsList filter:(sceneComponentsFilterDdl.selection != 1)
+
+			SetRelatives()
+		)
+		
+		
+		
+		/* Filter the scene component by ATA number ***************************************************************************************************************************************************************/
+		on sceneComponentsFilterDdl selected item do 
+		(
+			if sceneComponentsDdl.selection == 2 
+				then FillSceneComponentsList filter:(item != 1) broken:true
+				else FillSceneComponentsList filter:(item != 1)
+			
+			SetRelatives()
+		)
+			
+		
+			
+		/* Add scene component ********************************************************************************************************************************************************************************/
+		on addComponentBtn pressed do AddComponent()
+		
+		
+		
+		/* Remove scene component ******************************************************************************************************************************************************************************/
 		on removeComponentBtn pressed do
 		(
 			-- Check that there is a component to remove
@@ -957,7 +1200,7 @@ struct CompLocComponentStc
 		
 		
 		
-		/* Reload the list ***************************************************************************************************************************************************************/
+		/* Reload the list ***********************************************************************************************************************************************************************************/
 		on reloadComponentsBtn pressed do
 		(
 			FillSceneComponentsList filter:(sceneComponentsFilterDdl.selection != 1)
@@ -968,7 +1211,7 @@ struct CompLocComponentStc
 		
 		
 		
-		/* Select the object shown in the list ############################################################################################*/
+		/* Select the object shown in the list ***************************************************************************************************************************************************************/
 		on selectComponentBtn pressed do select (for item in sceneComponentsLbx.items collect (getNodeByName item))
 		
 		
@@ -979,7 +1222,10 @@ struct CompLocComponentStc
 		
 		
 		/* Select the component when double clicked ***************************************************************************************************************************************************************/
-		on sceneComponentsLbx doubleClicked item do select (getNodeByName sceneComponentsLbx.selected)
+		on sceneComponentsLbx doubleClicked item do SelectComponent (sceneComponentsLbx.selected)
+
+
+
 		on hiddenLbx doubleClicked item do select (getNodeByName hiddenLbx.selected)
 		on transparentLbx doubleClicked item do select (getNodeByName transparentLbx.selected)
 		on animatedLbx doubleClicked item do select (getNodeByName animatedLbx.selected)
@@ -1024,7 +1270,49 @@ struct CompLocComponentStc
 				component.fov = component.hotspot.fov = val
 			)
 		)
-		
+
+
+
+		/* Open the Excluded objects list  ***************************************************************************************************************************************************************/
+		on excludeObjectsbtn pressed do _cl.OpenExcludedObjects()
+
+
+
+		/* Copy relatives from selected object  ***************************************************************************************************************************************************************/
+		on copyBtn pressed do 
+		(
+			if _cl.sceneComponents.count != 0 then 
+			(
+				tempRelatives.canPast = true
+				component = getNodeByName sceneComponentsLbx.selected
+				tempRelatives.hotspot = hotspotDdl.selected
+				tempRelatives.fov = component.fov
+				tempRelatives.hidden = for obj in component.hidden where obj.node != undefined collect obj.node
+				tempRelatives.transparent = for obj in component.transparent where obj.node != undefined collect obj.node
+				tempRelatives.animated = for obj in component.animated where obj.node != undefined collect obj.node
+			)
+		)
+
+
+
+		/* Paste relatives to selected object  ***************************************************************************************************************************************************************/
+		on pasteBtn pressed do 
+		(
+			if _cl.sceneComponents.count != 0 AND tempRelatives.canPast then 
+			(
+				component = getNodeByName sceneComponentsLbx.selected
+				component.hotspot.pos = _sgz._extMxs.GetHashTableValue (_cl.hotspotHT) (tempRelatives.hotspot)
+				component.hotspot.name = component.name + "_" + tempRelatives.hotspot
+				component.fov = component.hotspot.fov = tempRelatives.fov
+				for obj in tempRelatives.hidden do append component.hidden (nodeTransformMonitor node:obj forwardTransformChangeMsgs:false)
+				for obj in tempRelatives.transparent do append component.transparent (nodeTransformMonitor node:obj forwardTransformChangeMsgs:false)
+				for obj in tempRelatives.animated do append component.animated (nodeTransformMonitor node:obj forwardTransformChangeMsgs:false)
+
+				SetRelatives()
+				viewport.setCamera component.hotspot
+				select component
+			)
+		)
 		
 		
 		/* Set the visibility of hidden objects ***************************************************************************************************************************************************************/
@@ -1100,13 +1388,12 @@ struct CompLocComponentStc
 			(
 				component = getNodeByName sceneComponentsLbx.selected
 				(for obj in component.transparent collect obj.node).xray = state
-				(for obj in component.transparent collect obj.node).isHidden = not state
 				
 			)
 		)
 		
 		
-		
+		/* Add transparent object ***************************************************************************************************************************************************************/
 		on addTransparentBtn pressed do
 		(
 			if _cl.sceneComponents.count != 0 then
@@ -1217,7 +1504,7 @@ struct CompLocComponentStc
 	(
 		try(destroyDialog _cl.CLView) catch()
 		GetView()
-		createDialog _cl.CLView 750 425 style:#(#style_titlebar, #style_sysmenu, #style_toolwindow)
+		createDialog _cl.CLView 750 455 style:#(#style_titlebar, #style_sysmenu, #style_toolwindow)
 	),
 	
 	
@@ -1275,6 +1562,29 @@ struct CompLocComponentStc
 			)
 		)
 	),
+
+
+
+	/* Check if scene components has no undefined relatives ############################################################################################*/
+	macroFix =
+	(
+		macroScript CompLocFixer
+			category:"SugzTools"
+			toolTip:"CompLoc Fixer"
+			Icon:#("Comploc",9)
+		
+		(
+			global _cl
+			on execute do 
+			(
+				if doesFileExist (file = "$userscripts\SugzTools\Scripts\CompLoc_Component.ms") then 
+				(
+					fileIn file
+					_cl.ComponentFixer()
+				)
+			)
+		)
+	),
 	
 	
 	
@@ -1293,6 +1603,7 @@ struct CompLocComponentStc
 				if doesFileExist (file = "$userscripts\SugzTools\Scripts\CompLoc_Component.ms") then 
 				(
 					fileIn file
+-- 					_cl.ExcelExportBackgroundWorker()
 					_cl.ExcelExport()
 				)
 			)
@@ -1417,9 +1728,20 @@ struct CompLocComponentStc
 
 
 (
-	if heapSize < 100000000 then heapSize += 85000000
-	hotspotHT = if _cl != undefined then _cl.hotspotHT else #()
+	_sgz._extMxs.SetHeapSize 100000000
+	hotspotHT = #()
+	excludedObjects = #()
+
+	if _cl != undefined then
+	(
+		hotspotHT = _cl.hotspotHT
+		excludedObjects = _cl.excludedObjects
+		brokenComponents = _cl.brokenComponents
+	)
+	
 	_cl = CompLocComponentStc()
 	_cl.hotspotHT = hotspotHT
+	_cl.excludedObjects = excludedObjects
+	_cl.brokenComponents = brokenComponents
 	_cl.Run()
 )

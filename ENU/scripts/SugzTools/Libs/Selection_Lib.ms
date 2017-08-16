@@ -90,7 +90,9 @@ struct SelectionLibraryStc
 		Description:
 			Check for subObjectLevel
 		Arguments:
+			<Integer> _obj, _vert, _edge, _border, _face, _element
 		Return:
+			<Bool> IsCorrect: wheter the current subObjectLevel matches the request
 		</Function>*/
 		
 		IsCorrect = false
@@ -223,7 +225,9 @@ struct SelectionLibraryStc
 		for obj in selection do 
 		(
 			instances = GetInstances obj getHidden:getHidden limitToSel:limitToSel
-			appendIfUnique firstInstanceArray instances[1]
+			if instances.count != 0 
+				then appendIfUnique firstInstanceArray instances[1]
+				else append firstInstanceArray obj
 		)
 		
 		firstInstanceArray

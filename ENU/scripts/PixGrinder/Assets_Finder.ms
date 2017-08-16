@@ -54,19 +54,27 @@
 		
 	)
 	
-	
+	fn pde_getMat theName=
+	(
+		theMats = getClassInstances StandardMaterial
+		theResult = for obj in theMats where matchpattern obj.name pattern:("*"+theName+"*") == true and obj.diffusemap == undefined collect obj
+		MatEditor.Open()
+		for i = 1 to 24 do try (meditMaterials[i] = theResult[i]) catch()
+	)
 	
 	rollout myRollout "Find Bitmap by name"
 	(
-		radiobuttons radBtn "Asset to search : " labels:#("Filename","BitmapTexture Name","Object(s)") default:3 columns:2 align:#center
+		radiobuttons radBtn "Asset to search : " labels:#("Filename","BitmapTexture Name","Object(s)","ColorMat") default:3 columns:2 align:#center
 		edittext myText "" pos:[20,75]
-		button myClr "Clear" across:2 pos:[50,100]
+		button myClr "Clear" across:3 pos:[50,100]
+		button myPaste "Paste" across:3 pos:[125,100]
 		button myBtn "Search" pos:[200,100]
 		
 		
 		on myBtn pressed do
 		(
-			if radBtn.state == 3 do searchObject myText.text 
+			if radBtn.state == 4 do pde_getMat myText.text
+			if radBtn.state == 3 do searchObject myText.text
 			if radBtn.state == 2 do 
 			(
 				searchBitmapTex myText.text 
@@ -84,6 +92,7 @@
 		
 		on myText entered txTemp do
 		(
+			if radBtn.state == 4 do pde_getMat myText.text
 			if radBtn.state == 3 do searchObject myText.text 
 			if radBtn.state == 2 do 
 			(
@@ -105,10 +114,15 @@
 			myText.text = ""
 			max select none
 			setFocus myRollout.myText
+			MatEditor.Close()
+			for i = 1 to 24 do meditMaterials[i] = standardMaterial()
 		)
 		
 		
-		
+		on myPaste pressed do 
+		(
+			myText.text = getclipboardText()
+		)
 		
 		
 	)

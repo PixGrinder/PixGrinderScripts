@@ -10,6 +10,7 @@ macroScript CompLocExcelExporter
 				if doesFileExist (file = "$userscripts\SugzTools\Scripts\CompLoc_Component.ms") then 
 				(
 					fileIn file
+-- 					_cl.ExcelExportBackgroundWorker()
 					_cl.ExcelExport()
 				)
 			)

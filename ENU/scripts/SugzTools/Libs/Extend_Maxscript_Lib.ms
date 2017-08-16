@@ -14,7 +14,8 @@ SugzTools INI Manager
 # Sources:
 DeleteUserProp() by DenisT: http://forums.cgsociety.org/showthread.php?f=98&t=797430&
 ArePtsEquivalent() by Vojtech Cada: http://creativescratchpad.blogspot.fr/2013/01/maxscript-float-comparison.html#
-GetWinFolders() by TimHawker post : http://forums.cgsociety.org/archive/index.php?t-1090567.html
+GetWinFolders() by TimHawker : http://forums.cgsociety.org/archive/index.php?t-1090567.html
+GetFirstBit() by DenisT: http://forums.cgsociety.org/archive/index.php?t-1033451.html
 
 # ToDo:
 rename library variable from _extMax to _mxs
@@ -163,7 +164,7 @@ struct ExtendMxsLibraryStc
 	
 	
 	
-	/* Convert a value to an array ############################################################################################*/
+	/* Convert a value to an Array ############################################################################################*/
 	fn AsArray input =
 	(
 		/*<Function>
@@ -176,6 +177,49 @@ struct ExtendMxsLibraryStc
 		</Function>*/
 		
 		if not isKindOf input array then #(input) else input
+	
+	),
+
+
+	/* Convert a value to a BitArray ############################################################################################*/
+	fn AsBitArray input =
+	(
+		/*<Function>
+		Description:
+			Convert a value to an array
+		Arguments:
+			<Var>  input: a variable that need to be an array
+		Return:
+			Array<Var> the input as array
+		</Function>*/
+		
+		case (classOf input) of 
+		(
+			Integer: #{input}
+			array: input as BitArray
+			BitArray: input
+		)
+	
+	),
+
+
+	/* Get the first bit from a BitArray ############################################################################################*/
+	fn GetFirstBit arg = 
+	(
+		/*<Function>
+		Description:
+			Get the first bit from a BitArray
+		Arguments:
+			<BitArray> arg: a BitArray
+		Return:
+			<Integer> the first bit from the input bitarray
+		Infos:
+			DenisT: http://forums.cgsociety.org/archive/index.php?t-1033451.html
+		</Function>*/
+		
+		local b
+		for n in arg while (b = n; off) do ()
+		b
 	
 	),
 	
@@ -500,6 +544,21 @@ struct ExtendMxsLibraryStc
 		for i = 1 to ht.count while index == -1 do if ht[i][2] == value then index = i
 		
 		index
+	),
+	
+	
+	
+	/* Set the HeapSize ############################################################################################*/
+	fn SetHeapSize value =
+	(
+		/*<Function>
+		Description:
+			Set the HeapSize
+		Arguments:
+			<Integer> value: the minimum heapsize to reach
+		</Function>*/
+		
+		while heapSize < value do heapSize += 100000
 	)
 	
 )

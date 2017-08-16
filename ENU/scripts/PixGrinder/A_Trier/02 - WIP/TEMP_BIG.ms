@@ -540,8 +540,10 @@ for obj in objects where custAttributes.count == 1 do fixComponents obj
 
 (
 	-- $.compLoc.hotspot.name
-
-	myComploc = for obj in objects where custAttributes.count obj > 0 collect obj
+	(
+		myComploc = for obj in objects where custAttributes.count obj > 0 collect obj
+		messagebox ("Recorded cams : "+ (myComploc.count as string))
+	)
 
 	myResult = for obj in myComploc where matchpattern obj.compLoc.hotspot.name pattern:"*overhead*" == true collect obj
 

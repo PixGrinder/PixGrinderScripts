@@ -8,6 +8,18 @@
 -------------------------------------------------------------------------------
 (
 	
+
+	macroScript HideByClick
+	category:"-- PixGrinder --"
+	toolTip:"Hide by Click"
+	buttonText:"Hide by Click"
+	-- icon:#("FileLinkActionItems",9)
+	silentErrors:false
+	autoUndoEnabled:false
+	(
+		FileIn "$userScripts/PixGrinder/Hide_by_click.ms"
+	)
+
 	macroScript AutoSavePixGrinder
 	category:"-- PixGrinder --"
 	toolTip:"AutoSave - PixGrinder"
