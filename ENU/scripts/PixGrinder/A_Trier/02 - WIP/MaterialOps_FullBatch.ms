@@ -14,9 +14,9 @@
 	fn updateMatInfos =
 	(
 		-- Force to update Scene Materials informations by saving an empty maxFile --
-		tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
-		saveNodes #() tempFile
-		deleteFile tempFile
+-- 		tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
+-- 		saveNodes #() tempFile
+-- 		deleteFile tempFile
 
 		theStandards 	= getClassInstances StandardMaterial
 		theMultis 		= getClassInstances MultiMaterial
