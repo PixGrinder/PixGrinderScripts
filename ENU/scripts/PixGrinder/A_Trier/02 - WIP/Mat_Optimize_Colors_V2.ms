@@ -115,7 +115,7 @@
 
 	ProgressEnd()
 
-	enableSceneRedraw() 
+	
 
 
 
@@ -150,7 +150,6 @@
 	format "% %\r" "myMatLibTex :" myMatLibTex.count
 
 
-	disableSceneRedraw()
 
 -- InfosMat : 
 -- 1 - obj
