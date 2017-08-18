@@ -20,18 +20,27 @@
 	)
 
 
+	fn readAsPoint3 v1 = 
+	(
+		a = (substring v1 1 3 ) as integer
+		b = (substring v1 5 3) as integer
+		c = (substring v1 9 3) as integer
+		[a,b,c]
+	)
+
+
 	allStand  = getClassInstances StandardMaterial
 	format "% %\r" "All Standard Materials :" allStand.count
 
-	InfosMat = for obj in objects where classof obj.material == StandardMaterial collect #(obj,obj.name,obj.material,obj.material.diffuse,obj.material.diffuseMap,obj.material.opacity,obj.material.opacityMap)
+	InfosMat = for obj in objects where classof obj.material == StandardMaterial collect #(obj,obj.name,obj.material,(myNumberFormat obj.material.diffuse),obj.material.diffuseMap,obj.material.opacity,obj.material.opacityMap)
 	format "% %\r" "InfosMat :" InfosMat.count
 
 	colorStrings = #() 
-	for obj in allStand where obj.diffuseMap == undefined and obj.opacity == 100.0 do appendIfUnique colorStrings obj.diffuse
+	for obj in allStand where obj.diffuseMap == undefined and obj.opacity == 100.0 do appendIfUnique colorStrings (myNumberFormat obj.diffuse)
 	format "% %\r" "colorStrings :" colorStrings.count
 
 	-- Create Library --
-	myMatLib = for obj in colorStrings collect (StandardMaterial name:("ColorMat_"+(myNumberFormat obj)) diffuse:(obj as point3) )
+	myMatLib = for obj in colorStrings collect (StandardMaterial name:("ColorMat_"+obj) diffuse:(readAsPoint3 obj) specularLevel:50.0 glossiness:20.0)
 	for obj in myMatLib do format "%\r" obj.name
 	format "% %\r" "myMatLib :" myMatLib.count
 
@@ -45,7 +54,7 @@
 		(
 			for bla in myMatLib do
 			(
-				if InfosMat[i][4] == bla.diffuse then InfosMat[i][1].material = bla
+				if InfosMat[i][4] == myNumberFormat(bla.diffuse) then InfosMat[i][1].material = bla
 			)
 		)
 		if (100*(i as float)/InfosMat.count > (myProg as float)) do
@@ -56,11 +65,11 @@
 	)
 	ProgressEnd()
 
-	
+	enableSceneRedraw() 
 
 	
 
-
+/*
 	-- Part 2 --
 
 
@@ -108,4 +117,4 @@
 --for obj in MultiInfo do format "%  %\r" obj[5] obj[4]
 
 
-
+*/
