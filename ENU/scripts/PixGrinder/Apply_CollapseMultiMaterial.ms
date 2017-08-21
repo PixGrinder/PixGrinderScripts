@@ -49,6 +49,12 @@
 -- PixGrinder Modif v2.0 -- 
 -- Proccess all scene geometries and added a progress bar  --
 
+
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+
+
 (
 	-- Globals
 
@@ -232,71 +238,33 @@
 
 
 
-	for bla in geometry where classof bla.material == multiMaterial do
+-- 	for bla in geometry where classof bla.material == multiMaterial do
+-- 	(
+-- 		prepare_mesh bla
+-- 		collapse_material bla
+-- 		convertToPoly bla
+-- 	)
+
+	myMultis = for obj in objects where classof obj.material == multiMaterial collect obj
+
+	myProg = 0
+
+	progressStart "Collapsing MultiMaterials..."
+
+	for i = 1 to myMultis.count do
 	(
-		prepare_mesh bla
-		collapse_material bla
-		convertToPoly bla
+		prepare_mesh myMultis[i]
+		collapse_material myMultis[i]
+		convertToPoly myMultis[i]
+		if (100*(i as float)/myMultis.count > (myProg as float)) do
+		(
+			myProg = myProg+1
+			progressUpdate myProg
+		)
 	)
 
-	messageBox("BlurScript done on whole objects ")
+	ProgressEnd()
+
+	messageBox("BlurScript done on whole scene objects ")
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
--- -- The Script
-
--- rollout csom_rollout "CollapseSubObjectMaterial"
--- 	(
--- 	group "Object"
--- 	(
--- 	label what_obj "None" align:#center
--- 	pickbutton PickObj "Pick Object" width:210 align:#center toolTip:"Pick Object" filter:geometry_filter
-	
--- 	label submats_text_label "Sub-Object Materials:" across:2 align:#left
--- 	label submats_label "" align:#right
-
--- 	label usedmatid_text_label "Used MatIDs:" across:2 align:#left
--- 	label usedmatid_label "" align:#right
--- 	)
-	
--- 	on PickObj picked obj do prepare_mesh obj
-	
--- 	group "Options"
--- 	(
--- 	checkbox active_slot "Put Collapsed Material in Active Slot" checked:true enabled:true
--- 	checkbox sort_alpha "Sort Sub-Materials Alphabetically" checked:true enabled:true
--- 	checkbox reduce_instanced "Reduce Instanced Sub-Materials" checked:true enabled:true
--- 	checkbox reduce_nested "Reduce Nested Sub-Materials" checked:true enabled:true
--- 	)
-	
--- 	on active_slot changed state do active_slot_value = active_slot.checked
--- 	on sort_alpha changed state do sort_alpha_value = sort_alpha.checked
--- 	on reduce_instanced changed state do reduce_instanced_value = reduce_instanced.checked
--- 	on reduce_nested changed state do reduce_nested_value = reduce_nested.checked
-
--- 	group "Collapse"
--- 	(
--- 	Button cm_do "Collapse Material" enabled:false width:210
--- 	label label1 "Warning: Operation will collapse" align:#center
--- 	label label2 "object's modifier stack" align:#center
--- 	)
--- 	on cm_do pressed do collapse_material()
--- 	)
-
--- if csom_floater != undefined then CloseRolloutFloater csom_floater
--- csom_floater = newRolloutFloater "CollapseSubObjectMaterial v1.21" 270 366
--- addRollout csom_rollout csom_floater
--- )
--------------------------------------------------------------------------------
