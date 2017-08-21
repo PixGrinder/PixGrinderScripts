@@ -1,4 +1,4 @@
-
+-- v2.0 --
 	
 	-- !! Be sure to Run sccript "Apply_CollapseMultiMaterial" before this one !! --
 
@@ -36,16 +36,15 @@
 	colorStrings = #() 
 	for obj in allStand where obj.diffuseMap == undefined and obj.opacity == 100.0 do appendIfUnique colorStrings (myNumberFormat obj.diffuse)
 
+	-- Create Library --
+	myMatLib = for obj in colorStrings collect (StandardMaterial name:("ColorMat_"+obj) diffuse:(readAsPoint3 obj) specularLevel:50.0 glossiness:20.0)
+
 	-- Display Infos -- 
 	--for obj in myMatLib do format "%\r" obj.name
 	format "% %\r" "All Standard Materials :" allStand.count
 	format "% %\r" "InfosMat :" InfosMat.count
 	format "% %\r" "colorStrings :" colorStrings.count
 	format "% %\r" "myMatLib :" myMatLib.count
-
-
-	-- Create Library --
-	myMatLib = for obj in colorStrings collect (StandardMaterial name:("ColorMat_"+obj) diffuse:(readAsPoint3 obj) specularLevel:50.0 glossiness:20.0)
 
 
 
@@ -180,5 +179,43 @@
 	)
 	ProgressEnd()
 
+
+
+	
+	
+	myProg = 0
+	MultiBitmapInfo = #()
+
+
+	for obj in objects where classof obj.material == multiMaterial do
+	(
+		for i = 1 to obj.material.count do
+		(
+			if classof obj.material[i].diffuseMap == BitmapTexture and obj.material[i].opacityMap == undefined  then append MultiBitmapInfo #(obj,obj.name,obj.material,obj.material[i],i,(filenamefrompath obj.material[i].diffusemap.filename))
+		)
+	)
+	MultiBitmapInfo.count	
+
+
+	progressStart "Processing Multi BITMAP Mat..."
+
+	for i = 1 to MultiBitmapInfo.count do
+	(
+		for bla in myMatLibTex do
+		(
+			if MultiBitmapInfo[i][6] == (filenamefrompath bla.diffusemap.filename) then MultiBitmapInfo[i][1].material[(MultiBitmapInfo[i][5])] = bla
+		)
+
+		if (100*(i as float)/MultiBitmapInfo.count > (myProg as float)) do
+		(
+			myProg = myProg+1
+			progressUpdate myProg
+		)
+	)
+
+	ProgressEnd()
+
 	enableSceneRedraw() 
+
+	actionMan.executeAction 0 "63545"
 

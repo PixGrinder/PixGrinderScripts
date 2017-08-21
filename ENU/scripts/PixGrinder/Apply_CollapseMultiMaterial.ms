@@ -44,6 +44,11 @@
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
+
+
+-- PixGrinder Modif v2.0 -- 
+-- Proccess all scene geometries and added a progress bar  --
+
 (
 	-- Globals
 
@@ -233,6 +238,8 @@
 		collapse_material bla
 		convertToPoly bla
 	)
+
+	messageBox("BlurScript done on whole objects ")
 )
 
 
