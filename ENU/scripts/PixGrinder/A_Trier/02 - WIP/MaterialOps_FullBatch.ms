@@ -3,65 +3,58 @@
 
 
 (
+	theTest = true
+	copyFile (maxFilePath+maxFileName) (maxFilePath+(substring maxfileName 1 (maxfileName.count-4))+"_BACKUP_MATERIALS.max") 
+
 	clearListener()
-	-- actionMan.executeAction 0 "40472" -- open Listener Window
-	-- sleep 1
-	theTest = 1
-	theStandards 	= getClassInstances StandardMaterial
-	theMultis 		= getClassInstances MultiMaterial
-	Res1 = ("Nombre initial de Matériaux Standards : " + (theStandards.count as string))
-	Res2 = ("Nombre initial de Matériaux Multiples : " + (theMultis.count as string))
-	fn updateMatInfos =
+
+	MyStart =  "Before :\r" + "Standard Materials : " + ((getClassInstances StandardMaterial).count as string )+  "\rMulti Materials : " + ((getClassInstances MultiMaterial).count as string) + "\r"
+	
+
+	while theTest == true do
 	(
-		-- Force to update Scene Materials informations by saving an empty maxFile --
--- 		tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
--- 		saveNodes #() tempFile
--- 		deleteFile tempFile
+		if queryBox ("Please be sure materials bitmaps path are ok before running the following steps.\rContinue ?") == false then
+		(
+			theTest = false
+			exit with(messagebox("Cancelled by User"))
+		)
 
-		theStandards 	= getClassInstances StandardMaterial
-		theMultis 		= getClassInstances MultiMaterial
-		print ("Materiaux Standards : " + (theStandards.count as string))
-		print ("Materiaux Multiples : " + (theMultis.count as string))
-
-
-	)
-
-
-	while theTest == 1 do
-	(
+		holdMaxFile()
+		
 		theFile = "$userScripts/PixGrinder/Apply_CollapseMultiMaterial.ms"
 		if doesFileExist theFile == true then fileIn theFile else exit with print ("error with file : "+ theFile)
-		updateMatInfos()
 
-		theFile = "$userScripts/PixGrinder/A_Trier/02 - WIP/MaterialOps_StandardColorInstancier.ms"
-		if doesFileExist theFile == true then fileIn theFile else exit with print ("error with file : "+ theFile)
-		updateMatInfos()
+		holdMaxFile()
 
-		theFile = "$userScripts/PixGrinder/A_Trier/02 - WIP/MaterialOps_StandardBitmapInstancier.ms"
+		theFile = "$userScripts/PixGrinder/A_Trier/02 - WIP/Mat_Optimize_Colors_V2.ms"
 		if doesFileExist theFile == true then fileIn theFile else exit with print ("error with file : "+ theFile)
-		updateMatInfos()
 
-		theFile = "$userScripts/PixGrinder/A_Trier/02 - WIP/MaterialOps_MultiMaterialsInstancier.ms"
-		if doesFileExist theFile == true then fileIn theFile else exit with print ("error with file : "+ theFile)
-		updateMatInfos()
+		holdMaxFile()
 
 		theFile = "$userScripts/PixGrinder/A_Trier/02 - WIP/Materials_AutoRename.ms"
 		if doesFileExist theFile == true then fileIn theFile else exit with print ("error with file : "+ theFile)
-		updateMatInfos()
 
+		holdMaxFile()
+		
+		theFile = "$userScripts/PixGrinder/A_Trier/02 - WIP/Materials_MultiMat_Optimizer.ms"
+		if doesFileExist theFile == true then fileIn theFile else exit with print ("error with file : "+ theFile)
 
-		-----------------------------------------------------------------------------
+		holdMaxFile()
 
-		theStandards 	= getClassInstances StandardMaterial
-		theMultis 		= getClassInstances MultiMaterial
-		ResEnd1 = ("Nombre FINAL de Matériaux Standards : " + (theStandards.count as string))
-		ResEnd2 = ("Nombre FINAL de Matériaux Multiples : " + (theMultis.count as string))
-		-- clearListener()
-		print Res1
-		print Res2
-		print ResEnd1
-		print ResEnd2
-		theTest = 0
+		theTest = false
 	)
 
+	myEnd =  "AFTER :\r" + "Standard Materials : " + ((getClassInstances StandardMaterial).count as string )+  "\rMulti Materials : " + ((getClassInstances MultiMaterial).count as string) + "\r"
+	format myStart
+	format myEnd
+
 )
+
+
+-- holdMaxFile()
+/*
+(
+	myTemp = #()
+	saveNodes myTemp ((GetDir #scene)+"\\tempTemp.max") quiet:true
+)
+*/

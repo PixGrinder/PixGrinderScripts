@@ -53,7 +53,7 @@
 
 	disableSceneRedraw()
 
-	progressStart "Processing Single Color Mat..."
+	progressStart "Processing Materials..."
 	-- Optimization -- 
 	for i = 1 to InfosMat.count do 
 	(
@@ -64,13 +64,13 @@
 				if InfosMat[i][4] == myNumberFormat(bla.diffuse) then InfosMat[i][1].material = bla
 			)
 		)
-		if (100*(i as float)/InfosMat.count > (myProg as float)) do
+		if (100*((i as float)/4)/InfosMat.count > (myProg as float)) do
 		(
 			myProg = myProg+1
 			progressUpdate myProg
 		)
 	)
-	ProgressEnd()
+	
 
 
 	
@@ -97,8 +97,6 @@
 
 	myProg = 0
 
-	progressStart "Processing Multi Color Mat..."
-
 	for i = 1 to MultiInfo.count do
 	(
 		for bla in myMatLib do
@@ -106,7 +104,7 @@
 			if MultiInfo[i][6] == myNumberFormat(bla.diffuse) then MultiInfo[i][1].material[(MultiInfo[i][5])] = bla
 		)
 
-		if (100*(i as float)/MultiInfo.count > (myProg as float)) do
+		if (100*((i as float)/4)/MultiInfo.count > (myProg as float)) do
 		(
 			myProg = myProg+1
 			progressUpdate myProg
@@ -114,7 +112,7 @@
 	)
 
 
-	ProgressEnd()
+	
 
 	
 
@@ -163,7 +161,6 @@
 
 	myProg = 0
 
-	progressStart "Processing Single BITMAP Mat..."
 	-- Optimization -- 
 	for i = 1 to InfosMat.count do 
 	(
@@ -174,13 +171,13 @@
 				if getFilenameFile InfosMat[i][5].filename == getFilenameFile bla.diffuseMap.filename then InfosMat[i][1].material = bla
 			)
 		)
-		if (100*(i as float)/InfosMat.count > (myProg as float)) do
+		if (100*((i as float)/4)/InfosMat.count > (myProg as float)) do
 		(
 			myProg = myProg+1
 			progressUpdate myProg
 		)
 	)
-	ProgressEnd()
+	
 
 
 
@@ -202,7 +199,6 @@
 
 	myProg = 0
 
-	progressStart "Processing Multi BITMAP Mat..."
 
 	for i = 1 to MultiBitmapInfo.count do
 	(
@@ -211,7 +207,7 @@
 			if MultiBitmapInfo[i][6] == (filenamefrompath bla.diffusemap.filename) then MultiBitmapInfo[i][1].material[(MultiBitmapInfo[i][5])] = bla
 		)
 
-		if (100*(i as float)/MultiBitmapInfo.count > (myProg as float)) do
+		if (100*((i as float)/4)/MultiBitmapInfo.count > (myProg as float)) do
 		(
 			myProg = myProg+1
 			progressUpdate myProg
