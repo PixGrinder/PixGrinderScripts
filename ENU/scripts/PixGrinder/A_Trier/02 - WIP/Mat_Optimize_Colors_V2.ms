@@ -2,6 +2,8 @@
 	
 	-- !! Be sure to Run sccript "Apply_CollapseMultiMaterial" before this one !! --
 
+(
+
 	clearListener()
 
 	myProg = 0
@@ -77,11 +79,11 @@
 	-- Part 2  - Multimaterials Color Type --
 
 
-	gc light:false delayed:false
+	-- gc light:false delayed:false
 
 	--clearListener()
 	MultiInfo = #()
-	myProg = 0
+	
 
 	for obj in objects where classof obj.material == multiMaterial do
 	(
@@ -93,7 +95,7 @@
 	MultiInfo.count
 
 
-
+	myProg = 0
 
 	progressStart "Processing Multi Color Mat..."
 
@@ -118,11 +120,11 @@
 
 
 
---for obj in MultiInfo do format "%  %\r" obj[5] obj[4]
+	--for obj in MultiInfo do format "%  %\r" obj[5] obj[4]
 
 
 
--- Part 3  - Single Materials Texture Type --
+	-- Part 3  - Single Materials Texture Type --
 
 	bitmapStrings = #() 
 	for obj in allStand where classof obj.diffuseMap == bitmapTexture and obj.opacityMap == undefined do appendIfUnique bitmapStrings (fileNameFromPath obj.diffuseMap.bitmap.fileName)
@@ -150,15 +152,16 @@
 
 
 
--- InfosMat : 
--- 1 - obj
--- 2 - obj.name
--- 3 - obj.material
--- 4 - diffuse color code as string
--- 5 - obj.material.diffuseMap
--- 6 - obj.material.opacity
--- 7 - obj.material.opacityMap
+	-- InfosMat : 
+	-- 1 - obj
+	-- 2 - obj.name
+	-- 3 - obj.material
+	-- 4 - diffuse color code as string
+	-- 5 - obj.material.diffuseMap
+	-- 6 - obj.material.opacity
+	-- 7 - obj.material.opacityMap
 
+	myProg = 0
 
 	progressStart "Processing Single BITMAP Mat..."
 	-- Optimization -- 
@@ -183,7 +186,7 @@
 
 	
 	
-	myProg = 0
+
 	MultiBitmapInfo = #()
 
 
@@ -196,6 +199,8 @@
 	)
 	MultiBitmapInfo.count	
 
+
+	myProg = 0
 
 	progressStart "Processing Multi BITMAP Mat..."
 
@@ -215,7 +220,25 @@
 
 	ProgressEnd()
 
+	-- MultiMono = for obj in (getClassInstances multimaterial) where obj.count == 1 collect obj
+	MonoMatObjects = for obj in objects where classof obj.material == multiMaterial and obj.material.count == 1 collect obj
+	for obj in MonoMatObjects do 
+	(
+		matTemp = obj.material[1]
+		obj.material = matTemp
+	)
+
 	enableSceneRedraw() 
 
 	actionMan.executeAction 0 "63545"
 
+ 	forceCompleteRedraw doDisabled:true
+
+
+
+
+
+)
+
+-- count1 = for obj in getClassInstances multimaterial collect obj
+-- print count1.count
