@@ -562,11 +562,10 @@ for obj in objects where custAttributes.count == 1 do fixComponents obj
 (
 -- 	ss = StringStream ""
 
-	oldEuler = $.rotation as eulerAngles
-	quat = eulerToQuat (eulerAngles (oldEuler.x + 90.0) oldEuler.y oldEuler.z)
-	
-
-
+	oldEuler = selection[1].rotation as eulerAngles
+	myQuat = eulerToQuat (eulerAngles (oldEuler.x + 90.0) oldEuler.y oldEuler.z)
+	clearListener()
+	format "%, %, %, %\r" myQuat.w myQuat.x myQuat.y myQuat.z
 )
 
 
