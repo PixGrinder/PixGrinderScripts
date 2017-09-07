@@ -2,6 +2,7 @@
 -- V 4.2
 
 (
+	disableSceneRedraw()
 	wantedPath = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-22-3D\\H225-22_05_2017"
 	myStdPath = "c:"+"\\"
 	if doesFileExist wantedPath == true then myStdPath = wantedPath
@@ -39,6 +40,10 @@
 		files[i]
 		SysUnit()
 		importFile files[i] #noPrompt  using:VrmlImp
+		viewport.setLayout #layout_4
+		viewport.activeViewport = 4
+		max tool maximize
+
 		delete cameras
 		select geometry
 		max zoomext sel all
@@ -46,10 +51,15 @@
 		myLayer = LayerManager.newLayerFromName y1
 		for obj in objects do myLayer.addnode obj
 		x1 = myInput+(getFilenameFile files[i])+".max"
-		max vpt persp user
-
-		max select none
+-- 		max vpt persp user
+		clearSelection()
+		select geometry[1]
 		max zoomext sel all
+		select geometry
+		max zoomext sel all
+		enableSceneRedraw()
+		forceCompleteRedraw doDisabled:true
+		sleep 1
 		saveMaxFile x1 useNewFile:true --quiet:<bool>
 	)
 )

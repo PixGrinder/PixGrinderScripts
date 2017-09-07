@@ -32,6 +32,52 @@ if selection.count != 0 then
 			cur.compLoc.hidden = theYoupla -- la list hidden est remplacé par le résultat de la supression des doublons
 		)
 	)
+
+
+	for cur in selection do
+	(
+		t1 = cur.compLoc.transparent.count as string -- nombre d'occurences AVANT
+		if t1 as integer != 0 then
+		(
+			tempNames = for bla in cur.compLoc.transparent collect #(bla.node.name,bla,bla.node) -- collecte des infos des entrée dans le tableau tempNames
+	
+			qsort tempNames mySort -- tri des données de tempNames
+			theYoupla = #(tempNames[1][2]) -- Création duu tableau theYoupla contenant le 1er composant de "transparent"
+	
+			-- ajout des composant dans 1 nouveau tableau si le composant est unique
+			for i = 2 to tempNames.count do
+			(
+				if tempNames[i-1][1] != tempNames[i][1] then append theYoupla tempNames[i][2]
+			)
+	
+			t2 = theYoupla.count as string -- nombre d'occurences APRES
+	
+			cur.compLoc.transparent = theYoupla -- la list transparent est remplacé par le résultat de la supression des doublons
+		)
+	)
+
+	for cur in selection do
+	(
+		t1 = cur.compLoc.animated.count as string -- nombre d'occurences AVANT
+		if t1 as integer != 0 then
+		(
+			tempNames = for bla in cur.compLoc.animated collect #(bla.node.name,bla,bla.node) -- collecte des infos des entrée dans le tableau tempNames
+	
+			qsort tempNames mySort -- tri des données de tempNames
+			theYoupla = #(tempNames[1][2]) -- Création duu tableau theYoupla contenant le 1er composant de "animated"
+	
+			-- ajout des composant dans 1 nouveau tableau si le composant est unique
+			for i = 2 to tempNames.count do
+			(
+				if tempNames[i-1][1] != tempNames[i][1] then append theYoupla tempNames[i][2]
+			)
+	
+			t2 = theYoupla.count as string -- nombre d'occurences APRES
+	
+			cur.compLoc.animated = theYoupla -- la list animated est remplacé par le résultat de la supression des doublons
+		)
+	)
+
 )
 
 
@@ -47,3 +93,6 @@ execute (blurf+".count")
 */
 
 -- for obj in tempNames do print obj[1]
+
+
+
