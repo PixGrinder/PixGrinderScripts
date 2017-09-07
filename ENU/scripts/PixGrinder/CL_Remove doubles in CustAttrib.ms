@@ -1,49 +1,42 @@
 -- CL - Remove doubles in CustAttrib
 
-
+tempNames = #()
 cur = selection[1]
--- obj.compLoc.hidden
-
--- tempNames = for bla in cur.compLoc.hidden collect #(i+1,bla,bla.node,bla.node.name)
---for obj in tempNames do format "%   %   \r" obj[1] obj[2]
-
+t1 = cur.compLoc.hidden.count as string
 fn mySort v1 v2 =  
 (
 	if v1[1] > v2[1] then 1 else -1
 )
 
-tempNames = #()
+
 for i = 1 to cur.compLoc.hidden.count do
 (
 	append tempNames #(cur.compLoc.hidden[i].node.name, cur.compLoc.hidden[i],cur.compLoc.hidden[i].node,cur.compLoc.hidden[i].node.name)
 )
 
 qsort tempNames mySort
+theYoupla = #()
+append theYoupla tempNames[1][2]
 
-for obj in tempNames do format "%\r" obj
-
-theArr = #()
-
-for obj in tempNames do
+for i = 2 to tempNames.count do
 (
-	for bla in theArr do
-	(
-		if obj[4] != bla[2] do append theArr #(obj[2],obj[4])
-	)
+	if tempNames[i-1][1] != tempNames[i][1] then append theYoupla tempNames[i][2]
 )
 
-theArr.count
+t2 = theYoupla.count as string
+
 /*
-tempArray = #()
-for obj in cur.compLoc.hidden do appendIfUnique tempArray obj
-for obj in tempArray do format "%\r" obj.node.name
-
-for obj in $.compLoc.hidden do
-(
-	for bla in $.compLoc.hidden do
-	(
-		if obj.node == bla.node then deleteItem  $.compLoc.hidden
-	)
-)
-
+clearListener()
+print("Before : "+t1)
+print("After : "+t2)
 */
+
+cur.compLoc.hidden = theYoupla
+
+/*
+blurf = "cur.compLoc.hidden"
+execute (blurf+".count")
+*/
+
+-- for obj in tempNames do print obj[1]
+
