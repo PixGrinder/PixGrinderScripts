@@ -164,11 +164,20 @@
 
 			for i = 1 to files.count do
 			(
+				disableSceneRedraw()
 				SysUnit()
 				ProcessCAO files[i] a1 a2 a3 a4 a5 a6 a7
-				max select none
+				viewport.setLayout #layout_4
+				viewport.activeViewport = 4
+				max tool maximize
+				clearSelection()
+				select geometry[1]
 				max zoomext sel all
-				completeRedraw()
+				select geometry
+				max zoomext sel all
+				enableSceneRedraw()
+				forceCompleteRedraw doDisabled:true
+				sleep 1
 				saveMaxFile files[i] useNewFile:true quiet:true
 			)
 		)
