@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ADSK_BPR>
+	<BrushPresets_Config iconMin="5,000000" iconMax="20,000000">
+	<Context name="VertexPaint" contextID="(0x0,0x216EF0E)" pluginClassID="(0x43616D86,0x216EF0E)" pluginSuperclassID="2912"/>
+	<Context name="Paint Skin Weights" contextID="(0x0,0x5ECD700D)" pluginClassID="(0x95C723,0x15666)" pluginSuperclassID="2064"/>
+	<Context name="Standard Brush Params" contextID="(0x0,0x5FB1707C)" pluginClassID="(0x2F2EF7E9,0x78FFE181)" pluginSuperclassID="512"/></BrushPresets_Config>
+	<PresetList/>
+</ADSK_BPR>
