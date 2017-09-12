@@ -411,6 +411,18 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="2053995757" imageID="-1" imageName="" actionID="9" tip="Disable Anim Layer" label="Disable Anim Layer" />
             </Items>
         </Window>
+        <Window name="Scene Explorer - Scene Explorer" type="N" rank="19" subRank="0" hidden="1" dPanel="8" tabbed="0" curTab="-1" cType="4">
+            <FRect left="254" top="245" right="716" bottom="1158" />
+            <DRect left="1506" top="131" right="1968" bottom="1358" />
+            <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <CurPos left="254" top="245" right="716" bottom="1158" floating="1" panelID="16" />
+        </Window>
+        <Window name="Scene Explorer - Layer Explorer" type="N" rank="22" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="4">
+            <FRect left="100" top="100" right="739" bottom="1126" />
+            <DRect left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <CurPos left="100" top="100" right="739" bottom="1126" floating="1" panelID="16" />
+        </Window>
     </CUIWindows>
     <QATItems>
         <Item actionTableID="0" actionName="40004" />

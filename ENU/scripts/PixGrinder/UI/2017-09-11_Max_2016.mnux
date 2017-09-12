@@ -454,6 +454,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
@@ -4643,6 +4645,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Duplicator`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BboxTrueMaker`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="HideByClick`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RefPlaneAutoRatio`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="WireColorChanger`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialRemove`-- PixGrinder --" />
