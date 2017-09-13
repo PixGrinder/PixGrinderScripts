@@ -1416,7 +1416,8 @@ struct CompLocComponentStc
 			(
 				component = getNodeByName sceneComponentsLbx.selected
 				(for obj in component.transparent collect obj.node).xray = state
-				
+				-- PDA ADD
+				(for obj in component.transparent collect obj.node).isHidden = (not state)
 			)
 		)
 		
