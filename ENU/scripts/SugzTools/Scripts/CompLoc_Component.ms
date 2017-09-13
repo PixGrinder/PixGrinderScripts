@@ -1217,12 +1217,40 @@ struct CompLocComponentStc
 		
 		
 		/* Set relative ***************************************************************************************************************************************************************/
-		on sceneComponentsLbx selected item do SetRelatives()
+		on sceneComponentsLbx selected item do 
+		(
+			SetRelatives()
+			pda_x1 = getNodeByName (sceneComponentsLbx.selected)
+			pda_x1.compLoc.HotSpot.target.pos = pda_x1.center
+			if pda_x1.compLoc.animated.count < 1 then 
+			(
+				sliderTime = animationRange.start.frame as integer
+				) else (
+				sliderTime = animationRange.end.frame as integer
+			)
+			-- select (for item in sceneComponentsLbx.items collect (getNodeByName item))
+		)
 		
 		
 		
 		/* Select the component when double clicked ***************************************************************************************************************************************************************/
-		on sceneComponentsLbx doubleClicked item do SelectComponent (sceneComponentsLbx.selected)
+		on sceneComponentsLbx doubleClicked item do 
+		(
+			pda_x1 = getNodeByName (sceneComponentsLbx.selected)
+			pda_x1.compLoc.HotSpot.target.pos = pda_x1.center
+			if pda_x1.compLoc.animated.count < 1 then 
+			(
+				sliderTime = animationRange.start.frame as integer
+				) else (
+				sliderTime = animationRange.end.frame as integer
+			)
+			pda_selec = for obj in pda_x1 collect obj
+			append pda_selec pda_x1
+			select pda_selec
+-- 			(SelectComponent (sceneComponentsLbx.selected)).compLoc.HotSpot.target.pos = (SelectComponent (sceneComponentsLbx.selected)).center
+			-- OLD Sugz Line : SelectComponent (sceneComponentsLbx.selected)
+		)
+		-- PDA MODIF --
 
 
 
@@ -1458,11 +1486,14 @@ struct CompLocComponentStc
 					canAdd = true
 					for relative in component.animated while canAdd do if relative.node == obj then canAdd = false
 						
-					if canAdd then append component.animated (nodeTransformMonitor node:obj forwardTransformChangeMsgs:false)
+					if canAdd then 
+					(
+						append component.animated (nodeTransformMonitor node:obj forwardTransformChangeMsgs:false)
+					)
 				)
-				
 				SetRelatives()
 			)
+			sliderTime = animationRange.end
 		)
 		
 		
