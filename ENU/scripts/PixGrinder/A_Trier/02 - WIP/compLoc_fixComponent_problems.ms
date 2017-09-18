@@ -26,7 +26,7 @@
 			if tst.node == undefined then appendIfUnique myTransp myVar.name else appendIfUnique pda tst
 		)
 		myVar.compLoc.transparent = pda
-		
+
 
 		pda = #()
 
@@ -43,6 +43,9 @@
 		SetQuietMode true
 		for obj in objects where custAttributes.count obj == 1 do fixComponents obj
 		clearListener()
+		sort myHide
+		sort myTransp
+		sort myAnim
 
 
 		format "\rHidden problems :\r------------------\r" 
