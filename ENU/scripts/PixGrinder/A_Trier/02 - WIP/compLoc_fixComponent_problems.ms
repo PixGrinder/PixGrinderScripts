@@ -1,90 +1,66 @@
-
+(
 
 	global myHide =#()
 	global myTransp =#()
 	global myAnim = #()
 
 
-fn fixComponents myVar= 
-(
-	
-
-
-	pda = #()
--- 	print myVar.compLoc.hidden.count
-	for i = 1 to myVar.compLoc.hidden.count do
+	fn fixComponents myVar= 
 	(
-		if myVar.compLoc.hidden[i].node == undefined do 
+		
+
+
+		pda = #()
+
+		for tst in myVar.compLoc.hidden do
 		(
-			appendIfUnique myHide myVar.name
-			append pda i
+			if tst.node == undefined then appendIfUnique myHide myVar.name else appendIfUnique pda tst
 		)
-
-	) 
-
-	for obj in pda do deleteItem myVar.compLoc.hidden obj
-
--- 	print myVar.compLoc.hidden.count
+		myVar.compLoc.hidden = pda
 
 
-	pda = #()
--- 	print myVar.compLoc.transparent.count
-	for i = 1 to myVar.compLoc.transparent.count do
+		pda = #()
+
+		for tst in myVar.compLoc.transparent do
+		(
+			if tst.node == undefined then appendIfUnique myTransp myVar.name else appendIfUnique pda tst
+		)
+		myVar.compLoc.transparent = pda
+		
+
+		pda = #()
+
+		for tst in myVar.compLoc.animated do
+		(
+			if tst.node == undefined then appendIfUnique myAnim myVar.name else appendIfUnique pda tst
+		)
+		myVar.compLoc.animated = pda
+
+	)
+
 	(
-		if myVar.compLoc.transparent[i].node == undefined do 
-		(
-			appendIfUnique myTransp myVar.name
-			append pda i
-			
-		)
-
-	) 
-
-	for obj in pda do deleteItem myVar.compLoc.transparent obj
-
--- 	print myVar.compLoc.transparent.count
-
-	pda = #()
--- 	print myVar.compLoc.transparent.count
-	for i = 1 to myVar.compLoc.animated.count do
-	(
-		if myVar.compLoc.animated[i].node == undefined do 
-		(
-			appendIfUnique myAnim myVar.name
-			append pda i
-		)
-
-	) 
-
-	for obj in pda do deleteItem myVar.compLoc.animated obj
-
-)
-
-(
-	setCommandPanelTaskMode mode:#modify
-	SetQuietMode true
-	for obj in objects where custAttributes.count obj == 1 do fixComponents obj
-	clearListener()
+		setCommandPanelTaskMode mode:#create
+		SetQuietMode true
+		for obj in objects where custAttributes.count obj == 1 do fixComponents obj
+		clearListener()
 
 
-	print "Hidden problems : "
-	print "------------------"
-	print " "
-	for obj in myHide do print obj
-	print "Transparent problems : "
-	print "------------------"
-	print " "
-	for obj in myTransp do print obj
+		format "\rHidden problems :\r------------------\r" 
+		for obj in myHide do format "%\r" obj
 
-	print "Animation problems : "
-	print "------------------"
-	print " "
-	for obj in myAnim do print obj
+		format "\rTransparent problems :\r---------------------\r" 
+		for obj in myTransp do format "%\r" obj
 
+		format "\rAnimation problems :\r---------------------\r" 
+		for obj in myAnim do format "%\r" obj
+		format "\r"
 
-	SetQuietMode false
+		actionMan.executeAction 0 "40472"
+		SetQuietMode false
 
 
 
+
+	)
 
 )
