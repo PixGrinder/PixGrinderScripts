@@ -125,8 +125,8 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50004" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="36" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50006" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="38" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50007" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="40" />
-                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="42">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="44">
+                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="42" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="44" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="46" />
@@ -410,6 +410,18 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="2053995757" imageID="-1" imageName="" actionID="8" tip="Collapse Anim Layer" label="Collapse Anim Layer" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="2053995757" imageID="-1" imageName="" actionID="9" tip="Disable Anim Layer" label="Disable Anim Layer" />
             </Items>
+        </Window>
+        <Window name="Scene Explorer - Layer Explorer" type="N" rank="22" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="4">
+            <FRect left="100" top="100" right="731" bottom="1114" />
+            <DRect left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <CurPos left="100" top="100" right="731" bottom="1114" floating="1" panelID="16" />
+        </Window>
+        <Window name="Scene Explorer - Scene Explorer" type="N" rank="22" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="4">
+            <FRect left="905" top="245" right="1532" bottom="1486" />
+            <DRect left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <CurPos left="905" top="245" right="1532" bottom="1486" floating="1" panelID="16" />
         </Window>
     </CUIWindows>
     <QATItems>

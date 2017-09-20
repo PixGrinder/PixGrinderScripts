@@ -65,6 +65,37 @@
 		Include "$userScripts/PixGrinder_TPZ_Tools/ConflictManagerLauncher.ms"
 	)
 
+	macroScript SelectClComps
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Comploc Select Tagged Components"
+	buttonText:"Comploc Select Tagged Components"
+	-- icon:#("MaxScript",2)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder_TPZ_Tools/CL_Select_CL_Comps.ms"
+	)
 
+	macroScript DeleteClComps
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Comploc Delete Tags"
+	buttonText:"Comploc Delete Tags"
+	-- icon:#("MaxScript",2)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder_TPZ_Tools/CL_Remove_Custom_Attributes.ms"
+	)
+
+	macroScript CleanGhostLinks
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Clean Ghost Comploc Links"
+	buttonText:"Clean Ghost Comploc Links"
+	-- icon:#("MaxScript",2)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder_TPZ_Tools/compLoc_fixComponent_problems.ms"
+	)
 
 )
