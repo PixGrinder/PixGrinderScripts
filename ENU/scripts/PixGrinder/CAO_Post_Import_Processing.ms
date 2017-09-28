@@ -9,7 +9,7 @@
 
 
 -- Default Values by AC --
--- H135   : 
+-- H135   : Position = [0.0,-0.33,0.0] ; Rotation = [0.0,-30,0.0]; Scale=10
 -- H145   : Position = [1.68,0,-3.1] ; Rotation = [0.0,-3.5,0.0]; Scale=10 
 -- AS365  : 
 -- H225   : Position = [0.0,0.0,12.05] ; Rotation = [0.0,0.0,0.0]; Scale=10 

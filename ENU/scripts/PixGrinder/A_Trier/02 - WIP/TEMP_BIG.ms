@@ -1,5 +1,20 @@
 
 
+
+select (for obj in $.compLoc.hidden collect obj.node)
+
+
+
+----------------------------------------------
+
+x1 = for obj in selection[1].hidden collect print obj.node.name
+sort x1
+for obj in x1 do print obj
+
+----------------------------------------------
+
+
+
 x1 = for obj in objects where obj.isHidden == false and matchpattern obj.name pattern:"ATA_??-??_*" == true collect obj
 clearListener()
 for obj in x1 do format "%\r" obj.name

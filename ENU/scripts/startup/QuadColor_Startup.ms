@@ -1,5 +1,5 @@
 -- Quad Color File
--- Created automatically by D:\03_Max_UI\3dsmax_2016_08 Scheme 
+-- Created automatically by C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2016 - 64bit\ENU\scripts\PixGrinder\UI\2017-09-11_Max_2016 Scheme 
 -- To restore Quad Menu to these settings, simply run this script.
 
 -- Quad number 1 colors 

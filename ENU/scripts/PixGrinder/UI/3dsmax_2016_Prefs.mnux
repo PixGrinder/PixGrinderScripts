@@ -459,6 +459,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EdgeBridge`Ribbon - Modeling" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -698,6 +699,7 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InsertLoop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Quickslice`Editable Polygon Object" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Cut`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
@@ -4664,6 +4666,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CustAttribTransfert`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectClComps`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DeleteClComps`-- PixGrinder - TPZ Tools --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanGhostLinks`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
