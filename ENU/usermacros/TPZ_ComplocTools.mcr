@@ -98,4 +98,19 @@
 		Include "$userScripts/PixGrinder_TPZ_Tools/compLoc_fixComponent_problems.ms"
 	)
 
+
+	macroScript DelecteCameras
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Delete All Cameras"
+	buttonText:"Delete All Cameras"
+	-- icon:#("MaxScript",2)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder_TPZ_Tools/DelecteCameras.ms"
+	)
+
+
+
+
 )
