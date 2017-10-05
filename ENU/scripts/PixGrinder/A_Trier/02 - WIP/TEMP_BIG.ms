@@ -1,5 +1,25 @@
 
 
+----------------------------------------------
+
+
+-- CompLoc : Search component in hidden Lists
+(
+	mySearch = "ATA_72-00_Engine"
+	myResult = #()
+	for obj in selection do
+	(
+		for bla in obj.compLoc.transparent where matchpattern bla.node.name pattern:(mySearch+"*") do appendifUnique myResult obj
+	)
+	clearSelection()
+	select myResult
+
+)
+
+
+----------------------------------------------
+
+
 
 select (for obj in $.compLoc.hidden collect obj.node)
 
