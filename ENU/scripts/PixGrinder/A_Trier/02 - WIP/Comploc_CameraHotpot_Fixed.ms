@@ -1,5 +1,14 @@
+-- Comploc_CameraHotpot_Fixed --
+-- Comploc_CameraHotpot_Fixed.ms --
+-- Writes selected cameras coords for Comploc to the listener window --
+-- v1.0 --
+
+
+
+
 
 (
+	
 	clearListener()
 	ss = StringStream ""
 
