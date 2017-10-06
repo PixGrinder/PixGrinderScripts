@@ -5,7 +5,7 @@
 
 	for obj in selection do
 	(	
-		oldEuler = obj.rotation as eulerAngles
+		oldEuler = obj.transform.rotation as eulerAngles
 		oldEuler.x = oldEuler.x + 90.0
 		oldEuler.y = oldEuler.y
 		oldEuler.z = oldEuler.z
