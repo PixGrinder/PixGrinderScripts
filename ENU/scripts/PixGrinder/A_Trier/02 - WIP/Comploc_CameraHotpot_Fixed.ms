@@ -1,7 +1,8 @@
 -- Comploc_CameraHotpot_Fixed --
 -- Comploc_CameraHotpot_Fixed.ms --
 -- Writes selected cameras coords for Comploc to a CSV File --
--- v2.0 --
+-- Sorts list alphabetically--
+-- v3.0 --
 
 
 
@@ -14,11 +15,18 @@
 	theCondition = false
 
 
+	fn mySort v1 v2 = 
+	(
+		if v1.name > v2.name then 1 else -1
+	)
+
 	if maxFileName.count == 0 then messageBox("Please Save MaxFile before using this script") else 
 	( 
 		myFile = maxFilePath + "NewHotspots.csv"
 		theCondition = true
 	)
+
+
 
 	if theCondition == true then 
 	(
@@ -26,7 +34,9 @@
 		try(close theFile) catch()
 		if doesFileExist myFile == true then deleteFile myFile
 		theFile = createFile myFile
-		for obj in selection do
+		myCams = for sel in selection collect sel
+		qsort myCams mySort
+		for obj in myCams do
 		(	
 			oldEuler = obj.transform.rotation as eulerAngles
 			oldEuler.x = oldEuler.x + 90.0
