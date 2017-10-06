@@ -2,7 +2,7 @@
 -- Comploc_CameraHotpot_Fixed.ms --
 -- Writes selected cameras coords for Comploc to a CSV File --
 -- Sorts list alphabetically--
--- v3.0 --
+-- v3.1 --
 
 
 
@@ -44,7 +44,7 @@
 			oldEuler.z = oldEuler.z
 			oldEuler
 			quat = eulerToQuat oldEuler
-			format "%;%,%,%;%,%,%,%\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(-100*quat.y)/100) (floor(100*quat.z)/100) (floor(-100*quat.w)/100) to:theFile
+			format "%;%,%,%;%, %, %, %\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(-100*quat.y)/100) (floor(100*quat.z)/100) (floor(-100*quat.w)/100) to:theFile
 		)
 		sleep 1
 		close theFile
