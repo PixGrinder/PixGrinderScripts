@@ -1,4 +1,32 @@
 
+----------------------------------------------
+
+
+-- unhide selections's children 
+
+(
+	myAr = #()
+
+	fn selectChild v1 = 
+	(
+		if v1.children.count != 0 do
+		(
+			for obj in v1.children do
+			(
+				append myAr obj
+				selectChild obj
+			)
+		)
+	)
+
+	for obj in selection do
+	(
+		selectChild obj
+	)
+
+	for obj in myAr do obj.isHidden = false
+)
+
 
 ----------------------------------------------
 
