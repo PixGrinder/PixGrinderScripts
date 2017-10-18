@@ -2,8 +2,8 @@
 
 (
 	FreeSceneBitmaps()
-
-	tempFile = maxFilePath + "_tempSceneMaterialsHack.max"
-	saveNodes #() tempFile
+	tempFile =  getDir(#scene) + "\\" + "zz_tempSceneMaterialsHack.max"
+	saveNodes geometry[1] tempFile
 	deleteFile tempFile
 )
+

@@ -560,5 +560,18 @@
 		Include "$userScripts/PixGrinder/Normals_QuickFlip.ms"
 	)
 
+	macroScript CableSplinePreset
+	category:"-- PixGrinder --"
+	toolTip:"CableSplinePreset"
+	buttonText:"CableSplinePreset"
+	icon:#("Splines",10)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Cable_SplinePreset.ms"
+	)
+
+
+
 
 )

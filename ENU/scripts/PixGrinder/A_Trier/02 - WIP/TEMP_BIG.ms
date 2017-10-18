@@ -1,31 +1,16 @@
 
 ----------------------------------------------
 
-
--- unhide selections's children 
-
+myAr = #()
+myName = "*" + "InclinedDriveShaftFairin" + "*"
+for obj in selection do
 (
-	myAr = #()
-
-	fn selectChild v1 = 
-	(
-		if v1.children.count != 0 do
-		(
-			for obj in v1.children do
-			(
-				append myAr obj
-				selectChild obj
-			)
-		)
-	)
-
-	for obj in selection do
-	(
-		selectChild obj
-	)
-
-	for obj in myAr do obj.isHidden = false
+	for bla in obj.compLoc.hidden where matchpattern bla.node.name pattern:myName do append myAr obj
 )
+clearSelection()
+select myAr
+
+
 
 
 ----------------------------------------------

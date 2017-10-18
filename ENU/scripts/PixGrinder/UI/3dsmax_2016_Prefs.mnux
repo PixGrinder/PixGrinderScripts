@@ -4667,8 +4667,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectClComps`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DeleteClComps`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanGhostLinks`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
@@ -4676,6 +4674,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableRetopology`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SplineSelectMiddlePoints`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ShapeSelectOptimizer`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableSplinePreset`-- PixGrinder --" />
         </Menu>
         <Menu title="PixGrinder - Pivot Tools">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotAlignator`-- PixGrinder --" />
