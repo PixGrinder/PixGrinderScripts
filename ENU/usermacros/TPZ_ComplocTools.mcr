@@ -109,8 +109,16 @@
 	(
 		Include "$userScripts/PixGrinder_TPZ_Tools/DelecteCameras.ms"
 	)
-
-
-
+	
+	macroScript CamFromComp
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"CamFromComp"
+	buttonText:"CamFromComp"
+	-- icon:#("MaxScript",2)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder_TPZ_Tools/CL_CamFromComponent.ms"
+	)
 
 )
