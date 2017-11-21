@@ -583,5 +583,7 @@
     <shortcut fVirt="7" accleleratorKey="68" actionID="EPoly_Detach`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="78" actionID="NormalFlip`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="82" actionID="Non_Uniform_Scale`Tools" actionTableID="647394" />
+    <shortcut fVirt="11" accleleratorKey="102" actionID="Select_Next_Object_Zoom`-- PixGrinder --" actionTableID="647394" />
+    <shortcut fVirt="11" accleleratorKey="100" actionID="Select_Previous_Object_Zoom`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>
