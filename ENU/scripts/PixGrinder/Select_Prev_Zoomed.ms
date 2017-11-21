@@ -18,6 +18,7 @@
 		---------------------------------------------------------------------------
 		if selection.count == 0 then (x1 = objects.count) else (x1 = finditem (objects as array) selection[1])
 		if x1 > 2  then select objects[x1-1] else select objects[objects.count]
+		max zoomext sel all
 		---------------------------------------------------------------------------
 	)
 )
