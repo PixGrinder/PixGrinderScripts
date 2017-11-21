@@ -62,12 +62,6 @@
 		on myName changed txtTemp do if selection[1] != undefined then selection[1].name = txtTemp
 	)
 
-	rollout pda_mySelector "Selector" 
-	(
-		radiobuttons myRad labels:#("Zoom On", "Zoom Off") default:2
-	)
-
-
 
 fn pixGrinder_Globals_selectChanged = 
 (
