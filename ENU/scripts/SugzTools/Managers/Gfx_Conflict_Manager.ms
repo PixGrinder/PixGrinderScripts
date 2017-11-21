@@ -327,10 +327,14 @@ struct GfxConflictManagerStc
 	),
 	
 	
-	
+	---- PIXGRINDER MODIF ---
+
+
 	/* Add current file to the user list  ############################################################################################*/
 	fn NoticeFileAsUse =
 	(
+		
+		/*
 		-- reload XML
 		LoadXml()
 		
@@ -362,6 +366,7 @@ struct GfxConflictManagerStc
 		
 		-- Update Macroscript
 		if GetIsFileUse() then UpdateMacro true
+		*/
 		
 	),
 	
