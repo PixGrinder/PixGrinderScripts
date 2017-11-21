@@ -1,4 +1,11 @@
 
+
+
+theTempTemp = selection[1].compLoc.hotspot
+getclipboardText()
+
+show theTempTemp
+
 ----------------------------------------------
 
 myAr = #()

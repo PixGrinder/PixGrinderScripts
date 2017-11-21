@@ -15,8 +15,8 @@
 	StdColor = for obj in StdMaterials where obj.diffuseMap == undefined collect obj
 	transpCol = for obj in StdColor where obj.opacity < 100.0 collect obj
 	BmTex = getClassInstances BitmapTexture
-	myPrefix = "AS365_"
--- 	myPrefix = "H225_"
+-- 	myPrefix = "AS365_"
+	myPrefix = "H225_"
 
 	for obj in StdBitmap do 
 	(

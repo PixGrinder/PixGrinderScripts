@@ -22,3 +22,18 @@ for obj in geometry do (
 
 )
 
+
+
+--------------
+for obj in selection do obj.material.diffusemap.coords.mapChannel=1
+
+
+x1 = getclassInstances StandardMaterial 
+
+x1[2].diffusemap
+
+x1 = for obj in selection collect obj.material
+
+for obj in x1 where obj.diffusemap != undefined do obj.diffusemap.coords.mapChannel = 1
+
+show x1[1].diffusemap.coords.mapChannel

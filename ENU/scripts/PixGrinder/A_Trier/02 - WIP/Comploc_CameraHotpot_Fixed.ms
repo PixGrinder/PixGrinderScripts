@@ -36,7 +36,7 @@
 		theFile = createFile myFile
 		myCams = for sel in selection collect sel
 		qsort myCams mySort
-		for obj in myCams do
+		for obj in selection do
 		(	
 			oldEuler = obj.transform.rotation as eulerAngles
 			oldEuler.x = oldEuler.x + 90.0
@@ -44,7 +44,8 @@
 			oldEuler.z = oldEuler.z
 			oldEuler
 			quat = eulerToQuat oldEuler
-			format "%;%,%,%;%, %, %, %\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(-100*quat.y)/100) (floor(100*quat.z)/100) (floor(-100*quat.w)/100) to:theFile
+-- 			format "%\r%,%,%\r%, %, %, %\r\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(100*quat.z)/100) (floor(-100*quat.y)/100) (floor(-100*quat.w)/100)  to:theFile
+			format "%;%,%,%;%, %, %, %;\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(100*quat.z)/100) (floor(-100*quat.y)/100) (floor(-100*quat.w)/100)  to:theFile
 		)
 		sleep 1
 		close theFile
