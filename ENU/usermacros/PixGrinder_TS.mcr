@@ -571,7 +571,27 @@
 		Include "$userScripts/PixGrinder/Cable_SplinePreset.ms"
 	)
 
-
+	macroScript Select_Previous_Object_Zoom
+	category:"-- PixGrinder --"
+	toolTip:"Select Previous Object Zoom"
+	buttonText:"Select Previous Object Zoom"
+	icon:#("PixGrinder",3)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		FileIn "$userScripts/PixGrinder/Select_Prev_Zoomed.ms"
+	)
+	
+	macroScript Select_Next_Object_Zoom
+	category:"-- PixGrinder --"
+	toolTip:"Select Next Object Zoom"
+	buttonText:"Select Next Object Zoom"
+	icon:#("PixGrinder",2)
+	silentErrors:false
+	autoUndoEnabled:false
+	(
+		FileIn "$userScripts/PixGrinder/Select_Next_Zoomed.ms"
+	)
 
 
 )

@@ -1,10 +1,7 @@
 macroScript MapChannelCopier
 category:"Felipe Scripts"
 toolTip:"Copies a map chanel to another on all scene objects"
-buttonText:"MapChannelCopier"
---icon:#("Felipe Scripts",11)
-silentErrors:true
-autoUndoEnabled:true
+
 
 (
 rollout pda_chanelcopier "Map Channel Copier" 
