@@ -1,5 +1,16 @@
 
 
+----------------------------------------------
+
+-- Selectionner les composants dont le parent n'est pas nommé comme suit :  "ATA_??-??-*****"
+
+select (for obj in objects where matchpattern obj.name pattern:"ATA_??-??_*" == true and obj.parent != undefined collect obj)
+
+
+
+----------------------------------------------
+
+
 
 theTempTemp = selection[1].compLoc.hotspot
 getclipboardText()

@@ -5,9 +5,24 @@
 -- v3.1 --
 
 
+ 
+(
+	clearListener()
+	obj=selection[1]
+	oldEuler = obj.transform.rotation as eulerAngles
+	oldEuler.x = oldEuler.x + 90.0
+	oldEuler.y = oldEuler.y
+	oldEuler.z = oldEuler.z
+	oldEuler
+	myQuat = eulerToQuat oldEuler
+	format "%;%,%,%;%, %, %, %\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*myQuat.x)/100) (floor(100*myQuat.z)/100) (floor(-100*myQuat.y)/100) (floor(-100*myQuat.w)/100)  --to:theFile
+-- 	format "%;%,%,%" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) -- (floor(100*myQuat.x)/100) (floor(100*myQuat.z)/100) (floor(-100*myQuat.y)/100) (floor(-100*myQuat.w)/100)  --to:theFile
+)
 
 
+ -------------------------------------------------
 
+/*
 (
 	
 	clearListener()
@@ -45,7 +60,8 @@
 			oldEuler
 			quat = eulerToQuat oldEuler
 -- 			format "%\r%,%,%\r%, %, %, %\r\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(100*quat.z)/100) (floor(-100*quat.y)/100) (floor(-100*quat.w)/100)  to:theFile
-			format "%;%,%,%;%, %, %, %;\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(100*quat.z)/100) (floor(-100*quat.y)/100) (floor(-100*quat.w)/100)  to:theFile
+-- 			format "%;%,%,%;%, %, %, %;\r" obj.name (-0.1*obj.pos.x) (0 .1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(100*quat.z)/100) (floor(-100*quat.y)/100) (floor(-100*quat.w)/100)  to:theFile
+			format "%;%,%,%;%, %, %, %;\r" obj.name (-0.1*obj.pos.x) (0 .1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*quat.x)/100) (floor(100*quat.z)/100) (floor(-100*quat.y)/100) (floor(-100*quat.w)/100)  --to:theFile
 		)
 		sleep 1
 		close theFile
@@ -53,5 +69,7 @@
 
 	)
 )
+
+*/
 
 
