@@ -8,6 +8,7 @@
  
 (
 	clearListener()
+	actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
 	obj=selection[1]
 	oldEuler = obj.transform.rotation as eulerAngles
 	oldEuler.x = oldEuler.x + 90.0

@@ -4,7 +4,9 @@
 -- Pivot Alignator --
 -- Pivot_Alignator.ms --
 -- Align 1 object's pivot to one clicked normal --
--- V 4.4 --
+-- V 5.0 --
+-- Added Orientation as final step --
+-- Removed  QueryBox for objects normals inversion --
 -- Mail : pixgrinder@gmail.com --
 
 ---------------------------------------------------------------------
@@ -19,6 +21,24 @@
 (
 	-- clearListener()
 	try (delete pda_dum) catch ()
+
+	rollout myAngleRollout "Pivot Angle"
+	(
+		label myLbl "Pivot Angle :" offset:[0,10]
+		spinner myAngleSpinner range:[-1.0,1.0,0.0] scale:0.01 type:#float align:#center fieldwidth:150 offset:[0,7]
+		button myAngleOk "OK" width:75 offset:[0,7]
+
+		on myAngleOk pressed do destroyDialog myAngleRollout
+		on myAngleSpinner changed state do 
+		(
+			in coordsys local pda_dum.rotation.z = myAngleSpinner.value
+			myAngleSpinner.value = 0.0
+-- 			pda_dum.rotation = myAngleSpinner.value
+		)
+	)
+
+
+
 	if selection[1] == undefined then 
 	(
 		messageBox "You must have a Geometry object selected..." title:"Warning of the Dead" beep:true
@@ -82,18 +102,19 @@
 		(
 			-- pda_cur.parent = pda_dum
 			-- select pda_dum
+			createDialog myAngleRollout 250 100 1000 250 modal:true
 			pda_cur.parent = undefined
 			pda_cur.pivot = pda_cur.center
 			pda_cur.backFaceCull = true
 			resetXForm pda_cur
 			redrawViews()
-			if querybox("Invert Normals ?") == true then 
-			(
-				myMod = (Normalmodifier ())
-				myMod.flip = true
-				myMod.unify = true
-				addModifier pda_cur myMod
-			)
+-- 			if querybox("Invert Normals ?") == true then 
+-- 			(
+-- 				myMod = (Normalmodifier ())
+-- 				myMod.flip = true
+-- 				myMod.unify = true
+-- 				addModifier pda_cur myMod
+-- 			)
 			pda_cur.pivot = pda_dum.transform.position
 			pda_RotatePivotOnly pda_cur pda_dum.transform.rotation
 			delete pda_dum
@@ -114,6 +135,4 @@
 		)
 	) 
 )
-
-
 
