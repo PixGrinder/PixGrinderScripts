@@ -124,7 +124,7 @@
         <color colorID="107" ColorRef="65280" name="Trackbar Cached Line" category="Trackbar" />
         <color colorID="108" ColorRef="65535" name="Trackbar Cache Line" category="Trackbar" />
         <color colorID="109" ColorRef="65535" name="Preview Highlights" category="Viewports" />
-        <color colorID="110" ColorRef="692224" name="Selection Highlights" category="Viewports" />
+        <color colorID="110" ColorRef="14864128" name="Selection Highlights" category="Viewports" />
         <color colorID="17320" ColorRef="16777215" name="Selection" category="Geometry" />
         <color colorID="17321" ColorRef="208" name="Subselection" category="Geometry" />
         <color colorID="17322" ColorRef="7895160" name="Freeze" category="Geometry" />

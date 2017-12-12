@@ -3,9 +3,9 @@
     <CUIWindows>
         <Window name="Command Panel" type="S" rank="0" subRank="0" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="4">
             <FRect left="1719" top="92" right="2279" bottom="1384" />
-            <DRect left="2008" top="131" right="2560" bottom="1358" />
+            <DRect left="1824" top="131" right="2560" bottom="1358" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="2008" top="131" right="2560" bottom="1358" floating="0" panelID="8" />
+            <CurPos left="1824" top="131" right="2560" bottom="1358" floating="0" panelID="8" />
         </Window>
         <Window name="Main Toolbar" type="T" rank="3" subRank="0" hidden="0" dPanel="1" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="3">
             <FRect left="18" top="15" right="1440" bottom="76" />
@@ -95,8 +95,8 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="62" imageName="Maintoolbar" actionID="LaunchFCurveEditor`Track View" tip="Curve Editor (Open)" label="" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50061" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="92" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
-                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50048" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="102">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50048" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="64">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="64" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="102" />
                     </FlyOffCt>
@@ -234,7 +234,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="-1172021248" imageID="-1" imageName="" actionID="16" tip="Override All Locks" label="Override All Locks" />
             </Items>
         </Window>
-        <Window name="MassFX Toolbar" type="T" rank="23" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="16">
+        <Window name="MassFX Toolbar" type="T" rank="24" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="16">
             <FRect left="200" top="200" right="485" bottom="261" />
             <DRect left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
@@ -284,9 +284,9 @@
         </Window>
         <Window name="User Interface" type="T" rank="4" subRank="0" hidden="0" dPanel="1" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="3">
             <FRect left="2589" top="205" right="3450" bottom="266" />
-            <DRect left="0" top="92" right="861" bottom="131" />
+            <DRect left="0" top="92" right="1191" bottom="131" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="0" top="92" right="861" bottom="131" floating="0" panelID="1" />
+            <CurPos left="0" top="92" right="1191" bottom="131" floating="0" panelID="1" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Separator`Seperator" tip="Separator" label="Separator" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="46" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="-1" imageName="" actionID="SaveScheme`Customize User Interface" tip="Save Custom UI Scheme" label="Save UI" />
@@ -298,13 +298,14 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="53" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="XRefMulti`-- PixGrinder --" tip="Xref multiple max files on the fly !" label="XRefMulti" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="124" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ViewportGrab`Tools" tip="Create Still Image File..." label="Create Still Image File..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="85" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Reveal_MaxFile`-- PixGrinder --" tip="Reveal Current Scene in Windows Explorer" label="Reveal Scene..." />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="106" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Reveal_BakFolder`-- PixGrinder --" tip="Reveal Current Scene Backup Folder " label="Reveal Bak Folder..." />
             </Items>
         </Window>
         <Window name="PixGrinder" type="T" rank="19" subRank="3" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="12">
             <FRect left="1297" top="130" right="1849" bottom="191" />
-            <DRect left="1968" top="573" right="2008" bottom="865" />
+            <DRect left="1784" top="573" right="1824" bottom="865" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="573" right="2008" bottom="865" floating="0" panelID="8" />
+            <CurPos left="1784" top="573" right="1824" bottom="865" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Duplicator`-- PixGrinder --" tip="Duplicator" label="Duplictor" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="LocksToggler`-- PixGrinder --" tip="Toggles Transforms locks" label="Animation Locks Toggler" />
@@ -317,7 +318,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="MaxScript_Help`-- PixGrinder --" tip="Maxscript Offline Help" label="MS Help" />
             </Items>
         </Window>
-        <Window name="Sugz" type="T" rank="21" subRank="0" hidden="0" dPanel="4" tabbed="0" curTab="-1" cType="1" toolbarRows="2" toolbarType="12">
+        <Window name="Sugz" type="T" rank="22" subRank="0" hidden="0" dPanel="4" tabbed="0" curTab="-1" cType="1" toolbarRows="2" toolbarType="12">
             <FRect left="2233" top="178" right="2317" bottom="274" />
             <DRect left="0" top="131" right="40" bottom="733" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
@@ -346,9 +347,9 @@
         </Window>
         <Window name="PixGrinder Layers" type="T" rank="19" subRank="1" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="12">
             <FRect left="169" top="449" right="310" bottom="510" />
-            <DRect left="1968" top="268" right="2008" bottom="436" />
+            <DRect left="1784" top="268" right="1824" bottom="436" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="268" right="2008" bottom="436" floating="0" panelID="8" />
+            <CurPos left="1784" top="268" right="1824" bottom="436" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SELayerExplorer`Scene Explorer" tip="Toggle Layer Explorer" label="Toggle Layer Explorer" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="LayersViewToggle`-- PixGrinder --" tip="Layers View Toggle - PixGrinder" label="Layers View Toggle" />
@@ -359,9 +360,9 @@
         </Window>
         <Window name="CopyPaste" type="T" rank="4" subRank="1" hidden="0" dPanel="1" tabbed="0" curTab="-1" cType="1" toolbarRows="9" toolbarType="3">
             <FRect left="565" top="468" right="699" bottom="809" />
-            <DRect left="861" top="92" right="1626" bottom="131" />
+            <DRect left="1191" top="92" right="2136" bottom="131" />
             <DRectPref left="100" top="100" right="500" bottom="150" />
-            <CurPos left="861" top="92" right="1626" bottom="131" floating="0" panelID="1" />
+            <CurPos left="1191" top="92" right="2136" bottom="131" floating="0" panelID="1" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="1" imageName="Maxscript" actionID="Macro59`DragAndDrop" tip="toggle Anim" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="-1" imageName="maxscript" actionID="Macro37`DragAndDrop" tip="Copy" label="Copy" />
@@ -374,9 +375,9 @@
         </Window>
         <Window name="PixGrinder - Reset Tools" type="T" rank="19" subRank="0" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="4" toolbarType="12">
             <FRect left="1153" top="391" right="1287" bottom="557" />
-            <DRect left="1968" top="131" right="2008" bottom="268" />
+            <DRect left="1784" top="131" right="1824" bottom="268" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="131" right="2008" bottom="268" floating="0" panelID="8" />
+            <CurPos left="1784" top="131" right="1824" bottom="268" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="50011" tip="Unlink Selection" label="Unlink Selection" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="32" imageName="Maintoolbar" actionID="CenterPivot`PolyTools" tip="Center Pivot" label="" />
@@ -386,9 +387,9 @@
         </Window>
         <Window name="PixGrinder - Spline Tools" type="T" rank="19" subRank="2" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="2" toolbarType="12">
             <FRect left="189" top="390" right="323" bottom="486" />
-            <DRect left="1968" top="436" right="2008" bottom="573" />
+            <DRect left="1784" top="436" right="1824" bottom="573" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="436" right="2008" bottom="573" floating="0" panelID="8" />
+            <CurPos left="1784" top="436" right="1824" bottom="573" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CableRetopology`-- PixGrinder --" tip="Cable Retopology - PixGrinder" label="CableRetopology" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SplineSelectMiddlePoints`-- PixGrinder --" tip="Selects Middle points on a Spline" label="SplinePoints" />
@@ -423,11 +424,11 @@
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
             <CurPos left="100" top="100" right="965" bottom="1353" floating="1" panelID="16" />
         </Window>
-        <Window name="Scene Explorer - Scene Explorer" type="N" rank="23" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="4">
-            <FRect left="1167" top="345" right="1893" bottom="1040" />
+        <Window name="Scene Explorer - Scene Explorer" type="N" rank="24" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="4">
+            <FRect left="144" top="310" right="1001" bottom="1350" />
             <DRect left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1167" top="345" right="1893" bottom="1040" floating="1" panelID="16" />
+            <CurPos left="144" top="310" right="1001" bottom="1350" floating="1" panelID="16" />
         </Window>
     </CUIWindows>
     <QATItems>
