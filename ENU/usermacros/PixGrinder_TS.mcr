@@ -357,6 +357,18 @@
 		Include "$userScripts/PixGrinder/Reveal_Maxfile_In_Explorer.ms"
 	)
 
+	macroScript Reveal_BakFolder
+	category:"-- PixGrinder --"
+	toolTip:"Reveal Current Scene Backup Folder "
+	buttonText:"Reveal Bak Folder..."
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Reveal_BackupFolder_In_Explorer.ms"
+	)
+
+
 	macroScript MaxScript_Help
 	category:"-- PixGrinder --"
 	toolTip:"MaxScript Help Offline"
@@ -592,6 +604,9 @@
 	(
 		FileIn "$userScripts/PixGrinder/Select_Next_Zoomed.ms"
 	)
+
+
+
 
 
 )
