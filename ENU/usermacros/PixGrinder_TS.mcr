@@ -605,6 +605,17 @@
 		FileIn "$userScripts/PixGrinder/Select_Next_Zoomed.ms"
 	)
 
+	macroScript CrossSurface
+	category:"-- PixGrinder --"
+	toolTip:"CrossSurface"
+	buttonText:"CrossSurface"
+	icon:#("Surface_tools",2)
+	silentErrors:false
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CrossSurface.ms"
+	)
+
 
 
 
