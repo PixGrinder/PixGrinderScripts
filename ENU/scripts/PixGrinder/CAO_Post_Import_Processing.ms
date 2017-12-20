@@ -134,7 +134,12 @@
 
 	rollout myParams "CAO Offset parameters"
 	(
+		label theInfos1 "H135   : Position = [0.0,-0.33,0.0] ; Rotation = [0.0,-30,0.0]; Scale=10"
+		label theInfos2 "H145   : Position = [1.68,0,-3.1] ; Rotation = [0.0,-3.5,0.0]; Scale=10"
+		label theInfos3 "AS365  : Position = [7.13,0.0,39.0] ; Rotation = [0.0,0.0,0.0]; Scale=10"
+		label theInfos4 "H225   : Position = [0.0,0.0,12.05] ; Rotation = [0.0,0.0,0.0]; Scale=10"
 		label txtPos "Position Offset :" offset:[0,15]
+		
 		edittext pX text:"0" fieldWidth:35 across:3 offset:[75,25]
 		edittext pY text:"0" fieldWidth:35 across:3 offset:[45,25]
 		edittext pZ text:"12.05" fieldWidth:35 across:3 offset:[10,25]
