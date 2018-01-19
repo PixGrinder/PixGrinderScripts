@@ -1315,19 +1315,20 @@
         <Menu title="Medit - Utilities">
             <Item mode="2" modeName="AM_ITEM" actionTableID="2" actionID="40274" customTitle="&amp;Render Map..." />
             <Item mode="2" modeName="AM_ITEM" actionTableID="2" actionID="1096" customTitle="&amp;Select Objects by Material..." />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="132537306" actionID="1" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="4745576" actionID="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="clear_medit_slots`Medit Tools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="condense_medit_slots`Medit Tools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="restore_medit_slots`Medit Tools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="4745576" actionID="1" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="132537306" actionID="1" />
         </Menu>
         <Menu title="Medit - Menu Bar">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="208" flat="0" customTitle="Mo&amp;des" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="131" flat="0" customTitle="&amp;Material" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="132" flat="0" customTitle="&amp;Navigation" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="133" flat="0" customTitle="&amp;Options" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="134" flat="0" customTitle="&amp;Utilities" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="465" flat="0" />
         </Menu>
         <Menu title="Track View - Track Bar - Menu Bar">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="219" flat="0" customTitle="Editor" />
@@ -4633,6 +4634,8 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="462" flat="0" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_MaxFile`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_BakFolder`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AutoSavePixGrinder`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BitmapFuckingUpdate`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="XRefMulti`-- PixGrinder --" />
@@ -4692,6 +4695,13 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayerFromSelection`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayersFreezeToggle`-- PixGrinder --" />
+        </Menu>
+        <Menu title="Medit - PixGrinder">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="clear_medit_slots`Medit Tools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FindMatFromSlot`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="182" flat="0" />
         </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />

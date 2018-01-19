@@ -16,7 +16,8 @@
 	oldEuler.z = oldEuler.z
 	oldEuler
 	myQuat = eulerToQuat oldEuler
-	format "%;%,%,%;;;;;;\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) --(floor(100*myQuat.x)/100) (floor(100*myQuat.z)/100) (floor(-100*myQuat.y)/100) (floor(-100*myQuat.w)/100)  --to:theFile
+-- 	format "%;%,%,%;;;;;;\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) --(floor(100*myQuat.x)/100) (floor(100*myQuat.z)/100) (floor(-100*myQuat.y)/100) (floor(-100*myQuat.w)/100)  --to:theFile
+	format "%;%,%,%;%;%;%;%;\r" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) (floor(100*myQuat.x)/100) (floor(100*myQuat.z)/100) (floor(-100*myQuat.y)/100) (floor(-100*myQuat.w)/100)  --to:theFile
 -- 	format "%;%,%,%" obj.name (-0.1*obj.pos.x) (0.1*obj.pos.z) (-0.1*obj.pos.y) -- (floor(100*myQuat.x)/100) (floor(100*myQuat.z)/100) (floor(-100*myQuat.y)/100) (floor(-100*myQuat.w)/100)  --to:theFile
 )
 

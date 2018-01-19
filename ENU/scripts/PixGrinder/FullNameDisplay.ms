@@ -16,7 +16,7 @@
 
 
 		try (destroyDialog pixGrinder_Globals_NmDisplay) catch()
-		createDialog pixGrinder_Globals_NmDisplay 400 120 1530 100
+		createDialog pixGrinder_Globals_NmDisplay 650 120 1230 100
 
 
 		

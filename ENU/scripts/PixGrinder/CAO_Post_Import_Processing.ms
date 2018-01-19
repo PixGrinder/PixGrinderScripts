@@ -174,15 +174,24 @@
 				ProcessCAO files[i] a1 a2 a3 a4 a5 a6 a7
 				viewport.setLayout #layout_4
 				viewport.activeViewport = 4
+				viewport.setType #view_persp_user
 				max tool maximize
 				clearSelection()
 				select geometry[1]
 				max zoomext sel all
 				select geometry
-				max zoomext sel all
 				enableSceneRedraw()
 				forceCompleteRedraw doDisabled:true
+				select geometry
+				max zoomext sel all
+				clearSelection()
+				viewport.setGridVisibility #all false
 				sleep 1
+				forceCompleteRedraw doDisabled:true
+				sleep 1
+				-- NitrousGraphicsManager.IsProgressiveRenderingFinished() -- TO CHECK --
+				disp = NitrousGraphicsManager.GetActiveViewportSetting()
+				disp.VisualStyleMode = #Shaded
 				saveMaxFile files[i] useNewFile:true quiet:true
 			)
 		)
@@ -197,6 +206,5 @@
 		callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
 	-- TPZ Specific
 	----------------------------------------------------------------------
-
 
 )
