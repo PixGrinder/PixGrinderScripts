@@ -34,6 +34,7 @@
 
 
 	myObj = selection[1]
+	myBak = copy myObj
 	convertToPoly myObj
 	addModifier myObj myWeld
 	resetXForm myObj
@@ -87,38 +88,31 @@
 
 
 	--myRadius = (distance theSpline.min theSpline.max)*1.5
-	x1.radius = (distance theSpline.min theSpline.max)
-	x1.scale = [0.01,0.01,0.01]
-	resetXform x1
-	collapseStack x1
+	x1.radius = (distance refShape.min refShape.max)*1.2
 	-- forceCompleteRedraw()
-	myThick = (distance theSpline.min theSpline.max)
+	myThick = (distance refShape.min refShape.max)
+
+	delete refShape
 	
 	-- /define the sphere radius using shape section --
 
-		thePos = polyop.getVert myObj 1
-		x1.pos = thePos
-		-- x1.radius = myRadius
-		x1.isHidden = false
-		select x1
-		max zoomext sel 
-		enableSceneRedraw()
-		forceCompleteRedraw()
-		--delete theSpline
-
-
+	thePos = polyop.getVert myObj 1
+	x1.pos = thePos
+	-- x1.radius = myRadius
+	x1.isHidden = false
+	select x1
+	max zoomext sel
 
 	while polyop.getNumVerts myObj > 0 do	
 	(
 		thePos = polyop.getVert myObj 1
 		x1.pos = thePos
-
-
 		addModifier myObj myMod
 		myMod.node = x1
 		collapseStack myObj
 		append myCoords (getSubObjCenter myObj (polyop.getVertSelection myObj ))
-		polyOp.deleteVerts myObj (polyop.getVertSelection myObj )
+		polyOp.deleteVerts myObj (polyop.getVertSelection myObj)
+		polyop.deleteIsoVerts myObj
 	)
 
 
@@ -160,7 +154,9 @@
 	myShape.steps = 0
 
 	delete myObj
-	select myShape
+	myBak.isHidden = false
+	select myBak
+	-- select myShape
 
 
 	--updateshape myShape
