@@ -20,11 +20,7 @@
 		if v1[1] > v2[1] then 1 else -1
 	)
 
-
-
 	myCoords = #()
-	-- polyOp.setVertSelection myObj #{1}
-	-- thePos = polyop.getVert myObj 1
 	x1 = sphere name:"tempSphere" 
 	x1.radius = 0.07
 	x1.segments = 8
@@ -34,47 +30,81 @@
 	myMod.volume = 3
 
 	myWeld = Vertex_Weld()
-	myWeld.threshold = 0.01
-
+	myWeld.threshold = 0.001
 
 
 	myObj = selection[1]
 	convertToPoly myObj
-	myCopy = copy myObj
-	myBackup = copy myObj
-	addModifier myCopy myWeld
-	collapseStack myCopy
-	thePos = polyop.getVert myCopy 1
+	addModifier myObj myWeld
+	resetXForm myObj
+	collapseStack myObj
+	thePos = polyop.getVert myObj 1
 
+	-- define the sphere radius using shape section --
+	select myObj
+	max hide inv
+	theSection = section length:10.0 width:10.0 pos:myObj.center isSelected:on
+	max views redraw
+	theSpline = convertToSplineShape theSection
+	select theSpline
+	theSpline.render_renderable = false
+	theSpline.render_displayRenderMesh = false
+	theSpline.render_mapcoords = false
+	x1.isHidden = false
+	theSpline.isHidden = false
+	select theSpline
+	max zoomext sel 
 	max modify mode
-	resetXForm myCopy
-	collapseStack myCopy
-	select myCopy
-	subObjectLevel = 1
-	polyOp.deleteVerts myCopy #{1..10}
-	polyOp.setVertSelection myCopy #{1}
-	myCopy.EditablePoly.GrowSelection ()
-	myCopy.EditablePoly.GrowSelection ()	max select invert
-	polyOp.deleteVerts myCopy (polyop.getVertSelection myCopy )
-	myradius = distance myCopy.min myCopy.max
-	delete myCopy
-	x1.radius = myradius * 0.5
--- 	x1.radius = 0.112*0.8
+	for i = 1 to (numSplines theSpline) do 
+	(
+		tempAr = for j = 1 to numKnots theSpline i collect j
+		setKnotSelection theSpline i tempAr keep:true 
+	)
+	--subObjectLevel = 1
+	weldSpline theSpline 0.001
+	updateshape theSpline
+	max views redraw
+	-- subObjectLevel = 3
 
-	myCopy2 = copy myObj
-	thePos = polyop.getVert myCopy2 1
-	x1.pos = thePos
-	addModifier myCopy2 myMod
-	myMod.node = x1
-	collapseStack myCopy2
-	max modify mode
-	select myCopy2
-	subObjectLevel = 1
-	max select invert
-	polyOp.deleteVerts myCopy2 (polyop.getVertSelection myCopy2 )
-	myThick = distance myCopy2.min myCopy2.max
-	delete myCopy2
+	knotCo = #()
+	for i = 1 to numKnots theSpline 1 do append knotCo (getKnotPoint theSpline 1 i)
 
+	refShape = splineShape ()
+	addNewSpline refShape
+	for i = 1 to knotCo.count do 
+	(
+		addKnot refShape 1 #corner #line knotCo[i]
+		if i > 1 do updateshape refShape
+	)
+	max views redraw
+	delete theSpline
+	select refShape
+	refShape.pivot = refShape.center
+	max zoomext sel
+
+
+--
+
+
+	--myRadius = (distance theSpline.min theSpline.max)*1.5
+	x1.radius = (distance theSpline.min theSpline.max)
+	x1.scale = [0.01,0.01,0.01]
+	resetXform x1
+	collapseStack x1
+	-- forceCompleteRedraw()
+	myThick = (distance theSpline.min theSpline.max)
+	
+	-- /define the sphere radius using shape section --
+
+		thePos = polyop.getVert myObj 1
+		x1.pos = thePos
+		-- x1.radius = myRadius
+		x1.isHidden = false
+		select x1
+		max zoomext sel 
+		enableSceneRedraw()
+		forceCompleteRedraw()
+		--delete theSpline
 
 
 
@@ -124,7 +154,7 @@
 	myShape.render_renderable = true
 	myShape.render_mapcoords = true
 	myShape.render_displayRenderMesh = true
-	myShape.render_thickness = myThick*0.5
+	myShape.render_thickness = myThick
 	myShape.render_sides = 3
 	myShape.render_threshold = 120
 	myShape.steps = 0
