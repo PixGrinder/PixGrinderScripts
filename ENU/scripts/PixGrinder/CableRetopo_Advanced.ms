@@ -34,6 +34,7 @@
 
 
 	myObj = selection[1]
+	theLay = layermanager.getlayerFromName selection[1].layer.name
 	myBak = copy myObj
 	convertToPoly myObj
 	addModifier myObj myWeld
@@ -45,8 +46,14 @@
 	select myObj
 	max hide inv
 	theSection = section length:10.0 width:10.0 pos:myObj.center isSelected:on
+	theLay.addNode theSection
 	max views redraw
+
+
+
+
 	theSpline = convertToSplineShape theSection
+	theLay.addNode theSpline
 	select theSpline
 	theSpline.render_renderable = false
 	theSpline.render_displayRenderMesh = false
@@ -93,8 +100,8 @@
 	myThick = (distance refShape.min refShape.max)
 
 	delete refShape
-	polyOp.deleteVerts myObj #{1..10}
-	update myObj
+	-- polyOp.deleteVerts myObj #{1..10}
+	-- update myObj
 	
 	-- /define the sphere radius using shape section --
 
@@ -108,10 +115,15 @@
 	max views redraw
 	max zoomext sel
 	myTresh = 1
-	while polyop.getNumVerts myObj > 0 and myTresh < 500 do	
+
+	-- polyop.setVertSelection myobj #{1}
+	-- polyop.setVertSelection myobj #{2274}
+	-- polyop.getNumVerts myobj 
+
+	while polyop.getNumVerts myObj > 0 and myTresh < 250 do	
 	(
 		thePos = polyop.getVert myObj 1
-		x1.pos = thePos
+		x1.pos = thePos + [0.001,0.001,0.001]
 		addModifier myObj myMod
 		myMod.node = x1
 		collapseStack myObj
@@ -160,8 +172,14 @@
 	myShape.steps = 0
 
 	delete myObj
+	myshape.pivot = myShape.center
+	clearSelection()
+	max hide inv
 	myBak.isHidden = false
-	select myBak
+	myShape.isHidden = false
+	select myShape
+	max zoomext sel
+
 	-- select myShape
 
 
