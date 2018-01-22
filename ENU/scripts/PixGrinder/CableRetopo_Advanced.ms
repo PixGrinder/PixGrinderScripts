@@ -40,7 +40,8 @@
 
 	myObj = selection[1]
 	convertToPoly myObj
-	myCopy = copy myObj 
+	myCopy = copy myObj
+	myBackup = copy myObj
 	addModifier myCopy myWeld
 	collapseStack myCopy
 	thePos = polyop.getVert myCopy 1
@@ -53,12 +54,12 @@
 	polyOp.deleteVerts myCopy #{1..10}
 	polyOp.setVertSelection myCopy #{1}
 	myCopy.EditablePoly.GrowSelection ()
-	myCopy.EditablePoly.GrowSelection ()
-	max select invert
+	myCopy.EditablePoly.GrowSelection ()	max select invert
 	polyOp.deleteVerts myCopy (polyop.getVertSelection myCopy )
 	myradius = distance myCopy.min myCopy.max
 	delete myCopy
-	x1.radius = myradius * 0.06
+	x1.radius = myradius * 0.5
+-- 	x1.radius = 0.112*0.8
 
 	myCopy2 = copy myObj
 	thePos = polyop.getVert myCopy2 1
