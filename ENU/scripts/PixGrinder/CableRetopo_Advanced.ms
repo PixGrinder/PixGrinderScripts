@@ -93,17 +93,22 @@
 	myThick = (distance refShape.min refShape.max)
 
 	delete refShape
+	polyOp.deleteVerts myObj #{1..10}
+	update myObj
 	
 	-- /define the sphere radius using shape section --
 
 	thePos = polyop.getVert myObj 1
+	
 	x1.pos = thePos
+	select myObj
 	-- x1.radius = myRadius
 	x1.isHidden = false
 	select x1
+	max views redraw
 	max zoomext sel
-
-	while polyop.getNumVerts myObj > 0 do	
+	myTresh = 1
+	while polyop.getNumVerts myObj > 0 and myTresh < 500 do	
 	(
 		thePos = polyop.getVert myObj 1
 		x1.pos = thePos
@@ -113,6 +118,7 @@
 		append myCoords (getSubObjCenter myObj (polyop.getVertSelection myObj ))
 		polyOp.deleteVerts myObj (polyop.getVertSelection myObj)
 		polyop.deleteIsoVerts myObj
+		myTresh = myTresh + 1
 	)
 
 
