@@ -61,7 +61,7 @@
 	x1.isHidden = false
 	theSpline.isHidden = false
 	select theSpline
-	max zoomext sel 
+-- 	max zoomext sel 
 	max modify mode
 	for i = 1 to (numSplines theSpline) do 
 	(
@@ -88,7 +88,7 @@
 	delete theSpline
 	select refShape
 	refShape.pivot = refShape.center
-	max zoomext sel
+-- 	max zoomext sel
 
 
 --
@@ -113,7 +113,7 @@
 	x1.isHidden = false
 	select x1
 	max views redraw
-	max zoomext sel
+-- 	max zoomext sel
 	myTresh = 1
 
 	-- polyop.setVertSelection myobj #{1}
@@ -122,6 +122,7 @@
 
 	while polyop.getNumVerts myObj > 0 and myTresh < 250 do	
 	(
+		--for i = 1 to (getNumVerts myObj) do format "%   %\r" i (polyop.getVert myObj i)
 		thePos = polyop.getVert myObj 1
 		x1.pos = thePos + [0.001,0.001,0.001]
 		addModifier myObj myMod
@@ -183,7 +184,7 @@
 	-- select myShape
 
 
-	--updateshape myShape
+	--updateshape selection[1]
 
 	--for obj in myCoords do format "%\r" obj
 	--actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener

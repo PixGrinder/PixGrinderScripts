@@ -3,7 +3,7 @@
 
 (
 	obj = selection[1]
-	
+
 	fn myConvert x1 = 
 	(
 		convertToPoly x1
@@ -13,6 +13,7 @@
 	
 	if superclassof obj == GeometryClass do
 	(
+		obj.backfacecull = on
 		max modify mode
 		if classof obj == Editable_Poly then 
 		(

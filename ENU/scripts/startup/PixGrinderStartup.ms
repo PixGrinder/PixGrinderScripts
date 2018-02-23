@@ -24,7 +24,7 @@
 	(
 
 		label nmLbl "NAME" align:#center offset:[0,5]
-		edittext myName "" text:"" fieldWidth:350 align:#center  offset:[0,5] -- height:20
+		edittext myName "" text:"" fieldWidth:550 align:#center  offset:[0,5] -- height:20
 		button NmBtn "OK" offset:[55,15] across:4 align:#left width:50
 		button NmBtnCopy "Copy" offset:[40,15] across:4 align:#left width:50
 		button NmBtnUpd "Update" offset:[30,15] across:4 align:#left width:50

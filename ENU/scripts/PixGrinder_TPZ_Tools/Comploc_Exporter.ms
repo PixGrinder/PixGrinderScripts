@@ -39,7 +39,9 @@
 
 	
 	copyfile (maxfilepath+maxfilename) (maxfilepath+substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
-	saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
+	
+	-- SCENE SAVE BEFORE EXPORT -- 
+	--saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
 	
 		
 	disableSceneRedraw()
@@ -75,7 +77,7 @@
 -- 	clearListener()
 -- 	allLayers = #()
 	
-	--     Collecte du nom des layers à part hotspots et zz_      --
+	--     Collecte du nom des layers Ã  part hotspots et zz_      --
 	
 	for w = 1 to layermanager.count-1 do 
 	(
@@ -100,7 +102,7 @@
 		)
 		if animed == 1 do
 		(
-			myDum = dummy pox:[0,0,0] name:(x1.name + "_rootnode")
+			myDum = dummy pos:[0,0,0] name:(x1.name + "_rootnode")
 			for obj in objects where obj.parent == undefined and obj != myDum do obj.parent = myDum
 		)
 		myExp = exp_path + x1.name + ".fbx"

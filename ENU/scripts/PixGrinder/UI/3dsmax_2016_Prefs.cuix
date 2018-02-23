@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ADSK_CUI>
     <CUIWindows>
-        <Window name="Command Panel" type="S" rank="0" subRank="0" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="4">
+        <Window name="Command Panel" type="S" rank="2" subRank="0" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="4">
             <FRect left="1719" top="92" right="2279" bottom="1384" />
-            <DRect left="2008" top="131" right="2560" bottom="1358" />
+            <DRect left="1824" top="131" right="2560" bottom="1358" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="2008" top="131" right="2560" bottom="1358" floating="0" panelID="8" />
+            <CurPos left="1824" top="131" right="2560" bottom="1358" floating="0" panelID="8" />
         </Window>
         <Window name="Main Toolbar" type="T" rank="3" subRank="0" hidden="0" dPanel="1" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="3">
             <FRect left="18" top="15" right="1440" bottom="76" />
@@ -36,8 +36,8 @@
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50001" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="20" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50002" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="22" />
-                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50003" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="26">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50003" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="24">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="24" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="26" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="28" />
@@ -49,9 +49,9 @@
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="104" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="View" />
-                <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="30">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
+                <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="34">
+                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="30" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="32" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="34" />
@@ -78,8 +78,8 @@
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="40210" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="50" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40113" tip="Align" label="Ali&amp;gn..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40211" tip="Normal Align " label="&amp;Normal Align..." />
-                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50012" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="56">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50012" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="58">
+                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="56" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="98" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="58" />
@@ -125,8 +125,8 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50004" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="36" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50006" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="38" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50007" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="40" />
-                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="42">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" outEnabledIndex="-1" outDisabledIndex="-1" inDisabledIndex="-1" captionVisibility="0" iconFilePrefix="Maintoolbar" iconImageIndex="44">
+                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="42" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="44" />
                         <Fly outEnabled="-1" inEnabled="-1" outDisabled="-1" inDisabled="1" iconFilePrefix="Maintoolbar" iconImageIndex="46" />
@@ -254,13 +254,14 @@
         </Window>
         <Window name="Modifiers" type="T" rank="3" subRank="3" hidden="0" dPanel="1" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="3">
             <FRect left="438" top="168" right="713" bottom="229" />
-            <DRect left="1574" top="53" right="2259" bottom="92" />
+            <DRect left="1574" top="53" right="2291" bottom="92" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1574" top="53" right="2259" bottom="92" floating="0" panelID="1" />
+            <CurPos left="1574" top="53" right="2291" bottom="92" floating="0" panelID="1" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Unwrap_UVW`Modifiers" tip="Unwrap UVW Modifier" label="Unwrap UVW" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Uvwmap`Modifiers" tip="UVW Map Modifier" label="UVW Map" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UVW_Xform`Modifiers" tip="UVW XForm Modifier" label="UVW XForm" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UvBox`-- PixGrinder --" tip="UV Box" label="UV Box" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ProBoolean`Objects Compounds" tip="ProBoolean Compound Object" label="ProBoolean" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Smooth`Modifiers" tip="Smooth Modifier" label="Smooth" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="4" imageName="Max_Edit_Modifiers" actionID="Shell`Modifiers" tip="Shell Modifier" label="" />
@@ -299,21 +300,23 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="85" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Reveal_MaxFile`-- PixGrinder --" tip="Reveal Current Scene in Windows Explorer" label="Reveal Scene..." />
             </Items>
         </Window>
-        <Window name="PixGrinder" type="T" rank="19" subRank="3" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="12">
+        <Window name="PixGrinder" type="T" rank="21" subRank="4" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="12">
             <FRect left="1297" top="130" right="1849" bottom="191" />
-            <DRect left="1968" top="573" right="2008" bottom="865" />
+            <DRect left="1784" top="617" right="1824" bottom="971" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="573" right="2008" bottom="865" floating="0" panelID="8" />
+            <CurPos left="1784" top="617" right="1824" bottom="971" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Duplicator`-- PixGrinder --" tip="Duplicator" label="Duplictor" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="LocksToggler`-- PixGrinder --" tip="Toggles Transforms locks" label="Animation Locks Toggler" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="39081" imageID="5" imageName="Helpers" actionID="32653" tip="Launch Global Search" label="" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="MaterialRemove`-- PixGrinder --" tip="Material Remove" label="Material Remove" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="WireColorChanger`-- PixGrinder --" tip="Wire Color Changer" label="WColor" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="PivotAlignator`-- PixGrinder --" tip="Pivot Alignator" label="PivotAlignator" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="0" imageID="1" imageName="SugzTools" actionID="470" tip="Selection/Preview Highlights Toggle" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="BS_CollapseMultiMaterial`-- PixGrinder --" tip="Collapse MultiSubObjects Material" label="Collapse MultiMat" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="BitmapFuckingUpdate`-- PixGrinder --" tip="Bitmap Fucking Update !!" label="BitmapUpdate" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="MaxScript_Help`-- PixGrinder --" tip="Maxscript Offline Help" label="MS Help" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="0" imageName="Patches" actionID="CAO_OneClickProcess`-- PixGrinder --" tip="CAO_OneClickProcess" label="" />
             </Items>
         </Window>
         <Window name="Sugz" type="T" rank="22" subRank="0" hidden="0" dPanel="4" tabbed="0" curTab="-1" cType="1" toolbarRows="2" toolbarType="12">
@@ -343,11 +346,11 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Scale`Tools" tip="Scale" label="Scale" />
             </Items>
         </Window>
-        <Window name="PixGrinder Layers" type="T" rank="19" subRank="1" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="12">
+        <Window name="PixGrinder Layers" type="T" rank="21" subRank="2" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="12">
             <FRect left="169" top="449" right="310" bottom="510" />
-            <DRect left="1968" top="268" right="2008" bottom="436" />
+            <DRect left="1784" top="312" right="1824" bottom="480" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="268" right="2008" bottom="436" floating="0" panelID="8" />
+            <CurPos left="1784" top="312" right="1824" bottom="480" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SELayerExplorer`Scene Explorer" tip="Toggle Layer Explorer" label="Toggle Layer Explorer" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="LayersViewToggle`-- PixGrinder --" tip="Layers View Toggle - PixGrinder" label="Layers View Toggle" />
@@ -371,11 +374,11 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="88" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FindMatFromSlot`-- PixGrinder --" tip="Find Material From Slot" label="FindMatFromSlot" />
             </Items>
         </Window>
-        <Window name="PixGrinder - Reset Tools" type="T" rank="19" subRank="0" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="4" toolbarType="12">
+        <Window name="PixGrinder - Reset Tools" type="T" rank="21" subRank="1" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="4" toolbarType="12">
             <FRect left="1153" top="391" right="1287" bottom="557" />
-            <DRect left="1968" top="131" right="2008" bottom="268" />
+            <DRect left="1784" top="175" right="1824" bottom="312" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="131" right="2008" bottom="268" floating="0" panelID="8" />
+            <CurPos left="1784" top="175" right="1824" bottom="312" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="50011" tip="Unlink Selection" label="Unlink Selection" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="32" imageName="Maintoolbar" actionID="CenterPivot`PolyTools" tip="Center Pivot" label="" />
@@ -383,11 +386,11 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Collapse_Selected`-- PixGrinder --" tip="Collapse Hierarchy on Selection" label="Collapse Selected" />
             </Items>
         </Window>
-        <Window name="PixGrinder - Spline Tools" type="T" rank="19" subRank="2" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="2" toolbarType="12">
+        <Window name="PixGrinder - Spline Tools" type="T" rank="21" subRank="3" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="2" toolbarType="12">
             <FRect left="189" top="390" right="323" bottom="486" />
-            <DRect left="1968" top="436" right="2008" bottom="573" />
+            <DRect left="1784" top="480" right="1824" bottom="617" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="1968" top="436" right="2008" bottom="573" floating="0" panelID="8" />
+            <CurPos left="1784" top="480" right="1824" bottom="617" floating="0" panelID="8" />
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CableRetopology`-- PixGrinder --" tip="Cable Retopology - PixGrinder" label="CableRetopology" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SplineSelectMiddlePoints`-- PixGrinder --" tip="Selects Middle points on a Spline" label="SplinePoints" />
@@ -417,16 +420,25 @@
             </Items>
         </Window>
         <Window name="Scene Explorer - Layer Explorer" type="N" rank="24" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="4">
-            <FRect left="100" top="100" right="841" bottom="1027" />
+            <FRect left="0" top="0" right="544" bottom="884" />
             <DRect left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="100" top="100" right="841" bottom="1027" floating="1" panelID="16" />
+            <CurPos left="100" top="100" right="644" bottom="984" floating="1" panelID="16" />
         </Window>
         <Window name="Scene Explorer - Scene Explorer" type="N" rank="24" subRank="0" hidden="1" dPanel="4" tabbed="0" curTab="-1" cType="4">
-            <FRect left="144" top="310" right="1001" bottom="1350" />
+            <FRect left="1057" top="257" right="1567" bottom="1514" />
             <DRect left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
             <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
-            <CurPos left="144" top="310" right="1001" bottom="1350" floating="1" panelID="16" />
+            <CurPos left="1057" top="257" right="1567" bottom="1514" floating="1" panelID="16" />
+        </Window>
+        <Window name="Pixgrinder - QuickReset" type="T" rank="21" subRank="0" hidden="0" dPanel="8" tabbed="0" curTab="-1" cType="1" toolbarRows="1" toolbarType="12">
+            <FRect left="902" top="674" right="947" bottom="735" />
+            <DRect left="1784" top="131" right="1824" bottom="175" />
+            <DRectPref left="2147483647" top="2147483647" right="-2147483648" bottom="-2147483648" />
+            <CurPos left="1784" top="131" right="1824" bottom="175" floating="0" panelID="8" />
+            <Items>
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ObjectQuickReset`-- PixGrinder --" tip="Object Quick Reset" label="QuickReset" />
+            </Items>
         </Window>
     </CUIWindows>
     <QATItems>
@@ -436,5 +448,6 @@
         <Item actionTableID="0" actionName="40015" />
         <Item actionTableID="0" actionName="40016" />
         <Item actionTableID="647394" actionName="SetProjectFolder`Tools" />
+        <Item actionTableID="0" actionName="40008" />
     </QATItems>
 </ADSK_CUI>

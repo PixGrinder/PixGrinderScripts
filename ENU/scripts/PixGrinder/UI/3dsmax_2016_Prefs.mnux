@@ -708,6 +708,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ProBoolean`Objects Compounds" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="TurnToPolyMod`Modifiers" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Quadrify`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Remove`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Break`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Split`Editable Polygon Object" />
