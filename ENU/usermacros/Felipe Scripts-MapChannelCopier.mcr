@@ -1,7 +1,10 @@
 macroScript MapChannelCopier
 category:"Felipe Scripts"
 toolTip:"Copies a map chanel to another on all scene objects"
-
+buttonText:"MapChannelCopier"
+--icon:#("Felipe Scripts",11)
+silentErrors:true
+autoUndoEnabled:true
 
 (
 rollout pda_chanelcopier "Map Channel Copier" 
@@ -15,7 +18,7 @@ rollout pda_chanelcopier "Map Channel Copier"
 		(
 					ChannelInfo.dialog()
 			
-			for obj in geometry do (
+			for obj in selection do (
 				
 				if classOf obj == PolyMeshObject or classOf obj == Editable_Poly do (
 				pda_x = polyop.getNumMaps obj
@@ -41,7 +44,7 @@ rollout pda_chanelcopier "Map Channel Copier"
 		
 	on pda_CollapseModifiers pressed do 
 		(
-		for obj in geometry do maxOps.CollapseNode obj on
+		for obj in selection do maxOps.CollapseNode obj on
 		)
 		
 		

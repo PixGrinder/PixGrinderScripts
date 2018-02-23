@@ -617,7 +617,38 @@
 	)
 
 
+	macroScript UvBox
+	category:"-- PixGrinder --"
+	toolTip:"UV Box"
+	buttonText:"UV Box"
+	icon:#("PixGrinder",21)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/UV_Box.ms"
+	)
+
+	macroScript CAO_OneClickProcess
+	category:"-- PixGrinder --"
+	toolTip:"CAO_OneClickProcess"
+	buttonText:"CAO_Optim"
+	--icon:#("PixGrinder",21)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/A_Trier/02 - WIP/CAO_OneClickProcess.ms"
+	)
 
 
+	macroScript ObjectQuickReset
+	category:"-- PixGrinder --"
+	toolTip:"Object Quick Reset"
+	buttonText:"QuickReset"
+	icon:#("PixGrinder",4)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/A_Trier/02 - WIP/Object_QuickReset.ms"
+	)
 
 )
