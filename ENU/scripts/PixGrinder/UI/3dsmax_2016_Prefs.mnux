@@ -4642,6 +4642,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BitmapFuckingUpdate`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="XRefMulti`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AttachSelected`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NamesTransfer`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listSelected`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listHierarchy`-- PixGrinder --" />

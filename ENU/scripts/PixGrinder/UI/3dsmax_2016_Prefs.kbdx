@@ -397,7 +397,6 @@
     <shortcut fVirt="7" accleleratorKey="77" actionID="40195" actionTableID="0" />
     <shortcut fVirt="15" accleleratorKey="83" actionID="40008" actionTableID="0" />
     <shortcut fVirt="31" accleleratorKey="83" actionID="40007" actionTableID="0" />
-    <shortcut fVirt="3" accleleratorKey="82" actionID="50003" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="188" actionID="50020" actionTableID="1" />
     <shortcut fVirt="3" accleleratorKey="190" actionID="50022" actionTableID="1" />
     <shortcut fVirt="11" accleleratorKey="65" actionID="50035" actionTableID="1" />
@@ -586,5 +585,6 @@
     <shortcut fVirt="11" accleleratorKey="102" actionID="Select_Next_Object_Zoom`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="100" actionID="Select_Previous_Object_Zoom`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="86" actionID="ESpline_Divide`Editable Spline Object" actionTableID="647394" />
+    <shortcut fVirt="3" accleleratorKey="82" actionID="SmartScale`Tools" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>

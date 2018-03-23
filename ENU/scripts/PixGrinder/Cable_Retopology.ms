@@ -4,7 +4,7 @@
 -- PixGrinder Scripts --
 -- Cable Retopology --
 -- Creates a spline from a bad cable model automatically --
--- V 4.0 --
+-- V 4.1 --
 -- by Philippe DASSONVILLE
 -- dassonphil@gmail.com
 
@@ -31,22 +31,24 @@
 			myCond = false
 		)
 
-		temp1 = polyop.getVertSelection myCable
-
-
-		if subobjectlevel != 1 or (temp1 as array).count < 3 do
+		if subobjectlevel != 1 or ((getVertSelection myCable)as array).count < 3 do
 		(
 			exit with (MessageBox("Need to select cable end vertices"))
 			myCond = false
 		)
 
-
-		select myCable
-
--- 		exit with (messageBox ("EveryThing OK Till Now !!! "))
+		-- Get Shape Radius --
+		(
+			mySnap = snapshot myCable
+			allVerts = (for i = 1 to (getNumVerts mySnap) collect i) as bitArray
+			ToRemoveNow = allVerts - getVertSelection mySnap
+			meshop.deleteVerts mySnap ToRemoveNow
+			global myThick = (distance mySnap.min mySnap.max)*0.9
+			delete mySnap
+		)
 		
--- 		myCond = false
-
+		select myCable
+		temp1 = getVertSelection myCable
 		converttopoly myCable
 		
 		fn getSubObjCenter obj verts center:[0, 0, 0] =
@@ -96,7 +98,8 @@
 		myShape.render_renderable = true
 		myShape.render_mapcoords = true
 		myShape.render_displayRenderMesh = true
-		myShape.render_thickness = 0.112
+		-- myShape.render_thickness = 0.112
+		myShape.render_thickness = myThick
 		myShape.render_sides = 5
 		myShape.render_threshold = 89
 		myShape.steps = 0

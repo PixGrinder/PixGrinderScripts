@@ -3,16 +3,16 @@
     <colorSchemeType type="0" />
     <IconImageScales>
         <appFrameColorTheme value="0" />
-        <enabledSatScale value="100,000000" />
-        <enabledValueScale value="100,000000" />
-        <enabledAlphaScale value="100,000000" />
-        <enabledContrastScale value="0,000000" />
-        <enabledGradientMapScale value="0,000000" />
-        <disabledSatScale value="0,000000" />
-        <disabledValueScale value="80,000000" />
-        <disabledAlphaScale value="100,000000" />
-        <disabledContrastScale value="0,000000" />
-        <disabledGradientMapScale value="0,000000" />
+        <enabledSatScale value="100.000000" />
+        <enabledValueScale value="100.000000" />
+        <enabledAlphaScale value="100.000000" />
+        <enabledContrastScale value="0.000000" />
+        <enabledGradientMapScale value="0.000000" />
+        <disabledSatScale value="0.000000" />
+        <disabledValueScale value="80.000000" />
+        <disabledAlphaScale value="100.000000" />
+        <disabledContrastScale value="0.000000" />
+        <disabledGradientMapScale value="0.000000" />
         <enabledInvertImage value="0" />
         <disabledInvertImage value="0" />
     </IconImageScales>

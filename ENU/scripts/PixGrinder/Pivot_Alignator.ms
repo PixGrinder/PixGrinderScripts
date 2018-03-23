@@ -22,22 +22,6 @@
 	-- clearListener()
 	try (delete pda_dum) catch ()
 
-	rollout myAngleRollout "Pivot Angle"
-	(
-		label myLbl "Pivot Angle :" offset:[0,10]
-		spinner myAngleSpinner range:[-1.0,1.0,0.0] scale:0.01 type:#float align:#center fieldwidth:150 offset:[0,7]
-		button myAngleOk "OK" width:75 offset:[0,7]
-
-		on myAngleOk pressed do destroyDialog myAngleRollout
-		on myAngleSpinner changed state do 
-		(
-			in coordsys local pda_dum.rotation.z = myAngleSpinner.value
-			myAngleSpinner.value = 0.0
--- 			pda_dum.rotation = myAngleSpinner.value
-		)
-	)
-
-
 
 	if selection[1] == undefined then 
 	(
@@ -102,7 +86,7 @@
 		(
 			-- pda_cur.parent = pda_dum
 			-- select pda_dum
-			createDialog myAngleRollout 250 100 1000 250 modal:true
+			-- createDialog myAngleRollout 250 100 1000 250 modal:true
 			pda_cur.parent = undefined
 			pda_cur.pivot = pda_cur.center
 			pda_cur.backFaceCull = true
@@ -123,15 +107,16 @@
 			collapseStack pda_cur
 			pda_cur.backFaceCull = pda_bkFace
 			select pda_cur
-			max rotate
-			toolMode.transformCenter()
-			setRefCoordSys #local
 			max scale
 			toolMode.transformCenter()
 			setRefCoordSys #local
 			max move
 			toolMode.transformCenter()
 			setRefCoordSys #local
+			max rotate
+			toolMode.transformCenter()
+			setRefCoordSys #local
+			maxOps.pivotMode = #pivotOnly
 		)
 	) 
 )

@@ -17,7 +17,8 @@
 	sort selNames
 	actionMan.executeAction 0 "40472"
 	clearListener()
-	for obj in selNames do format "%\r" obj
+-- 	for obj in selNames do format "%\r" obj
+	for obj in selNames do format "%%" obj ", "
 )
 
 

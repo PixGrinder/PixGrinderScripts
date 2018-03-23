@@ -11,7 +11,8 @@
 (
 	if selection.count != 2 then messagebox("Please select only 2 objects") else 
 	(
-	selection[2].name = selection[1].name 
-	if querybox ("Delete 1st object ?") == true then delete selection[1] else print "Name Copied"
-	)
+		selection[2].name = selection[1].name 
+		--if querybox ("Delete 1st object ?") == true then delete selection[1] else print "Name Copied"
+		select selection[2]
+		)
 )

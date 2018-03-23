@@ -265,6 +265,6 @@
 
 	ProgressEnd()
 
-	messageBox("BlurScript done on whole scene objects ")
+-- 	messageBox("BlurScript done on whole scene objects ")
 )
 
