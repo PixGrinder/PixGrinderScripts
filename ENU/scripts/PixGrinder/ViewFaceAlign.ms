@@ -18,7 +18,7 @@
 	in CoordSys Local move myCam [0,0,myDist]
 	viewport.setCamera myCam
 	redrawViews()
-	viewport.setType #view_iso_usera
+	viewport.setType #view_iso_user
 	delete myCam
 	max zoomext sel
 	max pancamera
