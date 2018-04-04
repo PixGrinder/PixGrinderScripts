@@ -38,14 +38,14 @@
 		)
 
 		-- Get Shape Radius --
-		(
-			mySnap = snapshot myCable
-			allVerts = (for i = 1 to (getNumVerts mySnap) collect i) as bitArray
-			ToRemoveNow = allVerts - getVertSelection mySnap
-			meshop.deleteVerts mySnap ToRemoveNow
-			global myThick = (distance mySnap.min mySnap.max)*0.9
-			delete mySnap
-		)
+		mySnap = snapshot myCable
+		allVerts = (for i = 1 to (getNumVerts mySnap) collect i) as bitArray
+		ToRemoveNow = allVerts - getVertSelection mySnap
+		meshop.deleteVerts mySnap ToRemoveNow
+		global myThick = (distance mySnap.min mySnap.max)*0.9
+		print myThick
+		delete mySnap
+
 		
 		select myCable
 		temp1 = getVertSelection myCable

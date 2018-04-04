@@ -651,4 +651,48 @@
 		FileIn "$userScripts/PixGrinder/A_Trier/02 - WIP/Object_QuickReset.ms"
 	)
 
+	macroScript CopyWireColor
+	category:"-- PixGrinder --"
+	toolTip:"CopyWireColor"
+	buttonText:"QCopyWireColor"
+	icon:#("Material_Modifiers",3)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CopyWireColor.ms"
+	)
+
+	macroScript Welder_Advanced
+	category:"-- PixGrinder --"
+	toolTip:"WelderAdvanced"
+	buttonText:"Welder"
+	icon:#("UVWUnwrapTools",4)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/Welder_Advanced.ms"
+	)
+
+	macroScript AttachSelected
+	category:"-- PixGrinder --"
+	toolTip:"AttachSelected"
+	buttonText:"AttachSelected"
+	icon:#("UVWUnwrapTools",4)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/AttachSelected.ms"
+	)
+
+	macroScript ViewFaceAlign
+	category:"-- PixGrinder --"
+	toolTip:"ViewFaceAlign"
+	buttonText:"ViewFaceAlign"
+	icon:#("Maintoolbar",76)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/ViewFaceAlign.ms"
+	)
+
 )

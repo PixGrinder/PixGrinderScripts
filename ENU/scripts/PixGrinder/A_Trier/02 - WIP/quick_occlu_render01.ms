@@ -13,7 +13,8 @@
 			pda_lt_on = #()
 			pda_path = ""
 			select pda01
-			pda_ratio = (distance objects.min objects.max)/(distance $.max $.min)
+-- 			pda_ratio = (distance objects.min objects.max)/(distance $.max $.min)
+			pda_ratio = (distance $.max $.min)
 			-- save lights on status + disable all lights
 			for i = 1 to pda_lights.count do append pda_lt_on pda_lights[i].enabled
 			pda_lt_on
@@ -28,8 +29,8 @@
 			meditmaterials[1].name = "Override_Mtl"
 			meditMaterials[1].selfIllumAmount = 100
 			meditMaterials[1].diffusemap = Ambient_Reflective_Occlusion__3dsmax ()
-			meditMaterials[1].diffusemap.max_distance = pda_ratio
-			meditMaterials[1].diffusemap.samples = 256
+			meditMaterials[1].diffusemap.max_distance = 0.0
+			meditMaterials[1].diffusemap.samples = 64
 
 			renderers.current.Enable_Material_Override = true
 			renderers.current.Override_Material = meditmaterials[1]
