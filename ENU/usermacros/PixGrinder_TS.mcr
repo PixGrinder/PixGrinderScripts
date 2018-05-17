@@ -695,4 +695,39 @@
 		FileIn "$userScripts/PixGrinder/ViewFaceAlign.ms"
 	)
 
+	macroScript PerspAdvanced
+	category:"-- PixGrinder --"
+	toolTip:"PerspAdvanced"
+	buttonText:"PerspAdvanced"
+	--icon:#("Maintoolbar",76)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/PerspectiveViewAdvanced.ms"
+	)
+
+
+	macroScript PivotFromFaces
+	category:"-- PixGrinder --"
+	toolTip:"PivotFromFaces"
+	buttonText:"PivotFromFaces"
+	--icon:#("Maintoolbar",76)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/PivotFromFaces.ms"
+	)
+
+
+	macroScript ScaleSwitch
+	category:"-- PixGrinder --"
+	toolTip:"ScaleSwitch"
+	buttonText:"ScaleSwitch"
+	icon:#("Maintoolbar",26)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/ScaleSwitch.ms"
+	)
+
 )

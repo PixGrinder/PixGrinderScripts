@@ -110,7 +110,7 @@
 99=11 82 40203 0
 100=11 34 40180 0
 101=11 192 63446 0
-102=7 65 49 0
+102=7 65 40211 0
 103=31 90 298 0
 104=23 90 297 0
 105=19 113 40905 0
@@ -540,7 +540,7 @@
 5=3 49 SubObject_1`Modifier Stack 647394
 6=3 50 SubObject_2`Modifier Stack 647394
 7=3 51 SubObject_3`Modifier Stack 647394
-8=3 82 SmartScale`Tools 647394
+8=3 82 ScaleSwitch`-- PixGrinder -- 647394
 9=3 53 SubObject_5`Modifier Stack 647394
 10=19 81 PixIsolate`-- PixGrinder -- 647394
 11=3 48 BakeDialog`Render 647394
