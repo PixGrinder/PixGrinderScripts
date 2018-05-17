@@ -18,9 +18,36 @@
 	toolMode.pivotCenter()
 	max rotate
 
+	x1 = getRefCoordSys()
+
+	getCoordCenter()
+
+	toolMode.coordsys #local
+
+
+	/*
+	
+	Uniform Scale or Non-Uniform Scale !!
+	---------------------------------------
+
+	toolmode.commandmode -- get active command mode ( move, rotate, etc )
+	toolMode.nonUniformScale()
+	toolMode.UniformScale()
+
+
+
+	*/
+
+	-- updateToolbarButtons()
 	-- actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
 
 )
+
+
+
+
+
+
 
 ------- HELP -------------
 
