@@ -730,4 +730,66 @@
 		FileIn "$userScripts/PixGrinder/ScaleSwitch.ms"
 	)
 
+	macroScript Coord_Parent
+	category:"-- PixGrinder --"
+	toolTip:"pix_Parent"
+	buttonText:"pix_Parent"
+	-- icon:#("Maintoolbar",26)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CoordSys_Parent.ms"
+	)
+
+
+
+	macroScript Coord_View
+	category:"-- PixGrinder --"
+	toolTip:"pix_View"
+	buttonText:"pix_View"
+	-- icon:#("Maintoolbar",26)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CoordSys_View.ms"
+	)
+
+
+	macroScript Coord_Screen
+	category:"-- PixGrinder --"
+	toolTip:"pix_Screen"
+	buttonText:"pix_Screen"
+	-- icon:#("Maintoolbar",26)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CoordSys_Screen.ms"
+	)
+
+
+	macroScript Coord_Local
+	category:"-- PixGrinder --"
+	toolTip:"pix_Local"
+	buttonText:"pix_Local"
+	-- icon:#("Maintoolbar",26)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CoordSys_Local.ms"
+	)
+
+
+	macroScript Coord_World
+	category:"-- PixGrinder --"
+	toolTip:"pix_World"
+	buttonText:"pix_World"
+	-- icon:#("Maintoolbar",26)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CoordSys_World.ms"
+	)
+
+
+
 )
