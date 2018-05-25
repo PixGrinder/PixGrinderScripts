@@ -15,7 +15,10 @@
 
 	theAO = StandardMaterial name:"AO"
 	theAO.diffuseMap = Ambient_Reflective_Occlusion__3dsmax()
-	theAO.diffuseMap.samples = 64
+	theAO.diffuseMap.samples = 128
+	-- theAO.diffuseMap.falloff = 10.0
+	--theAO.diffuseMap.max_distance = 1.0
+	theAO.diffuseMap.dark = (color 128 35 35)
 	theAO.selfIllumAmount = 100
 	clearListener()
 
@@ -100,7 +103,7 @@
 
 
 
-	myMult = 1.2
+	myMult = 3
 
 	
 	for obj in megArray do
@@ -111,8 +114,13 @@
 		obj[2].isHidden = false
 		select obj[2]
 		myBox = box length:(myMult*(abs(obj[2].max.y - obj[2].min.y))) transform:obj[2].transform width:(myMult*(abs (obj[2].max.x - obj[2].min.x))) height:(myMult*(abs (obj[2].max.z - obj[2].min.z)))
+		myBox.center = obj[2]. center
 		addModifier myBox myMod
 		collapseStack myBox
+		convertToPoly myBox
+		polyop.deleteFaces myBox #{2}
+		myBox.material = StandardMaterial diffuse:(color 128 128 128)
+
 
 
 
@@ -154,9 +162,11 @@
 		
 		-- Bake Complete Map based on uv 3--
 		select obj[2]
-		render rendertype:#bakeSelected vfb:on progressBar:true outputSize:[myRes,myRes]
+		render rendertype:#bakeSelected vfb:off progressBar:true outputSize:[myRes,myRes]
+		theMap1 = bitmaptexture filename:be1.fileType
 		
 		obj[2].material = StandardMaterial diffusemap:theMap1
+		showTextureMap obj[2].material on
 
 
 
@@ -185,6 +195,11 @@ max unhide all
 
 
 /*
+
+
+obj = #("1",selection[1])
+
+
 
 
 meditMAterials[1] = theAO
