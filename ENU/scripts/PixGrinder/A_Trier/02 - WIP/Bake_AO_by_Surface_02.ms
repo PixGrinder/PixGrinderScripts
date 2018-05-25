@@ -11,14 +11,18 @@
 
 	-- set Mental Ray as renderer
 	renderers.current = mental_ray_renderer()
+	renderers.current.FinalGatherEnable2 = false
 
-
+	
+	-- Create default AO Shader --
 	theAO = StandardMaterial name:"AO"
-	theAO.diffuseMap = Ambient_Reflective_Occlusion__3dsmax()
-	theAO.diffuseMap.samples = 128
-	-- theAO.diffuseMap.falloff = 10.0
-	--theAO.diffuseMap.max_distance = 1.0
-	theAO.diffuseMap.dark = (color 128 35 35)
+	theAO.diffuseMap = mix()
+	theAO.diffuseMap.mixAmount = 0
+	theAO.diffuseMap.map1 = Ambient_Reflective_Occlusion__3dsmax()
+	theAO.diffuseMap.map1.samples = 128
+	theAO.diffuseMap.map1.falloff = 1.0
+	theAO.diffuseMap.map1.max_distance = 0.05
+	theAO.diffuseMap.map1.dark = color 128 0 0 255
 	theAO.selfIllumAmount = 100
 	clearListener()
 
@@ -33,31 +37,40 @@
 				if theObj.material.diffuseMap == undefined then 
 				(
 					theObj.material = copy theAO
-					theObj.material.diffuseMap.bright = myColor
+					theObj.material.diffuseMap.map1.bright = myColor
+					--theObj.material.diffuseMap.map2 = undefined
+					theObj.material.diffuseMap.color2 = myColor
 				) else (
 					theObj.material = copy theAO
-					theObj.material.diffuseMap.bright_shader = myMap
+					theObj.material.diffuseMap.map1.bright_shader = myMap
+					theObj.material.diffuseMap.map2 = myMap
 				)
 			)
+
+			------ A RETOUCHER !! ----
+			------ A RETOUCHER !! ----
+			------ A RETOUCHER !! ----
+			------ A RETOUCHER !! ----
 
 			if classof theObj.material == MultiMaterial then
 			(
 
-				for i = 1 to theObj.material.count do
+				for mtl in theObj.material where mtl != undefined do
 				(
-					myMap = theObj.material[i].diffuseMap
-					myColor = theObj.material[i].diffuse
+					myMap = mtl.diffuseMap
+					myColor = mtl.diffuse
 
-					if theObj.material[i].diffuseMap == undefined then 
+					if mtl.diffuseMap == undefined then 
 					(
-						theObj.material[i] = copy theAO
-						theObj.material[i].diffuseMap.bright = myColor
+						mtl = copy theAO
+						mtl.diffuseMap.map1.bright = myColor
+						mtl.diffuseMap.color2 = myColor
 					) else (
-						theObj.material[i] = copy theAO
-						theObj.material[i].diffuseMap.bright_shader = myMap
+						mtl = copy theAO
+						mtl.diffuseMap.map1.bright_shader = myMap
+						mtl.diffuseMap.map2 = myMap
 					)
 				)
-
 			)
 
 			-- meditMaterials[13] = theObj.material
@@ -103,7 +116,7 @@
 
 
 
-	myMult = 3
+	myMult = 1.5
 
 	
 	for obj in megArray do
@@ -114,11 +127,11 @@
 		obj[2].isHidden = false
 		select obj[2]
 		myBox = box length:(myMult*(abs(obj[2].max.y - obj[2].min.y))) transform:obj[2].transform width:(myMult*(abs (obj[2].max.x - obj[2].min.x))) height:(myMult*(abs (obj[2].max.z - obj[2].min.z)))
-		myBox.center = obj[2]. center
+		myBox.center = obj[2].center
 		addModifier myBox myMod
 		collapseStack myBox
 		convertToPoly myBox
-		polyop.deleteFaces myBox #{2}
+		polyop.deleteFaces myBox #{2..6}
 		myBox.material = StandardMaterial diffuse:(color 128 128 128)
 
 
@@ -130,7 +143,7 @@
 		setFaceSelection obj[2] #{1..obj[2].numfaces}
 		addModifier obj[2] MyWarp
 		MyWarp.setMapChannel 3
-		MyWarp.flattenMap 66.0 #() 0.005 true 0 true true
+		MyWarp.flattenMap 80.0 #() 0.005 true 0 true true
 		collapseStack obj[2]
 
 
@@ -138,6 +151,16 @@
 
 		bakeMat obj[2]
 		
+		-- Automatic Bitmap Resolution --
+		case of
+		(
+			(obj[1] < 15.0): myRes = 256
+			(obj[1] > 15.0 and obj[1] < 50.0): myRes = 512
+			(obj[1] > 50.0 and obj[1] < 200.0): myRes = 1024
+			(obj[1] > 200.0): myRes = 2048
+		)
+		
+
 
 
 		-- Prepare Object for baking -- 
@@ -148,10 +171,12 @@
 		be1.fileName = fileNameFromPath be1.fileType
 		be1.filterOn = true
 		be1.enabled = true
+		be1.backgroundColor = (color 128 128 128)
 		obj[2].INodeBakeProperties.addBakeElement be1
 		obj[2].INodeBakeProperties.bakeEnabled = true
 		obj[2].INodeBakeProperties.bakeChannel = 3
-		obj[2].INodeBakeProperties.nDilations = 4
+		obj[2].INodeBakeProperties.nDilations = 16
+		
 
 
 
@@ -165,7 +190,7 @@
 		render rendertype:#bakeSelected vfb:off progressBar:true outputSize:[myRes,myRes]
 		theMap1 = bitmaptexture filename:be1.fileType
 		
-		obj[2].material = StandardMaterial diffusemap:theMap1
+		obj[2].material = StandardMaterial diffusemap:theMap1 specularLevel:50 glossiness:20
 		showTextureMap obj[2].material on
 
 
