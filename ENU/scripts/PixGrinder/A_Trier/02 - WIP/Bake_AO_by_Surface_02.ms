@@ -21,8 +21,8 @@
 	theAO.diffuseMap.map1 = Ambient_Reflective_Occlusion__3dsmax()
 	theAO.diffuseMap.map1.samples = 128
 	theAO.diffuseMap.map1.falloff = 1.0
-	theAO.diffuseMap.map1.max_distance = 0.05
-	theAO.diffuseMap.map1.dark = color 128 0 0 255
+	theAO.diffuseMap.map1.max_distance = 0.0
+	theAO.diffuseMap.map1.dark = color 0 0 0 255
 	theAO.selfIllumAmount = 100
 	clearListener()
 
@@ -55,20 +55,20 @@
 			if classof theObj.material == MultiMaterial then
 			(
 
-				for mtl in theObj.material where mtl != undefined do
+				for i = 1 to theObj.material.count where theObj.material[i] != undefined do
 				(
-					myMap = mtl.diffuseMap
-					myColor = mtl.diffuse
+					myMap = theObj.material[i].diffuseMap
+					myColor = theObj.material[i].diffuse
 
-					if mtl.diffuseMap == undefined then 
+					if theObj.material[i].diffuseMap == undefined then 
 					(
-						mtl = copy theAO
-						mtl.diffuseMap.map1.bright = myColor
-						mtl.diffuseMap.color2 = myColor
+						theObj.material[i] = copy theAO
+						theObj.material[i].diffuseMap.map1.bright = myColor
+						theObj.material[i].diffuseMap.color2 = myColor
 					) else (
-						mtl = copy theAO
-						mtl.diffuseMap.map1.bright_shader = myMap
-						mtl.diffuseMap.map2 = myMap
+						theObj.material[i] = copy theAO
+						theObj.material[i].diffuseMap.map1.bright_shader = myMap
+						theObj.material[i].diffuseMap.map2 = myMap
 					)
 				)
 			)
