@@ -9,8 +9,7 @@
 ---------------------------------------------------------------------
 
 (
-	myMod = Normalmodifier()
-	myMod.flip = on
+	myMod = Normalmodifier flip:on
 	for obj in selection where superclassof obj == GeometryClass do 
 	(
 		addModifier obj myMod

@@ -1,3 +1,12 @@
+-- Bake AO by Surface --
+
+-- To do : --
+-- Keep alpha blending in baked bitmaps --
+-- Find a way to bake only AO, and assign it to UV channel 2 or 3, and make it work in Unity --
+
+
+
+
 (	
 	
 	myCount = 0
@@ -98,7 +107,7 @@
 			setFaceSelection obj #{1..obj.numfaces}
 			myTempFaces = getFaceSelection obj
 			x1Temp = (meshop.getFaceArea (snapshotAsMesh obj) myTempFaces)
-			if x1Temp > 5.9 then 
+			if x1Temp > 5.99 then 
 			append megArray #(x1Temp, obj)
 		)
 
@@ -139,11 +148,12 @@
 
 		-- Auto UV Mapping --
 		max modify mode
+		mySpacing = 0.001
 		MyWarp = unwrap_UVW()
 		setFaceSelection obj[2] #{1..obj[2].numfaces}
 		addModifier obj[2] MyWarp
 		MyWarp.setMapChannel 3
-		MyWarp.flattenMap 80.0 #() 0.005 true 0 true true
+		MyWarp.flattenMap 80.0 #() mySpacing true 0 true true
 		collapseStack obj[2]
 
 
@@ -154,10 +164,11 @@
 		-- Automatic Bitmap Resolution --
 		case of
 		(
-			(obj[1] < 15.0): myRes = 256
-			(obj[1] > 15.0 and obj[1] < 50.0): myRes = 512
-			(obj[1] > 50.0 and obj[1] < 200.0): myRes = 1024
-			(obj[1] > 200.0): myRes = 2048
+			(obj[1] < 10.0): myRes = 256
+			(obj[1] > 10.0 and obj[1] < 20.0): myRes = 512
+			(obj[1] > 20.0 and obj[1] < 100.0): myRes = 1024
+			(obj[1] > 100.0 and obj[1] < 200.0): myRes = 2048
+			(obj[1] > 200.0): myRes = 4096
 		)
 		
 
