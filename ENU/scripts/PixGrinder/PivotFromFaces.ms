@@ -2,11 +2,37 @@
 
 (
 
-	polyop.detachFaces selection[1] (polyop.getFaceSelection selection[1]) delete:false asNode:true name:"TEMTEMP"
+	max modify mode
 
-	selection[1].pivot = (getNodeByName "TEMTEMP").center
+	if subObjectLevel == 4 then 
+	(
 
-	delete (getNodeByName "TEMTEMP")
+		polyop.detachFaces selection[1] (polyop.getFaceSelection selection[1]) delete:false asNode:true name:"TEMTEMP"
+
+		selection[1].pivot = (getNodeByName "TEMTEMP").center
+
+		delete (getNodeByName "TEMTEMP")
+
+	) 
+
+
+	if subObjectLevel == 1 then 
+	(
+		fn averageSelVertPosition obj =
+		(
+		    verts = obj.selectedVerts
+		    p = Point3 0 0 0
+		    for v in verts do
+		    (
+		        p += v.pos
+		    )
+		    p = p/verts.count
+		    return p
+		)
+
+		selection[1].pivot = averageSelVertPosition selection[1]
+
+	)
 
 	subobjectlevel = 0
 	
