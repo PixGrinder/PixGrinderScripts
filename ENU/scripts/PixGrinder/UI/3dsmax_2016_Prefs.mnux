@@ -377,20 +377,15 @@
         </Menu>
         <Menu title="coordinates" flags="2">
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotPerObject`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotExternal`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotCenterPixGrinder`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40235" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="73" flat="1" />
         </Menu>
         <Menu title="transform" flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RotationToZero`Animation Tools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="TransformToZero`Animation Tools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotExternal`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotCenterPixGrinder`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotPerObject`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FreezeRotation`Animation Tools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FreezeTransform`Animation Tools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotFromFaces`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="pose" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="258477000" actionID="4" customTitle="Set Pref Angles" />
@@ -739,11 +734,11 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CameraCorrection_Quad`Lights and Cameras" />
         </Menu>
         <Menu title="Coordinate System">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coordsys_Local`Coordinate System" customTitle="Local" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coordsys_Parent`Coordinate System" customTitle="Parent" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coordsys_Screen`Coordinate System" customTitle="Screen" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coordsys_View`Coordinate System" customTitle="View" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coordsys_World`Coordinate System" customTitle="World" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coord_Local`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coord_Parent`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coord_Screen`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coord_View`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coord_World`-- PixGrinder --" />
         </Menu>
         <Menu title="Context Grid Commands">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ActivateGrid`Objects Helpers" />

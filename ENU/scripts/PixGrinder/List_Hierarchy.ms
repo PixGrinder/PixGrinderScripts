@@ -13,7 +13,7 @@
 
 (
 	clearListener()
-	theCondition = false
+	--theCondition = false
 
 
 	fn sortByName v1 v2= 
@@ -21,48 +21,27 @@
 		if v1.name > v2.name then 1 else -1
 	)
 
-	fn testHier node level extFile =
+	fn testHier node level  =
 	(
 		x1=""
-		for i = 1 to level do x1 = x1+"\t"
-		format "%%%" x1 node.name "\r"
-		format "%%%" (x1 as string) node.name "\r" to:extFile
+		for i = 1 to level do x1 = x1+"    "
+		--format "%%%" x1 node.name "\r"
+		format "%%%" (x1 as string) node.name "\r" --to:extFile
 		theLevel = level
 		if node.children.count != 0 do 
 		(
 			theArray = for obj in node.children collect obj
 			qsort theArray sortByName
 			theLevel = theLevel+1
-			for bla in theArray do testHier bla theLevel extFile
+			for bla in theArray do testHier bla theLevel --extFile
 		)
 
 	)
 
-	if maxFileName.count == 0 then messageBox("Please Save MaxFile before using this script") else 
-	( 
-		myFile = (substituteString (maxFilePath+maxFileName) ".max" "_objectsList.txt")
-		theCondition = true
-	)
+	theStart = for obj in selection where finditem (selection as array) obj.parent == 0 collect obj
+	qsort theStart sortByName
 
-	if doesFileExist myFile == true or myFile == undefined then
-	(
-		theCondition = false
-		messageBox("Text File already exists. Please back it up or rename it before re-using this script")
-		--close theFile
-		Hiddendoscommand ("explorer.exe /select, "+ "\"" +myFile+"\"")
-	)
+	for obj in theStart do testHier obj 1 --theFile
 
-
-	if theCondition == true then
-	(
-
-		try(close theFile) catch()
-		theFile = createFile myFile
-		theStart = for obj in selection where finditem (selection as array) obj.parent == 0 collect obj
-		qsort theStart sortByName
-
-		for obj in theStart do testHier obj 1 theFile
-		close theFile
-		Hiddendoscommand ("explorer.exe /select, "+ "\"" +myFile+"\"")
-	)
+	actionMan.executeAction 0 "40472"
 )

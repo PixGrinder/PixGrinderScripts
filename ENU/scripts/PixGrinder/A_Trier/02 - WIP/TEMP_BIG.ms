@@ -1,4 +1,13 @@
 
+----------------------------------------------
+
+myTex = 
+myBitmap = BitmapTexture Youpla
+myBitmap = Bitmap
+meditmaterials[1].diffuseMap = myTex
+
+
+usedMaps()
 
 ----------------------------------------------
 
