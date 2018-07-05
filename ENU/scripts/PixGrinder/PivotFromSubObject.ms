@@ -2,59 +2,68 @@
 
 (
 
-	max modify mode
 
-	fn averageSelVertPosition obj =
+	myCond = true
+
+
+	if myCond == true then 
+
 	(
-	    verts = obj.selectedVerts
-	    p = Point3 0 0 0
-	    for v in verts do
-	    (
-	        p += v.pos
-	    )
-	    p = p/verts.count
-	    return p
+		max modify mode
+
+		myTempMesh = snapshotAsMesh selection[1]
+
+		fn averageSelVertPosition obj =
+		(
+		    verts = obj.selectedVerts
+		    --verts = meshop.getVertSelection obj
+		    p = Point3 0 0 0
+		    for v in verts do
+		    (
+		        p += v.pos
+		    )
+		    p = p/verts.count
+		    return p
+		)
+
+
+		if subObjectLevel == 4 or subObjectLevel == 5 then 
+		(
+			
+			setVertSelection myTempMesh (meshop.getVertsUsingFace myTempMesh (getFaceSelection myTempMesh))
+			selection[1].pivot = averageSelVertPosition myTempMesh
+		) 
+
+
+		if subObjectLevel == 1 then selection[1].pivot = averageSelVertPosition myTempMesh
+
+		if subObjectLevel == 2 or subObjectLevel == 3 then 
+		(
+			setVertSelection myTempMesh (meshop.getVertsUsingEdge myTempMesh (getEdgeSelection myTempMesh))
+			selection[1].pivot = averageSelVertPosition myTempMesh
+		)
+
+		delete myTempMesh
+
+		subobjectlevel = 0
+		
+		max rotate
+		toolMode.pivotCenter()
+		max scale
+		toolMode.pivotCenter()
+		max move
+		toolMode.pivotCenter()
+		max rotate
+
+		x1 = getRefCoordSys()
+
+		getCoordCenter()
+
+		toolMode.coordsys #local
 	)
 
 
-	if subObjectLevel == 4 or subObjectLevel == 5 then 
-	(
-
-		polyop.detachFaces selection[1] (polyop.getFaceSelection selection[1]) delete:false asNode:true name:"TEMTEMP"
-
-		selection[1].pivot = (getNodeByName "TEMTEMP").center
-
-		delete (getNodeByName "TEMTEMP")
-
-	) 
-
-
-	if subObjectLevel == 1 then selection[1].pivot = averageSelVertPosition selection[1]
-
-	if subObjectLevel == 2 or subObjectLevel == 3 then 
-	(
-		polyop.setVertSelection selection[1] (polyop.getVertsUsingEdge selection[1] (polyop.getEdgeSelection selection[1]))
-		selection[1].pivot = averageSelVertPosition selection[1]
-	)
-
-	
-
-	subobjectlevel = 0
-	
-	max rotate
-	toolMode.pivotCenter()
-	max scale
-	toolMode.pivotCenter()
-	max move
-	toolMode.pivotCenter()
-	max rotate
-
-	x1 = getRefCoordSys()
-
-	getCoordCenter()
-
-	toolMode.coordsys #local
-
+)
 
 	/*
 	
@@ -62,7 +71,7 @@
 		polyop.setVertSelection selection[1] (polyop.getVertsUsingEdge selection[1] (polyop.getEdgeSelection selection[1]))
 		subObjectLevel = 1
 
-
+meshop.getFaceSelection myTempMesh
 
 	*/
 
@@ -85,7 +94,7 @@
 	-- updateToolbarButtons()
 	-- actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
 
-)
+
 
 
 
