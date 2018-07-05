@@ -37,11 +37,24 @@
 
 		if subObjectLevel == 1 then selection[1].pivot = averageSelVertPosition myTempMesh
 
-		if subObjectLevel == 2 or subObjectLevel == 3 then 
+		if subObjectLevel == 2 then 
 		(
 			setVertSelection myTempMesh (meshop.getVertsUsingEdge myTempMesh (getEdgeSelection myTempMesh))
 			selection[1].pivot = averageSelVertPosition myTempMesh
 		)
+
+		if subObjectLevel == 3 then
+		(
+			if classof selection[1] == Editable_Poly then
+			(
+				setVertSelection myTempMesh (meshop.getVertsUsingEdge myTempMesh (getEdgeSelection myTempMesh))
+				selection[1].pivot = averageSelVertPosition myTempMesh
+			) else (
+				setVertSelection myTempMesh (meshop.getVertsUsingFace myTempMesh (getFaceSelection myTempMesh))
+				selection[1].pivot = averageSelVertPosition myTempMesh
+			)
+		)
+
 
 		delete myTempMesh
 
