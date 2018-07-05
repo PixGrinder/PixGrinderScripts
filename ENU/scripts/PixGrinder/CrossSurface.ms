@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
--- Felipe_CrossSurface.mcr
+-- Felipe_CrossSurface.ms
 -- MacroScripts File
--- By Philippe DASSONVILLE ( ph_dassonville@yahoo.fr)
--- 2013/12/17
--- Install in : 3ds Max 2010\ui\macroscripts
+-- By Philippe DASSONVILLE ( dassonphil@gmail.com)
+-- 2018/07/05
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
@@ -15,7 +14,7 @@ toolTip:"CrossSurface"
 
 
 (
-	if classof selection[1] == SplineShape then
+	if classof selection[1] == SplineShape or classof selection[1] == line then
 	( 
 		addModifier selection[1] (CrossSection () ) 
 		addModifier selection[1] (Surface () ) 

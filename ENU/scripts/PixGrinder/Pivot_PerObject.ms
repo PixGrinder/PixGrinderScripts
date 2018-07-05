@@ -8,5 +8,6 @@
 	toolMode.pivotCenter()
 	max move
 	toolMode.pivotCenter()
+	
 	toolmode.commandmode = tempMode
 )

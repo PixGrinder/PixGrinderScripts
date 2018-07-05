@@ -106,7 +106,7 @@
 
 	fn pda_AutoSave = 
 	(
-		format "%%" localTime "\r"
+		-- format "%%" localTime "\r"
 		try (destroyDialog ReallySavePrompt) catch()
 		if getSaveRequired() == true then
 		(
@@ -154,7 +154,7 @@
 
 		on pixNo pressed do
 		(
-			print "Autosave skipped !"
+			--print "Autosave skipped !"
 			pda_AutoSaveProcess()
 			pda_SaveAction()
 			pdaTimer.Start()
@@ -180,7 +180,7 @@
 
 		on pixRS_No pressed do
 		(
-			print "Autosave skipped !"
+			--print "Autosave skipped !"
 			pdaTimer.Start()
 			destroyDialog ReallySavePrompt
 		)

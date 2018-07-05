@@ -4,7 +4,7 @@
 -- PixGrinder Scripts --
 -- Spline Tools --
 -- Spline Select Middle Points --
--- V 1.0 --
+-- V 1.1 --
 
 ---------------------------------------------------------------------
 
@@ -12,7 +12,7 @@
 
 
 (
-	if classof $ == SplineShape do
+	if classof selection[1] == SplineShape or classof selection[1] == line do
 	(
 		max modify mode
 		subobjectlevel = 1
