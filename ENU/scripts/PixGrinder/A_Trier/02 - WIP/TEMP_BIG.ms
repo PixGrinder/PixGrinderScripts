@@ -7,7 +7,7 @@ myBitmap = Bitmap
 meditmaterials[1].diffuseMap = myTex
 
 
-usedMaps()
+for obj in (usedMaps()) do print obj
 
 ----------------------------------------------
 

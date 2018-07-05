@@ -23,6 +23,11 @@
 
 	sort mapfiles
 
-	for mapfile in mapfiles do print (mapfile as string)
+	actionMan.executeAction 0 "40472"
+
+
+-- 	for mapfile in mapfiles do print (mapfile as string)
+	for obj in mapfiles do format "%; " (filenameFromPath obj)
+
 
 )
