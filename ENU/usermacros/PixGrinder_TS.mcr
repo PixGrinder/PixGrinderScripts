@@ -715,7 +715,7 @@
 	silentErrors:true
 	autoUndoEnabled:true
 	(
-		FileIn "$userScripts/PixGrinder/PivotFromFaces.ms"
+		FileIn "$userScripts/PixGrinder/PivotFromSubObject.ms"
 	)
 
 

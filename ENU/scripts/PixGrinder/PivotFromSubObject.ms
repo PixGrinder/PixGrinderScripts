@@ -4,7 +4,20 @@
 
 	max modify mode
 
-	if subObjectLevel == 4 then 
+	fn averageSelVertPosition obj =
+	(
+	    verts = obj.selectedVerts
+	    p = Point3 0 0 0
+	    for v in verts do
+	    (
+	        p += v.pos
+	    )
+	    p = p/verts.count
+	    return p
+	)
+
+
+	if subObjectLevel == 4 or subObjectLevel == 5 then 
 	(
 
 		polyop.detachFaces selection[1] (polyop.getFaceSelection selection[1]) delete:false asNode:true name:"TEMTEMP"
@@ -16,23 +29,15 @@
 	) 
 
 
-	if subObjectLevel == 1 then 
+	if subObjectLevel == 1 then selection[1].pivot = averageSelVertPosition selection[1]
+
+	if subObjectLevel == 2 or subObjectLevel == 3 then 
 	(
-		fn averageSelVertPosition obj =
-		(
-		    verts = obj.selectedVerts
-		    p = Point3 0 0 0
-		    for v in verts do
-		    (
-		        p += v.pos
-		    )
-		    p = p/verts.count
-		    return p
-		)
-
+		polyop.setVertSelection selection[1] (polyop.getVertsUsingEdge selection[1] (polyop.getEdgeSelection selection[1]))
 		selection[1].pivot = averageSelVertPosition selection[1]
-
 	)
+
+	
 
 	subobjectlevel = 0
 	
@@ -49,6 +54,19 @@
 	getCoordCenter()
 
 	toolMode.coordsys #local
+
+
+	/*
+	
+		
+		polyop.setVertSelection selection[1] (polyop.getVertsUsingEdge selection[1] (polyop.getEdgeSelection selection[1]))
+		subObjectLevel = 1
+
+
+
+	*/
+
+
 
 
 	/*
