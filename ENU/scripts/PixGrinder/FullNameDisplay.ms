@@ -17,9 +17,8 @@
 
 		try (destroyDialog pixGrinder_Globals_NmDisplay) catch()
 		createDialog pixGrinder_Globals_NmDisplay 650 120 1230 100
-
-
-		
+		if selection[1] != undefined do pixGrinder_Globals_NmDisplay.myName.text = selection[1].name
+		setFocus pixGrinder_Globals_NmDisplay.myName
 
 
 
