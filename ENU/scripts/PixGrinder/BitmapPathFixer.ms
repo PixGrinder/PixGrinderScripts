@@ -25,3 +25,9 @@ ATSOps.Refresh()
 --createDialog myCustPath 350 100 1024 256
 
 ATSOps.SelectFiles Youpla
+
+
+/*
+
+select (for obj in objects where matchpattern obj.name pattern:"* *" == true collect obj)
+*/
