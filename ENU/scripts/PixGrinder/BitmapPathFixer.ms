@@ -22,12 +22,21 @@ ATSOps.ClearSelection()
 
 ATSOps.Refresh()
 
+clearListener()
+for obj in Youpla do format "%; " (filenamefrompath obj)
+
 --createDialog myCustPath 350 100 1024 256
 
 ATSOps.SelectFiles Youpla
 
 
+
+
 /*
 
 select (for obj in objects where matchpattern obj.name pattern:"* *" == true collect obj)
+
+
+prest.agipi@gieps.fr
+
 */

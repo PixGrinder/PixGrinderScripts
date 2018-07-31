@@ -707,10 +707,10 @@
 	)
 
 
-	macroScript PivotFromFaces
+	macroScript PivotFromSubObject
 	category:"-- PixGrinder --"
-	toolTip:"PivotFromFaces"
-	buttonText:"PivotFromFaces"
+	toolTip:"PivotFromSubObject"
+	buttonText:"PivotFromSubObject"
 	--icon:#("Maintoolbar",76)
 	silentErrors:true
 	autoUndoEnabled:true
@@ -790,6 +790,15 @@
 		FileIn "$userScripts/PixGrinder/CoordSys_World.ms"
 	)
 
-
+	macroScript Coord_World
+	category:"-- PixGrinder --"
+	toolTip:"ProBoolean_Quick"
+	buttonText:"ProBoolean_Quick"
+	icon:#("PowerBoolean",7)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/ProBoolean_Quick.ms"
+	)
 
 )

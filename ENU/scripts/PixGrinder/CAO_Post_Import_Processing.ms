@@ -22,29 +22,31 @@
 
 	----------------------------------------------------------------------
 	-- TPZ Specific
-		callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
+	--	callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
 	-- TPZ Specific
 	----------------------------------------------------------------------
-	wantedPath  = "D:\\10 - Helicopters\\H225VMT\\CAO\\2017-05-22-3D\\H225-22_05_2017"
-	myStdPath = "c:"+"\\"
+	wantedPath  = maxfilepath -- default path 1 
+	myStdPath = "$scenes" 											-- default path 2 if path 1 doesn't exist 
 	if doesFileExist wantedPath == true then myStdPath = wantedPath
-	myInput = getSavePath caption:"Choose MAX Files to process : " initialDir:myStdPath
+	myInput = getSavePath caption:"Choose MAX Files to process : " initialDir:myStdPath -- browser popoup
 	myInput = myInput +"\\"
-	files = getFiles (myInput+"*.max")
-	myProcessDir = myInput + "Processed" + "\\"
-	MakeDir myProcessDir
+	files = getFiles (myInput+"*.max") -- prendre tous les max du dossier
+	myProcessDir = myInput + "Processed" + "\\" -- créer dossier Processed
+	MakeDir myProcessDir-- créer dossier Processed
 	-- obj = files[1]
-	for obj in files do copyfile obj (myProcessDir+(filenamefrompath obj))
-	files = getFiles (myProcessDir +"*.max")
+	for obj in files do copyfile obj (myProcessDir+(filenamefrompath obj)) -- copier tous les fichiers dans dossier processed
+	files = getFiles (myProcessDir +"*.max") -- files = tous les fichiers max à traiter
 	global myParams
 
 
-	fn sortBySize file1 file2=
+	-- fonction trier par taille de fichier 
+	fn sortBySize file1 file2 =
 	(
 		if getFileSize file1 > getFileSize file2 then 1 else -1
 	)
 	
 
+	-- fonction pour mettre les bons parametres d'échelle
 	fn SysUnit =
 	(
 		resetMaxFile #noPrompt
@@ -55,6 +57,8 @@
 		-- max file import
 	)
 
+	-- ReNode V1 - OBSOLETE: Pour chaque objet qui a un parent, lui donner le nom du parent --
+	/*
 	fn ReNode =
 	(
 		for obj in geometry do 
@@ -62,31 +66,38 @@
 			if obj.parent != undefined do obj.name = obj.parent.name
 		)
 	)
-	
+	*/
+
+
+
+
 	
 	fn ProcessCAO myFile a b c d e f g =
 	(
 		loadMaxFile myFile useFileUnits:false quiet:true
+		max unhide all
 		ScaleRatio = g
 		myOffset = [a,b,c]
 		myRot = (eulerAngles d e f)
 		myProg = 0
 		
-		
+		-- creation du modifier VertexWeld et Smooth avec parametres custom --
 		myMod = Vertex_Weld()
 		myMod.threshold = 0.0001
 		mySmooth = Smooth()
 		mySmooth.threshold = 20
 		mySmooth.autosmooth = true
 		
-		
-		ReNode()
-		delete helpers
-		
+		fileIn ("C:/Users/guest1182/AppData/Local/Autodesk/3dsMax/2016 - 64bit/ENU/scripts/PixGrinder/A_Trier/02 - WIP/CAO_Dummy_Fix.ms")
+		--ReNode() -- executer ReNode
+		-- delete helpers -- supprimer les dummy
+
+
 		myDummy = dummy pos:[0,0,0]
 		try myDummy.name = (substring maxFileName 1 4) catch ()
 		
-		for obj in objects where obj != myDummy do obj.parent = myDummy
+		myTempAr = for obj in objects where obj.parent == undefined and obj != myDummy collect obj
+		for obj in myTempAr do obj.parent = myDummy
 			
 		myDummy.pos = myOffset
 		myDummy.scale *= ScaleRatio
@@ -96,8 +107,11 @@
 		
 		for obj in geometry do 
 		(
+			tempParent = obj.parent
+			obj.parent = undefined
 			resetXForm obj
 			convertToPoly obj
+			obj.parent = tempParent
 		)
 		
 		
@@ -186,12 +200,16 @@
 				max zoomext sel all
 				clearSelection()
 				viewport.setGridVisibility #all false
-				sleep 1
-				forceCompleteRedraw doDisabled:true
-				sleep 1
 				-- NitrousGraphicsManager.IsProgressiveRenderingFinished() -- TO CHECK --
 				disp = NitrousGraphicsManager.GetActiveViewportSetting()
 				disp.VisualStyleMode = #Shaded
+				y1 = "zz_CAO_ATA_" + (getFilenameFile files[i]) + "_helpers"
+				myLayer = LayerManager.newLayerFromName y1
+				for hlp in helpers do myLayer.addnode hlp
+				myLayer.on = false
+				sleep 1
+				forceCompleteRedraw doDisabled:true
+				sleep 1
 				saveMaxFile files[i] useNewFile:true quiet:true
 			)
 		)
@@ -203,7 +221,7 @@
 
 	----------------------------------------------------------------------
 	-- TPZ Specific
-		callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
+	--	callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
 	-- TPZ Specific
 	----------------------------------------------------------------------
 
