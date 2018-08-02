@@ -3,7 +3,7 @@
 -- PixGrinder Scripts --
 -- CAO Post Import Processing  --
 -- Optimizes CAO Placement / hierarchy n Geometry after brut import --
--- V 9.0 --
+-- V 10.0 --
 
 ---------------------------------------------------------------------
 
@@ -19,6 +19,7 @@
 
 	clearListener()
 	actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
+	
 	 
 
 	----------------------------------------------------------------------
@@ -26,12 +27,34 @@
 	--	callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
 	-- TPZ Specific
 	----------------------------------------------------------------------
-	wantedPath  = maxfilepath -- default path 1 
-	myStdPath = "$scenes" 											-- default path 2 if path 1 doesn't exist 
-	if doesFileExist wantedPath == true then myStdPath = wantedPath
-	myInput = getSavePath caption:"Choose MAX Files to process : " initialDir:myStdPath -- browser popoup
-	myInput = myInput +"\\"
-	files = getFiles (myInput+"*.max") -- prendre tous les max du dossier
+
+	-- DotNet Open Folder dialog --
+
+		initPath = getDir #scene
+
+		fn FileSelec thePath = 
+		(
+			theDialog = dotNetObject "System.Windows.Forms.OpenFileDialog" --create a OpenFileDialog 
+			theDialog.title = "Folder selection" --set the title
+			theDialog.Multiselect = false --allow multiple files to be selected
+			theDialog.Filter = "MaxFile(*.max)|" --specify the filter
+			theDialog.FilterIndex = 1 --set the filter drop-down list to All Files
+			theDialog.InitialDirectory = thePath
+			theDialog.FileName="*.max"
+			result = theDialog.showDialog() --display the dialog, get result into variable
+			result.ToString() --when closed, convert the result to string
+			result.Equals result.OK --returns TRUE if OK was pressed, FALSE otherwise
+			result.Equals result.Cancel --returns TRUE if Cancel was pressed, FALSE otherwise
+			theFilenames = theDialog.fileNames --the selected filenames will be returned as an array
+			myPath = getFilenamePath theFilenames[1]
+			return myPath
+		)
+
+		myInput = FileSelec initPath
+		files = getFiles (myInput +"*.max")
+	--
+
+
 	myProcessDir = myInput + "Processed" + "\\" -- créer dossier Processed
 	MakeDir myProcessDir-- créer dossier Processed
 	-- obj = files[1]
@@ -39,53 +62,36 @@
 	files = getFiles (myProcessDir +"*.max") -- files = tous les fichiers max à traiter
 	global myParams
 
-	rollout curObject "Current Object"
-	(
-		label lbl "Current Object : " align:#center
-		edittext myField fieldWidth:700 readOnly:true align:#center
-	)
 
-	fn upDialog lbl = 
-	(
-		curObject.myField.text = lbl
-	)
-
-
-	-- fonction trier par taille de fichier 
-	fn sortBySize file1 file2 =
-	(
-		if getFileSize file1 > getFileSize file2 then 1 else -1
-	)
+	-- Fonction trier par taille de fichier --
+		fn sortBySize file1 file2 =
+		(
+			if getFileSize file1 > getFileSize file2 then 1 else -1
+		)
+	--
 	
 
-	-- fonction pour mettre les bons parametres d'échelle
-	fn SysUnit =
-	(
-		resetMaxFile #noPrompt
-		units.DisplayType  = #Metric
-		units.MetricType = #Millimeters
-		units.SystemType = #Centimeters
-		units.SystemScale = 10.0
-		-- max file import
-	)
-
-	-- ReNode V1 - OBSOLETE: Pour chaque objet qui a un parent, lui donner le nom du parent --
-	/*
-	fn ReNode =
-	(
-		for obj in geometry do 
+	-- Fonction pour mettre les bons parametres d'échelle --
+		fn SysUnit =
 		(
-			if obj.parent != undefined do obj.name = obj.parent.name
+			resetMaxFile #noPrompt
+			units.DisplayType  = #Metric
+			units.MetricType = #Millimeters
+			units.SystemType = #Centimeters
+			units.SystemScale = 10.0
 		)
-	)
-	*/
-	fn SortFaceCount v1 v2= 
-	(
-		if v1.numfaces > v2.numfaces then 1 else -1
-	)
+	--
+
+	
+	-- Fonction pour trier les objets par nombre de faces -- 
+		fn SortFaceCount v1 v2= 
+		(
+			if v1.numfaces > v2.numfaces then 1 else -1
+		)
+	--
 
 
-	createDialog curObject 750 75 1200 1100
+	-- createDialog curObject 750 75 1200 1100  -- old dialog for showing current processed object
 	
 	fn ProcessCAO myFile a b c d e f g =
 	(
@@ -130,21 +136,17 @@
 		
 		myGeos = geometry as array
 		qsort myGeos SortFaceCount
--- 		for obj in myGeos do format "% : %\r" obj.name obj.numfaces
-
 		myProg = 0 -- reset progression status
 		
 		progressStart "Welding Vertices..."
 
 		for i = 1 to myGeos.count do
 		(
-			if (100*(i as float)/myGeos.count > (myProg as float)) do  --then print "youpi" else print ((obj as float)/gem.count) as string
+			if (100*(i as float)/myGeos.count > (myProg as float)) do
 			(
 				myProg = myProg+1
 				progressUpdate myProg
 			)
-			myChain =("Current object : "+ myGeos[i].name + "   NumFaces : " + myGeos[i].numfaces as string)
-			upDialog myChain
 			addmodifier myGeos[i] myMod
 			addmodifier myGeos[i] (Smooth())
 			--maxOps.CollapseNodeTo obj 1 off
@@ -159,7 +161,7 @@
 		progressStart "Smoothin faces..."
 		for i = 1 to myGeos.count do
 		(
-			if (100*(i as float)/myGeos.count > (myProg as float)) do  --then print "youpi" else print ((obj as float)/gem.count) as string
+			if (100*(i as float)/myGeos.count > (myProg as float)) do
 			(
 				myProg = myProg+1
 				progressUpdate myProg
@@ -212,37 +214,45 @@
 
 			for i = 1 to files.count do
 			(
-				disableSceneRedraw()
-				SysUnit()
-				ProcessCAO files[i] a1 a2 a3 a4 a5 a6 a7
-				viewport.setLayout #layout_4
-				viewport.activeViewport = 4
-				viewport.setType #view_persp_user
-				max tool maximize
+				--disableSceneRedraw()
+				with redraw off 
+				(
+					SysUnit()
+					ProcessCAO files[i] a1 a2 a3 a4 a5 a6 a7
+
+					-- Put helpers in hidden layer -- 
+						y1 = "zz_CAO_ATA_" + (getFilenameFile files[i]) + "_helpers"
+						myLayer = LayerManager.newLayerFromName y1
+						for hlp in helpers do myLayer.addnode hlp
+						myLayer.on = false
+					--D:\H160VMT\6-Delivered & received\Input\H160\2018-07-09-Datapack\Datapack_livraison TPZ_20180709\MAX\Conversion
+					
+					--enableSceneRedraw()
+
+					-- Maximize viewport on perspective view -- 
+						viewport.setGridVisibility #all false
+						viewport.setLayout #layout_4
+						viewport.activeViewport = 4
+						viewport.setType #view_persp_user
+						disp = NitrousGraphicsManager.GetActiveViewportSetting()
+						disp.VisualStyleMode = #Shaded
+						disp.ShowSelectionBracketsEnabled = false
+						max tool maximize
+					--
+				)
+
 				clearSelection()
+				sleep 1
 				select geometry[1]
 				max zoomext sel all
 				select geometry
-				enableSceneRedraw()
-				forceCompleteRedraw doDisabled:true
-				select geometry
 				max zoomext sel all
 				clearSelection()
-				viewport.setGridVisibility #all false
-				-- NitrousGraphicsManager.IsProgressiveRenderingFinished() -- TO CHECK --
-				disp = NitrousGraphicsManager.GetActiveViewportSetting()
-				disp.VisualStyleMode = #Shaded
-				y1 = "zz_CAO_ATA_" + (getFilenameFile files[i]) + "_helpers"
-				myLayer = LayerManager.newLayerFromName y1
-				for hlp in helpers do myLayer.addnode hlp
-				myLayer.on = false
-				sleep 1
 				forceCompleteRedraw doDisabled:true
 				sleep 1
 				saveMaxFile files[i] useNewFile:true quiet:true
 			)
 		)
-
 	)
 
 	try (destroyDialog myParams) catch ()
@@ -255,3 +265,4 @@
 	----------------------------------------------------------------------
 
 )
+
