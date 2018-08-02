@@ -3,7 +3,7 @@
 -- PixGrinder Scripts --
 -- CAO Post Import Processing  --
 -- Optimizes CAO Placement / hierarchy n Geometry after brut import --
--- V 8.3 --
+-- V 9.0 --
 
 ---------------------------------------------------------------------
 
@@ -18,6 +18,7 @@
 (
 
 	clearListener()
+	actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
 	 
 
 	----------------------------------------------------------------------
@@ -37,6 +38,17 @@
 	for obj in files do copyfile obj (myProcessDir+(filenamefrompath obj)) -- copier tous les fichiers dans dossier processed
 	files = getFiles (myProcessDir +"*.max") -- files = tous les fichiers max à traiter
 	global myParams
+
+	rollout curObject "Current Object"
+	(
+		label lbl "Current Object : " align:#center
+		edittext myField fieldWidth:700 readOnly:true align:#center
+	)
+
+	fn upDialog lbl = 
+	(
+		curObject.myField.text = lbl
+	)
 
 
 	-- fonction trier par taille de fichier 
@@ -67,10 +79,13 @@
 		)
 	)
 	*/
+	fn SortFaceCount v1 v2= 
+	(
+		if v1.numfaces > v2.numfaces then 1 else -1
+	)
 
 
-
-
+	createDialog curObject 750 75 1200 1100
 	
 	fn ProcessCAO myFile a b c d e f g =
 	(
@@ -79,7 +94,6 @@
 		ScaleRatio = g
 		myOffset = [a,b,c]
 		myRot = (eulerAngles d e f)
-		myProg = 0
 		
 		-- creation du modifier VertexWeld et Smooth avec parametres custom --
 		myMod = Vertex_Weld()
@@ -114,29 +128,44 @@
 			obj.parent = tempParent
 		)
 		
+		myGeos = geometry as array
+		qsort myGeos SortFaceCount
+-- 		for obj in myGeos do format "% : %\r" obj.name obj.numfaces
+
+		myProg = 0 -- reset progression status
 		
-		
-		for obj in geometry do
+		progressStart "Welding Vertices..."
+
+		for i = 1 to myGeos.count do
 		(
-			
-			addmodifier obj myMod
-			addmodifier obj (Smooth())
-			--maxOps.CollapseNodeTo obj 1 off
-			convertToPoly obj
-			obj.backfacecull = off
-		)
-		
-		
-		progressStart "Processing..."
-		for i = 1 to geometry.count do
-		(
-			if (100*(i as float)/geometry.count > (myProg as float)) do  --then print "youpi" else print ((obj as float)/gem.count) as string
+			if (100*(i as float)/myGeos.count > (myProg as float)) do  --then print "youpi" else print ((obj as float)/gem.count) as string
 			(
 				myProg = myProg+1
 				progressUpdate myProg
 			)
-			addmodifier geometry[i] mySmooth
-			convertToPoly geometry[i]
+			myChain =("Current object : "+ myGeos[i].name + "   NumFaces : " + myGeos[i].numfaces as string)
+			upDialog myChain
+			addmodifier myGeos[i] myMod
+			addmodifier myGeos[i] (Smooth())
+			--maxOps.CollapseNodeTo obj 1 off
+			convertToPoly myGeos[i]
+			myGeos[i].backfacecull = off
+		)
+		
+		
+
+		myProg = 0 -- reset progression status
+
+		progressStart "Smoothin faces..."
+		for i = 1 to myGeos.count do
+		(
+			if (100*(i as float)/myGeos.count > (myProg as float)) do  --then print "youpi" else print ((obj as float)/gem.count) as string
+			(
+				myProg = myProg+1
+				progressUpdate myProg
+			)
+			addmodifier myGeos[i] mySmooth
+			convertToPoly myGeos[i]
 		)
 		
 		progressEnd()
