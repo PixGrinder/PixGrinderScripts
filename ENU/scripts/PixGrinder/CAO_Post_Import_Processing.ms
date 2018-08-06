@@ -4,6 +4,7 @@
 -- CAO Post Import Processing  --
 -- Optimizes CAO Placement / hierarchy n Geometry after brut import --
 -- V 10.0 --
+-- Needs Script "CAO_Dummy_Fix.ms" to work --
 
 ---------------------------------------------------------------------
 
@@ -19,8 +20,9 @@
 
 	clearListener()
 	actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
-	
-	 
+	initPath = getDir #scene -- Set max project "scenes" folder as default open path
+	global myParams
+	global myInput
 
 	----------------------------------------------------------------------
 	-- TPZ Specific
@@ -29,8 +31,6 @@
 	----------------------------------------------------------------------
 
 	-- DotNet Open Folder dialog --
-
-		initPath = getDir #scene
 
 		fn FileSelec thePath = 
 		(
@@ -50,18 +50,7 @@
 			return myPath
 		)
 
-		myInput = FileSelec initPath
-		files = getFiles (myInput +"*.max")
 	--
-
-
-	myProcessDir = myInput + "Processed" + "\\" -- créer dossier Processed
-	MakeDir myProcessDir-- créer dossier Processed
-	-- obj = files[1]
-	for obj in files do copyfile obj (myProcessDir+(filenamefrompath obj)) -- copier tous les fichiers dans dossier processed
-	files = getFiles (myProcessDir +"*.max") -- files = tous les fichiers max à traiter
-	global myParams
-
 
 	-- Fonction trier par taille de fichier --
 		fn sortBySize file1 file2 =
@@ -84,7 +73,7 @@
 
 	
 	-- Fonction pour trier les objets par nombre de faces -- 
-		fn SortFaceCount v1 v2= 
+		fn SortFaceCount v1 v2 = 
 		(
 			if v1.numfaces > v2.numfaces then 1 else -1
 		)
@@ -108,10 +97,7 @@
 		mySmooth.threshold = 20
 		mySmooth.autosmooth = true
 		
-		fileIn ("C:/Users/guest1182/AppData/Local/Autodesk/3dsMax/2016 - 64bit/ENU/scripts/PixGrinder/A_Trier/02 - WIP/CAO_Dummy_Fix.ms")
-		--ReNode() -- executer ReNode
-		-- delete helpers -- supprimer les dummy
-
+		fileIn ("C:\\Users\\guest1182\\AppData\\Local\\Autodesk\\3dsMax\\2016 - 64bit\\ENU\\scripts\\PixGrinder\\A_Trier\\02 - WIP" + "\\" + "CAO_Dummy_Fix.ms")
 
 		myDummy = dummy pos:[0,0,0]
 		try myDummy.name = (substring maxFileName 1 4) catch ()
@@ -179,30 +165,28 @@
 
 	rollout myParams "CAO Offset parameters"
 	(
-		label theInfos1 "H135   : Position = [0.0,-0.33,0.0] ; Rotation = [0.0,-30,0.0]; Scale=10"
+		label theInfos1 "H135   : Position = [0.0,-0.33,0.0] ; Rotation = [0.0,-30,0.0]; Scale=10" offset:[0,20]
 		label theInfos2 "H145   : Position = [1.68,0,-3.1] ; Rotation = [0.0,-3.5,0.0]; Scale=10"
 		label theInfos3 "AS365  : Position = [7.13,0.0,39.0] ; Rotation = [0.0,0.0,0.0]; Scale=10"
 		label theInfos4 "H225   : Position = [0.0,0.0,12.05] ; Rotation = [0.0,0.0,0.0]; Scale=10"
-		label txtPos "Position Offset :" offset:[0,15]
+		label txtPos "Position Offset :" offset:[0,20]
 		
-		edittext pX text:"0" fieldWidth:35 across:3 offset:[75,25]
-		edittext pY text:"0" fieldWidth:35 across:3 offset:[45,25]
-		edittext pZ text:"12.05" fieldWidth:35 across:3 offset:[10,25]
+		edittext pX text:"0" fieldWidth:100 across:3 offset:[35,10]
+		edittext pY text:"0" fieldWidth:100 across:3 offset:[20,10]
+		edittext pZ text:"12.05" fieldWidth:100 across:3 offset:[15,10]
 
+		label txtRot "Rotation Offset :" offset:[0,20]
+		edittext rX text:"0" fieldWidth:100 across:3 offset:[35,10]
+		edittext rY text:"0" fieldWidth:100 across:3 offset:[20,10]
+		edittext rZ text:"0" fieldWidth:100 across:3 offset:[15,10]
 
-		label txtRot "Rotation Offset :" offset:[0,15]
-		edittext rX text:"0" fieldWidth:35 across:3 offset:[75,25]
-		edittext rY text:"0" fieldWidth:35 across:3 offset:[45,25]
-		edittext rZ text:"0" fieldWidth:35 across:3 offset:[10,25]
+		label txtScale "Scale Offset :" offset:[0,20]
+		edittext sX text:"10" fieldWidth:100 align:#center offset:[0,10]
 
-		label txtScale "Scale Offset :" offset:[0,15]
-		edittext sX text:"10" fieldWidth:35 align:#center
-
-		button processButton "OK" width: 150
+		button processButton "OK" width:150 offset:[0,25]
 
 		on processButton pressed do
 		(
-			qsort files sortBySize
 			a1 = (pX.text as float)
 			a2 = (pY.text as float)
 			a3 = (pZ.text as float)			
@@ -211,11 +195,20 @@
 			a6 = (rZ.text as float)
 			a7 = (sX.text as float)
 
+			-- Lines order is VERY IMPORTANT -- 
+				myProcessDir = myInput + "Processed" + "\\" -- créer dossier Processed
+				files = getFiles (myInput +"*.max") -- files = Array of max files to process
+				MakeDir myProcessDir-- créer dossier Processed
+				for obj in files do copyfile obj (myProcessDir+(filenamefrompath obj)) -- copier tous les fichiers dans dossier processed
+				files = getFiles (myProcessDir +"*.max") -- files = tous les fichiers max à traiter
+				qsort files sortBySize -- Sort max files by file size
+			--
+
 
 			for i = 1 to files.count do
 			(
 				--disableSceneRedraw()
-				with redraw off 
+				with redraw off
 				(
 					SysUnit()
 					ProcessCAO files[i] a1 a2 a3 a4 a5 a6 a7
@@ -225,18 +218,15 @@
 						myLayer = LayerManager.newLayerFromName y1
 						for hlp in helpers do myLayer.addnode hlp
 						myLayer.on = false
-					--D:\H160VMT\6-Delivered & received\Input\H160\2018-07-09-Datapack\Datapack_livraison TPZ_20180709\MAX\Conversion
 					
-					--enableSceneRedraw()
-
 					-- Maximize viewport on perspective view -- 
-						viewport.setGridVisibility #all false
 						viewport.setLayout #layout_4
 						viewport.activeViewport = 4
 						viewport.setType #view_persp_user
 						disp = NitrousGraphicsManager.GetActiveViewportSetting()
 						disp.VisualStyleMode = #Shaded
 						disp.ShowSelectionBracketsEnabled = false
+						viewport.setGridVisibility #all false
 						max tool maximize
 					--
 				)
@@ -254,9 +244,10 @@
 			)
 		)
 	)
-
+	
+	myInput = FileSelec initPath -- Use FileSelec function to have a DotNet "Open File" window
 	try (destroyDialog myParams) catch ()
-	createDialog myParams 450 450 512 256
+	createDialog myParams 450 400 512 256 modal:true
 
 	----------------------------------------------------------------------
 	-- TPZ Specific

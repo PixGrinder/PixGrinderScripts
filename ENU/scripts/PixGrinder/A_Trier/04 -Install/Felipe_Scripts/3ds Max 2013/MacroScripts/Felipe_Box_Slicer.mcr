@@ -1,16 +1,4 @@
--------------------------------------------------------------------------------
--- Felipe_Box_Slicer.mcr
--- MacroScripts File
--- By Philippe DASSONVILLE ( dassonphil@gmail.com)
--- 2014/08/01
--- Install in : 3ds Max 2010\ui\macroscripts
--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-
-macroScript Box_Slicer
-category:"Felipe Scripts"
-toolTip:"Box Slicer"
 
 (
 	
