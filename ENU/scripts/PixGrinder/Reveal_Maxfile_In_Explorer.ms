@@ -10,7 +10,8 @@
 	
 	fn myFail =
 	(
-		messageBox ("Please, save your scene before using this script")
+-- 		messageBox ("Please, save your scene before using this script")
+		Hiddendoscommand ("explorer.exe /select, "+ "\"" +(GetDir #scene)+"\"")
 	)
 	
 	

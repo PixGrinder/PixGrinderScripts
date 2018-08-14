@@ -790,7 +790,7 @@
 		FileIn "$userScripts/PixGrinder/CoordSys_World.ms"
 	)
 
-	macroScript Coord_World
+	macroScript ProBooleanQuick
 	category:"-- PixGrinder --"
 	toolTip:"ProBoolean_Quick"
 	buttonText:"ProBoolean_Quick"
