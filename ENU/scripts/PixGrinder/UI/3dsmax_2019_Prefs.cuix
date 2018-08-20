@@ -27,7 +27,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50001" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Move" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50002" helpID="0" orientation="31" captionVisibility="0" iconName="Common/RotateCW" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50003" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UniformScale">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UniformScale" />
                         <Fly iconName="MainUI/NonUniformScale" />
                         <Fly iconName="MainUI/Squash" />
@@ -39,7 +39,7 @@
                         <Fly iconName="MainUI/SelectAndRotate" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="View" />
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Parent" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
                     <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
@@ -63,7 +63,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="280" helpID="0" orientation="31" captionVisibility="0" iconName="SnapsControls/SpinnerSnapToggle" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" iconName="MainUI/EditNamedSelectionSets" actionID="namedSelSets`Edit" tip="Edit Named Selection Sets" label="" />
-                <Item typeID="5" type="CTB_OTHER" width="120" height="120" controlID="50037" helpID="0" orientation="19" vertJustif="2" winStyle="1344275266" controlClassName="ComboBox" winText="" />
+                <Item typeID="5" type="CTB_OTHER" width="120" height="120" controlID="50037" helpID="0" orientation="19" vertJustif="2" winStyle="1344275266" controlClassName="ComboBox" winText="Create Selection Set" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="40210" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Mirror" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50012" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Align">

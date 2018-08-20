@@ -191,8 +191,6 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="181" flat="0" customTitle="Viewport Lighting and Shadows" />
         </Menu>
         <Menu title="tools 1" flags="2">
-            <Item mode="5" modeName="AM_ITEM_SUBMENU" actionTableID="0" actionID="59228" flat="1" customTitle="Sub-objects" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="150" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="74" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="147" flat="1" />
@@ -403,6 +401,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopTools`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotRing`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Similar`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SimilarQuick`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40022" customTitle="Object &amp;Properties..." />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -434,12 +434,14 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyBridge`Ribbon - Modeling" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EdgeBridgeOptions`Ribbon - Modeling" />
@@ -656,11 +658,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ESpline_UnHide`Editable Spline Object" />
         </Menu>
         <Menu title="Context Edit Poly Tools 1">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Convert_Sel_To_Vertex`Editable Polygon Object" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Convert_Sel_To_Edge`Editable Polygon Object" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Convert_Sel_To_Face`Editable Polygon Object" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Repeat_Last`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Quickslice`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Cut`Editable Polygon Object" />
@@ -669,18 +666,15 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Collapse`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Hide_Unselected`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_IgnoreBack_Toggle`Editable Polygon Object" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_NURMS_Toggle`Editable Polygon Object" />
         </Menu>
         <Menu title="Context Edit Poly Tools 2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Create`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Remove`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Break`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Split`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Connect`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Connect2`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_InsertVertex`Editable Polygon Object" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Cap`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Extrude`Editable Polygon Object" />
