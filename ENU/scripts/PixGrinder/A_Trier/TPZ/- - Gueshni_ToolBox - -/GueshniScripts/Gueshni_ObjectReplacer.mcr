@@ -1,4 +1,10 @@
-macroScript ObjectReplacer category:"- Gueshni -" Icon:#("g9_objectreplacer", 1) tooltip:"Object Replacer"
+-- Replace Objects -- 
+-- ReplaceObjects.ms -- 
+-- Original : Gueshin ObjectReplacer.mcr --
+-- v1.0 -- 
+
+
+
  (
 	(
 -- Globals

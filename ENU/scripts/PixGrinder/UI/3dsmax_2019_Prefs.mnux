@@ -376,6 +376,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotPerObject`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotFromSubObject`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotFromNormal`-- PixGrinder --" />
         </Menu>
         <Menu title="transform" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RotationToZero`Animation Tools" />

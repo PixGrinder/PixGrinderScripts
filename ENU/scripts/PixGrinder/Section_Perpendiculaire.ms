@@ -15,7 +15,11 @@
 	myPos = selection[1].center
 	myRot = eulerangles 0.0 90.0 0.0
 	x1 = section length:0.2 width:0.2 grid:10 isSelected:on
-	x1.dir = myDir 
+	x1.dir = myDir
 	x1.pos = myPos
 	in coordsys local(rotate x1 myRot)
+	forceCompleteRedraw doDisabled:true
+	convertToSplineShape x1
+	numSplines x1
+	subobjectlevel = 3
 )

@@ -814,4 +814,49 @@
 		FileIn "$userScripts/PixGrinder/SelectByAngle.ms" ------- 
 	)
 
+	macroScript Section_Perpendiculaire ------- 
+	category:"-- PixGrinder --"
+	toolTip:"Section_Perpendiculaire" ------- 
+	buttonText:"Section_Perpendiculaire" ------- 
+	icon:#("Splines",7)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/Section_Perpendiculaire.ms" ------- 
+	)
+
+	macroScript DetachByElt ------- 
+	category:"-- PixGrinder --"
+	toolTip:"DetachByElt" ------- 
+	buttonText:"DetachByElt" ------- 
+	icon:#("Polytools",6)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/DetachByElt.ms" ------- 
+	)
+
+
+	macroScript ReplaceObjects ------- 
+	category:"-- PixGrinder --"
+	toolTip:"ReplaceObjects" ------- 
+	buttonText:"ReplaceObjects" ------- 
+	icon:#("Systems",3)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/ReplaceObjects.ms" ------- 
+	)
+
+	macroScript PivotFromNormal
+	category:"-- PixGrinder --"
+	toolTip:"PivotFromNormal"
+	buttonText:"PivotFromNormal"
+	--icon:#("Maintoolbar",76)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/PivotFromNormal.ms"
+	)
+
 )
