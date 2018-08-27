@@ -150,12 +150,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40904" customTitle="Enable Axis Constraints in Snaps" />
         </Menu>
         <Menu title="transform" flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Move`Tools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Rotate`Tools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Scale`Tools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="50131" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="50027" customTitle="Select" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40099" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40848" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -204,6 +199,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="59" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="65" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="180" flat="1" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="tools 2" flags="2">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="60" flat="1" />
@@ -218,6 +214,8 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="179" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="205" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="457" flat="1" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RenameObjects`Tools" />
         </Menu>
         <Menu title="tools" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="6" actionID="40707" />
@@ -395,11 +393,16 @@
         </Menu>
         <Menu title="transform" flags="2">
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByAngle`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Detach`Editable Polygon Object" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Quadrify`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InsertLoop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopTools`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotRing`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="StepLoop`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Similar`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SimilarQuick`PolyTools" />
@@ -418,14 +421,18 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Box`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="plane`Objects Primitives" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Ngon`Objects Shapes" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Star`Objects Shapes" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Lines`Objects Shapes" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Helix`Objects Shapes" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Circle`Objects Shapes" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Rectangle`Objects Shapes" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="478" flat="0" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="479" flat="0" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="477" flat="0" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="480" flat="0" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="tools 1" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NamesTransfer`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialTransfer`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="29" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="63" flat="1" />
@@ -444,7 +451,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyBridge`Ribbon - Modeling" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EdgeBridgeOptions`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EdgeBridge`Ribbon - Modeling" />
         </Menu>
         <Menu title="tools 2" flags="2">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="30" flat="1" />
@@ -4779,7 +4786,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Rotation_Activator`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ScaleSwitch`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SearchByName`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByList`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="selectSmallObjects`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SplineSelectMiddlePoints`-- PixGrinder --" />
@@ -4799,6 +4805,43 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="WireColorChanger`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="XRefMulti`-- PixGrinder --" />
+        </Menu>
+        <Menu title="pix_Helpers">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Dummy`Objects Helpers" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Grid`Objects Helpers" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Point`Objects Helpers" />
+        </Menu>
+        <Menu title="pix_Lights">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Omni_Light`Lights and Cameras" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Directional_Light`Lights and Cameras" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Target_Directional_Light`Lights and Cameras" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Free_Spotlight`Lights and Cameras" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Target_Spotlight`Lights and Cameras" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Light_SelectTarget`Lights and Cameras" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Light_List`Lights and Cameras" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+        </Menu>
+        <Menu title="pix_Cams">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PhysicalCamera_CreateFromView`Lights and Cameras" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="StandardCamera_CreateFromView`Lights and Cameras" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Free_Camera`Lights and Cameras" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Target_Camera`Lights and Cameras" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Camera_SelectTarget`Lights and Cameras" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Physical_Camera`Lights and Cameras" />
+        </Menu>
+        <Menu title="pix_Shapes">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Star`Objects Shapes" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Section`Objects Shapes" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Helix`Objects Shapes" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Circle`Objects Shapes" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Ngon`Objects Shapes" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Rectangle`Objects Shapes" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Lines`Objects Shapes" />
         </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />

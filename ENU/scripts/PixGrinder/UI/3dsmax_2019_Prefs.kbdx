@@ -390,6 +390,7 @@
     <shortcut fVirt="19" accleleratorKey="13" actionID="40022" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="88" actionID="40105" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="81" actionID="50027" actionTableID="0" />
+    <shortcut fVirt="7" accleleratorKey="77" actionID="40195" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="188" actionID="50020" actionTableID="1" />
     <shortcut fVirt="3" accleleratorKey="190" actionID="50022" actionTableID="1" />
     <shortcut fVirt="11" accleleratorKey="65" actionID="50035" actionTableID="1" />
@@ -542,7 +543,7 @@
     <shortcut fVirt="3" accleleratorKey="50" actionID="SubObject_2`Modifier Stack" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="51" actionID="SubObject_3`Modifier Stack" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="52" actionID="FaceMode`-- PixGrinder --" actionTableID="647394" />
-    <shortcut fVirt="3" accleleratorKey="82" actionID="SmartScale`Tools" actionTableID="647394" />
+    <shortcut fVirt="3" accleleratorKey="82" actionID="ScaleSwitch`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="53" actionID="SubObject_5`Modifier Stack" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="48" actionID="BakeDialog`Render" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="67" actionID="PhysicalCamera_CreateFromView`Lights and Cameras" actionTableID="647394" />

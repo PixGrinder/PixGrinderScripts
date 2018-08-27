@@ -1,5 +1,5 @@
 -- Quad Color File
--- Created automatically by C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2016 - 64bit\ENU\scripts\PixGrinder\UI\3dsmax_2016_Prefs Scheme 
+-- Created automatically by C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\en-US\UI\Workspaces\usersave\2019_Default Scheme 
 -- To restore Quad Menu to these settings, simply run this script.
 
 -- Quad number 1 colors 
@@ -79,7 +79,7 @@ QuadMenuSettings.SetHorizontalMarginInPoints 1
 QuadMenuSettings.SetVerticalMarginInPoints 1
 
 -- Font Settings
-QuadMenuSettings.SetItemFontFace "Arial"
+QuadMenuSettings.SetItemFontFace "Tahoma"
 QuadMenuSettings.SetItemFontSize 8
-QuadMenuSettings.SetTitleFontFace "Arial"
+QuadMenuSettings.SetTitleFontFace "Tahoma"
 QuadMenuSettings.SetTitleFontSize 7

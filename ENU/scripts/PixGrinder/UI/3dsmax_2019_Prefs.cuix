@@ -27,7 +27,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50001" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Move" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50002" helpID="0" orientation="31" captionVisibility="0" iconName="Common/RotateCW" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50003" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UniformScale">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UniformScale" />
                         <Fly iconName="MainUI/NonUniformScale" />
                         <Fly iconName="MainUI/Squash" />
@@ -39,7 +39,7 @@
                         <Fly iconName="MainUI/SelectAndRotate" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Parent" />
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
                     <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
@@ -85,7 +85,7 @@
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50061" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SchematicViewOpen" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50048" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SlateMaterialEditor">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/MaterialEditor" />
                         <Fly iconName="MainUI/SlateMaterialEditor" />
                     </FlyOffCt>
@@ -250,6 +250,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Push`Modifiers" tip="Push Modifier" label="Push" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Relax`Modifiers" tip="Relax Modifier" label="Relax" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FullNameDisplay`-- PixGrinder --" tip="Full Name Display" label="Full Name Display" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Lathe`Modifiers" tip="Lathe Modifier" label="Lathe" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Slice`Modifiers" tip="Slice Modifier" label="Slice" />
             </Items>
         </Window>
@@ -283,17 +284,17 @@
         </Window>
         <Window objectName="Sugz" name="Sugz" type="T" cType="1" toolbarRows="2">
             <Items>
-                <Item typeID="2" type="CTB_MACROBUTTON" width="132" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnAdd`SugzTools" tip="Tortoise SVN Add" label="Tortoise SVN Add" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="148" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnCommit`SugzTools" tip="Tortoise SVN Commit" label="Tortoise SVN Commit" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="148" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnUpdate`SugzTools" tip="Tortoise SVN Update" label="Tortoise SVN Update" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="155" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocComponents`SugzTools" tip="CompLoc Components" label="CompLoc Components" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="150" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocScreenshot`SugzTools" tip="CompLoc ScreenShot" label="CompLoc ScreenShot" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="154" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocCleanScene`SugzTools" tip="CompLoc Clean Scene" label="CompLoc Clean Scene" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="134" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocChecker`SugzTools" tip="CompLoc Checker" label="CompLoc Checker" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="165" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocExcelExporter`SugzTools" tip="CompLoc Excel Exporter" label="CompLoc Excel Exporter" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="165" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocExcelImporter`SugzTools" tip="CompLoc Excel Importer" label="CompLoc Excel Importer" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="188" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocCreateHotspotList`SugzTools" tip="CompLoc Create Hotspot List" label="CompLoc Create Hotspot List" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="187" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocExportHotspotList`SugzTools" tip="CompLoc Export Hotspot List" label="CompLoc Export Hotspot List" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnAdd`SugzTools" tip="Tortoise SVN Add" label="Tortoise SVN Add" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnCommit`SugzTools" tip="Tortoise SVN Commit" label="Tortoise SVN Commit" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnUpdate`SugzTools" tip="Tortoise SVN Update" label="Tortoise SVN Update" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocComponents`SugzTools" tip="CompLoc Components" label="CompLoc Components" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocScreenshot`SugzTools" tip="CompLoc ScreenShot" label="CompLoc ScreenShot" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocCleanScene`SugzTools" tip="CompLoc Clean Scene" label="CompLoc Clean Scene" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocChecker`SugzTools" tip="CompLoc Checker" label="CompLoc Checker" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocExcelExporter`SugzTools" tip="CompLoc Excel Exporter" label="CompLoc Excel Exporter" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocExcelImporter`SugzTools" tip="CompLoc Excel Importer" label="CompLoc Excel Importer" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocCreateHotspotList`SugzTools" tip="CompLoc Create Hotspot List" label="CompLoc Create Hotspot List" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocExportHotspotList`SugzTools" tip="CompLoc Export Hotspot List" label="CompLoc Export Hotspot List" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="BS_CollapseMultiMaterial`-- PixGrinder --" tip="Collapse MultiSubObjects Material" label="Collapse MultiMat" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ConflictManagerLauncher`-- PixGrinder - TPZ Tools --" tip="ConflictManagerLauncher" label="ConflictManagerLauncher" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SmartSelect`Selection" tip="Smart Select" label="Smart Select" />
@@ -322,8 +323,8 @@
         <Window objectName="PixGrinder - Reset Tools" name="PixGrinder - Reset Tools" type="T" cType="1" toolbarRows="4">
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="50011" tip="Unlink Selection" label="Unlink Selection" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ObjectQuickReset`-- PixGrinder --" tip="Object Quick Reset" label="QuickReset" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="32" imageName="Maintoolbar" actionID="CenterPivot`PolyTools" tip="Center Pivot" label="" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ResetXFormPixGrinder`-- PixGrinder --" tip="ResetXForm on Selection" label="ResetXForm" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Collapse_Selected`-- PixGrinder --" tip="Collapse Hierarchy on Selection" label="Collapse Selected" />
             </Items>
         </Window>
@@ -336,9 +337,7 @@
             </Items>
         </Window>
         <Window objectName="Pixgrinder - QuickReset" name="Pixgrinder - QuickReset" type="T" cType="1" toolbarRows="1">
-            <Items>
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ObjectQuickReset`-- PixGrinder --" tip="Object Quick Reset" label="QuickReset" />
-            </Items>
+            <Items />
         </Window>
         <Window objectName="Grids" name="Grids" type="T" cType="1" toolbarRows="1">
             <Items>

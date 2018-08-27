@@ -6,6 +6,7 @@
 	select myTempObj
 	myOp = pickObject()
 	ProBoolean.SetOperandB myTempObj myOp 2 0
+	ProBoolean.SetImprint myTempObj true
 	addModifier myTempObj (Turn_to_Poly ())
 	collapseStack myTempObj
 )

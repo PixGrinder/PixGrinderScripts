@@ -290,17 +290,6 @@
 		Include "$userScripts/PixGrinder/MaterialRemove.ms"
 	)
 	
-	macroScript SearchByName
-	category:"-- PixGrinder --"
-	toolTip:"SearchByName"
-	buttonText:"Srch"
-	icon:#("Maxscript",2)
-	silentErrors:true
-	autoUndoEnabled:false
-	(
-		Include "$userScripts/PixGrinder/search_by_Name.ms"
-	)
-	
 	macroScript LayerFromSelection
 	category:"-- PixGrinder --"
 	toolTip:"Layer Isolate Objects's layer"
@@ -799,6 +788,30 @@
 	autoUndoEnabled:true
 	(
 		FileIn "$userScripts/PixGrinder/ProBoolean_Quick.ms"
+	)
+
+
+	macroScript CopyWithName ------- 
+	category:"-- PixGrinder --"
+	toolTip:"CopyWithName" ------- 
+	buttonText:"CopyWithName" ------- 
+	icon:#("PowerBoolean",7)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CopyWithName.ms" ------- 
+	)
+
+
+	macroScript SelectByAngle ------- 
+	category:"-- PixGrinder --"
+	toolTip:"SelectByAngle" ------- 
+	buttonText:"SelectByAngle" ------- 
+	--icon:#("PowerBoolean",7)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/SelectByAngle.ms" ------- 
 	)
 
 )

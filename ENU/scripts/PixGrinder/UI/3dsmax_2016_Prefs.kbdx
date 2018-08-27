@@ -584,9 +584,7 @@
     <shortcut fVirt="11" accleleratorKey="102" actionID="Select_Next_Object_Zoom`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="100" actionID="Select_Previous_Object_Zoom`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="86" actionID="ESpline_Divide`Editable Spline Object" actionTableID="647394" />
-    <shortcut fVirt="3" accleleratorKey="82" actionID="ScaleSwitch`-- PixGrinder --" actionTableID="647394" />
+    <shortcut fVirt="3" accleleratorKey="82" actionID="SmartScale`Tools" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="80" actionID="PerspAdvanced`-- PixGrinder --" actionTableID="647394" />
-    <shortcut fVirt="19" accleleratorKey="84" actionID="TurnEdge`Ribbon - Modeling" actionTableID="647394" />
-    <shortcut fVirt="27" accleleratorKey="77" actionID="advanced_material_editor`Medit Tools" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>

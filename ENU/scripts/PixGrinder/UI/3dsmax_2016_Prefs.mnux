@@ -182,8 +182,6 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Make_Planar`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectInstances`Selection" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="display" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="223" />
@@ -386,7 +384,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotCenterPixGrinder`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotPerObject`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotFromSubObject`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotFromFaces`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="pose" flags="2">
@@ -398,13 +396,13 @@
         </Menu>
         <Menu title="transform" flags="2">
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="TurnEdge`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40213" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Similar`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SimilarQuick`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40022" customTitle="Object &amp;Properties..." />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Loop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotLoop`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopModeToggle`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopTools`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="StepLoop`PolyTools" />
@@ -412,6 +410,7 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Ring`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotRing`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RingModeToggle`PolyTools" />
         </Menu>
         <Menu title="primitives" flags="2">
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -466,10 +465,8 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="66" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="64" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="71" flat="1" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialTransfer`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NamesTransfer`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CustAttribTransfert`-- PixGrinder - TPZ Tools --" />
         </Menu>
         <Menu title="MassFX Tools" flags="2">
@@ -702,14 +699,13 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="Context Edit Poly Tools 2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Create`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ProBoolean`Objects Compounds" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="TurnToPolyMod`Modifiers" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ProBooleanQuick`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Quadrify`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InsertLoop`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Remove`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Break`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Split`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Connect`Editable Polygon Object" />
