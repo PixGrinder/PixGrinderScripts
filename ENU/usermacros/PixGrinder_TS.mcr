@@ -870,5 +870,16 @@
 		FileIn "$userScripts/PixGrinder/CylinderFromSelec.ms" ------- 
 	)
 
+	macroScript DetachQuick ------- 
+	category:"-- PixGrinder --"
+	toolTip:"DetachQuick" ------- 
+	buttonText:"DetachQuick" ------- 
+	--icon:#("Standard",8)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/DetachQuick.ms" ------- 
+	)
+
 
 )
