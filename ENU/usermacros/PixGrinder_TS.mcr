@@ -373,7 +373,7 @@
 	macroScript AssetsFinder
 	category:"-- PixGrinder --"
 	toolTip:"AssetsFinder"
-	buttonText:"Search..."
+	buttonText:"Assets Finder"
 	icon:#("Maxscript",2)
 	silentErrors:true
 	autoUndoEnabled:false
@@ -552,8 +552,8 @@
 
 	macroScript NormalFlip
 	category:"-- PixGrinder --"
-	toolTip:"Normals - Quick Flip"
-	buttonText:"QuickFlip"
+	toolTip:"NormalFlip"
+	buttonText:"NormalFlip"
 	-- icon:#("Splines",5)
 	silentErrors:true
 	autoUndoEnabled:false
@@ -848,15 +848,27 @@
 		FileIn "$userScripts/PixGrinder/ReplaceObjects.ms" ------- 
 	)
 
-	macroScript PivotFromNormal
+	macroScript PivotFromNormal ------- 
 	category:"-- PixGrinder --"
-	toolTip:"PivotFromNormal"
-	buttonText:"PivotFromNormal"
-	--icon:#("Maintoolbar",76)
+	toolTip:"PivotFromNormal" ------- 
+	buttonText:"PivotFromNormal" ------- 
+	--icon:#("Maintoolbar",6)
 	silentErrors:true
 	autoUndoEnabled:true
 	(
-		FileIn "$userScripts/PixGrinder/PivotFromNormal.ms"
+		FileIn "$userScripts/PixGrinder/PivotFromNormal.ms" ------- 
 	)
+
+	macroScript CylinderFromSelec ------- 
+	category:"-- PixGrinder --"
+	toolTip:"CylinderFromSelec" ------- 
+	buttonText:"CylinderFromSelec" ------- 
+	icon:#("Standard",8)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CylinderFromSelec.ms" ------- 
+	)
+
 
 )

@@ -397,6 +397,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByAngle`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Detach`Editable Polygon Object" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Make_Planar`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Quadrify`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -4736,76 +4737,22 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="695602995" actionID="0" customTitle="About MAXtoA" />
         </Menu>
         <Menu title="PixGrinder">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AssetsFinder`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AssignCurrentMaterial`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Attach100`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AttachSelected`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AutoSavePixGrinder`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BboxTrueMaker`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BitmapFuckingUpdate`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableRetopology`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableSplinePreset`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CAO_OneClickProcess`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanLayers`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Collapse_Selected`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopyWireColor`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CrossSurface`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DoublonFinder`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Duplicator`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FaceMode`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FindMatFromSlot`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FullNameDisplay`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="HideByClick`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayerFromSelection`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayersFreezeToggle`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayersViewToggle`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listHierarchy`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listSelected`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listToFile`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialRemove`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialTransfer`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaxScript_Help`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NamesTransfer`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NormalFlip`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ObjectQuickReset`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Coord_World`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RefPlaneAutoRatio`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ResetXFormPixGrinder`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_BakFolder`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_MaxFile`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Rotation_Activator`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ScaleSwitch`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByList`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="selectSmallObjects`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SplineSelectMiddlePoints`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ShapeSelectOptimizer`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SymY`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LocksToggler`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CustAttribTransfer`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="TrisToQuad`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UV1Detector`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UvBox`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ViewFaceAlign`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Welder_Advanced`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="WireColorChanger`-- PixGrinder --" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="XRefMulti`-- PixGrinder --" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="481" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="482" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="483" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="484" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="485" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="486" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="487" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="488" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="489" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="490" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="491" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="492" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="494" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="495" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="496" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="497" flat="0" />
         </Menu>
         <Menu title="pix_Helpers">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Dummy`Objects Helpers" />
@@ -4843,6 +4790,89 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Ngon`Objects Shapes" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Rectangle`Objects Shapes" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Lines`Objects Shapes" />
+        </Menu>
+        <Menu title="-1-A-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LocksToggler`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AssetsFinder`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AssignCurrentMaterial`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Attach100`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AttachSelected`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AutoSavePixGrinder`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-B-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BboxTrueMaker`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BitmapFuckingUpdate`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-C-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableRetopology`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableSplinePreset`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CAO_OneClickProcess`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanLayers`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Collapse_Selected`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopyWireColor`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CrossSurface`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-D-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DoublonFinder`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Duplicator`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-F-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FaceMode`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FindMatFromSlot`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FullNameDisplay`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-H-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="HideByClick`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-L-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayerFromSelection`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayersFreezeToggle`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LayersViewToggle`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listHierarchy`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listSelected`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listToFile`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-M-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialRemove`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialTransfer`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaxScript_Help`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-N-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NamesTransfer`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NormalFlip`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-O-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ObjectQuickReset`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-R-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RefPlaneAutoRatio`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ResetXFormPixGrinder`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_BakFolder`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_MaxFile`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Rotation_Activator`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-S-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ScaleSwitch`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByList`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="selectSmallObjects`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SplineSelectMiddlePoints`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ShapeSelectOptimizer`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SymY`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-T-" />
+        <Menu title="-1-U-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UV1Detector`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UvBox`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-V-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ViewFaceAlign`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-W-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Welder_Advanced`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="WireColorChanger`-- PixGrinder --" />
+        </Menu>
+        <Menu title="-1-X-">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="XRefMulti`-- PixGrinder --" />
         </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />
