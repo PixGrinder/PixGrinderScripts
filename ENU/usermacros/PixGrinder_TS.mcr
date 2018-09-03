@@ -881,5 +881,16 @@
 		FileIn "$userScripts/PixGrinder/DetachQuick.ms" ------- 
 	)
 
+	macroScript CreateShapeQuick ------- 
+	category:"-- PixGrinder --"
+	toolTip:"CreateShapeQuick" ------- 
+	buttonText:"CreateShapeQuick" ------- 
+	icon:#("Splines",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/CreateShapeQuick.ms" ------- 
+	)
+
 
 )

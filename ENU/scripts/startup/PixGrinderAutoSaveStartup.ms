@@ -196,7 +196,7 @@
 	-- Callback :
 	----------------
 	callbacks.addScript #filePostOpen "myAutoSaveOpenFile()" id:#FelipeCallback persistent:false
-	format ("PixGrinder Startup Done\r")
+	format ("PixGrinder Autosave Startup Done\r")
 
 	
 	-- Timer : 
