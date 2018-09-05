@@ -1,15 +1,16 @@
 -- Replace Objects --
 -- Replace Objects.ms -- 
--- 1 - Select object to duplicate  / 2 - Ctrl+Click to select objects to replace / 3 - Run This script --
+-- 1 - Select objects to replace  / 2 - Alt+Click to select the replacer object / 3 - Run This script --
 
 
 (
 	mySelec = selection as array
 	--myCoords = for obj in selection collect obj.pos
-	for i = 2 to mySelec.count do
+	theReplacer = mySelec[mySelec.count]
+	for i = 1 to (mySelec.count-1) do
 	(
-		x1 = copy mySelec[1]
-		x1.pos = mySelec[i].pos
+		x1 = copy theReplacer
+		x1.center = mySelec[i].center
 		delete mySelec[i]
 	)
 

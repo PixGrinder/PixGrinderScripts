@@ -407,6 +407,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InsertLoop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopTools`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotRing`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotLoop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="StepLoop`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Similar`PolyTools" />
@@ -462,6 +463,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="30" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="64" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="71" flat="1" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CreateShapeQuick`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RenameObjects`Tools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -1329,8 +1331,22 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40068" customTitle="&amp;Camera View" />
         </Menu>
         <Menu title=" " flags="2" />
-        <Menu title="Quad 3" flags="2" />
-        <Menu title="Quad 4" flags="2" />
+        <Menu title="Quad 3" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="63547" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="63545" />
+        </Menu>
+        <Menu title="Quad 4" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="374" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40023" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="219" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40834" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="1" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="550" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="551" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+        </Menu>
         <Menu title="Trackbar - Editing Modes" />
         <Menu title="SchematicView - Align">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SVAlignLeft`Schematic View" customTitle="Left" />
