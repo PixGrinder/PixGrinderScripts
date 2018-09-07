@@ -296,7 +296,6 @@
     <shortcut fVirt="7" accleleratorKey="80" actionID="40189" actionTableID="0" />
     <shortcut fVirt="15" accleleratorKey="80" actionID="40223" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="83" actionID="40072" actionTableID="0" />
-    <shortcut fVirt="11" accleleratorKey="83" actionID="40006" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="84" actionID="40059" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="85" actionID="40183" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="107" actionID="40226" actionTableID="0" />
@@ -583,5 +582,6 @@
     <shortcut fVirt="3" accleleratorKey="97" actionID="LayerAdd`Layers" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="78" actionID="NormalFlip`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="80" actionID="PerspAdvanced`-- PixGrinder --" actionTableID="647394" />
+    <shortcut fVirt="11" accleleratorKey="83" actionID="AutoSavePixGrinder`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>

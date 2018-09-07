@@ -1330,7 +1330,13 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40183" customTitle="Isometric &amp;User View" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40068" customTitle="&amp;Camera View" />
         </Menu>
-        <Menu title=" " flags="2" />
+        <Menu title=" " flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59230" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="334" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="332" />
+        </Menu>
         <Menu title="Quad 3" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="63547" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="63545" />
@@ -1338,10 +1344,12 @@
         <Menu title="Quad 4" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="374" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40023" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="4" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="219" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40834" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="1" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="12" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="550" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="551" />
