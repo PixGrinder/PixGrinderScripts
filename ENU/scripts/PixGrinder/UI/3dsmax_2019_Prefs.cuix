@@ -39,7 +39,7 @@
                         <Fly iconName="MainUI/SelectAndRotate" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="View" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
                     <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
@@ -52,7 +52,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="30761" helpID="0" orientation="31" captionVisibility="0" iconName="SnapsControls/KeyboardOverrideToggle" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="40072" helpID="0" orientation="31" captionVisibility="0" iconName="SnapsControls/SnapsToggle3">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
                         <Fly iconName="SnapsControls/SnapsToggle2" />
                         <Fly iconName="SnapsControls/SnapsToggle2.5.png" />
                         <Fly iconName="SnapsControls/SnapsToggle3" />

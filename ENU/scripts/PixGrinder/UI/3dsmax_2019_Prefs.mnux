@@ -396,7 +396,7 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByAngle`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Detach`Editable Polygon Object" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachClone`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachQuick`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachByElt`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
