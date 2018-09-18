@@ -881,6 +881,17 @@
 		FileIn "$userScripts/PixGrinder/DetachQuick.ms" ------- 
 	)
 
+	macroScript DetachClone ------- 
+	category:"-- PixGrinder --"
+	toolTip:"DetachClone" ------- 
+	buttonText:"DetachClone" ------- 
+	--icon:#("Standard",8)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/DetachClone.ms" ------- 
+	)
+
 	macroScript CreateShapeQuick ------- 
 	category:"-- PixGrinder --"
 	toolTip:"CreateShapeQuick" ------- 
@@ -891,6 +902,19 @@
 	(
 		FileIn "$userScripts/PixGrinder/CreateShapeQuick.ms" ------- 
 	)
+
+
+	macroScript WireTransfer ------- 
+	category:"-- PixGrinder --"
+	toolTip:"WireTransfer" ------- 
+	buttonText:"WireTransfer" ------- 
+	--icon:#("Splines",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/WireTransfer.ms" ------- 
+	)
+
 
 
 )
