@@ -915,6 +915,16 @@
 		FileIn "$userScripts/PixGrinder/WireTransfer.ms" ------- 
 	)
 
+	macroScript SymetryMod ------- 
+	category:"-- PixGrinder --"
+	toolTip:"SymetryMod" ------- 
+	buttonText:"SymetryMod" ------- 
+	icon:#("UVWUnwrapModes",15)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/SymetryMod.ms" ------- 
+	)
 
 
 )

@@ -41,7 +41,7 @@
                 </Item>
                 <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
-                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
                         <Fly iconName="MainUI/UseSelectionCenter" />
                         <Fly iconName="MainUI/UseTransformCoordinateCenter" />
@@ -112,7 +112,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50006" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintY" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50007" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintZ" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintXY">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="AxisConstraints/ConstraintXY" />
                         <Fly iconName="AxisConstraints/ConstraintYZ" />
                         <Fly iconName="AxisConstraints/ConstraintZX" />
@@ -144,7 +144,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="two_point_dist`Tools" tip="Measure Distance..." label="" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="60120" helpID="0" orientation="31" captionVisibility="0" iconName="Extras/Array">
-                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="Extras/Array" />
                         <Fly iconName="Extras/SnapShot" />
                         <Fly iconName="Extras/SpacingTool" />
@@ -244,7 +244,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FFD_3x3x3`Modifiers" tip="FFD 3x3x3 Modifier" label="FFD 3x3x3" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FFD_4x4x4`Modifiers" tip="FFD 4x4x4 Modifier" label="FFD 4x4x4" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Mirror`Modifiers" tip="Mirror Modifier" label="Mirror" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="14" imageName="UVWUnwrapModes" actionID="Symmetry`Modifiers" tip="Symmetry Modifier" label="" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SymetryMod`-- PixGrinder --" tip="SymetryMod" label="SymetryMod" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Normalmodifier`Modifiers" tip="Normal Modifier" label="Normal Modifier" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="0" imageName="AutoGrid" actionID="ProjectionMod`Modifiers" tip="Projection Modifier" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="33" imageName="Standard_Modifiers" actionID="ProOptimizerMod`Modifiers" tip="ProOptimizer Modifier" label="" />
@@ -254,6 +254,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Lathe`Modifiers" tip="Lathe Modifier" label="Lathe" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ReplaceObjects`-- PixGrinder --" tip="ReplaceObjects" label="ReplaceObjects" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CylinderFromSelec`-- PixGrinder --" tip="CylinderFromSelec" label="CylinderFromSelec" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="2" macroType="MB_TYPE_SCRIPT" actionTableID="0" imageID="0" imageName="maxscript" category="DragAndDrop" name="Macro1" actionID="0" tip="" label="Macro1" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Slice`Modifiers" tip="Slice Modifier" label="Slice" />
             </Items>
         </Window>
