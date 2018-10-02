@@ -927,4 +927,16 @@
 	)
 
 
+	macroScript Hide_Selec ------- 
+	category:"-- PixGrinder --"
+	toolTip:"Hide_Selec" ------- 
+	buttonText:"Hide_Selec" ------- 
+	--icon:#("UVWUnwrapModes",15)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/Hide_Selec.ms" ------- 
+	)
+
+
 )

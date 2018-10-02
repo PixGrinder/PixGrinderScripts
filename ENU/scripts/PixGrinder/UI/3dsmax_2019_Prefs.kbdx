@@ -276,7 +276,6 @@
     <shortcut fVirt="11" accleleratorKey="66" actionID="40205" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="67" actionID="40068" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="67" actionID="40185" actionTableID="0" />
-    <shortcut fVirt="3" accleleratorKey="68" actionID="223" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="69" actionID="50002" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="70" actionID="40060" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="70" actionID="325" actionTableID="0" />
@@ -548,7 +547,7 @@
     <shortcut fVirt="3" accleleratorKey="82" actionID="ScaleSwitch`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="53" actionID="SubObject_5`Modifier Stack" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="48" actionID="BakeDialog`Render" actionTableID="647394" />
-    <shortcut fVirt="11" accleleratorKey="67" actionID="PhysicalCamera_CreateFromView`Lights and Cameras" actionTableID="647394" />
+    <shortcut fVirt="11" accleleratorKey="67" actionID="StandardCamera_CreateFromView`Lights and Cameras" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="49" actionID="Custom_Attributes`Customize User Interface" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="49" actionID="TVCustom_Attributes`Track View" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="50" actionID="ParamCollectorShow`Parameter Collector" actionTableID="647394" />
@@ -583,5 +582,6 @@
     <shortcut fVirt="7" accleleratorKey="78" actionID="NormalFlip`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="80" actionID="PerspAdvanced`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="83" actionID="AutoSavePixGrinder`-- PixGrinder --" actionTableID="647394" />
+    <shortcut fVirt="3" accleleratorKey="68" actionID="Hide_Selec`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>
