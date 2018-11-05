@@ -579,5 +579,4 @@
     <shortcut fVirt="11" accleleratorKey="83" actionID="AutoSavePixGrinder`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="68" actionID="Hide_Selec`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
-    <shortcut fVirt="19" accleleratorKey="67" actionID="Pix_Constraints" actionTableID="1261319018" />
 </ADSK_KBD>

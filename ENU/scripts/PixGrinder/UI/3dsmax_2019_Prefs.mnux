@@ -8,7 +8,7 @@
             <Context menuID="4" title="Animation                [Alt+RMB]" showAll="1" />
             <Context menuID="5" title="Modeling                 [Ctrl+RMB]" showAll="1" />
             <Context menuID="6" title="MassFX                   [Shift+Alt+RMB]" showAll="1" />
-            <Context menuID="7" title="Custom                    [Shift+Ctrl+RMB]" showAll="0" />
+            <Context menuID="7" title="Custom                    [Shift+Ctrl+RMB]" showAll="1" />
             <Context menuID="8" title="Lighting | Render     [Ctrl+Alt+RMB]" showAll="1" />
             <Context menuID="9" title="Custom                    [Shift+Ctrl+Alt+RMB]" showAll="1" />
             <Context menuID="12" title="Track View Key Quad (Classic)" showAll="1" />
@@ -347,10 +347,12 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40024" />
         </Menu>
         <Menu title=" Constraints" flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsNone`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CrowdAreaConstrain`CrowdArea" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsEdge`Ribbon - Modeling" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsFace`Ribbon - Modeling" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsNormal`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsNone`Ribbon - Modeling" />
         </Menu>
         <Menu title="set" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40800" customTitle="Set Keyframe" />
@@ -495,10 +497,38 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PxCreateBallAndSocketConstraintMS`PhysX" customTitle="Ball-and-Socket Constraint" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PxCreateUniversalConstraintMS`PhysX" customTitle="Universal Constraint" />
         </Menu>
-        <Menu title=" " flags="2" />
-        <Menu title=" " flags="2" />
-        <Menu title=" " flags="2" />
-        <Menu title=" " flags="2" />
+        <Menu title=" PolyDraw" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawStepBuild`PolyTools" />
+        </Menu>
+        <Menu title=" Surface" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
+        </Menu>
+        <Menu title=" Conform" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConform`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformMove`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRotate`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformScale`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRelax`PolyTools" />
+        </Menu>
+        <Menu title=" Shift" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftRotate`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftScale`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftIgnoreBackToggle`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftUseSelectedToggle`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftFreezeXToggle`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftFreezeYToggle`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftFreezeZToggle`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+        </Menu>
         <Menu title="rendering control properties" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Renderable`Render" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InheritVis`Render" />
