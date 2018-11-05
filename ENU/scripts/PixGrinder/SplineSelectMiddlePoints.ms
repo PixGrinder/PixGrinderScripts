@@ -20,3 +20,11 @@
 		max select invert
 	)
 )
+
+
+/*
+
+getKnotSelection $ 1
+
+
+*/

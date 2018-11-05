@@ -1,6 +1,7 @@
 -- Pivot from Normal -- 
 -- PivotFromNormal.ms -- 
 -- Align and center object's pivot from face selection --
+-- v 2.0 --
 
 
 
@@ -29,7 +30,8 @@
 		polyop.detachFaces myObj (getFaceSelection myObj) delete:false asNode:true name:"myYouplaTemp"
 		subobjectlevel = 0
 		select (getNodeByName "myYouplaTemp")
-
+		addModifier selection[1] (Smooth())
+		collapseStack selection[1]
 		myObj = selection[1]---------------
 		resetXForm myObj
 		collapseStack myObj

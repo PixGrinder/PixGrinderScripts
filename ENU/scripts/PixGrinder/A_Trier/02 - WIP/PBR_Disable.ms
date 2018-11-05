@@ -16,6 +16,13 @@ for mtl in DxData do
 
 classof meditmaterials[1]
 
+selection[1].material[2].TEX_global_diffuse_cube = undefined
+selection[1].material[2].TEX_global_specular_cube = undefined
+selection[1].material[2].TEX_brdf_lut = undefined
+show selection[1].material[1]
+
+
+D:\PBR_Tests\Users\Guest1239\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\plugcfg_ln\ShaderFX\Images\PBS\midday
 
 
 */

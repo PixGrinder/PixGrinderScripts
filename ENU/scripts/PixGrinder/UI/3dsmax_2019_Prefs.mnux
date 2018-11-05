@@ -10,13 +10,15 @@
             <Context menuID="6" title="MassFX                   [Shift+Alt+RMB]" showAll="1" />
             <Context menuID="7" title="Custom                    [Shift+Ctrl+RMB]" showAll="0" />
             <Context menuID="8" title="Lighting | Render     [Ctrl+Alt+RMB]" showAll="1" />
-            <Context menuID="9" title="Custom                    [Shift+Ctrl+Alt+RMB]" showAll="0" />
+            <Context menuID="9" title="Custom                    [Shift+Ctrl+Alt+RMB]" showAll="1" />
             <Context menuID="12" title="Track View Key Quad (Classic)" showAll="1" />
             <Context menuID="13" title="Trackbar Quad" showAll="1" />
             <Context menuID="14" title="Viewports" showAll="1" />
             <Context menuID="16" title="Track View Key Quad" showAll="0" />
             <Context menuID="18" title="LayerExplorer Quad" showAll="1" />
             <Context menuID="19" title="SceneExplorer Quad" showAll="1" />
+            <Context menuID="20" title="Pix_Constraints" showAll="1" />
+            <Context menuID="21" title="Pix_Ribbon" showAll="1" />
             <RightClickContexts>
                 <Context menuID="0" contextID="0" />
                 <Context menuID="3" contextID="1" />
@@ -79,6 +81,8 @@
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1567997" title="Render Dialog Menu Bar" menuID="238" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1744264583" title="" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1101794312" title="Arnold" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="132275449" title="" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="506" />
     </MenuContexts>
     <MenuManager>
         <Menu title="Main Menu Bar" flags="1">
@@ -100,6 +104,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="506" flat="0" />
         </Menu>
         <Menu title="&amp;File">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="458" flat="0" customTitle="&amp;New" />
@@ -152,13 +157,7 @@
         <Menu title="transform" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="50131" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40848" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CenterPivot`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40213" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40022" customTitle="Object &amp;Properties..." />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LaunchFCurveEditor`Track View" customTitle="Curve Editor..." />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LaunchDopeSheetEditor`Track View" customTitle="Dope Sheet..." />
@@ -169,19 +168,12 @@
         <Menu title="display" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="276" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="29771" actionID="33764" customTitle="Manage State Sets..." />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="243" flat="0" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="223" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="281" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="277" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="284" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="224" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="283" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="261" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="197" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="181" flat="0" customTitle="Viewport Lighting and Shadows" />
         </Menu>
@@ -354,7 +346,12 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40024" />
         </Menu>
-        <Menu title=" " flags="2" />
+        <Menu title=" Constraints" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsNone`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsEdge`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsFace`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsNormal`Ribbon - Modeling" />
+        </Menu>
         <Menu title="set" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40800" customTitle="Set Keyframe" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -443,18 +440,6 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="29" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="63" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="70" flat="1" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyBridge`Ribbon - Modeling" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EdgeBridge`Ribbon - Modeling" />
@@ -547,10 +532,38 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="-1159893849" actionID="36864" />
         </Menu>
         <Menu title=" " flags="2" />
-        <Menu title=" " flags="2" />
-        <Menu title=" " flags="2" />
-        <Menu title=" " flags="2" />
-        <Menu title=" " flags="2" />
+        <Menu title=" " flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawStepBuild`PolyTools" />
+        </Menu>
+        <Menu title=" " flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
+        </Menu>
+        <Menu title=" " flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConform`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformMove`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRotate`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformScale`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRelax`PolyTools" />
+        </Menu>
+        <Menu title=" " flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftRotate`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftScale`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftUseSelectedToggle`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftIgnoreBackToggle`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorToggle`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorX`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorY`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorZ`Ribbon - Modeling" />
+        </Menu>
         <Menu title="Context Skin Tools 1">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopySelectedBone`Skin Modifier" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PasteToSelectedBone`Skin Modifier" />
@@ -3653,6 +3666,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="2030336542" actionID="0" customTitle="Plug-in Manager..." />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40108" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="securityToolsStartup`Security Tools" />
         </Menu>
         <Menu title="&amp;Help">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40036" customTitle="&amp;Autodesk 3ds Max Help" />
@@ -4903,6 +4917,64 @@
         <Menu title="-1-X-">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="XRefMulti`-- PixGrinder --" />
         </Menu>
+        <Menu title="Quad 1" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsNone`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsEdge`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsNormal`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConstraintsFace`Ribbon - Modeling" />
+        </Menu>
+        <Menu title="Quad 2" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="freeRotate`Tools" />
+        </Menu>
+        <Menu title="Quad 3" flags="2" />
+        <Menu title="Quad 4" flags="2" />
+        <Menu title="Retopo" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawStepBuild`PolyTools" />
+        </Menu>
+        <Menu title="SurfaceSelec" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawSetSurfaceObject`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawAutoWeldToggle`PolyTools" />
+        </Menu>
+        <Menu title="Conform" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConform`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformMove`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRelax`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRotate`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformScale`PolyTools" />
+        </Menu>
+        <Menu title="Shift" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftRotate`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftScale`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorToggle`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftUseSelectedToggle`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorX`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorY`Ribbon - Modeling" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorZ`Ribbon - Modeling" />
+        </Menu>
+        <Menu title="Substance">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="1" customTitle="Substance Settings" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="2" customTitle="Substance Batch Import" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="3" customTitle="Substance To Arnold" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="4" customTitle="Substance To Vray" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="7" customTitle="Substance To Octane 3.06" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="8" customTitle="Substance To Corona" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="9" customTitle="Substance To Redshift" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="10" customTitle="Substance To Physical Material" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="5" customTitle="Allegorithmic Website" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="6" customTitle="Substance Source" />
+        </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />
             <Item menuID="5" title="Edit" />
@@ -5022,6 +5094,18 @@
             <Item menuID="442" title="Quad 2" />
             <Item menuID="443" title="Quad 3" />
             <Item menuID="444" title="Quad 4" />
+        </QuadMenu>
+        <QuadMenu>
+            <Item menuID="498" title="Quad 1" />
+            <Item menuID="499" title="Quad 2" />
+            <Item menuID="500" title="Quad 3" />
+            <Item menuID="501" title="Quad 4" />
+        </QuadMenu>
+        <QuadMenu>
+            <Item menuID="502" title="Quad 1" />
+            <Item menuID="503" title="Quad 2" />
+            <Item menuID="504" title="Quad 3" />
+            <Item menuID="505" title="Quad 4" />
         </QuadMenu>
     </MenuManager>
 </ADSK_MNU>

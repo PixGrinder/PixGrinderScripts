@@ -71,3 +71,6 @@
 
 
 
+for obj in geometry where obj.modifiers[1]!= undefined and obj.modifiers[1].name == "TurboSmooth" do obj.modifiers[1].enabled = false
+
+
