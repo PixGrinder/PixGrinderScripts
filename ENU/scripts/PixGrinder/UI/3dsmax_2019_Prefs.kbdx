@@ -297,7 +297,6 @@
     <shortcut fVirt="3" accleleratorKey="83" actionID="40072" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="84" actionID="40059" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="85" actionID="40183" actionTableID="0" />
-    <shortcut fVirt="11" accleleratorKey="107" actionID="40226" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="8" actionID="40233" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="46" actionID="40020" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="35" actionID="50023" actionTableID="0" />
@@ -306,7 +305,6 @@
     <shortcut fVirt="3" accleleratorKey="118" actionID="50007" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="119" actionID="59229" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="36" actionID="50019" actionTableID="0" />
-    <shortcut fVirt="11" accleleratorKey="109" actionID="40225" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="87" actionID="50001" actionTableID="0" />
     <shortcut fVirt="15" accleleratorKey="87" actionID="40188" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="90" actionID="40015" actionTableID="0" />
@@ -578,5 +576,7 @@
     <shortcut fVirt="3" accleleratorKey="80" actionID="PerspAdvanced`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="83" actionID="AutoSavePixGrinder`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="68" actionID="Hide_Selec`-- PixGrinder --" actionTableID="647394" />
+    <shortcut fVirt="11" accleleratorKey="107" actionID="PaintSelBrushSizeUp`Selection" actionTableID="647394" />
+    <shortcut fVirt="11" accleleratorKey="109" actionID="PaintSelBrushSizeDown`Selection" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>

@@ -27,7 +27,13 @@
 
 
 -- 	for mapfile in mapfiles do print (mapfile as string)
-	for obj in mapfiles do format "%; " (filenameFromPath obj)
-
+	
+	--for obj in mapfiles do format "%; " (filenameFromPath obj)
+	
+	ATSOps.SelectFiles mapfiles
 
 )
+
+/*
+select (for obj in geometry where classof obj.rotation.controller != Euler_XYZ collect obj)
+*/

@@ -49,7 +49,7 @@
                 <Context menuID="10" contextID="0" />
             </RightClickContexts>
         </MenuContext>
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="231" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="103" />
         <MenuContext type="1" typeName="kMenuContextQuadMenu" contextID="6" title="Track View Quad">
             <Context menuID="11" title="Track View Quad" showAll="1" />
             <Context menuID="12" title="Track View Key Quad (Classic)" showAll="1" />
@@ -341,10 +341,12 @@
             <Item mode="5" modeName="AM_ITEM_SUBMENU" actionTableID="0" actionID="59227" flat="1" />
         </Menu>
         <Menu title=" snap options" flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40904" customTitle="Enable Axis Constraints in Snaps" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40905" customTitle="Snaps To Frozen Objects" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59236" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40024" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59234" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59235" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59233" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59232" />
         </Menu>
         <Menu title=" Constraints" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CrowdAreaConstrain`CrowdArea" />
