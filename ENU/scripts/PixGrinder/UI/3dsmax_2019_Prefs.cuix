@@ -14,7 +14,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50027" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SelectObject" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50029" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SelectByName" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50028" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/RectangularSelection">
-                    <FlyOffCt flyInit="4" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/RectangularSelection" />
                         <Fly iconName="MainUI/CircularSelection" />
                         <Fly iconName="MainUI/FenceSelection" />
@@ -39,7 +39,7 @@
                         <Fly iconName="MainUI/SelectAndRotate" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Parent" />
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="World" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
                     <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
@@ -112,7 +112,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50006" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintY" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50007" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintZ" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintXY">
-                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="AxisConstraints/ConstraintXY" />
                         <Fly iconName="AxisConstraints/ConstraintYZ" />
                         <Fly iconName="AxisConstraints/ConstraintZX" />
@@ -239,6 +239,8 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="11" imageName="PolyTools" actionID="EditPolyMod`Modifiers" tip="Edit Poly Modifier" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="15" imageName="PolyTools" actionID="PolySelect`Modifiers" tip="Poly Select Modifier" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CrossSurface`-- PixGrinder --" tip="CrossSurface" label="CrossSurface" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CrossSection`Modifiers" tip="CrossSection Modifier" label="CrossSection" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Surface`Modifiers" tip="Surface Modifier" label="Surface" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="DetachByElt`-- PixGrinder --" tip="DetachByElt" label="DetachByElt" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FFD_2x2x2`Modifiers" tip="FFD 2x2x2 Modifier" label="FFD 2x2x2" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FFD_3x3x3`Modifiers" tip="FFD 3x3x3 Modifier" label="FFD 3x3x3" />
@@ -347,6 +349,8 @@
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="100" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40083" tip="Activate Home Grid" label="Activate Home Grid" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="105" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40084" tip="Activate Grid Object" label="Activate Grid Object" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Separator`Seperator" tip="Separator" label="Separator" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="108" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="GammaSetup`Render" tip="Gamma/LUT Setup..." label="Gamma/LUT Setup..." />
             </Items>
         </Window>
         <Window objectName="ProjectsToolbar" name="Projects" type="N" cType="1" />

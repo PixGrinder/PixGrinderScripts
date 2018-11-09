@@ -346,6 +346,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59234" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59235" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59233" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59232" />
         </Menu>
         <Menu title=" Constraints" flags="2">
@@ -453,6 +454,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="64" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="71" flat="1" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CreateShapeQuick`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ShapeFromPoly`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RenameObjects`Tools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -4930,6 +4932,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByList`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="selectSmallObjects`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SplineSelectMiddlePoints`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ShapeFromPoly`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ShapeSelectOptimizer`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SymY`-- PixGrinder --" />
         </Menu>

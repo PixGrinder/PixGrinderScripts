@@ -262,7 +262,6 @@
     <shortcut fVirt="7" accleleratorKey="38" actionID="51" actionTableID="1127307088" />
     <shortcut fVirt="27" accleleratorKey="79" actionID="8" actionTableID="427416257" />
     <shortcut fVirt="27" accleleratorKey="80" actionID="9" actionTableID="427416257" />
-    <shortcut fVirt="19" accleleratorKey="79" actionID="0" actionTableID="427416257" />
     <shortcut fVirt="7" accleleratorKey="86" actionID="40033" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="192" actionID="40067" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="219" actionID="321" actionTableID="0" />
@@ -578,5 +577,6 @@
     <shortcut fVirt="3" accleleratorKey="68" actionID="Hide_Selec`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="107" actionID="PaintSelBrushSizeUp`Selection" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="109" actionID="PaintSelBrushSizeDown`Selection" actionTableID="647394" />
+    <shortcut fVirt="19" accleleratorKey="79" actionID="SESceneExplorer`Scene Explorer" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>

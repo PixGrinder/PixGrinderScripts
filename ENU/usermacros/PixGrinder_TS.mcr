@@ -938,5 +938,14 @@
 		FileIn "$userScripts/PixGrinder/Hide_Selec.ms" ------- 
 	)
 
-
+	macroScript ShapeFromPoly ------- 
+	category:"-- PixGrinder --"
+	toolTip:"ShapeFromPoly" ------- 
+	buttonText:"ShapeFromPoly" ------- 
+	--icon:#("UVWUnwrapModes",15)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder/ShapeFromPoly.ms" ------- 
+	)
 )
