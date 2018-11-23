@@ -502,6 +502,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PxCreateUniversalConstraintMS`PhysX" customTitle="Universal Constraint" />
         </Menu>
         <Menu title=" PolyDraw" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
@@ -745,6 +747,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Outline`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Inset`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InsertLoop`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Weld`Editable Polygon Object" />
