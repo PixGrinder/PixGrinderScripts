@@ -19,6 +19,7 @@
             <Context menuID="19" title="SceneExplorer Quad" showAll="1" />
             <Context menuID="20" title="Pix_Constraints" showAll="1" />
             <Context menuID="21" title="Pix_Ribbon" showAll="1" />
+            <Context menuID="22" title="Styling Quad" showAll="1" />
             <RightClickContexts>
                 <Context menuID="0" contextID="0" />
                 <Context menuID="3" contextID="1" />
@@ -49,7 +50,7 @@
                 <Context menuID="10" contextID="0" />
             </RightClickContexts>
         </MenuContext>
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="103" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="231" />
         <MenuContext type="1" typeName="kMenuContextQuadMenu" contextID="6" title="Track View Quad">
             <Context menuID="11" title="Track View Quad" showAll="1" />
             <Context menuID="12" title="Track View Key Quad (Classic)" showAll="1" />
@@ -82,7 +83,7 @@
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1744264583" title="" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1101794312" title="Arnold" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="132275449" title="" />
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="506" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="511" />
     </MenuContexts>
     <MenuManager>
         <Menu title="Main Menu Bar" flags="1">
@@ -104,7 +105,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="506" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="511" flat="0" />
         </Menu>
         <Menu title="&amp;File">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="458" flat="0" customTitle="&amp;New" />
@@ -5001,6 +5002,50 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorY`Ribbon - Modeling" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorZ`Ribbon - Modeling" />
         </Menu>
+        <Menu title="selection" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40001" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40002" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="58112" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40004" />
+        </Menu>
+        <Menu title="styling" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40006" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40034" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40035" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40036" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40037" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40038" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40039" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40040" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40041" />
+        </Menu>
+        <Menu title="utilities" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40021" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40022" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40023" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40024" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40025" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40026" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40027" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40028" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40029" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40031" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40032" />
+        </Menu>
+        <Menu title="selection utils" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40009" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40010" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40011" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40012" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40013" />
+        </Menu>
+        <Menu title="PixGrinder_Slate" />
         <Menu title="Substance">
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="1" customTitle="Substance Settings" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="2" customTitle="Substance Batch Import" />
@@ -5144,6 +5189,12 @@
             <Item menuID="503" title="Quad 2" />
             <Item menuID="504" title="Quad 3" />
             <Item menuID="505" title="Quad 4" />
+        </QuadMenu>
+        <QuadMenu>
+            <Item menuID="506" title="selection" />
+            <Item menuID="507" title="styling" />
+            <Item menuID="508" title="utilities" />
+            <Item menuID="509" title="selection utils" />
         </QuadMenu>
     </MenuManager>
 </ADSK_MNU>
