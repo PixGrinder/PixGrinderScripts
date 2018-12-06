@@ -579,5 +579,7 @@
     <shortcut fVirt="19" accleleratorKey="79" actionID="SESceneExplorer`Scene Explorer" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="77" actionID="advanced_material_editor`Medit Tools" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="77" actionID="basic_material_editor`Medit Tools" actionTableID="647394" />
+    <shortcut fVirt="11" accleleratorKey="87" actionID="ESpline_Weld`Editable Spline Object" actionTableID="647394" />
+    <shortcut fVirt="19" accleleratorKey="67" actionID="ESpline_VChamfer`Editable Spline Object" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
 </ADSK_KBD>
