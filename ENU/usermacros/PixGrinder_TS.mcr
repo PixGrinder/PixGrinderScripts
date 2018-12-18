@@ -948,4 +948,17 @@
 	(
 		FileIn "$userScripts/PixGrinder/ShapeFromPoly.ms" ------- 
 	)
+
+	macroScript MXP
+	category:"-- PixGrinder --"
+	toolTip:"MXP Folder"
+	buttonText:"MXP..."
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/MXP.ms"
+	)
+
+
 )

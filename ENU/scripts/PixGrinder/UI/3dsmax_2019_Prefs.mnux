@@ -102,6 +102,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="254" flat="0" customTitle="&amp;Scripting" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="469" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="476" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="512" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
@@ -5060,6 +5061,17 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="10" customTitle="Substance To Physical Material" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="5" customTitle="Allegorithmic Website" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="6" customTitle="Substance Source" />
+        </Menu>
+        <Menu title="TPZ">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Bitmap_AH_Path`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CamFromComp`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanGhostLinks`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CustAttribTransfert`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DeleteClComps`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ComplocExporter`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectClComps`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConflictManagerLauncher`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
         </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />
