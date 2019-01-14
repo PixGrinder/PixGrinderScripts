@@ -122,6 +122,20 @@
 		on myPaste pressed do 
 		(
 			myText.text = getclipboardText()
+			if radBtn.state == 4 do pde_getMat myText.text
+			if radBtn.state == 3 do searchObject myText.text
+			if radBtn.state == 2 do 
+			(
+				searchBitmapTex myText.text 
+				MatEditor.Open()
+			)
+			if radBtn.state == 1 do 
+			(
+				searchFile myText.text 
+				MatEditor.Open()
+			)
+			--if radBtn.state == 2 do searchFile myText.text 
+			setFocus myRollout.myText
 		)
 		
 		
