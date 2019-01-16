@@ -39,9 +39,9 @@
                         <Fly iconName="MainUI/SelectAndRotate" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="View" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
-                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
                         <Fly iconName="MainUI/UseSelectionCenter" />
                         <Fly iconName="MainUI/UseTransformCoordinateCenter" />
@@ -271,6 +271,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="53" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="XRefMulti`-- PixGrinder --" tip="Xref multiple max files on the fly !" label="XRefMulti" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="124" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ViewportGrab`Tools" tip="Create Still Image File..." label="Create Still Image File..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="85" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Reveal_MaxFile`-- PixGrinder --" tip="Reveal Current Scene in Windows Explorer" label="Reveal Scene..." />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="40" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="MXP`-- PixGrinder --" tip="MXP Folder" label="MXP..." />
             </Items>
         </Window>
         <Window objectName="PixGrinder" name="PixGrinder" type="T" cType="1" toolbarRows="1">
@@ -353,6 +354,8 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Separator`Seperator" tip="Separator" label="Separator" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="108" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="GammaSetup`Render" tip="Gamma/LUT Setup..." label="Gamma/LUT Setup..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="toggleOutliner`Outliner" tip="Open/Close Outliner" label="Open/Close Outliner" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="101" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Sceneconverter`Show" tip="Open Scene Converter" label="Scene Converter..." />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="274" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ExportUnityMaterial`Export" tip="Export scene Physical Materials to Unity material assets" label="Export scene Physical Materials to Unity material assets" />
             </Items>
         </Window>
         <Window objectName="ProjectsToolbar" name="Projects" type="N" cType="1" />

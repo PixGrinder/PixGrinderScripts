@@ -83,7 +83,7 @@
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1744264583" title="" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1101794312" title="Arnold" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="132275449" title="" />
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="511" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="512" />
     </MenuContexts>
     <MenuManager>
         <Menu title="Main Menu Bar" flags="1">
@@ -102,11 +102,11 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="254" flat="0" customTitle="&amp;Scripting" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="469" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="476" flat="0" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="512" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="511" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="511" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="512" flat="0" />
         </Menu>
         <Menu title="&amp;File">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="458" flat="0" customTitle="&amp;New" />
@@ -434,13 +434,13 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Box`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="plane`Objects Primitives" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="478" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="478" flat="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="479" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="479" flat="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="477" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="477" flat="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="480" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="480" flat="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="tools 1" flags="2">
@@ -2120,8 +2120,6 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="204" flat="0" customTitle="Scene Explorer" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="200" flat="0" customTitle="Schematic View" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40702" customTitle="ActiveShade" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="203" flat="0" customTitle="Grid" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40215" customTitle="Shape" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -2137,6 +2135,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40413" />
         </Menu>
         <Menu title="Views - Shading Viewport Nitrous Label Menu">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="-623044237" actionID="4112" />
+            <Item mode="5" modeName="AM_ITEM_SUBMENU" actionTableID="-623044237" actionID="4096" flat="0" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="12" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="13" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="14" />
@@ -5050,6 +5050,17 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="1909744250" actionID="40013" />
         </Menu>
         <Menu title="PixGrinder_Slate" />
+        <Menu title="TPZ">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Bitmap_AH_Path`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CamFromComp`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanGhostLinks`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CustAttribTransfert`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DeleteClComps`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ComplocExporter`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectClComps`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConflictManagerLauncher`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
+        </Menu>
         <Menu title="Substance">
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="1" customTitle="Substance Settings" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="2" customTitle="Substance Batch Import" />
@@ -5061,17 +5072,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="10" customTitle="Substance To Physical Material" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="5" customTitle="Allegorithmic Website" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="6" customTitle="Substance Source" />
-        </Menu>
-        <Menu title="TPZ">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Bitmap_AH_Path`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CamFromComp`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanGhostLinks`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CustAttribTransfert`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DeleteClComps`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ComplocExporter`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectClComps`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConflictManagerLauncher`-- PixGrinder - TPZ Tools --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
         </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />
