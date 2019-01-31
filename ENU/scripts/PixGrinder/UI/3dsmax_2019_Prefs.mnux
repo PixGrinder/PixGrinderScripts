@@ -83,7 +83,7 @@
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1744264583" title="" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1101794312" title="Arnold" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="132275449" title="" />
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="512" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="513" />
     </MenuContexts>
     <MenuManager>
         <Menu title="Main Menu Bar" flags="1">
@@ -106,7 +106,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="512" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="513" flat="0" />
         </Menu>
         <Menu title="&amp;File">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="458" flat="0" customTitle="&amp;New" />
@@ -396,7 +396,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SetSkinPose`Characters" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AssumeSkinPose`Characters" />
         </Menu>
-        <Menu title="transform" flags="2">
+        <Menu title="Transform" flags="2">
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByAngle`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -424,7 +424,7 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="12" flat="0" customTitle="Convert To:" />
         </Menu>
-        <Menu title="primitives" flags="2">
+        <Menu title="Primitives" flags="2">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="69" flat="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Teapot`Objects Primitives" />
@@ -434,16 +434,14 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Box`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="plane`Objects Primitives" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="478" flat="1" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="479" flat="1" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="477" flat="1" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="480" flat="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="477" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="478" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="479" flat="0" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
-        <Menu title="tools 1" flags="2">
+        <Menu title="Tools 1" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="NamesTransfer`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MaterialTransfer`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -454,7 +452,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyBridge`Ribbon - Modeling" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EdgeBridge`Ribbon - Modeling" />
         </Menu>
-        <Menu title="tools 2" flags="2">
+        <Menu title="Tools 2" flags="2">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="30" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="64" flat="1" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="71" flat="1" />
@@ -519,6 +517,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="60545" actionID="26914" />
         </Menu>
         <Menu title=" Conform" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConform`PolyTools" />
@@ -752,7 +752,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Outline`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Inset`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InsertLoop`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Weld`Editable Polygon Object" />
@@ -4884,8 +4883,10 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="AutoSavePixGrinder`-- PixGrinder --" />
         </Menu>
         <Menu title="-1-B-">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BboxTrueMaker`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BitmapFuckingUpdate`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BboxDummyMaker`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="BboxGeoMaker`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Bitmap_Missing_Highlight`-- PixGrinder --" />
         </Menu>
         <Menu title="-1-C-">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableRetopology`-- PixGrinder --" />
@@ -5060,6 +5061,15 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectClComps`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ConflictManagerLauncher`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
+        </Menu>
+        <Menu title="Pix_Detach">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachByElt`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EMesh_Detach`Editable Mesh Object" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Detach`Editable Polygon Object" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachByElt`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachClone`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachQuick`-- PixGrinder --" />
         </Menu>
         <Menu title="Substance">
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="1" customTitle="Substance Settings" />

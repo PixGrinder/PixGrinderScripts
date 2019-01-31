@@ -32,15 +32,26 @@
 	)
 
 
-	macroScript BboxTrueMaker
+	macroScript BboxGeoMaker
 	category:"-- PixGrinder --"
-	toolTip:"Bbox True Maker"
-	buttonText:"Bbox True Maker"
+	toolTip:"Bbox Geo Maker"
+	buttonText:"Bbox Geo Maker"
 	--icon:#("FileLinkActionItems",9)
 	silentErrors:false
 	autoUndoEnabled:true
 	(
-		Include "$userScripts/PixGrinder/Bbox_TrueMaker.ms"
+		Include "$userScripts/PixGrinder/bbox_GeoMaker.ms"
+	)
+
+	macroScript BboxDummyMaker
+	category:"-- PixGrinder --"
+	toolTip:"Bbox Dummy Maker"
+	buttonText:"Bbox Dummy Maker"
+	--icon:#("FileLinkActionItems",9)
+	silentErrors:false
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Bbox_DummyMaker.ms"
 	)
 
 
@@ -958,6 +969,18 @@
 	autoUndoEnabled:false
 	(
 		Include "$userScripts/PixGrinder/MXP.ms"
+	)
+
+
+	macroScript Bitmap_Missing_Highlight
+	category:"-- PixGrinder --"
+	toolTip:"Bitmap Missing Highlight"
+	buttonText:"Bitmap Missing Highlight"
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Bitmap_Missing_Highlight.ms"
 	)
 
 

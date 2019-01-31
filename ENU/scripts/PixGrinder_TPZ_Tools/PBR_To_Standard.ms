@@ -16,6 +16,7 @@ for obj in thePhys do
 		(
 			myMat.diffuse = obj.base_color
 			myMat.diffuseMap = obj.base_color_map
+			myMat.opacity = (1-obj.transparency)*100
 			bla.material = myMat
 		)
 	)
@@ -36,6 +37,7 @@ for obj in thePhys do
 			(
 				myMat.diffuseMap = obj.base_color_map
 				myMat.diffuse = obj.base_color
+				myMat.opacity = (1-obj.transparency)*100
 				mtl.material[i] = myMat
 			)
 		)

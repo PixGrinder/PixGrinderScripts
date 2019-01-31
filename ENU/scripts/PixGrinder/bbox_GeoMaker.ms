@@ -4,3 +4,11 @@ if selection.count != 0 then
 	myBox.pivot = myBox.center
 	myBox.pos = selection[1].pos
 ) 
+
+
+
+/*
+
+select (for obj in geometry where obj.material == undefined collect obj)
+
+*/
