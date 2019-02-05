@@ -23,7 +23,7 @@ fn pdaSvnUpdate v1 =
 		pda_svn = @"C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe"
 		print pda_myFile
 		ShellLaunch pda_svn (pda_cmd + "/path:" + pda_myFile)
-		createDialog v1 300 100 modal:true escapeEnable:true
+		createDialog v1 300 100 modal:true escapeEnable:true bgcolor:(color 60 90 100) fgcolor:(color 255 255 255)
 	)
 )
 
@@ -37,5 +37,6 @@ format "SVN Startup Script launched successfully !\r"
 /*
 myString = "maxstart.max"
 findString myString "bla"
+createDialog pdaMyUI 300 100 modal:true escapeEnable:true bgcolor:(color 60 90 100) fgcolor:(color 255 255 255)
 
 */
