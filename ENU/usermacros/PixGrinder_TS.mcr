@@ -983,5 +983,14 @@
 		Include "$userScripts/PixGrinder/Bitmap_Missing_Highlight.ms"
 	)
 
-
+	macroScript SelectAnimated
+	category:"-- PixGrinder --"
+	toolTip:"Select Animated"
+	buttonText:"Select Animated"
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Select_Animated.ms"
+	)
 )

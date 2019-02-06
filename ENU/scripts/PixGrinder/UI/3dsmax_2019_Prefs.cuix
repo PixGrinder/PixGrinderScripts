@@ -354,8 +354,8 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Separator`Seperator" tip="Separator" label="Separator" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="108" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="GammaSetup`Render" tip="Gamma/LUT Setup..." label="Gamma/LUT Setup..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="toggleOutliner`Outliner" tip="Open/Close Outliner" label="Open/Close Outliner" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="101" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Sceneconverter`Show" tip="Open Scene Converter" label="Scene Converter..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="274" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ExportUnityMaterial`Export" tip="Export scene Physical Materials to Unity material assets" label="Export scene Physical Materials to Unity material assets" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="101" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Sceneconverter`Show" tip="Open Scene Converter" label="Scene Converter..." />
             </Items>
         </Window>
         <Window objectName="ProjectsToolbar" name="Projects" type="N" cType="1" />

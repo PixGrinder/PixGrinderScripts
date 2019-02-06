@@ -343,11 +343,11 @@
             <Item mode="5" modeName="AM_ITEM_SUBMENU" actionTableID="0" actionID="59227" flat="1" />
         </Menu>
         <Menu title=" snap options" flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59236" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59234" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59235" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59233" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59236" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59232" />
         </Menu>
@@ -4938,6 +4938,7 @@
         </Menu>
         <Menu title="-1-S-">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ScaleSwitch`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectAnimated`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SelectByList`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="selectSmallObjects`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SplineSelectMiddlePoints`-- PixGrinder --" />
