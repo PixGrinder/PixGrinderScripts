@@ -1,4 +1,7 @@
--- PBR from Substance -- 
+-- Substance to Physical -- 
+-- Substance_to_Physical.ms -- 
+-- Creates Physical materials from a substance exported folder --
+-- Materials are placed in material editor's slots --
 
 clearListener()
 
