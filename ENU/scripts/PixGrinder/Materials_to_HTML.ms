@@ -127,7 +127,7 @@ for i = 1 to allMats.count do
 	close myMap
 )
 
-myString = "AS365_TranspColor_4"
+myString = "AS365_TranspColor_1"
 x1 = getclassinstances standardmaterial
 x2 = for obj in x1 where obj.name == myString collect obj
 x2.count

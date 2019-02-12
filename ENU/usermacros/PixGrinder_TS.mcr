@@ -993,4 +993,17 @@
 	(
 		Include "$userScripts/PixGrinder/Select_Animated.ms"
 	)
+
+	macroScript Linear_Controller_Assign
+	category:"-- PixGrinder --"
+	toolTip:"Linear Controllers Assign"
+	buttonText:"Linear Controllers Assign"
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Linear_Controller_Assign.ms"
+	)
+
+
 )
