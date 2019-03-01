@@ -17,7 +17,7 @@
 		if v1[1] > v2[1] then 1 else -1
 	)
 
-	myVisible = for obj in objects where obj.isHidden == false collect #(obj.name,obj)
+	myVisible = for obj in objects where not obj.isHidden collect #(obj.name,obj)
 
 	qsort myVisible myCompare
 

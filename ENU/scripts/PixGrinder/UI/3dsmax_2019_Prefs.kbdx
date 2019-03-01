@@ -277,7 +277,6 @@
     <shortcut fVirt="7" accleleratorKey="67" actionID="40185" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="69" actionID="50002" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="70" actionID="40060" actionTableID="0" />
-    <shortcut fVirt="11" accleleratorKey="70" actionID="325" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="70" actionID="219" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="72" actionID="50029" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="72" actionID="40187" actionTableID="0" />
@@ -314,7 +313,6 @@
     <shortcut fVirt="19" accleleratorKey="66" actionID="40095" actionTableID="0" />
     <shortcut fVirt="27" accleleratorKey="66" actionID="343" actionTableID="0" />
     <shortcut fVirt="31" accleleratorKey="66" actionID="40321" actionTableID="0" />
-    <shortcut fVirt="3" accleleratorKey="96" actionID="40460" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="190" actionID="50022" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="188" actionID="50020" actionTableID="0" />
     <shortcut fVirt="19" accleleratorKey="78" actionID="40211" actionTableID="0" />
@@ -364,7 +362,6 @@
     <shortcut fVirt="19" accleleratorKey="113" actionID="40905" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="187" actionID="321" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="189" actionID="320" actionTableID="0" />
-    <shortcut fVirt="19" accleleratorKey="83" actionID="40906" actionTableID="0" />
     <shortcut fVirt="23" accleleratorKey="83" actionID="40345" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="34" actionID="40194" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="33" actionID="40193" actionTableID="0" />
@@ -384,6 +381,9 @@
     <shortcut fVirt="7" accleleratorKey="117" actionID="550" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="118" actionID="40834" actionTableID="0" />
     <shortcut fVirt="19" accleleratorKey="77" actionID="40195" actionTableID="0" />
+    <shortcut fVirt="15" accleleratorKey="76" actionID="50010" actionTableID="0" />
+    <shortcut fVirt="11" accleleratorKey="85" actionID="50011" actionTableID="0" />
+    <shortcut fVirt="15" accleleratorKey="83" actionID="40008" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="188" actionID="50020" actionTableID="1" />
     <shortcut fVirt="3" accleleratorKey="190" actionID="50022" actionTableID="1" />
     <shortcut fVirt="11" accleleratorKey="65" actionID="50035" actionTableID="1" />
@@ -572,7 +572,6 @@
     <shortcut fVirt="3" accleleratorKey="97" actionID="LayerAdd`Layers" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="78" actionID="NormalFlip`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="80" actionID="PerspAdvanced`-- PixGrinder --" actionTableID="647394" />
-    <shortcut fVirt="11" accleleratorKey="83" actionID="AutoSavePixGrinder`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="68" actionID="Hide_Selec`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="107" actionID="PaintSelBrushSizeUp`Selection" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="109" actionID="PaintSelBrushSizeDown`Selection" actionTableID="647394" />
@@ -582,4 +581,6 @@
     <shortcut fVirt="11" accleleratorKey="87" actionID="ESpline_Weld`Editable Spline Object" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="67" actionID="ESpline_VChamfer`Editable Spline Object" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
+    <shortcut fVirt="3" accleleratorKey="96" actionID="Pix_Slate" actionTableID="1261319018" />
+    <shortcut fVirt="11" accleleratorKey="83" actionID="Pix_FileMenu" actionTableID="1261319018" />
 </ADSK_KBD>

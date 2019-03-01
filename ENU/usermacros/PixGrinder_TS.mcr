@@ -1006,4 +1006,16 @@
 	)
 
 
+	macroScript SlateRename
+	category:"-- PixGrinder --"
+	toolTip:"SlateRename"
+	buttonText:"SlateRename"
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/SlateRename.ms"
+	)
+
+
 )

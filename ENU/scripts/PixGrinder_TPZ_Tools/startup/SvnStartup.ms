@@ -1,13 +1,13 @@
 -- SVN Startup --
 -- SvnStartup.ms --
 -- dassonphil@gmail.com -- 
--- v1.0 --
+-- v2.0 --
 
 
 rollout pdaMyUI "File Open Prompt"
 (
-	label pda_lbl1 "Please wait during svn update" offset:[0,5]
-	label pda_lbl2 "You can click OK when update is finished !" offset:[0,5]
+	hyperlink  pda_lbl1 "Please wait during svn update" offset:[0,5] enabled:false align:#center
+	hyperlink pda_lbl2 "You can click OK when update is finished !" offset:[0,5] enabled:false align:#center
 	button pda_myOK "OK" width:75 align:#center offset:[0,10]
 
 	on pda_myOK pressed do DestroyDialog pdaMyUI
@@ -24,6 +24,7 @@ fn pdaSvnUpdate v1 =
 		print pda_myFile
 		ShellLaunch pda_svn (pda_cmd + "/path:" + pda_myFile)
 		createDialog v1 300 100 modal:true escapeEnable:true bgcolor:(color 60 90 100) fgcolor:(color 255 255 255)
+		setFocus pdaMyUI.pda_myOK
 	)
 )
 
@@ -39,4 +40,10 @@ myString = "maxstart.max"
 findString myString "bla"
 createDialog pdaMyUI 300 100 modal:true escapeEnable:true bgcolor:(color 60 90 100) fgcolor:(color 255 255 255)
 
+hyperlink  pda_lbl1 "Please wait during svn update" offset:[0,5] enabled:false align:#center
+
+hyperlink pda_lbl2 "You can click OK when update is finished !" offset:[0,5] enabled:false align:#center
+
 */
+
+
