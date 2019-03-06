@@ -34,6 +34,22 @@ actionMan.executeAction 0 "40472"
 
 /*
 
+-- Access Slate Material Editor -- 
+
+
+x1 = ((sme.getview 1).GetSelectedNodes())[1].reference
+
+x1.name = getFileNameFile x1.bitmap.filename
+
+x2 = sme.GetMainframe() 
+
+x1 = ((sme.getview 1).GetSelectedNodes())
+classof x1[1].reference
+x1[2].reference
+
+------------------------------------------------------
+
+
 show x1[1]
 getFilenameFile x1[1].bitmap.filename
 
@@ -50,3 +66,4 @@ a = (substring x1 8 3) as integer
 
 
 */
+
