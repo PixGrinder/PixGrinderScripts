@@ -1,5 +1,16 @@
+
+-- CreateShapeQuick --
+-- Creates shape from selected edges, and selects the created shape and go to edit vertex mode -- 
+-- v2.0 --
+
+
 (
 
+
+	fn  myShpSort v1 v2= 
+	(
+		if v1.name > v2.name then 1 else -1
+	)
 
 	if (polyop.getEdgeSelection selection[1]) != #{} then 
 	(
