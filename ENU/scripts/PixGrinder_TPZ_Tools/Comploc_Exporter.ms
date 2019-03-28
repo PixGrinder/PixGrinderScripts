@@ -22,7 +22,8 @@
 	)
 	
 	--
-	callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
+-- 	callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
+	callbacks.removeScripts id:#myPdaSvnUpdate
 	--
 
 
@@ -115,7 +116,8 @@
 	enableSceneRedraw()
 
 	--
-	callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
+-- 	callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
+	callbacks.addScript #filePreOpenProcess "pdaSvnUpdate()" id:#myPdaSvnUpdate
 	--
 
 	messageBox ("Export Successful !\rIf you need, your Scene was backuped as "+ substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")

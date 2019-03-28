@@ -5,8 +5,6 @@
 
 
 (
-
-
 	fn  myShpSort v1 v2= 
 	(
 		if v1.name > v2.name then 1 else -1

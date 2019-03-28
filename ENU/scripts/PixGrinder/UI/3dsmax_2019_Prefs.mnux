@@ -5087,6 +5087,9 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40003" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40195" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_MaxFile`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_BakFolder`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40004" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40005" />
             <Item mode="1" modeName="AM_SEPARATOR" />
