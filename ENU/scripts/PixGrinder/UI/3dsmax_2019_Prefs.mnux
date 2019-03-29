@@ -4478,8 +4478,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SESelectChildren`Scene Explorer" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40044" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="438" flat="0" customTitle="Add Selection To" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40213" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SERename`Scene Explorer" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SEDelete`Scene Explorer" />
@@ -4559,8 +4557,6 @@
         <Menu title="   " flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SESelectChildren`Scene Explorer" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40044" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="438" flat="0" customTitle="Add Selected To" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40213" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SERename`Scene Explorer" />
