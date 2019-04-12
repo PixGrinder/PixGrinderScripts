@@ -1,12 +1,26 @@
 -- batch_optimizer.ms
-myMod = ProOptimizer()
-myMod.VertexPercent = 35
 
-for obj in selection where superclassof obj == GeometryClass do
+setCommandPanelTaskMode #modify
+clearListener()
+myAr = selection as array
+myProg = 0
+-- Assign proOptimizer modifier to all objects of selection
+for i = 1 to myAr.count do 
 (
-	addModifier obj myMod
--- 	obj.modifers[1].VertexPercent = 0.35
-	myMod.Calculate = on
-	convertToPoly obj
-
+	addModifier myAr[i] (ProOptimizer vertexPercent:35.0)
 )
+
+
+progressStart "Processing..." -- Start ProgressBar 
+-- Enable ProOptim calculation on all objects --
+for i = 1 to myAr.count do 
+(
+	if (100*(i as float)/(myAr.count as float) > (myProg as float)) do  --then print "youpi" else print ((obj as float)/gem.count) as string
+	(
+		myProg = myProg+1
+		progressUpdate myProg
+	)
+	myAr[i].modifiers[1].calculate = on
+	convertToPoly myAr[i]
+)
+progressEnd()
