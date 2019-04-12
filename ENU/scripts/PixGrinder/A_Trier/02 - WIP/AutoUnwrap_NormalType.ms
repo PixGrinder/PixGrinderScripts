@@ -17,8 +17,8 @@
 		-- alignWidth will sort the clusters by there width otherwise it will use their heights. 
 
 		MyWarp.normalMap #() mySpacing true 0 false true
-		MyWarp.flattenMap 80.0 #() mySpacing true 0 true true
-		update obj
+		--MyWarp.flattenMap 80.0 #() mySpacing true 0 true true
+		--update obj
 		collapseStack obj
 
 

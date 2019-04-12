@@ -1,17 +1,14 @@
 -- Field.ms --
 
 
+
+
 rollout myRol "MyRol" 
 (
-	edittext lbl fieldWidth:450 height:600 text:"Youpi\nYoupla\nBlast"
-	button myBtn "OK"
+	edittext lbl fieldWidth:450 height:550 text:"Youpi\nYoupla\nBlast"
 	button myBtnAll "List All"
-	button mySelector "List All"
-
-	on myBtn pressed do
-	(
-		print lbl.text
-	)
+	button mySelector "Select by List"
+	button clrList "Clear List"
 
 	on myBtnAll pressed do 
 	(
@@ -22,11 +19,25 @@ rollout myRol "MyRol"
 
 	on mySelector pressed do
 	(
-		myStream = lbl.text
+		mySelec = #()
+		myStream = (lbl.text) as StringStream
+		--print myStream
 		seek myStream 0
-		append mySelec 
+		while not eof myStream do append mySelec (readline myStream) -- recently added
+		theRes = for obj in mySelec where (getNodeByName obj != undefined) collect (getNodeByName obj)
+		clearListener()
+		theRes
+		clearSelection()
+		select theRes --------------
+	)
+
+	on clrList pressed do
+	(
+		lbl.text = ""
 	)
 
 )
 
 CreateDialog myRol 500 700 500 50
+
+
