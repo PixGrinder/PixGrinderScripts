@@ -5,7 +5,7 @@
 -- Doublon_Finder_VisibleObjects.ms --
 -- Doublon_Finder on Visible Objects--
 -- Selects double names in the 3d scene, only on visible objects (to check an export )--
--- V 1.3 --
+-- V 1.4 --
 
 ---------------------------------------------------------------------
 (
@@ -35,6 +35,6 @@
 	)
 
 	clearSelection()
-	select pda
+	if pda.count != 0 then select pda else messageBox("No double names in visible objects")
 
 )
