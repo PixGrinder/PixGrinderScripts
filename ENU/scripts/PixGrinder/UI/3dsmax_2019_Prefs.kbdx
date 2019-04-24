@@ -580,6 +580,7 @@
     <shortcut fVirt="11" accleleratorKey="87" actionID="ESpline_Weld`Editable Spline Object" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="67" actionID="ESpline_VChamfer`Editable Spline Object" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="83" actionID="AutoSavePixGrinder`-- PixGrinder --" actionTableID="647394" />
+    <shortcut fVirt="15" accleleratorKey="68" actionID="EditablePoly_RegularizeEdgeLoop`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
     <shortcut fVirt="3" accleleratorKey="96" actionID="Pix_Slate" actionTableID="1261319018" />
     <shortcut fVirt="15" accleleratorKey="83" actionID="Pix_FileMenu" actionTableID="1261319018" />

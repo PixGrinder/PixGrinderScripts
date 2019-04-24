@@ -12,6 +12,27 @@
 (
 
 	clearListener()
+
+	theLbl = substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max"
+	rollout myEnd "Complete"
+	(
+		hyperlink lbl "Export Successful !"  enabled:false align:#center --offset:[15,0]
+		hyperlink lbl2 "If you need, your Scene was backuped as" offset:[15,0] enabled:false
+		hyperlink lbl3 theLbl offset:[15,0] enabled:false
+		button btnEnd "OK" offset:[0,10]
+
+		on btnEnd pressed do 
+		(
+			destroyDialog myEnd
+			callbacks.removeScripts id:#pdaDialog
+		)
+	)
+	fn myDialog =
+	(
+		messageBox ("Export Successful !\rIf you need, your Scene was backuped as "+ substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
+		--createDialog myEnd 250 125 ((1920-250)/2) 400 modal:true bgcolor:(color 95 138 193)
+	)
+
 	defLayer = layermanager.getLayer 0
 	for obj in objects do
 	(
@@ -22,29 +43,17 @@
 	)
 	
 	--
--- 	callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
 	callbacks.removeScripts id:#myPdaSvnUpdate
 	--
-
-
 	currentScene = maxfilePath + maxFileName
--- 	myStdPath = "D:\11_Comploc\Assets\Variants\AS365\Graphics"+"\\"
 	myStdPath = "$exports"
--- 	myStdPath = "D:\REVERT_COMPLOC\Assets\Variants\AS365\Graphics"+"\\"
--- 	global exp_path = getSavePath caption:"Export Files To : " initialDir:myStdPath
--- 	global exp_path = append exp_path "\\"
 	exp_path = getSavePath caption:"Export Files To : " initialDir:myStdPath
 	exp_path = append exp_path "\\"
 	allLayers = #()
 	animed = 0
-
 	
 	copyfile (maxfilepath+maxfilename) (maxfilepath+substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
 	
-	-- SCENE SAVE BEFORE EXPORT -- 
-	--saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
-	
-		
 	disableSceneRedraw()
 	
 	-- supprimer les layers vides
@@ -69,14 +78,6 @@
 		)
 	)
 	
-	------------------------------
-	
-
-	
-	
-	-- A VIRER --
--- 	clearListener()
--- 	allLayers = #()
 	
 	--     Collecte du nom des layers à part hotspots et zz_      --
 	
@@ -86,8 +87,7 @@
 		if matchpattern x1.name pattern:"hotspot*" == false  and matchpattern x1.name pattern:"zz*" == false and x1.on == true do append allLayers x1.name
 	)
 	
--- 	for obj in allLayers do print obj
-		
+
 	for i = 1 to allLayers.count do
 	(
 		x1 = layerManager.getLayerFromName allLayers[i]
@@ -108,23 +108,24 @@
 		)
 		myExp = exp_path + x1.name + ".fbx"
 		exportFile  myExp #noPrompt using:FBXExp
-		
-		loadMaxFile currentScene useFileUnits:true quiet:true
-		
+
+		if i != allLayers.count then 
+		(
+			loadMaxFile currentScene useFileUnits:true quiet:true
+		) else (
+			callbacks.addScript #filePostOpen "myDialog()" id:#pdaDialog
+			loadMaxFile currentScene useFileUnits:true quiet:true
+		)
 	)
 
 	enableSceneRedraw()
 
 	--
--- 	callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
 	callbacks.addScript #filePreOpenProcess "pdaSvnUpdate()" id:#myPdaSvnUpdate
 	--
 
-	messageBox ("Export Successful !\rIf you need, your Scene was backuped as "+ substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
+	--
 
-
-
-	
 )
 
 

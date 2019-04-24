@@ -53,7 +53,7 @@
                 <Context menuID="10" contextID="0" />
             </RightClickContexts>
         </MenuContext>
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="231" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="103" />
         <MenuContext type="1" typeName="kMenuContextQuadMenu" contextID="6" title="Track View Quad">
             <Context menuID="11" title="Track View Quad" showAll="1" />
             <Context menuID="12" title="Track View Key Quad (Classic)" showAll="1" />
@@ -213,6 +213,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="457" flat="1" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RenameObjects`Tools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EditablePoly_RegularizeEdgeLoop`Editable Polygon Object" customTitle="Regularize" />
         </Menu>
         <Menu title="tools" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="6" actionID="40707" />
@@ -433,11 +434,11 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Teapot`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Cylinder`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Sphere`Objects Primitives" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Torus`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Box`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="plane`Objects Primitives" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="480" flat="1" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Lines`Objects Shapes" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="480" flat="0" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="477" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="478" flat="0" />
@@ -508,6 +509,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PxCreateUniversalConstraintMS`PhysX" customTitle="Universal Constraint" />
         </Menu>
         <Menu title=" PolyDraw" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SwiftLoop`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
@@ -5095,6 +5098,8 @@
         <Menu title="EXPORT" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40011" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40373" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ComplocExporter`-- PixGrinder - TPZ Tools --" />
         </Menu>
         <Menu title="RECENT" flags="2">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="143" flat="0" />
