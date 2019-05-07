@@ -25,7 +25,7 @@ if subObjectLevel == 4 then
 	qsort myAr myShpSort
 	delete myObj
 	select myAr[myAr.count]
-	subObjectLevel = 3
+	subObjectLevel = 2
 
 )
 

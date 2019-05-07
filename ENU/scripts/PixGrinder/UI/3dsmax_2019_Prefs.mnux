@@ -53,7 +53,7 @@
                 <Context menuID="10" contextID="0" />
             </RightClickContexts>
         </MenuContext>
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="103" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="7" title="Track View Menu Bar" menuID="231" />
         <MenuContext type="1" typeName="kMenuContextQuadMenu" contextID="6" title="Track View Quad">
             <Context menuID="11" title="Track View Quad" showAll="1" />
             <Context menuID="12" title="Track View Key Quad (Classic)" showAll="1" />
@@ -387,11 +387,15 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PivotFromNormal`-- PixGrinder --" />
         </Menu>
         <Menu title="transform" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="50010" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="50011" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RotationToZero`Animation Tools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="TransformToZero`Animation Tools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FreezeRotation`Animation Tools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FreezeTransform`Animation Tools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="pose" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="258477000" actionID="4" customTitle="Set Pref Angles" />
@@ -523,8 +527,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="60545" actionID="26914" />
         </Menu>
         <Menu title=" Conform" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConform`PolyTools" />
@@ -532,6 +534,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRotate`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformScale`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRelax`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="60545" actionID="26914" />
         </Menu>
         <Menu title=" Shift" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
