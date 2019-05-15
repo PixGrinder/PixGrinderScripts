@@ -7,7 +7,7 @@
 
 -------------------------------------------------------------------------------
 (
-	
+	/*
 	macroScript ComplocExporter
 	category:"-- PixGrinder - TPZ Tools --"
 	toolTip:"Comploc Exporter"
@@ -18,7 +18,7 @@
 	(
 		Include "$userScripts/PixGrinder_TPZ_Tools/Comploc_Exporter.ms"
 	)
-
+*/
 	macroScript Rotation_Activator
 	category:"-- PixGrinder --"
 	toolTip:"Rotation_Activator"
@@ -29,7 +29,7 @@
 	(
 		Include "$userScripts/PixGrinder/Rotation_Activator.mse"
 	)
-
+/*
 	macroScript CustAttribTransfert
 	category:"-- PixGrinder - TPZ Tools --"
 	toolTip:"Comploc Attributes Transfert"
@@ -41,7 +41,7 @@
 		Include "$userScripts/PixGrinder_TPZ_Tools/CustomAttributesTransfer.ms"
 	)
 
-
+*/
 	macroScript Bitmap_AH_Path
 	category:"-- PixGrinder - TPZ Tools --"
 	toolTip:"Bitmap Relative Path"
@@ -53,7 +53,7 @@
 		Include "$userScripts/PixGrinder_TPZ_Tools/BitmapPath_AH.ms"
 	)
 
-
+/*
 	macroScript ConflictManagerLauncher
 	category:"-- PixGrinder - TPZ Tools --"
 	toolTip:"ConflictManagerLauncher"
@@ -121,6 +121,6 @@
 		Include "$userScripts/PixGrinder_TPZ_Tools/CL_CamFromComponent.ms"
 	)
 
-
+*/
 
 )

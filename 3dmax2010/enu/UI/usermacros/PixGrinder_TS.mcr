@@ -143,7 +143,7 @@
 	silentErrors:true
 	autoUndoEnabled:true
 	(
-		Include "$userScripts/PixGrinder/CleanLayers_v2.ms"
+		Include "$userScripts/PixGrinder/CleanLayers.mse"
 	)
 
 	macroScript AssignCurrentMaterial
