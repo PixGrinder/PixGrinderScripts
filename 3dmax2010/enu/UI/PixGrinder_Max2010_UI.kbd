@@ -1005,8 +1005,8 @@
 5=3 49 SubObject_1`Modifier Stack 647394
 6=3 50 SubObject_2`Modifier Stack 647394
 7=3 51 SubObject_3`Modifier Stack 647394
-8=3 52 SubObject_4`Modifier Stack 647394
-9=3 82 SmartScale`Tools 647394
+8=3 52 FaceMode`-- PixGrinder -- 647394
+9=3 82 ScaleSwitch`-- PixGrinder -- 647394
 10=3 53 SubObject_5`Modifier Stack 647394
 11=19 81 Isolate_Selection`Tools 647394
 12=3 48 BakeDialog`Render 647394
@@ -1036,4 +1036,15 @@
 36=15 87 EPoly_Weld`Editable Polygon Object 647394
 37=19 76 EPoly_Select_Loop`Editable Polygon Object 647394
 38=19 82 EPoly_Select_Ring`Editable Polygon Object 647394
+39=3 99 AssignCurrentMaterial`-- PixGrinder -- 647394
+40=19 70 AssetsFinder`-- PixGrinder -- 647394
+41=11 83 AutoSavePixGrinder`-- PixGrinder -- 647394
+42=3 68 Hide_Selec`-- PixGrinder -- 647394
+43=7 78 NormalFlip`-- PixGrinder -- 647394
+44=3 80 PerspAdvanced`-- PixGrinder -- 647394
+45=3 102 Select_Next_Object`-- PixGrinder -- 647394
+46=11 102 Select_Next_Object_Zoom`-- PixGrinder -- 647394
+47=3 100 Select_Previous_Object`-- PixGrinder -- 647394
+48=11 100 Select_Previous_Object_Zoom`-- PixGrinder -- 647394
 0=3 86 Viewports 1261319018
+1=15 83 Pix_Files 1261319018
