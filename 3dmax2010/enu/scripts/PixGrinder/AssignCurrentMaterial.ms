@@ -1,0 +1,1 @@
+$.material = meditMaterials[activeMeditSlot]

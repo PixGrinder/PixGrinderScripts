@@ -1,0 +1,20 @@
+
+dmu = selection as array
+Dummy name:"dummy_a_virer" pos:[0,0,0] isSelected:on 
+$.boxsize=[1,1,1]
+dmu.parent = $dummy_a_virer
+select $dummy_a_virer
+max scale
+max tti
+
+
+
+
+
+
+Dummy name:"dummy_a_virer" pos:[0,0,0] isSelected:on 
+$.boxsize=[1,1,1]
+max select invert
+selection.parent = $dummy_a_virer
+$dummy_a_virer.scale = [100,100,100]
+delete $dummy_a_virer

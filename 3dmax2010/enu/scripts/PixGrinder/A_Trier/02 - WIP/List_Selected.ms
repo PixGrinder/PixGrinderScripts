@@ -1,0 +1,1 @@
+for obj in selection do print obj.name

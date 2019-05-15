@@ -1,0 +1,94 @@
+
+---------------------------------------------------------------------
+
+-- PixGrinder Scripts --
+-- PixGrinderStartup --
+-- PixGrinderStartup.ms --
+-- Initialisations for PixGrinder Scripts --
+-- V 1.1 --
+
+---------------------------------------------------------------------
+
+-- FullNameDisplay.ms --
+-- global pixGrinder_Globals_objSelect
+	global pixGrinder_Globals_NmDisplay
+	global pixGrinder_Globals_myBackupName = ""
+	global pda_myBoxOpen = true
+	global pda_mySelectorFloater
+	global pda_mySelector
+
+
+
+
+	rollout pixGrinder_Globals_NmDisplay "Name Display"
+	(
+
+		label nmLbl "NAME" align:#center offset:[0,5]
+		edittext myName "" text:"" fieldWidth:550 align:#center  offset:[0,5] -- height:20
+		button NmBtn "OK" offset:[55,15] across:5 align:#left width:50
+		button NmBtnCopy "Copy" offset:[45,15] across:5 align:#left width:50
+		button NmBtnPaste "Paste" offset:[40,15] across:5 align:#left width:50
+		button NmBtnUpd "Update" offset:[40,15] across:5 align:#left width:50
+		button NmBtnCancel "Undo" offset:[15,15] align:#left width:50
+		on NmBtn pressed do 
+		(
+			if selection[1] != undefined then selection[1].name = myName.text
+			destroyDialog pixGrinder_Globals_NmDisplay
+		)
+
+		on NmBtnCopy pressed do 
+		(
+			if selection[1] != undefined then setclipboardText selection[1].name
+		)
+
+		on NmBtnPaste pressed do 
+		(
+			if selection[1] != undefined then 
+			(
+				myName.text = getclipboardText()
+				selection[1].name = myName.text
+			)
+		)
+
+
+		on NmBtnCancel pressed do 
+		(
+			
+			if selection[1] != undefined then
+			(
+				try (selection[1].name = pixGrinder_Globals_myBackupName) catch()
+				myName.text = selection[1].name
+			) else (
+				destroyDialog pixGrinder_Globals_NmDisplay
+			)
+
+		)
+
+		on NmBtnUpd pressed do 
+		(
+			myName.text = selection[1].name
+		)
+
+		on myName changed txtTemp do if selection[1] != undefined then selection[1].name = txtTemp
+	)
+
+
+fn pixGrinder_Globals_selectChanged = 
+(
+	if selection.count > 0 then 
+	(
+		pixGrinder_Globals_myBackupName = selection[1].name
+		pixGrinder_Globals_NmDisplay.myName.text = selection[1].name 
+	) else (
+		pixGrinder_Globals_NmDisplay.myName.text = ""
+	)
+
+)
+
+
+	callbacks.addScript #selectionSetChanged "pixGrinder_Globals_selectChanged()" id:#pixGrinder_selectChanged  persistent:false
+	
+
+format ("PixGrinder Startup Done\r")
+
+actionMan.loadKeyboardFile @"C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\scripts\PixGrinder\UI\3dsmax_2019_Prefs.kbdx"

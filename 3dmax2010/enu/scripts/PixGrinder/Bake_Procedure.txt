@@ -1,0 +1,15 @@
+- Trier objets par surface du plus petit au plus grand
+- Definir seuil où on bake l'objet
+- Au dessus du seuil : 
+		- Configurer MentalRay pour le bake
+		- Isoler l'objet
+		- Faire une bbox avec normales inversées autour de l'objet
+		- ( Créer shell material )
+		- Remplacer tous les diffuse de l'objet par une texture MentalRay occlu Occlu
+		- Mettre tous les self_illum de l'objet à 100%
+		- Desactiver la reflect
+		- Déplier UV2 de l'objet
+		- Bake complete map de l'objet
+		- Re-appliquer nouveau matériau à l'objet
+		- Objet suivant  
+

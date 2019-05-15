@@ -1,0 +1,1 @@
+for obj in objects do if findstring obj.name "ite_" == 1 do print obj.name
