@@ -5,12 +5,11 @@
 -- Select_by_List.ms --
 -- Outputs missing names from list in Listener --
 -- dassonphil@gmail.com -- 
--- V 2.3 --
+-- V 3.0 --
 
 ---------------------------------
 -- Ideas to implement :  
 --     Sort List alphabetically
---     List missing objects
 ---------------------------------
 
 
@@ -65,10 +64,17 @@ rollout myRol "Select By List"
 		seek myStream 0
 		while not eof myStream do append mySelec (readline myStream) -- recently added
 		theRes = for obj in mySelec where (getNodeByName obj != undefined) collect (getNodeByName obj)
-		clearListener()
-		theRes
+		theBad = for obj in mySelec where (getNodeByName obj == undefined) collect obj
+-- 		theRes
 		clearSelection()
-		select theRes --------------
+		select theRes
+		clearListener()
+		if theBad.count != 0 then
+		(
+			actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
+			format "Missing objects : \r-----------------\n\n"
+			for obj in theBad do format "%\r" obj
+		)
 	)
 
 	on clrList pressed do
