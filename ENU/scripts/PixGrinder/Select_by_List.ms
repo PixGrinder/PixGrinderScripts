@@ -1,5 +1,3 @@
-
-
 ---------------------------------------------------------------------
 
 -- PixGrinder Scripts --
@@ -8,83 +6,69 @@
 -- Selects all components in scene from a .txt list of names --
 -- Outputs missing names from list in Listener --
 
--- Coming improvements : UI to select text file --
-
--- V 0.1 --
+-- V 2.0 --
 
 ---------------------------------------------------------------------
 
+clearListener()
+
+try (DestroyDialog myRol) catch()
+
+rollout myRol "Select By List" 
 (
-	clearListener()
-	pda=#()
-	compOk = #()
-	i = 0
-	x1 = openFile "d:\\myList.txt"
-	myValue = 0
-	seek x1 #eof
-	myMax = filePos x1
-	seek x1 0
-	myDiff = #()
-
-
--- pda = tableau de strings des noms présents dans le fichier "test.txt"
-
-	while eof x1 != true do
-	(
-		--seek x1 i
-		myString = readLine x1
-		append pda myString
-		-- i = i+myString.count
-	)
-	format "%%\r" "Lines in text file : " pda.count
-
----------------------------------------
+	edittext lbl fieldWidth:450 height:550 text:"" offset:[-2,15] align:#center
+	button clrList "Clear List" pos:[lbl.pos.x, lbl.height+50]
+	button myBtnAll "List Selected" pos:[(lbl.width/3), lbl.height+50]
+	button mySelector "Select by List" pos:[2*(lbl.width/3)-15, lbl.height+50]
+	button myClose "Close" pos:[lbl.width-20, lbl.height+50]
 	
 
-	
--- compOk = tableau contenant tous les noeuds 3D présents dans la scène et qui correspondent aux noms de la liste "test.txt"
-
-	for i = 1 to pda.count do
+	on myBtnAll pressed do 
 	(
-		for obj in objects do if pda[i] == obj.name do append compOk obj
+		myStream = ""
+		for obj in selection do append myStream (obj.name + "\n")
+		lbl.text=myStream
 	)
 
-	
----------------------------------------
-
-
-
-
--- myNames = tableau de strings des noms de composants présents dans le fichier texte ET dans la scene 3D
-
-	myNames = for obj in compOk collect obj.name   
-
----------------------------------------
-
-
-
-
--- myDiff = recherche des noms de composants absents de la scène 3D
-
-	for obj in pda do 
+	on mySelector pressed do
 	(
-		if (finditem myNames obj == 0) do append myDiff obj
+		mySelec = #()
+		myStream = (lbl.text) as StringStream
+		--print myStream
+		seek myStream 0
+		while not eof myStream do append mySelec (readline myStream) -- recently added
+		theRes = for obj in mySelec where (getNodeByName obj != undefined) collect (getNodeByName obj)
+		clearListener()
+		theRes
+		clearSelection()
+		select theRes --------------
 	)
 
----------------------------------------
-	
+	on clrList pressed do
+	(
+		lbl.text = ""
+	)
 
+	on myClose pressed do
+	(
+		DestroyDialog myRol
+	)
 
--- Affichage dans le listener des noms de composants manquants dans la scene 3D
+	on myRol resized mySize do 
+	(
+ 		lbl.width = (mySize.x  - 50)
+ 		lbl.height = (mySize.y  - 100)
+ 		clrList.pos = [lbl.pos.x, lbl.height+50]
+ 		myBtnAll.pos = [(lbl.width/3), lbl.height+50]
+ 		mySelector.pos = [2*(lbl.width/3)-15, lbl.height+50]
+ 		myClose.pos = [lbl.width-20, lbl.height+50]
+	)
 
-	format ("Missing : \r")
-	for ola in myDiff do format "%\r" ola
-
----------------------------------------
-
-	format "%\r" myDiff.count  -- Affichage du nombre de composants manquants
-	select compOk  -- selection des composants présents
-	close x1 -- fermeture du fichier texte
 )
 
+CreateDialog myRol 500 650 500 50 bgcolor:(color 50 70 70) style:#(#style_titlebar, #style_border, #style_sysmenu, #style_resizing)
+setFocus myRol.lbl
+-- CreateDialog myRol 500 650 500 50 bgcolor:(color 50 70 70) style:#(#style_resizing, #style_titlebar, #style_minimizebox, #style_maximizebox)
+
+--  DestroyDialog myRol
 
