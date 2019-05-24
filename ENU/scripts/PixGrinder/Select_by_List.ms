@@ -3,10 +3,10 @@
 -- PixGrinder Scripts --
 -- Select_by_List --
 -- Select_by_List.ms --
--- Selects all components in scene from a .txt list of names --
 -- Outputs missing names from list in Listener --
+-- dassonphil@gmail.com -- 
 
--- V 2.0 --
+-- V 2.1 --
 
 ---------------------------------------------------------------------
 
@@ -56,6 +56,7 @@ rollout myRol "Select By List"
 
 	on myRol resized mySize do 
 	(
+ 		if mySize.x <= 400 then mySize.x = 350
  		lbl.width = (mySize.x  - 50)
  		lbl.height = (mySize.y  - 100)
  		clrList.pos = [lbl.pos.x, lbl.height+50]
