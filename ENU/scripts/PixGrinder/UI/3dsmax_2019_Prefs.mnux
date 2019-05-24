@@ -5098,6 +5098,8 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40010" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MXP`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="EXPORT" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40011" />

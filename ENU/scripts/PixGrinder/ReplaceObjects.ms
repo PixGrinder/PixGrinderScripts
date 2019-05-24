@@ -9,7 +9,10 @@
 	theReplacer = mySelec[mySelec.count]
 	for i = 1 to (mySelec.count-1) do
 	(
-		x1 = copy theReplacer
+		x1 = instance theReplacer
+		x1.name = x1.name+"_0"+(i as string)
+
+-- 		x1 = copy theReplacer
 		x1.center = mySelec[i].center
 		delete mySelec[i]
 	)
