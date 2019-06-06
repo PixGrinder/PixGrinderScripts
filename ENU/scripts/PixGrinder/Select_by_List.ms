@@ -10,6 +10,7 @@
 ---------------------------------
 -- Ideas to implement :  
 --     Sort List alphabetically
+--     Check for bad lines in text field
 ---------------------------------
 
 
@@ -71,6 +72,7 @@ rollout myRol "Select By List"
 		clearListener()
 		if theBad.count != 0 then
 		(
+			print theBad.count ----
 			actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
 			format "Missing objects : \r-----------------\n\n"
 			for obj in theBad do format "%\r" obj
