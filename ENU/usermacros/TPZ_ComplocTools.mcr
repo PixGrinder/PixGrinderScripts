@@ -122,5 +122,20 @@
 	)
 
 
+	
+	macroScript VMT_Cam
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"VMT_Cam"
+	buttonText:"VMT_Cam"
+	-- icon:#("MaxScript",2)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder_TPZ_Tools/VMT_Cam.ms"
+	)
+
+
+
+
 
 )

@@ -1,7 +1,8 @@
 -- Export Custom -- 
--- v 0.1 --
+-- v 0.2 --
 
 
+-- theClasses = exporterPlugin.classes
 
 initPath = getDir #export
 
@@ -32,10 +33,10 @@ initPath = getDir #export
 
 	case myType of
 	(
-		".IVE": format "%   -   %\r" "IVE Extension" pda
-		".OBJ": format "%   -   %\r" "OBJ Extension" pda
-		".FBX": format "%   -   %\r" "FBX Extension" pda
+		".IVE": exportFile pda #noPrompt using:OSGExp
+		".OBJ": exportFile pda #noPrompt using:ObjExp
+		".FBX": exportFile pda #noPrompt using:FBXExp
 	)
 
 
-	
+
