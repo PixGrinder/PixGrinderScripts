@@ -3,7 +3,7 @@
 
 -- global pdaVisible
 if pdaMyToggle == undefined then global pdaMyToggle = false
-
+global pdaVisible
 pdaMySelec = selection as array
 
 if pdaMyToggle == false then
@@ -19,4 +19,11 @@ if pdaMyToggle == false then
 	pdaMyToggle = false
 )
 
-print pdaMyToggle
+--print pdaMyToggle
+
+/*
+
+pdaMyToggle = false
+
+*/
+
