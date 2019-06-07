@@ -1006,19 +1006,7 @@
 	)
 
 
-	macroScript SlateRename
-	category:"-- PixGrinder --"
-	toolTip:"SlateRename"
-	buttonText:"SlateRename"
-	--icon:#("BlurScripts",51)
-	silentErrors:true
-	autoUndoEnabled:false
-	(
-		Include "$userScripts/PixGrinder/SlateRename.ms"
-	)
-
-
-	macroScript SlateRename
+	macroScript ExportCustom
 	category:"-- PixGrinder --"
 	toolTip:"ExportCustom"
 	buttonText:"ExportCustom"
@@ -1027,6 +1015,18 @@
 	autoUndoEnabled:false
 	(
 		Include "$userScripts/PixGrinder/Export_Custom.ms"
+	)
+
+
+	macroScript IsolateToggle
+	category:"-- PixGrinder --"
+	toolTip:"Isolate_Toggle"
+	buttonText:"Isolate_Toggle"
+	--icon:#("BlurScripts",51)
+	silentErrors:false
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Isolate_Toggle_2010.ms"
 	)
 
 

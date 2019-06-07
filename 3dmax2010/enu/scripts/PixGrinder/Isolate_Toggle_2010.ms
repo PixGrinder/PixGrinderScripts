@@ -2,8 +2,10 @@
 
 
 -- global pdaVisible
-if pdaMyToggle == undefined then global pdaMyToggle = false
+
 global pdaVisible
+global pdaMyToggle
+if pdaMyToggle == undefined then global pdaMyToggle = false
 pdaMySelec = selection as array
 
 if pdaMyToggle == false then
