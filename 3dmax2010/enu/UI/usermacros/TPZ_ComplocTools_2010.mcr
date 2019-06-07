@@ -35,11 +35,11 @@
 	category:"-- PixGrinder - TPZ Tools --"
 	toolTip:"VMT_Cam"
 	buttonText:"VMT_Cam"
-	--icon:#("FileLinkActionItems",1)
+	-- icon:#("MaxScript",2)
 	silentErrors:true
 	autoUndoEnabled:false
 	(
-		Include @"$userScripts\Pixgrinder\A_Trier\02 - WIP\VMT_Cam_2010.ms"
+		Include "$userScripts/PixGrinder_TPZ_Tools/VMT_Cam.ms"
 	)
 
 

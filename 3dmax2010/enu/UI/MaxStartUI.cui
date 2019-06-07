@@ -286,7 +286,7 @@ Item2=2|0|0|31|3|647394|RenderPresetSlotC`Render|0|0|"Render Preset Slot C (shif
 Item3=3|6|16|31|1
 Item4=5|120|200|30105|0|19|2|1342177795|ComboBox|-----------------------------------------------------------------------------------------------------------------------------------------------------
 [Snaps]
-Rank=61
+Rank=64
 SubRank=1
 Hidden=0
 FRect=149 184 451 245
@@ -570,7 +570,7 @@ Item26=2|0|0|31|3|647394|CylinderFromSelec`-- PixGrinder --|0|0|"CylinderFromSel
 Item27=2|0|0|31|3|647394|Slice`Modifiers|0|0|"Slice Modifier"|"Slice"|-1|
 Item28=2|0|0|31|3|647394|Rotation_Activator`-- PixGrinder - TPZ Tools --|0|0|"Rotation_Activator"|"Rotation_Activator"|-1|
 [pix_FileTools]
-Rank=61
+Rank=64
 SubRank=0
 Hidden=0
 FRect=902 675 993 749
