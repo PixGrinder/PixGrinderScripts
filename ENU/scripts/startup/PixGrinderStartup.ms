@@ -91,4 +91,5 @@ fn pixGrinder_Globals_selectChanged =
 
 format ("PixGrinder Startup Done\r")
 
+menuMan.loadMenuFile @"C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\scripts\PixGrinder\UI\3dsmax_2019_Prefs.mnux"
 actionMan.loadKeyboardFile @"C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\scripts\PixGrinder\UI\3dsmax_2019_Prefs.kbdx"

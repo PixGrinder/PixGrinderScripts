@@ -1,5 +1,5 @@
 -- Quad Color File
--- Created automatically by C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\scripts\PixGrinder\UI\3dsmax_2010_Prefs_02 Scheme 
+-- Created automatically by Advanced Quad Options Save Startup Command 
 -- To restore Quad Menu to these settings, simply run this script.
 
 -- Quad number 1 colors 
@@ -55,8 +55,8 @@ QuadMenuSettings.SetUseLastExecutedItem true
 
 -- Animation Settings
 QuadMenuSettings.SetDisplayMethod 0
-QuadMenuSettings.SetAnimatedStepTime 1
-QuadMenuSettings.SetAnimatedSteps 2
+QuadMenuSettings.SetAnimatedStepTime 3
+QuadMenuSettings.SetAnimatedSteps 20
 
 -- Display Settings
 QuadMenuSettings.SetSubMenuPauseTime 0
@@ -80,6 +80,6 @@ QuadMenuSettings.SetVerticalMarginInPoints 1
 
 -- Font Settings
 QuadMenuSettings.SetItemFontFace "Arial"
-QuadMenuSettings.SetItemFontSize 8
+QuadMenuSettings.SetItemFontSize 12
 QuadMenuSettings.SetTitleFontFace "Arial"
 QuadMenuSettings.SetTitleFontSize 7

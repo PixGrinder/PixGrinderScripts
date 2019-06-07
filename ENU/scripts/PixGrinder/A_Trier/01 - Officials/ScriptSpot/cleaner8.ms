@@ -1,7 +1,4 @@
-macroScript realCleaner
-	category:"# Scripts"
-	toolTip:"Cleaner"
-	buttonText:"Cleaner"
+
 (
 	clearListener()
 	
