@@ -20,7 +20,7 @@
 	)
 */
 	macroScript Rotation_Activator
-	category:"-- PixGrinder --"
+	category:"-- PixGrinder - TPZ Tools --"
 	toolTip:"Rotation_Activator"
 	buttonText:"Rotation_Activator"
 	icon:#("FileLinkActionItems",1)
@@ -29,6 +29,20 @@
 	(
 		Include "$userScripts/PixGrinder/Rotation_Activator.mse"
 	)
+
+
+	macroScript VMT_Cam
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"VMT_Cam"
+	buttonText:"VMT_Cam"
+	--icon:#("FileLinkActionItems",1)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include @"$userScripts\Pixgrinder\A_Trier\02 - WIP\VMT_Cam_2010.ms"
+	)
+
+
 /*
 	macroScript CustAttribTransfert
 	category:"-- PixGrinder - TPZ Tools --"

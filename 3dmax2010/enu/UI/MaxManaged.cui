@@ -1,15 +1,15 @@
 [Graphite Modeling Tools]
 Rank=1
 SubRank=0
-Hidden=0
+Hidden=1
 FRect=232 321 1604 475
-DRect=0 92 2560 134
+DRect=0 92 2560 212
 DRectPref=2147483647 2147483647 -2147483648 -2147483648
 DPanel=1
 Tabbed=0
 TabCt=0
 CurTab=-1
-CurPos=1 0 92 2560 134
+CurPos=1 0 92 2560 212
 CType=4
 [Graphite Modeling Tools (Vertical)]
 Rank=0

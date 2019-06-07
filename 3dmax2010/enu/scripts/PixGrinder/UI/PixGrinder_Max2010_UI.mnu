@@ -844,10 +844,8 @@ Flags=2
 [Menu_17]
 MenuName="tools 1"
 ItemCount=15
-Item_0_Mode=5
-Item0_Action=0|59228
-Flat_0=1
-CustomTitle_0="Sub-objects"
+Item_0_Mode=2
+Item0_Action=647394|RenameObjects`Tools
 Item_1_Mode=1
 Item_2_Mode=4
 Item2_SubMenu=222
@@ -6215,9 +6213,12 @@ Item_0_Mode=2
 Item0_Action=-1172021248|12
 [Menu_291]
 MenuName="TPZ"
-ItemCount=1
+ItemCount=3
 Item_0_Mode=2
 Item0_Action=647394|Bitmap_AH_Path`-- PixGrinder - TPZ Tools --
+Item_1_Mode=1
+Item_2_Mode=2
+Item2_Action=647394|VMT_Cam`-- PixGrinder - TPZ Tools --
 [Menu_292]
 MenuName="PixGrinder"
 ItemCount=18
@@ -6522,15 +6523,18 @@ Item_10_Mode=1
 Flags=2
 [Menu_313]
 MenuName="Export"
-ItemCount=5
+ItemCount=6
 Item_0_Mode=1
 Item_1_Mode=2
-Item1_Action=0|40011
+Item1_Action=647394|SlateRename`-- PixGrinder --
+CustomTitle_1="Export (Custom) ..."
 Item_2_Mode=2
 Item2_Action=0|40373
-Item_3_Mode=1
-Item_4_Mode=2
-Item4_Action=647394|MXP`-- PixGrinder --
+Item_3_Mode=2
+Item3_Action=0|40011
+Item_4_Mode=1
+Item_5_Mode=2
+Item5_Action=647394|MXP`-- PixGrinder --
 Flags=2
 [Menu_314]
 MenuName="Recent"

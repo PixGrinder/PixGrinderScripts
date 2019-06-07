@@ -143,7 +143,7 @@
 	silentErrors:true
 	autoUndoEnabled:true
 	(
-		Include "$userScripts/PixGrinder/CleanLayers.mse"
+		Include "$userScripts/PixGrinder/CleanLayers_2010.ms"
 	)
 
 	macroScript AssignCurrentMaterial
@@ -188,7 +188,7 @@
 	silentErrors:true
 	autoUndoEnabled:false
 	(
-		Include "$userScripts/PixGrinder/Layers_view_Toggle_v2.ms"
+		Include "$userScripts/PixGrinder/Layers_Toggle_v1.ms"
 	)	
 	
 	macroScript LayersFreezeToggle
@@ -1015,6 +1015,18 @@
 	autoUndoEnabled:false
 	(
 		Include "$userScripts/PixGrinder/SlateRename.ms"
+	)
+
+
+	macroScript SlateRename
+	category:"-- PixGrinder --"
+	toolTip:"ExportCustom"
+	buttonText:"ExportCustom"
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Export_Custom.ms"
 	)
 
 

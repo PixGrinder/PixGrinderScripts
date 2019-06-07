@@ -88,7 +88,16 @@ fn pixGrinder_Globals_selectChanged =
 
 	callbacks.addScript #selectionSetChanged "pixGrinder_Globals_selectChanged()" id:#pixGrinder_selectChanged  persistent:false
 	
+menuMan.loadMenuFile @"$userScripts\PixGrinder\UI\PixGrinder_Max2010_UI.mnu"
+actionMan.loadKeyboardFile @"$userScripts\PixGrinder\UI\PixGrinder_Max2010_UI.kbd"
 
-format ("PixGrinder Startup Done\r")
+format ("PixGrinder Startup 2010 Done\r")
 
-actionMan.loadKeyboardFile @"C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\scripts\PixGrinder\UI\3dsmax_2019_Prefs.kbdx"
+
+
+/*
+doesFileExist "$userScripts/PixGrinder/UI/PixGrinder_Max2010_UI.kbd"
+doesFileExist "$userScripts/PixGrinder/UI/PixGrinder_Max2010_UI.mnu"
+doesFileExist @"$userScripts\PixGrinder\UI\PixGrinder_Max2010_UI.mnu"
+doesFileExist @"$userScripts\PixGrinder\UI\PixGrinder_Max2010_UI.kbd"
+*/
