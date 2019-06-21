@@ -21,22 +21,24 @@ initPath = getDir #export
 		result.Equals result.OK --returns TRUE if OK was pressed, FALSE otherwise
 		result.Equals result.Cancel --returns TRUE if Cancel was pressed, FALSE otherwise
 		theFilenames = theDialog.fileName --the selected filenames will be returned as an array
-		return theFilenames
+		if (result.Equals result.OK == true) then return theFilenames else return false
 	)
 
 
 	pda = FileSelec initPath
-	myType = getFilenameType pda
-
--- 	print myType
-
-
-	case myType of
+	if pda != false then
 	(
-		".IVE": exportFile pda #noPrompt using:OSGExp
-		".OBJ": exportFile pda #noPrompt using:ObjExp
-		".FBX": exportFile pda #noPrompt using:FBXExp
-	)
+		myType = getFilenameType pda
 
+	-- 	print myType
+
+
+		case myType of
+		(
+			".IVE": exportFile pda #noPrompt using:OSGExp
+			".OBJ": exportFile pda #noPrompt using:ObjExp
+			".FBX": exportFile pda #noPrompt using:FBXExp
+		)
+	)
 
 
