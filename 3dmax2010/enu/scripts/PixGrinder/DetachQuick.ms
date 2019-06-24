@@ -1,21 +1,23 @@
 -- DetachQuick --
 -- DetachQuick.ms --
+-- v1.1 --
 
+fn theObjSort v1 v2 = 
+(
+	if v1.name > v2.name then 1 else -1
+)
 
 
 if subObjectLevel == 4 or subObjectLevel == 5 then 
 (
 	convertToPoly selection[1]
-	myObj = copy selection[1]
-	myObj.name = selection[1].name + "_Detached"
-	polyop.deleteFaces selection[1] (polyOp.getFaceSelection selection[1])
-	--convertToPoly myObj
-	select myObj
-	subObjectLevel = 4
-	max select invert
-	polyop.deleteFaces myObj (polyOp.getFaceSelection myObj)
-	update myObj
-	subObjectLevel = 0
-	select myObj
+	myTemp = selection[1]
+	myfcSel = polyop.getFaceSelection selection[1]
+	polyop.detachFaces selection[1] myfcSel delete:true asNode:true name:(selection[1].name + "_detached")
+	tempAr = (for obj in geometry where matchpattern obj.name pattern:(myTemp.name + "_detached*") == true collect obj)
+	qsort tempAr theObjSort
+	for obj in tempAr do print obj
+	select tempAr[tempAr.count]
+	$.pivot=$.center
 )
 
