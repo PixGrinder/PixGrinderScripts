@@ -513,6 +513,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PxCreateUniversalConstraintMS`PhysX" customTitle="Universal Constraint" />
         </Menu>
         <Menu title=" PolyDraw" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="plane`Objects Primitives" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SwiftLoop`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
@@ -5106,6 +5108,7 @@
         <Menu title="EXPORT" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40011" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40373" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SlateRename`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ComplocExporter`-- PixGrinder - TPZ Tools --" />
         </Menu>

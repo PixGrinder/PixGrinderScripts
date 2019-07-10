@@ -5,7 +5,10 @@
 -- v1.0 --
 --------------------------
 
+/*
+	classof meditmaterials[1]
 
+*/
 
 clearListener()
 
@@ -20,12 +23,27 @@ if classof selection[1].material == Multimaterial then
 (
 	for i = 1 to myIds.count do
 	(
-		if selection[1].material[myIds[i]].diffuseMap == undefined then 
+		if classof selection[1].material[myIds[i]] == StandardMaterial then
 		(
-			append theMatList (myIds[i] as string + " - ")
-		) else (
-			append theMatList (myIds[i] as string + " - " + (filenameFromPath selection[1].material[myIds[i]].diffuseMap.filename)) 
+			if selection[1].material[myIds[i]].diffuseMap == undefined then 
+			(
+				append theMatList (myIds[i] as string + " - ")
+			) else (
+				append theMatList (myIds[i] as string + " - " + (filenameFromPath selection[1].material[myIds[i]].diffuseMap.filename)) 
+			)
 		)
+
+		if classof selection[1].material[myIds[i]] == PhysicalMaterial then
+		(
+			if selection[1].material[myIds[i]].base_color_map == undefined then 
+			(
+				append theMatList (myIds[i] as string + " - ")
+			) else (
+				append theMatList (myIds[i] as string + " - " + (filenameFromPath selection[1].material[myIds[i]].base_color_map.filename)) 
+			)
+		)
+
+
 	)
 )
 
