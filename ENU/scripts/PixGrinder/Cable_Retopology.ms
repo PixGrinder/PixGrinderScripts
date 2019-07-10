@@ -4,7 +4,7 @@
 -- PixGrinder Scripts --
 -- Cable Retopology --
 -- Creates a spline from a bad cable model automatically --
--- V 4.1 --
+-- V 4.2 --
 -- by Philippe DASSONVILLE
 -- dassonphil@gmail.com
 
@@ -15,6 +15,7 @@
 (
 	clearlistener()
 	myCable = selection[1]
+	selection[1].layer.current = true
 	myCond = true
 	myAr = #()
 	myArTemp = #{}
@@ -107,8 +108,7 @@
 		select myCable
 		subobjectlevel = 0
 		myShape.pivot = myShape.center
-		select myShape	
-		
+		select myShape
 
 		myCond = false
 	)
