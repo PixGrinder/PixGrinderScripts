@@ -1018,4 +1018,16 @@
 	)
 
 
+	macroScript SlateRename
+	category:"-- PixGrinder --"
+	toolTip:"Export Custom..."
+	buttonText:"Export Custom..."
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/Export_Custom.ms"
+	)
+
+
 )
