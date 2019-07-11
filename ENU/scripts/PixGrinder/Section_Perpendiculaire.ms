@@ -5,12 +5,13 @@
 -- Section_Perpendiculaire.ms --
 -- Use "Pivot Alignator" script before --
 -- Creates a section normal to an object --
--- V 1.0 --
+-- V 1.1 --
 -- Mail : dassonphil@gmail.com --
 
 ---------------------------------------------------------------------
 
 (
+	selection[1].layer.current = true
 	myDir = selection[1].dir
 	myPos = selection[1].center
 	myRot = eulerangles 0.0 90.0 0.0
