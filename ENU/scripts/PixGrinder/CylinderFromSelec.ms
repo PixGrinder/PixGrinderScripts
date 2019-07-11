@@ -1,7 +1,7 @@
 -- Pivot from Normal -- 
 -- PivotFromNormal.ms -- 
 -- Align and center object's pivot from face selection --
--- v 2.0 --
+-- v 2.1 --
 
 
 
@@ -27,6 +27,7 @@
 		max modify mode
 		--convertToPoly myObj
 		myObj = selection[1]---------------
+		selection[1].layer.current = true
 		polyop.detachFaces myObj (getFaceSelection myObj) delete:false asNode:true name:"myYouplaTemp"
 		subobjectlevel = 0
 		select (getNodeByName "myYouplaTemp")
