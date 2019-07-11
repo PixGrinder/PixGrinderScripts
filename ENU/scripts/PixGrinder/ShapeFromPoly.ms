@@ -1,4 +1,6 @@
 -- ShapeFromPoly --
+-- Version 1.1 --
+
 fn  myShpSort v1 v2= 
 (
 	if v1.name > v2.name then 1 else -1
@@ -6,6 +8,7 @@ fn  myShpSort v1 v2=
 
 if subObjectLevel == 4 then 
 (
+	selection[1].layer.current = true
 	myObj = copy selection[1]
 	myObj.name = selection[1].name + "_Detached"
 	convertToPoly myObj

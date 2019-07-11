@@ -4940,6 +4940,7 @@
         </Menu>
         <Menu title="-1-R-">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RefPlaneAutoRatio`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ReplaceObjects`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ResetXFormPixGrinder`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_BakFolder`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Reveal_MaxFile`-- PixGrinder --" />
