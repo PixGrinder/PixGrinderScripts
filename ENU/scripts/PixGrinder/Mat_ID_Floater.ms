@@ -88,7 +88,9 @@ rollout PDE_Ids "Material IDs"
 
 	on myDropList selected val do
 	(
-		selID (myDropList.selected[1] as integer)
+		x1 = filterString myDropList.selected " - "
+		myGet.value = x1[1] as integer
+		selID (x1[1] as integer)
 	)
 
 )
