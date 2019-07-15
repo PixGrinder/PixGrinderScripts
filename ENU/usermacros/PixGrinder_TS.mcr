@@ -1030,4 +1030,17 @@
 	)
 
 
+	macroScript UniversalWeld
+	category:"-- PixGrinder --"
+	toolTip:"Weld"
+	buttonText:"Weld"
+	--icon:#("BlurScripts",51)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/UniversalWeld.ms"
+	)
+
+
+
 )
