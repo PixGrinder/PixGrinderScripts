@@ -62,6 +62,9 @@
 		sleep 1
 		saveMaxFile x1 useNewFile:true --quiet:<bool>
 	)
+
+	messageBox("MAx conversion complete !")
+
 )
 
 
