@@ -1,4 +1,10 @@
--- SelectNearObjects --
+-----------------------------
+-- SelectByDistance --
+-- v1.0 --
+-- by PixGrinder --
+-- dassonphil@gmail.com --
+-----------------------------
+
 
 myTab = for obj in geometry collect #(distance selection.center obj.center,obj)
 
@@ -19,6 +25,7 @@ rollout selectByDistance "SelectByDistance"
 
 
 createDialog selectByDistance
+
 
 /*
 myVal = 1.0
