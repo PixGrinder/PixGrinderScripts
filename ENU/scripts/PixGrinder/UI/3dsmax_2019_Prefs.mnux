@@ -4899,7 +4899,6 @@
         <Menu title="-1-C-">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableRetopology`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CableSplinePreset`-- PixGrinder --" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CAO_OneClickProcess`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanLayers`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Collapse_Selected`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopyWireColor`-- PixGrinder --" />
@@ -5074,6 +5073,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="VMT_Cam`-- PixGrinder - TPZ Tools --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CAO_OneClickProcess`-- PixGrinder - TPZ Tools --" />
         </Menu>
         <Menu title="Pix_Detach">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachByElt`-- PixGrinder --" />

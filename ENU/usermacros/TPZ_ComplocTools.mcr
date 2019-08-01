@@ -135,6 +135,16 @@
 	)
 
 
+	macroScript CAO_OneClickProcess
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"CAO_OneClickProcess"
+	buttonText:"CAO_Optim"
+	--icon:#("PixGrinder",21)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/CAO_OneClickProcess.ms"
+	)
 
 
 
