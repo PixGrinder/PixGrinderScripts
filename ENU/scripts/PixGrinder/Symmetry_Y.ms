@@ -3,7 +3,7 @@
 -- PixGrinder Scripts --
 -- Symmetry_Y.ms --
 -- Quick object Symetry along Y axis --
--- V 1.1 --
+-- V 1.2 --
 -- Acts on a selection of objects --
 
 ---------------------------------------------------------------------
@@ -13,6 +13,7 @@
 
 (
 	clearListener()
+	selection[1].layer.current = true
 	myMod = NormalModifier()
 	myMod.flip = true
 	myAR = #()

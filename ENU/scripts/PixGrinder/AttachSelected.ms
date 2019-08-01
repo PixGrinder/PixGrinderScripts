@@ -1,8 +1,12 @@
 -- Attach Selected --
 -- PixGrinder --
+-- v1.2 --
 
 
 (
+
+	selection[1].layer.current = true
+	
 	theSelec = for obj in selection where superclassof obj == GeometryClass collect obj
 	if theSelec.count < 2 then messageBox ("Select at least 2 geometry objects !") 
 	(
