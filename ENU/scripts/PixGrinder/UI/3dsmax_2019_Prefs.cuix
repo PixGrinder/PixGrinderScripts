@@ -14,7 +14,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50027" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SelectObject" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50029" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SelectByName" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50028" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/RectangularSelection">
-                    <FlyOffCt flyInit="4" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/RectangularSelection" />
                         <Fly iconName="MainUI/CircularSelection" />
                         <Fly iconName="MainUI/FenceSelection" />
@@ -41,7 +41,7 @@
                 </Item>
                 <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
                         <Fly iconName="MainUI/UseSelectionCenter" />
                         <Fly iconName="MainUI/UseTransformCoordinateCenter" />
@@ -87,7 +87,7 @@
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50061" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SchematicViewOpen" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50048" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SlateMaterialEditor">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/MaterialEditor" />
                         <Fly iconName="MainUI/SlateMaterialEditor" />
                     </FlyOffCt>
@@ -323,9 +323,9 @@
         <Window objectName="CopyPaste" name="CopyPaste" type="T" cType="1" toolbarRows="9">
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="92" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40086" tip="View File" label="&amp;amp;View File..." />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="80" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CamFromComp`-- PixGrinder - TPZ Tools --" tip="CamFromComp" label="CamFromComp" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="118" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40047" tip="Summary Info" label="S&amp;amp;ummary Info..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="88" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FindMatFromSlot`-- PixGrinder --" tip="Find Material From Slot" label="FindMatFromSlot" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="48" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40315" tip="Grid Top" label="Grid Top" />
             </Items>
         </Window>
         <Window objectName="PixGrinder - Reset Tools" name="PixGrinder - Reset Tools" type="T" cType="1" toolbarRows="4">
@@ -360,5 +360,17 @@
             </Items>
         </Window>
         <Window objectName="ProjectsToolbar" name="Projects" type="N" cType="1" />
+        <Window objectName="Pix_Grid_Views" name="Pix_Grid_Views" type="T" cType="1" toolbarRows="1">
+            <Items>
+                <Item typeID="2" type="CTB_MACROBUTTON" width="48" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40315" tip="Grid Top" label="Grid Top" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="56" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40316" tip="Grid Front" label="Grid Front" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="49" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40319" tip="Grid Left" label="Grid Left" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="55" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40320" tip="Grid Right" label="Grid Right" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="52" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40317" tip="Grid Back" label="Grid Back" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="64" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40318" tip="Grid Bottom" label="Grid Bottom" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="105" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40084" tip="Activate Grid Object" label="Activate Grid Object" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="100" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40083" tip="Activate Home Grid" label="Activate Home Grid" />
+            </Items>
+        </Window>
     </CUIWindows>
 </ADSK_CUI>
