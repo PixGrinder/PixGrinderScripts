@@ -22,7 +22,7 @@
 	(
 		if i != selNames.count then (format "%, " selNames[i] to:ss) else (format "%" selNames[i] to:ss)
 	)
-	seek ss 1
+	seek ss 0
 	format "%\r" (readline ss)
 )
 
