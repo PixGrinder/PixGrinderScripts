@@ -22,8 +22,10 @@ fn pdaSvnUpdate =
 	(
 		pda_cmd = "/command:update "
 		pda_svn = @"C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe"
-		print pda_myFile
-		ShellLaunch pda_svn (pda_cmd + "/path:" + pda_myFile)
+-- 		print pda_myFile
+		pda_Path_01 = @"D:\Work\Textures_Common"
+		pda_Path_02 = @"D:\Travail\SVN3D_H160\Textures_Common"
+		ShellLaunch pda_svn (pda_cmd + "/path:" + pda_myFile+"\*"+pda_Path_01+"\*"+pda_Path_02)
 		queryBox ("Press OK when file is updated")
 -- 		createDialog v1 300 100 modal:true escapeEnable:true bgcolor:(color 60 90 100) fgcolor:(color 255 255 255)
 -- 		setFocus pdaMyUI.pda_myOK
