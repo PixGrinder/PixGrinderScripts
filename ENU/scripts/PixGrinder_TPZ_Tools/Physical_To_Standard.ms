@@ -66,9 +66,18 @@ id = 1
 
 for obj in meditmaterials[1] do print(obj.name + "   " + (obj.metalness as string))
 
-for id in myAr do print myMat[id].name
+for id in myAr do myMat[id].specularLevel = 50
+for id in myAr do myMat[id].glossiness = 30
+for id in myAr do myMat[id].glossiness = 30
+for id in myAr do print myMat[id].diffusecolor
+
+for id in myAr do 
+(
+	if myMat[id].diffuseMap != undefined then myMat[id].diffuseColor = (color 255 255 255)
+)
+
+
 
 */
 
-
-
+meditMaterials[12].diffuseColor
