@@ -146,6 +146,27 @@
 		FileIn "$userScripts/PixGrinder_TPZ_Tools/CAO_OneClickProcess.ms"
 	)
 
+	macroScript Physical_to_Standard
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Physical_To_Standard"
+	buttonText:"Physical_To_Standard"
+	--icon:#("PixGrinder",21)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/Physical_To_Standard.ms"
+	)
+
+	macroScript Standard_to_Physical
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Standard_To_Physical"
+	buttonText:"Standard_To_Physical"
+	--icon:#("PixGrinder",21)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/Standard_To_Physical.ms"
+	)
 
 
 )

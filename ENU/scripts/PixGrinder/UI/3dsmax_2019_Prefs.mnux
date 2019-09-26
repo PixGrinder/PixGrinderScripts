@@ -5075,6 +5075,9 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="VMT_Cam`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CAO_OneClickProcess`-- PixGrinder - TPZ Tools --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Physical_to_Standard`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Standard_to_Physical`-- PixGrinder - TPZ Tools --" />
         </Menu>
         <Menu title="Pix_Detach">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachByElt`-- PixGrinder --" />
