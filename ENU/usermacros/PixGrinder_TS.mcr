@@ -1031,5 +1031,16 @@
 	)
 
 
+	macroScript SoftSelec
+	category:"-- PixGrinder --"
+	toolTip:"SoftSelec"
+	buttonText:"SoftSelec"
+	icon:#("UVWUnwrapSoftSelection",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/SoftSelectToggle.ms"
+	)
+
 
 )

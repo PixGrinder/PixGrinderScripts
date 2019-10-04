@@ -1,9 +1,26 @@
 -- Physical to Standard -- 
 
+/*
+
+Base color = Diffuse
+Roughness = specularLevel
+Metalness = glossiness
+Emissive = selfillumMap
+
+
+Diffuse = Base color
+specularLevel = Roughness
+glossiness = Metalness
+selfillumMap = Emissive
+
+*/
+
+
+
 clearListener()
 if selection.count >0 and classof selection[1].material == Multimaterial then 
 (
-	myMult = getclassinstances MultiMaterial
+	-- myMult = getclassinstances MultiMaterial
 	myMat = selection[1].material
 	myBackup = meditMaterials[24]
 	meditMaterials[24] = Standardmaterial()
@@ -51,7 +68,57 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 	meditMaterials[24] = myBackup
 
 	redrawViews()
-) else (messageBox "Please select 1 object with the main multimaterial")
+)-- else (messageBox "Please select 1 object with the main multimaterial")
+
+
+
+if selection.count >0 and classof selection[1].material == Physicalmaterial then 
+(
+	-- myMult = getclassinstances MultiMaterial
+	myMat = selection[1].material
+	myBackup = meditMaterials[24]
+	meditMaterials[24] = Standardmaterial()
+
+	with redraw off
+	(
+		--print id
+		myTempAr = #(myMat.base_weight_map, myMat.base_color_map, myMat.base_color, myMat.bump_map, myMat.roughness, myMat.metalness, myMat.emit_color_map, myMat.emission, myMat.emit_color,myMat.cutout_map)
+		meditMaterials[24] = Standardmaterial()
+		meditMaterials[24].name = myMat.name
+		meditMaterials[24].adTextureLock = off
+		meditMaterials[24].adLock = off
+		meditMaterials[24].ambientMap = myTempAr[1]
+		meditMaterials[24].diffuseMap = myTempAr[2]
+		meditMaterials[24].diffuse = myTempAr[3]
+		meditMaterials[24].specularLevelMap = meditMaterials[24].ambientMap
+		meditMaterials[24].glossinessMap = meditMaterials[24].ambientMap
+		meditMaterials[24].bumpMap = myTempAr[4]
+		meditMaterials[24].bumpMapAmount = 100.0
+		meditMaterials[24].specularLevel = myTempAr[5]*100
+		meditMaterials[24].glossiness = myTempAr[6]*100
+		meditMaterials[24].selfillumMap = myTempAr[7]
+		meditMaterials[24].selfillumMapAmount = myTempAr[8]*100
+		meditMaterials[24].selfIllumColor = myTempAr[9]
+		meditMaterials[24].filterMap = myTempAr[10]
+			--if meditMaterials[24].diffusemap != undefined and meditMaterials[24].diffusemap.bitmap.hasAlpha then meditMaterials[24].opacityMap = meditMaterials[24].diffuseMap
+		if myTempAr[8] == 0 then meditMaterials[24].selfillumMapEnable = off
+		meditMaterials[24].adTextureLock = off
+		meditMaterials[24].adLock = off
+		meditMaterials[24].ambientMapEnable = off
+		meditMaterials[24].specularLevelMapEnable = off
+		meditMaterials[24].glossinessMapEnable = off
+		meditMaterials[24].filterMapEnable = off
+		meditMaterials[24].showInViewport = true
+		selection[1].material = meditMaterials[24]
+	)
+)
+
+
+	meditMaterials[24] = myBackup
+
+	redrawViews()
+
+
 
 
 
@@ -76,8 +143,8 @@ for id in myAr do
 	if myMat[id].diffuseMap != undefined then myMat[id].diffuseColor = (color 255 255 255)
 )
 
-
+meditMaterials[12].diffuseColor
 
 */
 
-meditMaterials[12].diffuseColor
+
