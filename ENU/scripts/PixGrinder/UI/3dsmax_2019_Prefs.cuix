@@ -39,9 +39,9 @@
                         <Fly iconName="MainUI/SelectAndRotate" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="View" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
-                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
                         <Fly iconName="MainUI/UseSelectionCenter" />
                         <Fly iconName="MainUI/UseTransformCoordinateCenter" />
@@ -87,7 +87,7 @@
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50061" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SchematicViewOpen" />
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50048" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/SlateMaterialEditor">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/MaterialEditor" />
                         <Fly iconName="MainUI/SlateMaterialEditor" />
                     </FlyOffCt>
@@ -114,7 +114,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50006" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintY" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50007" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintZ" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintXY">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
                         <Fly iconName="AxisConstraints/ConstraintXY" />
                         <Fly iconName="AxisConstraints/ConstraintYZ" />
                         <Fly iconName="AxisConstraints/ConstraintZX" />
@@ -231,10 +231,6 @@
         </Window>
         <Window objectName="Modifiers" name="Modifiers" type="T" cType="1" toolbarRows="1">
             <Items>
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Unwrap_UVW`Modifiers" tip="Unwrap UVW Modifier" label="Unwrap UVW" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Uvwmap`Modifiers" tip="UVW Map Modifier" label="UVW Map" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UVW_Xform`Modifiers" tip="UVW XForm Modifier" label="UVW XForm" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UvBox`-- PixGrinder --" tip="UV Box" label="UV Box" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ProBoolean`Objects Compounds" tip="ProBoolean Compound Object" label="ProBoolean" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Smooth`Modifiers" tip="Smooth Modifier" label="Smooth" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="4" imageName="Max_Edit_Modifiers" actionID="Shell`Modifiers" tip="Shell Modifier" label="" />
@@ -292,9 +288,6 @@
         </Window>
         <Window objectName="Sugz" name="Sugz" type="T" cType="1" toolbarRows="2">
             <Items>
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnAdd`SugzTools" tip="Tortoise SVN Add" label="Tortoise SVN Add" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnCommit`SugzTools" tip="Tortoise SVN Commit" label="Tortoise SVN Commit" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="TortoiseSvnUpdate`SugzTools" tip="Tortoise SVN Update" label="Tortoise SVN Update" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocComponents`SugzTools" tip="CompLoc Components" label="CompLoc Components" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocScreenshot`SugzTools" tip="CompLoc ScreenShot" label="CompLoc ScreenShot" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CompLocCleanScene`SugzTools" tip="CompLoc Clean Scene" label="CompLoc Clean Scene" />
@@ -326,6 +319,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="118" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40047" tip="Summary Info" label="S&amp;amp;ummary Info..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="88" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FindMatFromSlot`-- PixGrinder --" tip="Find Material From Slot" label="FindMatFromSlot" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="48" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40315" tip="Grid Top" label="Grid Top" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="274" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ExportUnityMaterial`Export" tip="Export scene Physical Materials to Unity material assets" label="Export scene Physical Materials to Unity material assets" />
             </Items>
         </Window>
         <Window objectName="PixGrinder - Reset Tools" name="PixGrinder - Reset Tools" type="T" cType="1" toolbarRows="4">
@@ -355,7 +349,6 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Separator`Seperator" tip="Separator" label="Separator" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="108" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="GammaSetup`Render" tip="Gamma/LUT Setup..." label="Gamma/LUT Setup..." />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="toggleOutliner`Outliner" tip="Open/Close Outliner" label="Open/Close Outliner" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="274" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ExportUnityMaterial`Export" tip="Export scene Physical Materials to Unity material assets" label="Export scene Physical Materials to Unity material assets" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="101" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Sceneconverter`Show" tip="Open Scene Converter" label="Scene Converter..." />
             </Items>
         </Window>
@@ -370,6 +363,21 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="64" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40318" tip="Grid Bottom" label="Grid Bottom" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="105" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40084" tip="Activate Grid Object" label="Activate Grid Object" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="100" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40083" tip="Activate Home Grid" label="Activate Home Grid" />
+            </Items>
+        </Window>
+        <Window objectName="Pix_UV" name="Pix_UV" type="T" cType="1" toolbarRows="1">
+            <Items>
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Unwrap_UVW`Modifiers" tip="Unwrap UVW Modifier" label="Unwrap UVW" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Uvwmap`Modifiers" tip="UVW Map Modifier" label="UVW Map" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UVW_Xform`Modifiers" tip="UVW XForm Modifier" label="UVW XForm" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UvBox`-- PixGrinder --" tip="UV Box" label="UV Box" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="2" imageName="UVWUnwrapOption" actionID="Macro2`DragAndDrop" tip="Macro2" label="" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Material_ID`Modifiers" tip="Material Modifier" label="Material" />
+            </Items>
+        </Window>
+        <Window objectName="Pix-Modeling" name="Pix-Modeling" type="T" cType="1" toolbarRows="1">
+            <Items>
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SoftSelec`-- PixGrinder --" tip="SoftSelec" label="SoftSelec" />
             </Items>
         </Window>
     </CUIWindows>
