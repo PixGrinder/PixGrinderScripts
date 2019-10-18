@@ -15,11 +15,15 @@ selfillumMap = Emissive
 
 */
 
-
+rollout pda_Working "Working"
+(
+	Label lbl1 "Converting materials..."
+)
 
 clearListener()
 if selection.count >0 and classof selection[1].material == Multimaterial then 
 (
+	CreateDialog pda_Working
 	-- myMult = getclassinstances MultiMaterial
 	myMat = selection[1].material
 	myBackup = meditMaterials[24]
@@ -52,6 +56,12 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 				meditMaterials[24].selfIllumColor = myTempAr[9]
 				meditMaterials[24].filterMap = myTempAr[10]
 -- 				if meditMaterials[24].diffusemap != undefined and meditMaterials[24].diffusemap.bitmap.hasAlpha then meditMaterials[24].opacityMap = meditMaterials[24].diffuseMap
+				if matchpattern myMat[id].name pattern:"t_*" == true then 
+				(
+					meditMaterials[24].opacityMap = myTempAr[2]
+					if myMat[id].transparency > 0.0 then meditMaterials[24].opacity = (1-myMat[id].transparency)*100
+				)
+
 				if myTempAr[8] == 0 then meditMaterials[24].selfillumMapEnable = off
 				meditMaterials[24].adTextureLock = off
 				meditMaterials[24].adLock = off
@@ -74,6 +84,7 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 
 if selection.count >0 and classof selection[1].material == Physicalmaterial then 
 (
+	CreateDialog pda_Working
 	-- myMult = getclassinstances MultiMaterial
 	myMat = selection[1].material
 	myBackup = meditMaterials[24]
@@ -100,6 +111,11 @@ if selection.count >0 and classof selection[1].material == Physicalmaterial then
 		meditMaterials[24].selfillumMapAmount = myTempAr[8]*100
 		meditMaterials[24].selfIllumColor = myTempAr[9]
 		meditMaterials[24].filterMap = myTempAr[10]
+		if matchpattern myMat.name pattern:"t_*" == true then 
+		(
+			meditMaterials[24].opacityMap = myTempAr[2]
+			if myMat.transparency > 0.0 then meditMaterials[24].opacity = (1-myMat.transparency)*100
+		)
 			--if meditMaterials[24].diffusemap != undefined and meditMaterials[24].diffusemap.bitmap.hasAlpha then meditMaterials[24].opacityMap = meditMaterials[24].diffuseMap
 		if myTempAr[8] == 0 then meditMaterials[24].selfillumMapEnable = off
 		meditMaterials[24].adTextureLock = off
@@ -111,40 +127,12 @@ if selection.count >0 and classof selection[1].material == Physicalmaterial then
 		meditMaterials[24].showInViewport = true
 		selection[1].material = meditMaterials[24]
 	)
-)
-
 
 	meditMaterials[24] = myBackup
 
 	redrawViews()
 
-
-
-
-
-------------------
-
-/*
-
-myTempAr = #(meditmaterials[3].base_weight_map, meditmaterials[3].base_color_map, meditmaterials[3].roughness_map, meditmaterials[3].metalness_map, meditmaterials[3].bump_map)
-
-obj= meditMaterials[1]
-id = 1
-
-for obj in meditmaterials[1] do print(obj.name + "   " + (obj.metalness as string))
-
-for id in myAr do myMat[id].specularLevel = 50
-for id in myAr do myMat[id].glossiness = 30
-for id in myAr do myMat[id].glossiness = 30
-for id in myAr do print myMat[id].diffusecolor
-
-for id in myAr do 
-(
-	if myMat[id].diffuseMap != undefined then myMat[id].diffuseColor = (color 255 255 255)
 )
 
-meditMaterials[12].diffuseColor
-
-*/
-
-
+DestroyDialog pda_Working
+messageBox("Conversion Finished")

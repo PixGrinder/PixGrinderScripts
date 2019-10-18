@@ -15,10 +15,16 @@ selfillumMap = Emissive
 
 */
 
+rollout pda_Working "Working"
+(
+	Label lbl1 "Converting materials..."
+)
+
 
 clearListener()
 if selection.count >0 and classof selection[1].material == Multimaterial then 
 (
+	CreateDialog pda_Working
 	myMult = getclassinstances MultiMaterial
 	myMat = selection[1].material
 	myBackup = meditMaterials[24]
@@ -50,6 +56,12 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 				meditMaterials[24].emission = myTempAr[8]/100
 				meditMaterials[24].emit_color = myTempAr[9]
 				meditMaterials[24].cutout_map = myTempAr[10]
+				if myMat[id].opacity < 100 then 
+				(
+					meditMaterials[24].transparency = 1-(myMat[id].opacity/100)
+					meditMaterials[24].thin_walled = on
+				)
+
 
 	-- 			meditMaterials[24].bumpMapAmount = 100.0
 				meditMaterials[24].showInViewport = true
@@ -60,13 +72,13 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 
 	meditMaterials[24] = myBackup
 	redrawViews()
-
 ) --else (messageBox "Please select 1 object with the main multimaterial")
 
 
 
 if selection.count >0 and classof selection[1].material == Standardmaterial then 
 (
+	CreateDialog pda_Working
 	-- myMult = getclassinstances MultiMaterial
 	myMat = selection[1].material
 	myBackup = meditMaterials[24]
@@ -75,10 +87,10 @@ if selection.count >0 and classof selection[1].material == Standardmaterial then
 	with redraw off
 	(
 		--print id
-		myTempAr = #(myMat[id].ambientMap, myMat[id].diffuseMap, myMat[id].diffuseColor, myMat[id].bumpMap, myMat[id].specularLevel, myMat[id].glossiness, myMat[id].selfillumMap, myMat[id].selfillumMapAmount, myMat[id].selfIllumColor,myMat[id].filterMap)
+		myTempAr = #(myMat.ambientMap, myMat.diffuseMap, myMat.diffuseColor, myMat.bumpMap, myMat.specularLevel, myMat.glossiness, myMat.selfillumMap, myMat.selfillumMapAmount, myMat.selfIllumColor,myMat.filterMap)
 		meditMaterials[24] = Physicalmaterial()
 		meditMaterials[24].material_mode = 1
-		meditMaterials[24].name = myMat[id].name
+		meditMaterials[24].name = myMat.name
 		meditMaterials[24].base_weight_map = myTempAr[1]
 		meditMaterials[24].base_color_map = myTempAr[2]
 		meditMaterials[24].base_color = myTempAr[3]
@@ -93,6 +105,11 @@ if selection.count >0 and classof selection[1].material == Standardmaterial then
 		meditMaterials[24].emission = myTempAr[8]/100
 		meditMaterials[24].emit_color = myTempAr[9]
 		meditMaterials[24].cutout_map = myTempAr[10]
+		if myMat.opacity < 100 then 
+		(
+			meditMaterials[24].transparency = 1-(myMat[id].opacity/100)
+			meditMaterials[24].thin_walled = on
+		)
 
 -- 			meditMaterials[24].bumpMapAmount = 100.0
 		meditMaterials[24].showInViewport = true
@@ -104,29 +121,6 @@ if selection.count >0 and classof selection[1].material == Standardmaterial then
 
 ) 
 
-
-
-
-------------------
-
-/*
-
-
-meditMaterials[24].specularLevel = 10
-meditMaterials[24].glossiness = 10
-
-
-
-myTempAr = #(meditmaterials[3].base_weight_map, meditmaterials[3].base_color_map, meditmaterials[3].roughness_map, meditmaterials[3].metalness_map, meditmaterials[3].bump_map)
-
-obj= meditMaterials[1]
-meditMaterials[1][1].material_mode   
-show meditMaterials[1][1]
-meditMaterials[1][1].diffusemap.bitmap.hasAlpha
-show meditMaterials[1][1].diffusemap
-id = 1
-
-*/
-
-
+DestroyDialog pda_Working
+messageBox("Conversion Finished")
 
