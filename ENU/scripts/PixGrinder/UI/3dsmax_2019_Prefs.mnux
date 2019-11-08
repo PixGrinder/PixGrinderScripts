@@ -417,13 +417,14 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Quadrify`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SwiftLoop`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="InsertLoop`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopTools`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Ring`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotRing`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Convert_Sel_To_Face`Editable Polygon Object" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SwiftLoop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DotLoop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="StepLoop`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopTools`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Similar`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SimilarQuick`PolyTools" />

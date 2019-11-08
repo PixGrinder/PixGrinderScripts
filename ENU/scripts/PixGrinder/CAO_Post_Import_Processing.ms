@@ -22,7 +22,7 @@
 
 	----------------------------------------------------------------------
 	-- TPZ Specific
-	--	callbacks.removeScripts #filePreOpenProcess id:#UpdateFileOnOpenCb
+		callbacks.removeScripts #filePreOpenProcess id:#myPdaSvnUpdate
 	-- TPZ Specific
 	----------------------------------------------------------------------
 	wantedPath  = maxfilepath -- default path 1 
@@ -88,7 +88,7 @@
 		mySmooth.threshold = 20
 		mySmooth.autosmooth = true
 		
-		fileIn ("C:/Users/guest1182/AppData/Local/Autodesk/3dsMax/2016 - 64bit/ENU/scripts/PixGrinder/A_Trier/02 - WIP/CAO_Dummy_Fix.ms")
+		fileIn ("C:/Users/guest1182/AppData/Local/Autodesk/3dsMax/2019 - 64bit/ENU/scripts/PixGrinder/A_Trier/02 - WIP/CAO_Dummy_Fix.ms")
 		--ReNode() -- executer ReNode
 		-- delete helpers -- supprimer les dummy
 
@@ -221,7 +221,7 @@
 
 	----------------------------------------------------------------------
 	-- TPZ Specific
-	--	callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#UpdateFileOnOpenCb
+		callbacks.addScript #filePreOpenProcess "pdaSvnUpdate()" id:#myPdaSvnUpdate
 	-- TPZ Specific
 	----------------------------------------------------------------------
 

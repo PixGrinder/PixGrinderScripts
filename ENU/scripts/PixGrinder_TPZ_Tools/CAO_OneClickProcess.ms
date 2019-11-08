@@ -18,3 +18,22 @@ if superclassof selection[1] == GeometryClass then
 	*/
 )
 
+----------------------------
+/*
+	theWeld = Vertex_Weld ()
+	theWeld.threshold = 0.0001
+	theSmooth = Smooth()
+	theSmooth.autosmooth = on
+	theSmooth.threshold = 45
+
+
+for obj in geometry do
+(
+	addModifier obj theWeld
+	addModifier obj theSmooth
+
+	convertToPoly obj
+
+)
+
+*/

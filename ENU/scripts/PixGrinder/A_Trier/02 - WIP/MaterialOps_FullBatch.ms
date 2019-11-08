@@ -60,11 +60,12 @@
 		on myPrefixBtn pressed do 
 		(
 			pda_thePrefix = myField.text
+			destroyDialog myPrefixer
 		)
 	)
 
 
-	createDialog myPrefixer modal:true
+	createDialog myPrefixer 250 100 150 150 modal:true
 
 
 
