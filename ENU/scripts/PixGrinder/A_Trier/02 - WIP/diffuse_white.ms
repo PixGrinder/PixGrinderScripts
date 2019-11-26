@@ -1,3 +1,19 @@
+-- Diffuse To White -- 
+-- put all diffuseColor to white fot materials with diffuse bitmap--
+-- v2.0 --
+
+myStd = getClassInstances StandardMaterial
+
+for obj in myStd where obj.diffusemap != undefined do
+(
+	meditMaterials[24] = obj
+	meditMaterials[24].diffuse = (color 255 255 255)
+)
+
+
+
+/*
+
 --pda = GetCurrentSelection()
 pda = geometry as array
 
@@ -15,3 +31,6 @@ for i = 1 to pda.count do
 		
 	)
 )
+
+
+*/
