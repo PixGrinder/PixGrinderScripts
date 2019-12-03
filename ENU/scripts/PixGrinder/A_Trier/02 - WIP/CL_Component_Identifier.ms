@@ -1,5 +1,5 @@
 -- CL_Component_Identifier --
--- v 0.1 --
+-- v 0.2 --
 
 clearListener()
 
@@ -69,8 +69,6 @@ readLine fl
 clearListener()
 for Yo = 1 to (nbLine) do (format "%    |    %" myTable[Yo][1] myTable[Yo][2])
 myTable.count
-
-
 
 close fl
 
