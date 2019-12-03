@@ -11,20 +11,40 @@ myTable = #()
 
 
 
+
 -- Find file end character number --
 	seek fl #eof
 	myEnd = filePos fl
 	seek fl 0
 
 
+-- Functions -- 
+
+	fn ReadWord = 
+	(
+		tmpStart = filePos fl
+		skipToString fl ";"
+		tmpEnd = filePos fl
+		seek fl tmpStart
+		x1 = (readChars fl (tmpEnd - tmpStart - 1))
+		skipToString fl ";"
+		tmpStart = filePos fl
+		skipToString fl ";"
+		tmpEnd = filePos fl
+		seek fl tmpStart
+		x2 = (readChars fl (tmpEnd - tmpStart - 1))
+		skipToString fl ";"
+		return #(x1,x2)
+	)
+
+
 
 -- Read characters between separator";" --
-	tmpStart = filePos fl
-	try (skipToString fl ";") catch (seek fl #eof)
-	tmpEnd = filePos fl
-	seek fl tmpStart
-	readChars fl (tmpEnd - tmpStart - 1)
-	try (skipToString fl ";") catch (seek fl #eof)
+	
+	append myTable (ReadWord())
+
+
+
 
 ------------------
 
@@ -36,6 +56,8 @@ readLine fl
 readChar fl
 
 filePos fl
+
+close fl
 
 */
 
