@@ -1042,5 +1042,27 @@
 		Include "$userScripts/PixGrinder/SoftSelectToggle.ms"
 	)
 
+	macroScript CopyObj
+	category:"-- PixGrinder --"
+	toolTip:"CopyObj"
+	buttonText:"CopyObj"
+	--icon:#("UVWUnwrapSoftSelection",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/CopyObject.ms"
+	)
+
+
+	macroScript PasteObj
+	category:"-- PixGrinder --"
+	toolTip:"PasteObj"
+	buttonText:"PasteObj"
+	--icon:#("UVWUnwrapSoftSelection",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/PasteObject.ms"
+	)
 
 )

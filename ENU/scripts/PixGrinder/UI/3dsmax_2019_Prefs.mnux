@@ -587,17 +587,15 @@
         </Menu>
         <Menu title=" " flags="2" />
         <Menu title=" " flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawExtend`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawStepBuild`PolyTools" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40315" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40316" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40319" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40318" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40317" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40320" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40135" />
         </Menu>
-        <Menu title=" " flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
-        </Menu>
+        <Menu title=" " flags="2" />
         <Menu title=" " flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConform`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformMove`PolyTools" />
@@ -605,19 +603,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformScale`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConformRelax`PolyTools" />
         </Menu>
-        <Menu title=" " flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMove`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftRotate`PolyTools" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftScale`PolyTools" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftUseSelectedToggle`Ribbon - Modeling" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftIgnoreBackToggle`Ribbon - Modeling" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorToggle`Ribbon - Modeling" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorX`Ribbon - Modeling" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorY`Ribbon - Modeling" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyShiftMirrorZ`Ribbon - Modeling" />
-        </Menu>
+        <Menu title=" " flags="2" />
         <Menu title="Context Skin Tools 1">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopySelectedBone`Skin Modifier" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PasteToSelectedBone`Skin Modifier" />
@@ -4903,6 +4889,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanLayers`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Collapse_Selected`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopyWireColor`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopyWithName`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CrossSurface`-- PixGrinder --" />
         </Menu>
         <Menu title="-1-D-">
@@ -5120,6 +5107,9 @@
         </Menu>
         <Menu title="RECENT" flags="2">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="143" flat="0" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CopyObj`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PasteObj`-- PixGrinder --" />
         </Menu>
         <Menu title="SLATE" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SlateRename`-- PixGrinder --" />

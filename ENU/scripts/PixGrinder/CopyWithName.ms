@@ -1,6 +1,6 @@
 -- Copy with Name -- 
 -- dassonphil@gmail.com --
--- v1.1 -- 
+-- v1.2 -- 
 
 
 
@@ -27,6 +27,9 @@
 			obj[1].parent = (getNodeByName (myPrefix+ obj[2].name))
 		)
 	)
+
+	clearSelection()
+	select (for obj in mySelec collect obj[1])
 )
 
 

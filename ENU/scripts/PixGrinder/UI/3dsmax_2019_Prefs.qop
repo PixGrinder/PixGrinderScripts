@@ -55,8 +55,8 @@ QuadMenuSettings.SetUseLastExecutedItem true
 
 -- Animation Settings
 QuadMenuSettings.SetDisplayMethod 0
-QuadMenuSettings.SetAnimatedStepTime 1
-QuadMenuSettings.SetAnimatedSteps 2
+QuadMenuSettings.SetAnimatedStepTime 3
+QuadMenuSettings.SetAnimatedSteps 20
 
 -- Display Settings
 QuadMenuSettings.SetSubMenuPauseTime 0
@@ -80,6 +80,6 @@ QuadMenuSettings.SetVerticalMarginInPoints 1
 
 -- Font Settings
 QuadMenuSettings.SetItemFontFace "Arial"
-QuadMenuSettings.SetItemFontSize 8
+QuadMenuSettings.SetItemFontSize 12
 QuadMenuSettings.SetTitleFontFace "Arial"
 QuadMenuSettings.SetTitleFontSize 7

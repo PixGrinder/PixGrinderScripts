@@ -168,5 +168,16 @@
 		FileIn "$userScripts/PixGrinder_TPZ_Tools/Standard_To_Physical.ms"
 	)
 
+	macroScript SugzInit
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"SugzTools Init"
+	buttonText:"SugzTools Init"
+	icon:#("SugzTools",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/SugzTools_Init.ms"
+	)
+
 
 )
