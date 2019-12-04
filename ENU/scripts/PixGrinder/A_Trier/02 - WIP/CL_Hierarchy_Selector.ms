@@ -1,5 +1,8 @@
 -- CL_Hierarchy_Selector --
--- V0.3 --
+-- V0.4 --
+
+
+-- enableSceneRedraw() 
 
 clearListener()
 
@@ -19,34 +22,40 @@ allComponents = #()
 -- )
 
 pda = #()
+myComp = #()
 clearSelection()
-mySearch = myTable[7][2][1]
-for obj in helpers do -- modified in v4.2
+
+for i = 1 to myTable[15][2].count do
 (
-	if matchpattern obj.name pattern:("*"+mySearch+"*") == true do appendifunique pda obj
+	--if (myTable[15][2][i] as string).count > 12 then mySearch = (FilterString (myTable[15][2][i]) "--")[2] else mySearch = (myTable[15][2][i])
+	mySearch = (myTable[15][2][i] as string)
+	pda = for obj in helpers where matchpattern obj.name pattern:("*"+ mySearch +"*") == true collect obj
+	select pda
+	selectHierarchy()
+	-- myComp = for obj in selection where superclassof obj == GeometryClass collect obj
+	for obj in selection do appendifunique myComp obj
 )
 
-select pda
 
-selectHierarchy()
-
-myComp = for obj in selection where superclassof obj == GeometryClass collect obj
-
-select myComp
-myComp1 = #()
-for obj in myComp do append myComp1 (copy obj)
-for obj in myComp1 do obj.material = undefined
-for obj in myComp1 do obj.parent = undefined
+	select myComp
+	myComp1 = #()
+	for obj in myComp do append myComp1 (copy obj)
+	for obj in myComp1 do obj.material = undefined
+	for obj in myComp1 do obj.parent = undefined
 
 
-select myComp1
-Include "$userScripts/PixGrinder/AttachSelected.ms"
-myResult = selection[1]
-myResult.name = myTable[7][1]
-myResult.wireColor = (color 128 128 128)
-update myResult
+	select myComp1
+	Include "$userScripts/PixGrinder/AttachSelected.ms"
+	myResult = selection[1]
+	myResult.name = myTable[7][1]
+	myResult.wireColor = (color 128 128 128)
+	update myResult
+
+
+
 
 ForceCompleteRedraw()
+
 append allComponents myResult
 myResult = undefined
 
@@ -56,5 +65,39 @@ myResult = undefined
 
 
 
+/*
 
+for obj in myTable[27][2] do print obj
+
+
+-- WORKING TRIMMED VERSION --
+-------------------------------
+for i = 1 to myTable[15][2][i].count do
+(
+	if (myTable[15][2][i] as string).count > 12 then mySearch = (FilterString (myTable[15][2][i]) "--")[2] else mySearch = (myTable[15][2][i])
+	pda = for obj in helpers where matchpattern obj.name pattern:("*"+ (mySearch as string) +"*") == true collect obj
+	select pda
+	selectHierarchy()
+	-- myComp = for obj in selection where superclassof obj == GeometryClass collect obj
+	for obj in selection do appendifunique myComp obj
+)
+
+
+
+
+OLD VERSION
+---------------
+	for i = 1 to myTable[27][2][i].count do
+	(
+		for obj in helpers do
+		(
+			if matchpattern obj.name pattern:("*"+ (myTable[27][2][i] as string) +"*") == true do appendifunique pda obj
+		)
+		select pda
+		selectHierarchy()
+		-- myComp = for obj in selection where superclassof obj == GeometryClass collect obj
+		for obj in selection do appendifunique myComp obj
+	)
+--------------------
+*/
 
