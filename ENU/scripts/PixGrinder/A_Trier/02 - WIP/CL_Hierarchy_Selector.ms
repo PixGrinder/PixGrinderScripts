@@ -1,5 +1,5 @@
 -- CL_Hierarchy_Selector --
--- V0.2 --
+-- V0.3 --
 
 clearListener()
 
@@ -11,7 +11,7 @@ function selectHierarchy =
     )
 )
 
-
+allComponents = #()
 
 -- for i = 1 to myTable.count do
 -- (
@@ -33,10 +33,22 @@ selectHierarchy()
 myComp = for obj in selection where superclassof obj == GeometryClass collect obj
 
 select myComp
+myComp1 = #()
+for obj in myComp do append myComp1 (copy obj)
+for obj in myComp1 do obj.material = undefined
+for obj in myComp1 do obj.parent = undefined
 
 
+select myComp1
+Include "$userScripts/PixGrinder/AttachSelected.ms"
+myResult = selection[1]
+myResult.name = myTable[7][1]
+myResult.wireColor = (color 128 128 128)
+update myResult
 
-
+ForceCompleteRedraw()
+append allComponents myResult
+myResult = undefined
 
 
 
