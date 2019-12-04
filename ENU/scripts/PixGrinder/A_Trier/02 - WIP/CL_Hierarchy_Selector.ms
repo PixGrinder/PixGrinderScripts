@@ -36,21 +36,25 @@ for i = 1 to myTable[15][2].count do
 	for obj in selection do appendifunique myComp obj
 )
 
-
+	myComp = for obj in myComp where superclassof obj == GeometryClass collect obj
 	select myComp
 	myComp1 = #()
 	for obj in myComp do append myComp1 (copy obj)
-	for obj in myComp1 do obj.material = undefined
-	for obj in myComp1 do obj.parent = undefined
+	for obj in myComp1 do
+	(
+		obj.material = undefined
+		obj.parent = undefined
+		obj.wireColor = (color 128 128 128)
+	)
+
 
 
 	select myComp1
-	Include "$userScripts/PixGrinder/AttachSelected.ms"
+	FileIn "$userScripts/PixGrinder/AttachSelected.ms"
 	myResult = selection[1]
-	myResult.name = myTable[7][1]
-	myResult.wireColor = (color 128 128 128)
+	myResult.name = myTable[15][1]
+	myResult.pivot = myResult.center
 	update myResult
-
 
 
 
@@ -67,7 +71,7 @@ myResult = undefined
 
 /*
 
-for obj in myTable[27][2] do print obj
+for obj in myTable[15][2] do print obj
 
 
 -- WORKING TRIMMED VERSION --
