@@ -34,7 +34,8 @@ fn sortBySize file1 file2 =
 )
 
 
-	initPath = getDir #scene
+-- 	initPath = getDir #scene
+	initPath = @"D:\Travail\SVN3D_H160\H160_Comploc\MAX\CAO_BRUT\"
 	theMaxFiles = #()
 	
 	if Maxfilepath.count != 0 do initPath = Maxfilepath
@@ -63,9 +64,10 @@ fn sortBySize file1 file2 =
 	qsort theMaxFiles sortBySize
 
 
+
 callbacks.removeScripts id:#myPdaSvnUpdate
 
-CreateDialog pda_Working
+
 
 
 
