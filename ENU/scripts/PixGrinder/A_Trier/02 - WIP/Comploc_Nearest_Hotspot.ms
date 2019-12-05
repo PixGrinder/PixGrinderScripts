@@ -3,7 +3,6 @@
 --------------------
 
 
-
 myArray = #()
 fn mySortCam v1 v2= 
 (
@@ -23,6 +22,4 @@ for obj in myATA do
 clearListener()
 actionMan.executeAction 0 "40472"  -- MAX Script: MAXScript Listener
 for ar in myArray do format "%  -  %\r" ar[1] ar[2]
-
-
 
