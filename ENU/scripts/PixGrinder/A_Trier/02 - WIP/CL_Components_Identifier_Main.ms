@@ -63,7 +63,7 @@ fn sortBySize file1 file2 =
 
 	qsort theMaxFiles sortBySize
 
-
+CreateDialog pda_Working
 
 callbacks.removeScripts id:#myPdaSvnUpdate
 
