@@ -16,56 +16,76 @@ function selectHierarchy =
 
 allComponents = #()
 
-for t = 1 to myTable.count do
-(
-	pda = #()
-	myComp = #()
-	clearSelection()
 
-	for i = 1 to myTable[t][2].count do
+ -- put your code here
+
+	for t = 1 to myTable.count do
 	(
-		--if (myTable[t][2][i] as string).count > 12 then mySearch = (FilterString (myTable[t][2][i]) "--")[2] else mySearch = (myTable[t][2][i])
-		mySearch = (myTable[t][2][i] as string)
-		pda = for obj in helpers where matchpattern obj.name pattern:("*"+ mySearch +"*") == true collect obj
-		if pda.count >= 1 then
+		pda = #()
+		myComp = #()
+		clearSelection()
+
+		for i = 1 to myTable[t][2].count do
 		(
-			select pda
-			selectHierarchy()
-			-- myComp = for obj in selection where superclassof obj == GeometryClass collect obj
-			for obj in selection do appendifunique myComp obj
-		) else (
-			myComp = #()
+			--if (myTable[t][2][i] as string).count > 12 then mySearch = (FilterString (myTable[t][2][i]) "--")[2] else mySearch = (myTable[t][2][i])
+			mySearch = (myTable[t][2][i] as string)
+			pda = for obj in helpers where matchpattern obj.name pattern:("*"+ mySearch +"*") == true collect obj
+			if pda.count >= 1 then
+			(
+				select pda
+				selectHierarchy()
+				-- myComp = for obj in selection where superclassof obj == GeometryClass collect obj
+				for obj in selection do appendifunique myComp obj
+			) else (
+				myComp = #()
+			)
+		)
+
+		if myComp.count >= 1 then
+		(
+			myComp = for obj in myComp where superclassof obj == GeometryClass collect obj
+			select myComp
+			myComp1 = #()
+			for obj in myComp do append myComp1 (copy obj)
+			for obj in myComp1 do
+			(
+				obj.material = undefined
+				obj.parent = undefined
+				obj.wireColor = (color 128 128 128)
+			)
+
+
+
+			select myComp1
+			FileIn "$userScripts/PixGrinder/A_Trier/02 - WIP/CL_AttachComponents.ms"
+	-- 		doesFileExist "$userScripts/PixGrinder/A_Trier/02 - WIP/CL_AttachComponents.ms"
+
+			myResult = selection[1]
+			myResult.name = myTable[t][1]
+			myResult.pivot = myResult.center
+			update myResult
+
+			appendifunique allComponents myResult
+		)
+		myResult = undefined
+		--mod 100 10
+		if mod allComponents.count 10 == 0.0 then
+		(
+			if doesFileExist (MaxFilePath+(getfilenameFile maxFileName)+ "_ID_WIP.max") then deleteFile (MaxFilePath+(getfilenameFile maxFileName)+ "_ID_WIP.max")
+			saveNodes allComponents (MaxFilePath+(getfilenameFile maxFileName)+ "_ID_WIP.max") quiet:on
 		)
 	)
 
-	if myComp.count >= 1 then
-	(
-		myComp = for obj in myComp where superclassof obj == GeometryClass collect obj
-		select myComp
-		myComp1 = #()
-		for obj in myComp do append myComp1 (copy obj)
-		for obj in myComp1 do
-		(
-			obj.material = undefined
-			obj.parent = undefined
-			obj.wireColor = (color 128 128 128)
-		)
+	-- select allComponents
+
+ -- put your code here
 
 
 
-		select myComp1
-		FileIn "$userScripts/PixGrinder/AttachSelected.ms"
-		myResult = selection[1]
-		myResult.name = myTable[t][1]
-		myResult.pivot = myResult.center
-		update myResult
+FinalFile = maxFilePath + (getfilenameFile maxFileName) + "_IDENTIFIED.max"
+saveMaxFile FinalFile useNewFile:on quiet:on
 
-		append allComponents myResult
-	)
-	myResult = undefined
-)
-
-select allComponents
+messageBox("Identification Finished !")
 
 -- ForceCompleteRedraw()
 
