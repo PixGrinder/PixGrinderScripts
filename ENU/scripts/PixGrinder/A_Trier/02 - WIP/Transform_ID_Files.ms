@@ -44,7 +44,13 @@ callbacks.removeScripts id:#myPdaSvnUpdate
 
 	for fil in theMaxFiles do
 	(
-
+		loadMaxFile fil useFileUnits:on quiet:on allowPrompts:off
+		myDummy = dummy pos:[0,0,0]
+-- 		myTempAr = for obj in geometry where obj != myDummy collect obj
+		for obj in geometry do obj.parent = myDummy
+		myDummy.transform = theGoodTransform
+		delete myDummy
+		saveMaxFile (maxFilePath + maxFileName) quiet:on 
 	)
 
 
@@ -54,3 +60,6 @@ callbacks.removeScripts id:#myPdaSvnUpdate
 		callbacks.addScript #filePreOpenProcess fileName:"$userScripts/PixGrinder/SVN_FileUpdate_Callback.ms" id:#myPdaSvnUpdate
 	-- TPZ Specific
 	----------------------------------------------------------------------
+
+
+

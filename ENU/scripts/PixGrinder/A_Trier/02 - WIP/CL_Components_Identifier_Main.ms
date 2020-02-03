@@ -189,5 +189,11 @@ OLD VERSION
 		for obj in selection do appendifunique myComp obj
 	)
 --------------------
+
+
+
+select (for obj in )
+
+
 */
 

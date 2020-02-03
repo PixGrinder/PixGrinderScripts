@@ -3,7 +3,8 @@
 
 clearListener()
 
-myFile = @"d:\DataH160_ForScripts_2Lines.txt"
+myFile = @"d:\DataH160_For_Engine_01.txt"
+-- myFile = @"d:\DataH160_ForScripts_2Lines.txt"
 
 fl = openFile myFile
 
