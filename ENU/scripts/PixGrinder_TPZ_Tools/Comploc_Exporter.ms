@@ -5,33 +5,81 @@
 -- Comploc Exporter --
 -- Comploc_Exporter.ms --
 -- Exports One FBX File by Layer --
--- V 5.0 --
+-- V 5.2 --
 
 ---------------------------------------------------------------------
+
+-- FBX Export Setup --
+
+(
+	FbxExporterSetParam "Animation" on
+	FbxExporterSetParam "ASCII" off
+	FbxExporterSetParam "AxisConversionMethod" #Animation
+	FbxExporterSetParam "BakeAnimation" off
+	FbxExporterSetParam "Cameras" off
+	FbxExporterSetParam "EmbedTextures" off
+	FbxExporterSetParam "FileVersion" #FBX201900
+	FbxExporterSetParam "GenerateLog" off
+	FbxExporterSetParam "UseSceneName" off
+	FbxExporterSetParam "UpAxis" #y
+	FbxExporterSetParam "TangentSpaceExport" off
+	FbxExporterSetParam "Triangulate" off
+	FbxExporterSetParam "SplitAnimationIntoTakes" off
+	FbxExporterSetParam "SmoothMeshExport" off
+	FbxExporterSetParam "SmoothingGroups" on
+	FbxExporterSetParam "ShowWarnings" off
+	FbxExporterSetParam "Skin" on
+	FbxExporterSetParam "Shape" on
+	FbxExporterSetParam "SelectionSetExport" off
+	FbxExporterSetParam "ScaleFactor" 1.0
+	FbxExporterSetParam "Resampling" 30.0
+	FbxExporterSetParam "Removesinglekeys" off
+	FbxExporterSetParam "Preserveinstances" off
+	FbxExporterSetParam "PointCache" off
+	FbxExporterSetParam "NormalsPerPoly" off
+	FbxExporterSetParam "Lights" off
+	FbxExporterSetParam "GeomAsBone" off
+	FbxExporterSetParam "FilterKeyReducer" off
+	FbxExporterSetParam "ConvertUnit" #dm
+	FbxExporterSetParam "Convert2Tiff" off
+	FbxExporterSetParam "ColladaFrameRate" 30.0
+	FbxExporterSetParam "ColladaSingleMatrix" on
+	FbxExporterSetParam "ColladaTriangulate" on
+	FbxExporterSetParam "CAT2HIK" off
+	FbxExporterSetParam "BakeResampleAnimation" on
+)
+
+---------------------------
+
 
 (
 
 	clearListener()
 
-	theLbl = substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max"
+	--theLbl = substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max"
 	rollout myEnd "Complete"
 	(
 		hyperlink lbl "Export Successful !"  enabled:false align:#center --offset:[15,0]
-		hyperlink lbl2 "If you need, your Scene was backuped as" offset:[15,0] enabled:false
-		hyperlink lbl3 theLbl offset:[15,0] enabled:false
-		button btnEnd "OK" offset:[0,10]
-
 		on btnEnd pressed do 
 		(
 			destroyDialog myEnd
 			callbacks.removeScripts id:#pdaDialog
 		)
 	)
+
+	rollout myWorking "Working"
+	(
+		label lbl28 "Exporting..."
+	)
+
+
 	fn myDialog =
 	(
 		messageBox ("Export Successful !\rIf you need, your Scene was backuped as "+ substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
 		--createDialog myEnd 250 125 ((1920-250)/2) 400 modal:true bgcolor:(color 95 138 193)
 	)
+
+
 
 	defLayer = layermanager.getLayer 0
 	for obj in objects do
@@ -52,7 +100,7 @@
 	allLayers = #()
 	animed = 0
 	
-	copyfile (maxfilepath+maxfilename) (maxfilepath+substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
+	--copyfile (maxfilepath+maxfilename) (maxfilepath+substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
 	
 	disableSceneRedraw()
 	
@@ -88,41 +136,32 @@
 	)
 	
 
+createDialog myWorking
+
 	for i = 1 to allLayers.count do
 	(
 		x1 = layerManager.getLayerFromName allLayers[i]
 		x1.current = true
 			-- Display all layers --
 		
-		Avirer = for obj in objects where obj.layer != x1 collect obj
-		delete Avirer
-		for obj in objects do if obj.isAnimated == true do 
-		(
-			animed = 1
-			exit
-		)
-		if animed == 1 do
-		(
-			myDum = dummy pos:[0,0,0] name:(x1.name + "_rootnode")
-			for obj in objects where obj.parent == undefined and obj != myDum do obj.parent = myDum
-		)
+-- 		Avirer = for obj in objects where obj.layer != x1 collect obj
+-- 		delete Avirer
+		select (for obj in objects where obj.layer == x1 collect obj)
 		myExp = exp_path + x1.name + ".fbx"
-		exportFile  myExp #noPrompt using:FBXExp
+		exportFile  myExp #noPrompt selectedOnly:on using:FBXExp
 
-		if i != allLayers.count then 
-		(
-			loadMaxFile currentScene useFileUnits:true quiet:true
-		) else (
-			callbacks.addScript #filePostOpen "myDialog()" id:#pdaDialog
-			loadMaxFile currentScene useFileUnits:true quiet:true
-		)
 	)
-
+	clearSelection()
 	enableSceneRedraw()
+
 
 	--
 	callbacks.addScript #filePreOpenProcess "pdaSvnUpdate()" id:#myPdaSvnUpdate
 	--
+
+
+destroyDialog myWorking
+
 
 	--
 
