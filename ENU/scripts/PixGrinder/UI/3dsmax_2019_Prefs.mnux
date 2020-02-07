@@ -23,6 +23,7 @@
             <Context menuID="23" title="Pix_FileMenu" showAll="1" />
             <Context menuID="24" title="Pix_Slate" showAll="0" />
             <Context menuID="25" title="Pix_FileOpen" showAll="1" />
+            <Context menuID="26" title="Pix_Filter" showAll="1" />
             <RightClickContexts>
                 <Context menuID="0" contextID="0" />
                 <Context menuID="3" contextID="1" />
@@ -214,6 +215,9 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="RenameObjects`Tools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EditablePoly_RegularizeEdgeLoop`Editable Polygon Object" customTitle="Regularize" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ResetXForm`PolyTools" customTitle="Reset XForm - Legacy" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ResetXFormPixGrinder`-- PixGrinder --" customTitle="ResetXForm (Pix)" />
         </Menu>
         <Menu title="tools" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="6" actionID="40707" />
@@ -5138,6 +5142,19 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="5" customTitle="Allegorithmic Website" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="6" customTitle="Substance Source" />
         </Menu>
+        <Menu title="Selection Filter" flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS01`_custom" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS02`_custom" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS03`_custom" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS04`_custom" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS05`_custom" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS06`_custom" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS08`_custom" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS10`_custom" />
+        </Menu>
+        <Menu title="Quad 2" flags="2" />
+        <Menu title="Quad 3" flags="2" />
+        <Menu title="Quad 4" flags="2" />
         <QuadMenu>
             <Item menuID="4" title="Common" />
             <Item menuID="5" title="Edit" />
@@ -5293,6 +5310,12 @@
             <Item menuID="522" title="Quad 2" />
             <Item menuID="523" title="Quad 3" />
             <Item menuID="524" title="Quad 4" />
+        </QuadMenu>
+        <QuadMenu>
+            <Item menuID="526" title="Quad 1" />
+            <Item menuID="527" title="Quad 2" />
+            <Item menuID="528" title="Quad 3" />
+            <Item menuID="529" title="Quad 4" />
         </QuadMenu>
     </MenuManager>
 </ADSK_MNU>

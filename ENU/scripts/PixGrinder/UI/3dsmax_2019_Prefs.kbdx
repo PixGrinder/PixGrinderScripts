@@ -287,7 +287,6 @@
     <shortcut fVirt="7" accleleratorKey="76" actionID="40186" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="78" actionID="50024" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="78" actionID="40004" actionTableID="0" />
-    <shortcut fVirt="3" accleleratorKey="79" actionID="40184" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="80" actionID="40202" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="80" actionID="40189" actionTableID="0" />
     <shortcut fVirt="15" accleleratorKey="80" actionID="40223" actionTableID="0" />
@@ -585,4 +584,5 @@
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
     <shortcut fVirt="3" accleleratorKey="96" actionID="Pix_Slate" actionTableID="1261319018" />
     <shortcut fVirt="15" accleleratorKey="83" actionID="Pix_FileMenu" actionTableID="1261319018" />
+    <shortcut fVirt="3" accleleratorKey="79" actionID="Pix_Filter" actionTableID="1261319018" />
 </ADSK_KBD>

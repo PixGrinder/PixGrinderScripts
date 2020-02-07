@@ -13,6 +13,10 @@
 	(
 		selection[2].name = selection[1].name 
 		--if querybox ("Delete 1st object ?") == true then delete selection[1] else print "Name Copied"
+		--
+			--delete selection[1]
+		--
 		select selection[2]
+
 		)
 )
