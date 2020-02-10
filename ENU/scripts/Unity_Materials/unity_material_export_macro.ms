@@ -1,0 +1,33 @@
+global materialDirVar = undefined
+global textureDirVar = undefined
+	
+macroScript ExportUnityMaterial category: "Export" tooltip: "Export scene Physical Materials to Unity material assets"
+(
+    include "unity_material_export.ms"
+
+    local prevMaterialDir = globalVars.get #materialDirVar
+    local prevTextureDir = globalVars.get #textureDirVar
+
+	if prevMaterialDir == undefined then
+	(
+		prevMaterialDir = ""
+	)
+	local materialDir = getSavePath caption:"Select the Unity project material folder destination..." initialDir:prevMaterialDir
+	
+    if materialDir != undefined then
+    (
+        if prevTextureDir == undefined then
+        (
+            prevTextureDir = materialDir
+        )
+        local textureDir = getSavePath caption:"Select the Unity project texture folder..." initialDir:prevTextureDir
+        if textureDir != undefined then
+        (
+            globalVars.set #materialDirVar materialDir
+            globalVars.set #textureDirVar textureDir
+
+			exportUnitySceneMaterials materialDir textureDir
+        )
+    )
+
+)

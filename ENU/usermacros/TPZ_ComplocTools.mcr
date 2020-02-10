@@ -146,6 +146,18 @@
 		FileIn "$userScripts/PixGrinder_TPZ_Tools/CAO_OneClickProcess.ms"
 	)
 
+
+	macroScript CAO_OneClickOptim_35p
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"CAO_OneClickOptim"
+	buttonText:"CAO_Optim_35p"
+	--icon:#("PixGrinder",21)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/CAO_OneClickOptim_35p.ms"
+	)
+
 	macroScript Physical_to_Standard
 	category:"-- PixGrinder - TPZ Tools --"
 	toolTip:"Physical_To_Standard"

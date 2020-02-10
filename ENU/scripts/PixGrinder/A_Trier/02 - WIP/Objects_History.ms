@@ -1,6 +1,16 @@
 -- Objects_History.ms --
 
 
+fn pda_HistoryWriter=
+(
+	setUserProp selection[1] "Last Change" localTime
+)
+
+
+-- callbackItem = NodeEventCallback modelStructured:pda_HistoryWriter
+
+callbacks.addScript #postNodeGeneralPropChanged "pda_HistoryWriter()" id:#pda_history
+
 /*
 
 <callbackItem>NodeEventCallback [mouseUp:<bool>] [delay:<integer>] [enabled:<bool>] [callbackBegin:<fn>] [all:<fn>] [added:<fn>] [deleted:<fn>] 
@@ -13,8 +23,35 @@
 
 
 Callbacks
+--------------
+
+
+callbacks.addScript #preRender "setUpRenderGeom()" id:#jbwRender
+
+
+
+
+
 
 modelStructured:
+
+
+
+User defined object properties
+-------------------------------
+
+https://help.autodesk.com/view/3DSMAX/2016/ENU/?guid=__files_GUID_AF1F51D4_449B_4C4D_9F58_85DB145BC0B9_htm
+
+setUserProp <node> <key_string> <value> 
+
+setUserProp selection[1] "Last Change" localTime
+
+
+Datas to record
+---------------
+sysInfo.username
+
+localTime
 
 
 */
