@@ -1,14 +1,27 @@
 -- Objects_History.ms --
 
 
-fn pda_HistoryWriter ev nd =
+fn pda_HistoryTopo ev nd =
 (
-	for obj in selection do	setUserPropBuffer obj ("LastChange = "+ localTime)
+-- 	for obj in selection do	setUserPropBuffer obj ("LastChange = "+ localTime)
+	for obj in selection do	setUserProp obj "Topology" localTime
+)
+
+fn pda_HistoryLink ev nd =
+(
+-- 	for obj in selection do	setUserPropBuffer obj ("LastChange = "+ localTime)
+	for obj in selection do	setUserProp obj "Link Change" localTime
+)
+
+fn pda_HistoryUV ev nd =
+(
+-- 	for obj in selection do	setUserPropBuffer obj ("LastChange = "+ localTime)
+	for obj in selection do	setUserProp obj "UV Change" localTime
 )
 
 
 
-myCB = NodeEventCallback mouseUp:true geometryChanged:pda_HistoryWriter --enabled:on
+myCB = NodeEventCallback mouseUp:true geometryChanged:pda_HistoryTopo linkChanged:pda_HistoryLink mappingChanged:pda_HistoryUV--enabled:on
 
 -- myCB = NodeEventCallback enabled:on topologyChanged:pda_HistoryWriter()
 
@@ -18,6 +31,22 @@ myCB = NodeEventCallback mouseUp:true geometryChanged:pda_HistoryWriter --enable
 
 myCB = undefined
 gc light:true
+
+
+/*
+
+getUserProp selection[1] "UV Change"
+
+myArProps = for obj in geometry collect #(obj, getUserProp obj "Link Change")
+for obj in myArProps do print obj
+
+select (for obj in geometry where getUserProp obj "Link Change" != undefined and (matchpattern (getUserProp obj "Link Change") pattern:"*11:14:16" == true) collect obj)
+
+
+obj = selection[1]
+
+*/
+
 
 
 
