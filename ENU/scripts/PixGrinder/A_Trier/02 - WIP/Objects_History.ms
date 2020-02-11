@@ -1,15 +1,25 @@
 -- Objects_History.ms --
 
 
-fn pda_HistoryWriter=
+fn pda_HistoryWriter ev nd =
 (
-	setUserProp selection[1] "Last Change" localTime
+	for obj in selection do	setUserPropBuffer obj ("LastChange = "+ localTime)
 )
 
 
+
+myCB = NodeEventCallback mouseUp:true geometryChanged:pda_HistoryWriter --enabled:on
+
+-- myCB = NodeEventCallback enabled:on topologyChanged:pda_HistoryWriter()
+
 -- callbackItem = NodeEventCallback modelStructured:pda_HistoryWriter
 
-callbacks.addScript #postNodeGeneralPropChanged "pda_HistoryWriter()" id:#pda_history
+--callbacks.addScript #postNodeGeneralPropChanged "pda_HistoryWriter()" id:#pda_history
+
+myCB = undefined
+gc light:true
+
+
 
 /*
 
