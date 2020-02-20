@@ -100,14 +100,13 @@ if selection.count >0 and classof selection[1].material == Standardmaterial then
 		meditMaterials[24].bump_map = myTempAr[4]
 		meditMaterials[24].roughness = myTempAr[5]/100
 		meditMaterials[24].metalness = myTempAr[6]/100
-
 		meditMaterials[24].emit_color_map = myTempAr[7]
 		meditMaterials[24].emission = myTempAr[8]/100
 		meditMaterials[24].emit_color = myTempAr[9]
 		meditMaterials[24].cutout_map = myTempAr[10]
 		if myMat.opacity < 100 then 
 		(
-			meditMaterials[24].transparency = 1-(myMat[id].opacity/100)
+			meditMaterials[24].transparency = 1-(myMat.opacity/100)
 			meditMaterials[24].thin_walled = on
 		)
 

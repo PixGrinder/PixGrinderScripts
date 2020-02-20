@@ -87,7 +87,7 @@
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1744264583" title="" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1101794312" title="Arnold" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="132275449" title="" />
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="525" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="529" />
     </MenuContexts>
     <MenuManager>
         <Menu title="Main Menu Bar" flags="1">
@@ -110,7 +110,7 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="525" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="529" flat="0" />
         </Menu>
         <Menu title="&amp;File">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="458" flat="0" customTitle="&amp;New" />
@@ -676,6 +676,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ESpline_Create_Line`Editable Spline Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ESpline_Attach`Editable Spline Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ESpline_Detach_Segment`Editable Spline Object" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ESpline_VChamfer`Editable Spline Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ESpline_Connect`Editable Spline Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -5130,18 +5132,6 @@
         <Menu title="Quad 2" flags="2" />
         <Menu title="Quad 3" flags="2" />
         <Menu title="Quad 4" flags="2" />
-        <Menu title="Substance">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="1" customTitle="Substance Settings" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="2" customTitle="Substance Batch Import" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="3" customTitle="Substance To Arnold" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="4" customTitle="Substance To Vray" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="7" customTitle="Substance To Octane 3.06" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="8" customTitle="Substance To Corona" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="9" customTitle="Substance To Redshift" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="10" customTitle="Substance To Physical Material" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="5" customTitle="Allegorithmic Website" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="6" customTitle="Substance Source" />
-        </Menu>
         <Menu title="Selection Filter" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS01`_custom" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="MS02`_custom" />
@@ -5155,6 +5145,18 @@
         <Menu title="Quad 2" flags="2" />
         <Menu title="Quad 3" flags="2" />
         <Menu title="Quad 4" flags="2" />
+        <Menu title="Substance">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="1" customTitle="Substance Settings" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="2" customTitle="Substance Batch Import" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="3" customTitle="Substance To Arnold" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="4" customTitle="Substance To Vray" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="7" customTitle="Substance To Octane 3.06" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="8" customTitle="Substance To Corona" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="9" customTitle="Substance To Redshift" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="10" customTitle="Substance To Physical Material" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="5" customTitle="Allegorithmic Website" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="6" customTitle="Substance Source" />
+        </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />
             <Item menuID="5" title="Edit" />
@@ -5312,10 +5314,10 @@
             <Item menuID="524" title="Quad 4" />
         </QuadMenu>
         <QuadMenu>
-            <Item menuID="526" title="Quad 1" />
-            <Item menuID="527" title="Quad 2" />
-            <Item menuID="528" title="Quad 3" />
-            <Item menuID="529" title="Quad 4" />
+            <Item menuID="525" title="Quad 1" />
+            <Item menuID="526" title="Quad 2" />
+            <Item menuID="527" title="Quad 3" />
+            <Item menuID="528" title="Quad 4" />
         </QuadMenu>
     </MenuManager>
 </ADSK_MNU>

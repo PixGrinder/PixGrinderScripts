@@ -585,4 +585,5 @@
     <shortcut fVirt="3" accleleratorKey="96" actionID="Pix_Slate" actionTableID="1261319018" />
     <shortcut fVirt="15" accleleratorKey="83" actionID="Pix_FileMenu" actionTableID="1261319018" />
     <shortcut fVirt="3" accleleratorKey="79" actionID="Pix_Filter" actionTableID="1261319018" />
+    <shortcut fVirt="7" accleleratorKey="82" actionID="rapidTools" actionTableID="1261319018" />
 </ADSK_KBD>
