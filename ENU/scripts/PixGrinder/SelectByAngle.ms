@@ -5,6 +5,9 @@
 -- v1.0					--
 --------------------------
 
+try (DestroyDialog selByAngle) catch()
+
+
 rollout selByAngle "selByAngle"
 (
 	Spinner mySpin "Angle" range:[1,80,20] type:#integer
@@ -14,16 +17,29 @@ rollout selByAngle "selByAngle"
 
 	on mySpin changed state do selection[1].selectAngle = mySpin.value
 
-	on my20 pressed do selection[1].selectAngle = 20.0
-	on my45 pressed do selection[1].selectAngle = 45.0
-	on my80 pressed do selection[1].selectAngle = 80.0
+	on my20 pressed do 
+	(
+		selection[1].selectAngle = 20.0
+		mySpin.value = 20.0
+	)
+	on my45 pressed do 
+	(
+		selection[1].selectAngle = 45.0
+		mySpin.value = 45.0
+	)
+
+	on my80 pressed do 
+	(
+		selection[1].selectAngle = 80.0
+		mySpin.value = 80.0
+	)
 
 )
 
 
 
 (
-	try (DestroyDialog selByAngle) catch()
+	
 
 	if subobjectlevel == 4 and (selection[1].SelectByAngle == off) then
 	(
