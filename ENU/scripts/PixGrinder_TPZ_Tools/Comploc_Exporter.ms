@@ -11,11 +11,11 @@
 
 -- FBX Export Setup --
 
-(
+
 	FbxExporterSetParam "Animation" on
 	FbxExporterSetParam "ASCII" off
 	FbxExporterSetParam "AxisConversionMethod" #Animation
-	FbxExporterSetParam "BakeAnimation" off
+	FbxExporterSetParam "BakeAnimation" on
 	FbxExporterSetParam "Cameras" off
 	FbxExporterSetParam "EmbedTextures" off
 	FbxExporterSetParam "FileVersion" #FBX201900
@@ -24,7 +24,7 @@
 	FbxExporterSetParam "UpAxis" #y
 	FbxExporterSetParam "TangentSpaceExport" off
 	FbxExporterSetParam "Triangulate" off
-	FbxExporterSetParam "SplitAnimationIntoTakes" off
+-- 	FbxExporterSetParam "SplitAnimationIntoTakes" off
 	FbxExporterSetParam "SmoothMeshExport" off
 	FbxExporterSetParam "SmoothingGroups" on
 	FbxExporterSetParam "ShowWarnings" off
@@ -47,7 +47,7 @@
 	FbxExporterSetParam "ColladaTriangulate" on
 	FbxExporterSetParam "CAT2HIK" off
 	FbxExporterSetParam "BakeResampleAnimation" on
-)
+
 
 ---------------------------
 
