@@ -1400,6 +1400,12 @@
         <Menu title="Quad 3" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="63547" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="63545" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="560" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="559" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="558" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40607" />
         </Menu>
         <Menu title="Quad 4" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="374" />
