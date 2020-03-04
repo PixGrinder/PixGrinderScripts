@@ -23,9 +23,6 @@ if selection.count < 1 then messageBox ("Please select 1 object with the multima
 	convertToPoly myPlane
 	myPlane.material = meditmaterials[1]
 
-	polyop.setFaceSelection myPlane #{43}
-	update myPlane
-
 	for i = 1 to myCount do polyop.setFaceMatID myPlane #{i} meditmaterials[1].materialIDList[i]
 	update myPlane
 )
