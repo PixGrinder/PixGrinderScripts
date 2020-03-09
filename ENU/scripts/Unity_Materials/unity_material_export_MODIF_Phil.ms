@@ -3,7 +3,7 @@ global MATERIAL_TEMPLATE = include "$userScripts/Unity_Materials/template.mat"
 function collectMaterials mat materials =
 (
 	local classMat = classof mat
-	if classMat == PhysicalMaterial then
+	if classMat == StandardMaterial then
 		append materials mat
 	else if classMat == Multimaterial then
 		for subMaterial in mat do
@@ -88,7 +88,7 @@ function isAlphaMap map =
 
 mapped function exportMaterial material matDir: texDir:  =
 (
-	if classof material == PhysicalMaterial then
+	if classof material == StandardMaterial then
 	(
 		materialFilename = material.name
 		materialFilename = materialFilename + ".mat"
@@ -99,8 +99,8 @@ mapped function exportMaterial material matDir: texDir:  =
 		(
 			format "Writing material file %\n"  materialFilePath
 			
-			albedoMap = getBitmap material.base_color_map
-			cutoutMap = getBitmap material.cutout_map
+			albedoMap = getBitmap material.diffuseMap
+			cutoutMap = getBitmap material.opacityMap
 
 			keywords = ""
 			lightmapFlags = 4
@@ -114,14 +114,17 @@ mapped function exportMaterial material matDir: texDir:  =
 			dstBlend = 0
 			srcBlend = 1
 			zWrite = 1
-			if albedoMap != undefined and cutoutMap != undefined and albedoMap == cutoutMap and material.cutout_map_on then
+			if albedoMap != undefined and cutoutMap != undefined and albedoMap == cutoutMap  then -- and material.cutout_map_on
 			(
-				keywords = "_ALPHATEST_ON "
-				renderQueue = 2450
-				stringTagMap = "\n    RenderType: TransparentCutout"
-				mode = 1
+				keywords = "_ALPHABLEND_ON "
+				renderQueue = 3000
+				stringTagMap = "\n    RenderType: Transparent"
+				mode = 2
+				dstBlend = 10
+				srcBlend = 5
+				zWrite = 0
 			)
-			else if material.transparency > 0 or (albedoMap != undefined and isAlphaMap albedoMap) then
+			else if material.opacity < 100.0 or (albedoMap != undefined and isAlphaMap albedoMap) then
 			(
 				keywords = "_ALPHABLEND_ON "
 				renderQueue = 3000
@@ -139,9 +142,9 @@ mapped function exportMaterial material matDir: texDir:  =
 			content = substituteString content "$Z_WRITE" (zWrite as string)
 			
 			-- Normal map
-			map = getBitmap material.bump_map
+			map = getBitmap material.bumpMap
 			map_id = 0
-			if map != undefined and material.bump_map_on then
+			if map != undefined and material.bumpMapEnable == on then
 			(
 				map_id = findMapGUID map texDir
 				if map_id !=0 then
@@ -151,10 +154,10 @@ mapped function exportMaterial material matDir: texDir:  =
 			content = substituteString content "$BUMP_SCALE" (toStr (material.bump_map_amt / 0.3))				
 			
 			-- Emissive map
-			emitColor = material.emit_color
-			map = getBitmap material.emit_color_map
+			emitColor = material.selfillumColor
+			map = getBitmap material.selfillumMap
 			map_id = 0
-			if map != undefined and material.emit_color_map_on then
+			if map != undefined and material.selfillumMapEnable == on then
 			(
 				map_id = findMapGUID map texDir
 				if map_id != 0 then
@@ -173,10 +176,12 @@ mapped function exportMaterial material matDir: texDir:  =
 			)
 			
 			-- Albedo map
-			albedoColor = material.base_color
-			opacity = 1.0 - material.transparency			
+			albedoColor = material.diffuseMap
+-- 			opacity = 1.0 - material.transparency		
+			opacity = material.opacity*0.01
 			map_id = 0
-			if albedoMap != undefined and material.base_color_map_on then
+-- 			if albedoMap != undefined and material.base_color_map_on then
+			if albedoMap != undefined and material.diffuseMapEnable == on then
 			(
 				map_id = findMapGUID albedoMap texDir
 				if map_id != 0 then
@@ -191,39 +196,39 @@ mapped function exportMaterial material matDir: texDir:  =
 			content = substituteString content "$ALBEDO" (colorToYAML albedoColor opacity)				
 			
 			-- Metallic map
-			map = getBitmap material.metalness_map
+			map = getBitmap material.glossinessMap
 			map_id = 0
-			if map != undefined and material.metalness_map_on then
+			if map != undefined then
 			(
 				map_id = findMapGUID map texDir
 				if map_id !=0 then
 					keywords = keywords + "_METALLICGLOSSMAP "
 			)
 			content = substituteString content "$METALLIC_MAP" (map_id as string)				
-			content = substituteString content "$METALLIC" (toStr material.metalness)				
+			content = substituteString content "$METALLIC" (toStr material.glossinessMap)				
 			
 			-- Occlusion map
-			map = getBitmap material.base_weight_map
+			map = getBitmap material.ambientMap
 			map_id = 0
-			if map != undefined and material.base_weight_map_on then
+			if map != undefined then
 			(
 				map_id = findMapGUID map texDir
 			)
 			content = substituteString content "$OCCLUSION_MAP" (map_id as string)				
 			
 			-- Roughness map
-			map = getBitmap material.roughness_map
+			map = getBitmap material.specularLevelMap
 			map_id = 0
-			if map != undefined and material.roughness_map_on then
+			if map != undefined then
 			(
 				map_id = findMapGUID map texDir
 				if map_id !=0 then
 					keywords = keywords + "_SPECGLOSSMAP "
 			)
 			content = substituteString content "$SMOOTHNESS_MAP" (map_id as string)
-			local smoothness = material.roughness
-			if not material.roughness_inv then
-				smoothness = 1.0 - smoothness
+			local smoothness = material.specularLevel*0.01
+-- 			if not material.roughness_inv then
+-- 				smoothness = 1.0 - smoothness
 			content = substituteString content "$SMOOTHNESS" (toStr smoothness)				
 			
 			content = substituteString content "$SHADER_KEYWORDS" (trimRight keywords)
