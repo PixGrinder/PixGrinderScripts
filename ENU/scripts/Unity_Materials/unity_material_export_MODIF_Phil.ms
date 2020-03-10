@@ -1,9 +1,11 @@
+clearListener()
+
 global MATERIAL_TEMPLATE = include "$userScripts/Unity_Materials/template.mat"
 
 function collectMaterials mat materials =
 (
 	local classMat = classof mat
-	if classMat == StandardMaterial then
+	if classMat == StandardMaterial then 
 		append materials mat
 	else if classMat == Multimaterial then
 		for subMaterial in mat do
@@ -16,8 +18,8 @@ function getBitmap map =
 (
 	case (classof map) of
 	(
-		Bitmaptexture: map
-		Normal_Bump: map.normal
+		Bitmaptexture: map -------------------------
+		Normal_Bump: map.normal_map ----------------
 		default: undefined
 	)
 )
@@ -124,7 +126,8 @@ mapped function exportMaterial material matDir: texDir:  =
 				srcBlend = 5
 				zWrite = 0
 			)
-			else if material.opacity < 100.0 or (albedoMap != undefined and isAlphaMap albedoMap) then
+			-- else if material.opacity < 100.0 or (albedoMap != undefined and isAlphaMap albedoMap) then
+			else if material.opacity < 100.0 then
 			(
 				keywords = "_ALPHABLEND_ON "
 				renderQueue = 3000
@@ -151,7 +154,7 @@ mapped function exportMaterial material matDir: texDir:  =
 					keywords = keywords + "_NORMALMAP "
 			)
 			content = substituteString content "$BUMP_MAP" (map_id as string)				
-			content = substituteString content "$BUMP_SCALE" (toStr (material.bump_map_amt / 0.3))				
+			content = substituteString content "$BUMP_SCALE" (toStr (material.bumpMapAmount*0.01))				
 			
 			-- Emissive map
 			emitColor = material.selfillumColor
@@ -168,15 +171,15 @@ mapped function exportMaterial material matDir: texDir:  =
 				)
 			)
 			content = substituteString content "$EMISSIVE_MAP" (map_id as string)	
-			content = substituteString content "$EMISSIVE" (colorToYAML (emitColor * material.emission) 0.0)
-			if material.emission > 0 then
+			content = substituteString content "$EMISSIVE" (colorToYAML (emitColor * material.selfillumMapAmount) 0.0)
+			if material.selfillumMapAmount > 0 then
 			(
 				lightmapFlags = 2
 				keywords = keywords + "_EMISSION "
 			)
 			
 			-- Albedo map
-			albedoColor = material.diffuseMap
+			albedoColor = material.diffuse
 -- 			opacity = 1.0 - material.transparency		
 			opacity = material.opacity*0.01
 			map_id = 0
