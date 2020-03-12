@@ -6,17 +6,6 @@ fn myDateSort v1 v2 =
 )
 
 
-fn pda_ItemSelect v =
-(
-	case of
-	(
-		v = 1: return "Topology Changed"
-		v = 2: return "Link Changed"
-		v = 3: return "Material Changed"
-		v = 4: return "Name Changed"
-		v = 5: return "Object Created"
-	)
-)
 
 
 rollout pda_HistorySearch "History Search"
@@ -32,16 +21,24 @@ rollout pda_HistorySearch "History Search"
 
 	on myButton pressed do
 	(
-
+		pda_myVal = Crit.selection
+		case of
+		(
+			(pda_myVal == 1): pda_myVal = "Topology Changed"
+			(pda_myVal == 2): pda_myVal = "Link Changed"
+			(pda_myVal == 3): pda_myVal = "Material Changed"
+			(pda_myVal == 4): pda_myVal = "Name Changed"
+			(pda_myVal == 5): pda_myVal = "Object Created"
+		)
 		
-		x1 = for obj in objects where getUserProp obj (pda_ItemSelect Crit.items) != undefined collect #(getUserProp obj (pda_ItemSelect Crit.items), obj)
+		x1 = for obj in objects where getUserProp obj (pda_myVal) != undefined collect #(getUserProp obj pda_myVal, obj)
 		if mySwitch.state == 1 then
 		(
-			x2 = for obj in x1 where obj[1] <= DateCreation.text collect obj[2]
+			x2 = for obj in x1 where obj[1] <= Date.text collect obj[2]
 			clearSelection()
 			select x2
 		) else (
-			x2 = for obj in x1 where obj[1] >= DateCreation.text collect obj[2]
+			x2 = for obj in x1 where obj[1] >= Date.text collect obj[2]
 			clearSelection()
 			select x2
 		)
@@ -80,5 +77,3 @@ substring localTime 1 10
 
 
 */
-
-
