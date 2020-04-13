@@ -46,7 +46,7 @@ rollout selByAngle "selByAngle"
 		selection[1].ignoreBackfacing = on
 		selection[1].SelectByAngle = on
 		selection[1].selectAngle = 20
-		createDialog selByAngle 300 50 1900 500
+		createDialog selByAngle 300 50 1350 250
 	) else (
 		selection[1].ignoreBackfacing = off
 		selection[1].SelectByAngle = off

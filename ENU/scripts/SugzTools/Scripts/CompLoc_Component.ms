@@ -226,11 +226,11 @@ struct CompLocComponentStc
 				
 				-- Hide hotspots and covers if needed
 				if findItem excludedObjects obj != 0 then 
-					(for obj in objects where matchPattern obj.layer.name pattern:"zzz_*" collect obj).isHidden = true
+					(for obj in objects where matchPattern obj.layer.name pattern:"zz*" collect obj).isHidden = true
 				else 
 				(
 					excluded = join #() _cl.excludedObjects
-					join excluded (for obj in objects where matchPattern obj.layer.name pattern:"zzz_*" collect obj)
+					join excluded (for obj in objects where matchPattern obj.layer.name pattern:"zz*" collect obj)
 					(for obj in objects where findItem excluded obj != 0 collect obj).isHidden = true
 				)
 				
@@ -929,7 +929,7 @@ struct CompLocComponentStc
 
 			-- Collect excluded objects 
 			excluded = join #() _cl.excludedObjects
-			join excluded (for obj in objects where matchPattern obj.layer.name pattern:"zzz_*" collect obj)
+			join excluded (for obj in objects where matchPattern obj.layer.name pattern:"zz*" collect obj)
 			
 			
 			if _cl.sceneComponents.count != 0 and sceneComponentsLbx.selection != 0 then 

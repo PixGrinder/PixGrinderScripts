@@ -231,6 +231,7 @@
         </Window>
         <Window objectName="Modifiers" name="Modifiers" type="T" cType="1" toolbarRows="1">
             <Items>
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="0" imageID="2" imageName="Cameras" actionID="40228" tip="Restore Active View" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ProBoolean`Objects Compounds" tip="ProBoolean Compound Object" label="ProBoolean" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Smooth`Modifiers" tip="Smooth Modifier" label="Smooth" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="4" imageName="Max_Edit_Modifiers" actionID="Shell`Modifiers" tip="Shell Modifier" label="" />
@@ -254,6 +255,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Lathe`Modifiers" tip="Lathe Modifier" label="Lathe" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ReplaceObjects`-- PixGrinder --" tip="ReplaceObjects" label="ReplaceObjects" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="CylinderFromSelec`-- PixGrinder --" tip="CylinderFromSelec" label="CylinderFromSelec" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SoftSelec`-- PixGrinder --" tip="SoftSelec" label="SoftSelec" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Slice`Modifiers" tip="Slice Modifier" label="Slice" />
             </Items>
         </Window>
@@ -377,6 +379,14 @@
         <Window objectName="Pix-Modeling" name="Pix-Modeling" type="T" cType="1" toolbarRows="1">
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="SoftSelec`-- PixGrinder --" tip="SoftSelec" label="SoftSelec" />
+            </Items>
+        </Window>
+        <Window objectName="pda_Axis" name="pda_Axis" type="T" cType="1" toolbarRows="1">
+            <Items>
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="50004" tip="Transform Gizmo X Constraint" label="Transform Gizmo X Constraint" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="50006" tip="Transform Gizmo Y Constraint" label="Transform Gizmo Y Constraint" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="50007" tip="Transform Gizmo Z Constraint" label="Transform Gizmo Z Constraint" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="199" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="59229" tip="Transform Gizmo Plane Constraint Cycle" label="Transform Gizmo Plane Constraint Cycle" />
             </Items>
         </Window>
     </CUIWindows>

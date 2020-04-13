@@ -87,7 +87,7 @@
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1744264583" title="" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="1101794312" title="Arnold" />
         <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="132275449" title="" />
-        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="529" />
+        <MenuContext type="0" typeName="kMenuContextMenuBar" contextID="0" title="SubstanceMenu" menuID="530" />
     </MenuContexts>
     <MenuManager>
         <Menu title="Main Menu Bar" flags="1">
@@ -107,10 +107,11 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="469" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="476" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="511" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="529" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="529" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="530" flat="0" />
         </Menu>
         <Menu title="&amp;File">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="458" flat="0" customTitle="&amp;New" />
@@ -5151,6 +5152,30 @@
         <Menu title="Quad 2" flags="2" />
         <Menu title="Quad 3" flags="2" />
         <Menu title="Quad 4" flags="2" />
+        <Menu title="PixCasual">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40228" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="FindMatFromSlot`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40083" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40084" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40315" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="XRefMulti`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40368" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ViewportGrab`Tools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40209" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SaveScheme`Customize User Interface" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40047" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40086" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ExportUnityMaterial`Export" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="GammaSetup`Render" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="toggleOutliner`Outliner" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="1879341591" actionID="0" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Macro3`DragAndDrop" />
+        </Menu>
         <Menu title="Substance">
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="1" customTitle="Substance Settings" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="2" customTitle="Substance Batch Import" />

@@ -51,7 +51,7 @@
 
 ---------------------------
 
-
+if QueryBox("Did you configure UNITY Importer ?") then
 (
 
 	clearListener()
@@ -165,7 +165,9 @@ destroyDialog myWorking
 
 	--
 
-)
+) else (messageBox("Export Aborted") )
+
+
 
 
 

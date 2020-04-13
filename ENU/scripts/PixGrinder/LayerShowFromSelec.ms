@@ -1,7 +1,11 @@
 -- LayerShowFromSelec --
-
+-- v 2.0 --
 
 (
+	
+	myLays = #()
+	for obj in selection do appendIfUnique myLays obj.layer
+
 	x1 = selection[1].layer
 
 	for i = 1 to (layermanager.count-1) do
@@ -10,6 +14,6 @@
 		myLay.on = false
 	)
 
-	x1.on = true
-	x1.current = true
+	for lay in myLays do lay.on = true
+	--x1.current = true
 )
