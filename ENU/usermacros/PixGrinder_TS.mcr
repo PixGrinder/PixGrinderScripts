@@ -1064,5 +1064,15 @@
 	(
 		Include "$userScripts/PixGrinder/PasteObject.ms"
 	)
+	macroScript SmoothQuick
+	category:"-- PixGrinder --"
+	toolTip:"SmoothQuick"
+	buttonText:"SmoothQuick"
+	icon:#("Standard_Modifiers",23)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Smooth_Quick.ms"
+	)
 
 )
