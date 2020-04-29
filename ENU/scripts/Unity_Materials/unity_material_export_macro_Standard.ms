@@ -1,9 +1,9 @@
 global materialDirVar = undefined
 global textureDirVar = undefined
 	
---macroScript ExportUnityMaterial category: "Export" tooltip: "Export scene Physical Materials to Unity material assets"
+-- macroScript ExportUnityMaterial category: "Export" tooltip: "Export scene Physical Materials to Unity material assets"
 (
-    include "$userScripts/Unity_Materials/unity_material_export.ms"
+    include "$userScripts/Unity_Materials/unity_material_export_Standard.ms"
 
     local prevMaterialDir = globalVars.get #materialDirVar
     local prevTextureDir = globalVars.get #textureDirVar

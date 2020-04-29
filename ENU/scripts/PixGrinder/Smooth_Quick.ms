@@ -19,8 +19,7 @@ rollout mySmoothDialog "Smooth Angle"
 
 		on myAngle changed state do 
 		(
-				global pdaTheAngle = mySmoothDialog.myAngle.value as float
-				selection[1].autoSmoothThreshold = pdaTheAngle
+				selection[1].autoSmoothThreshold = mySmoothDialog.myAngle.value
 				selection[1].EditablePoly.autosmooth ()	
 		)
 )
@@ -31,10 +30,11 @@ if selection.count == 1 and subobjectlevel == 0 then
 (
 	addModifier (selection[1]) (SmoothModifier autosmooth:on)
 	selection[1].modifiers[1].threshold = pdaTheAngle
+	update selection[1]
 )
 
 
-if selection.count == 1 and subobjectlevel == 4 then 
+if selection.count == 1 and subobjectlevel == 4 or subobjectlevel == 5 then 
 (
 -- 		selection[1].autoSmoothThreshold = 80.0
 		CreateDialog mySmoothDialog 250 75 1300 150

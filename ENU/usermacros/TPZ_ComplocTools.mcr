@@ -191,5 +191,17 @@
 		FileIn "$userScripts/PixGrinder_TPZ_Tools/SugzTools_Init.ms"
 	)
 
+	macroScript MapSeeker_Current
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"MapSeeker_Current"
+	buttonText:"MapSeeker_Current"
+	icon:#("Material_Modifiers",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/MapSeeker_Current.ms"
+	)
+
+
 
 )

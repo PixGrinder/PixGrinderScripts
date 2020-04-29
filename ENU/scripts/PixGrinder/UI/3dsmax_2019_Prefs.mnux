@@ -1390,6 +1390,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40182" customTitle="&amp;Perspective View" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40183" customTitle="Isometric &amp;User View" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40068" customTitle="&amp;Camera View" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ViewFaceAlign`-- PixGrinder --" />
         </Menu>
         <Menu title=" " flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59230" />

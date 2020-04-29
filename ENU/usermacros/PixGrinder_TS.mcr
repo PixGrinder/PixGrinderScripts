@@ -87,7 +87,7 @@
 	silentErrors:true
 	autoUndoEnabled:true
 	(
-		Include "$userScripts/PixGrinder/Collapse.mse"
+		Include "$userScripts/PixGrinder/CollapseSelected.ms"
 	)
 	
 	macroScript ResetXFormPixGrinder
@@ -1073,6 +1073,29 @@
 	autoUndoEnabled:true
 	(
 		Include "$userScripts/PixGrinder/Smooth_Quick.ms"
+	)
+
+
+	macroScript Usual_Materials
+	category:"-- PixGrinder --"
+	toolTip:"Usual_Materials"
+	buttonText:"Usual_Materials"
+	icon:#("Material_Modifiers",3)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Usual_Materials.ms"
+	)
+
+	macroScript HideTextured
+	category:"-- PixGrinder --"
+	toolTip:"HideTextured"
+	buttonText:"HideTextured"
+	icon:#("UVWUnwrapOption",2)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/A_Trier/02 - WIP/Hide_Textured.ms"
 	)
 
 )
