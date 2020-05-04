@@ -1378,17 +1378,10 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="230" flat="0" customTitle="Show" />
         </Menu>
         <Menu title="viewports" flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40060" customTitle="&amp;Front View" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40064" customTitle="Bac&amp;k View" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40059" customTitle="&amp;Top View" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40063" customTitle="&amp;Bottom View" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40061" customTitle="&amp;Left View" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40062" customTitle="&amp;Right View" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40182" customTitle="&amp;Perspective View" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40183" customTitle="Isometric &amp;User View" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40068" customTitle="&amp;Camera View" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ViewFaceAlign`-- PixGrinder --" />
@@ -1399,6 +1392,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="334" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="332" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40130" />
         </Menu>
         <Menu title="Quad 3" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="63547" />
@@ -5127,7 +5122,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PasteObj`-- PixGrinder --" />
         </Menu>
         <Menu title="SLATE" flags="2">
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SlateRename`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PBR_MapSeeker`-- PixGrinder --" />
         </Menu>
         <Menu title="Quad 2" flags="2" />
         <Menu title="Quad 3" flags="2" />

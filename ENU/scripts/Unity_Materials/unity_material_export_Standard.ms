@@ -208,7 +208,17 @@ mapped function exportMaterial material matDir: texDir:  =
 					keywords = keywords + "_METALLICGLOSSMAP "
 			)
 			content = substituteString content "$METALLIC_MAP" (map_id as string)				
-			content = substituteString content "$METALLIC" (toStr material.glossinessMap)				
+-- 			content = substituteString content "$METALLIC" (toStr material.glossinessMap)	-- ORIGINAL			
+			------ RAJOUT PIXGRINDER --
+			if material.specularLevelMap == undefined then
+			(
+				content = substituteString content "$METALLIC" ((material.specularLevel*0.01) as string)
+			) else (
+				content = substituteString content "$METALLIC" ("1.0")
+			)
+			------ RAJOUT PIXGRINDER --
+
+
 			
 			-- Occlusion map
 			map = getBitmap material.ambientMap
@@ -232,7 +242,13 @@ mapped function exportMaterial material matDir: texDir:  =
 			local smoothness = material.specularLevel*0.01
 -- 			if not material.roughness_inv then
 -- 				smoothness = 1.0 - smoothness
-			content = substituteString content "$SMOOTHNESS" (toStr smoothness)				
+-- 			content = substituteString content "$SMOOTHNESS" (toStr smoothness) -- ORIGINAL
+			if material.glossinessMap == undefined then
+			(
+				content = substituteString content "$SMOOTHNESS" ((material.glossiness*0.01) as string)
+			) else (
+				content = substituteString content "$SMOOTHNESS" ("1.0")
+			)
 			
 			content = substituteString content "$SHADER_KEYWORDS" (trimRight keywords)
 			content = substituteString content "$LIGHT_MAP_FLAGS" (lightmapFlags as string)

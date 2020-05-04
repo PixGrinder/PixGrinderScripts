@@ -1098,4 +1098,16 @@
 		Include "$userScripts/PixGrinder/A_Trier/02 - WIP/Hide_Textured.ms"
 	)
 
+	macroScript PBR_MapSeeker
+	category:"-- PixGrinder --"
+	toolTip:"PBR_MapSeeker"
+	buttonText:"PBR_MapSeeker"
+	-- icon:#("UVWUnwrapOption",2)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/PBR_MapSeeker.ms"
+	)
+
+
 )

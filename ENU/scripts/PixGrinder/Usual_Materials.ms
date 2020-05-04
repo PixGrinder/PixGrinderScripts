@@ -16,7 +16,11 @@ fn pda_ID_Mod Id =
 		selection[1].EditablePoly.setMaterialIndex Id 1
 	) else (
 		modPanel.addModToSelection (Materialmodifier MaterialID:Id) 
-		for obj in selection do convertToPoly obj
+		for obj in selection do 
+		(
+			obj.wirecolor = (color 87 225 87)
+			convertToPoly obj
+		)
 	)
 )
 
