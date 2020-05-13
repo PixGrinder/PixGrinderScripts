@@ -368,13 +368,14 @@
         </Window>
         <Window objectName="Pix_UV" name="Pix_UV" type="T" cType="1" toolbarRows="1">
             <Items>
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Unwrap_UVW`Modifiers" tip="Unwrap UVW Modifier" label="Unwrap UVW" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UnwrapCustom`-- PixGrinder --" tip="UnwrapCustom" label="UnwrapCustom" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Uvwmap`Modifiers" tip="UVW Map Modifier" label="UVW Map" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UVW_Xform`Modifiers" tip="UVW XForm Modifier" label="UVW XForm" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UvBox`-- PixGrinder --" tip="UV Box" label="UV Box" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="2" imageName="UVWUnwrapOption" actionID="Macro2`DragAndDrop" tip="Macro2" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Usual_Materials`-- PixGrinder --" tip="Usual_Materials" label="Usual_Materials" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="HideTextured`-- PixGrinder --" tip="HideTextured" label="HideTextured" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="0" imageName="NURBSSurface" actionID="Macro6`DragAndDrop" tip="" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Material_ID`Modifiers" tip="Material Modifier" label="Material" />
             </Items>
         </Window>
@@ -390,6 +391,9 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="50007" tip="Transform Gizmo Z Constraint" label="Transform Gizmo Z Constraint" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="199" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="59229" tip="Transform Gizmo Plane Constraint Cycle" label="Transform Gizmo Plane Constraint Cycle" />
             </Items>
+        </Window>
+        <Window objectName="Rapid_Rools" name="Rapid_Rools" type="T" cType="1" toolbarRows="1">
+            <Items />
         </Window>
     </CUIWindows>
 </ADSK_CUI>

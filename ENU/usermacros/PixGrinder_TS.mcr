@@ -499,12 +499,26 @@
 	category:"-- PixGrinder --"
 	toolTip:"List Selected"
 	buttonText:"List Selected"
-	-- icon:#("Splines",5)
+	icon:#("Maxscript",1)
 	silentErrors:true
 	autoUndoEnabled:false
 	(
 		Include "$userScripts/PixGrinder/listSelected.ms"
 	)
+
+
+	macroScript listSelected_comma
+	category:"-- PixGrinder --"
+	toolTip:"List Selected Comma"
+	buttonText:"List Selected Comma"
+	icon:#("Maxscript",1)
+	silentErrors:true
+	autoUndoEnabled:false
+	(
+		Include "$userScripts/PixGrinder/ListSelected_comma.ms"
+	)
+
+
 
 	macroScript listHierarchy
 	category:"-- PixGrinder --"
@@ -1107,6 +1121,17 @@
 	autoUndoEnabled:true
 	(
 		Include "$userScripts/PixGrinder/PBR_MapSeeker.ms"
+	)
+
+	macroScript UnwrapCustom
+	category:"-- PixGrinder --"
+	toolTip:"UnwrapCustom"
+	buttonText:"UnwrapCustom"
+	icon:#("Material_Modifiers",6)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/UnwrapCustom.ms"
 	)
 
 

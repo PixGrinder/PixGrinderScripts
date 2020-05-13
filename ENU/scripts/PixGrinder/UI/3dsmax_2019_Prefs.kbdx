@@ -262,6 +262,7 @@
     <shortcut fVirt="7" accleleratorKey="38" actionID="51" actionTableID="1127307088" />
     <shortcut fVirt="27" accleleratorKey="79" actionID="8" actionTableID="427416257" />
     <shortcut fVirt="27" accleleratorKey="80" actionID="9" actionTableID="427416257" />
+    <shortcut fVirt="11" accleleratorKey="114" actionID="32653" actionTableID="39081" />
     <shortcut fVirt="7" accleleratorKey="86" actionID="40033" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="192" actionID="40067" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="219" actionID="321" actionTableID="0" />
@@ -553,7 +554,7 @@
     <shortcut fVirt="7" accleleratorKey="69" actionID="EPoly_FExtrude`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="33" actionID="EPoly_Grow`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="73" actionID="EPoly_Hide_Unselected`Editable Polygon Object" actionTableID="647394" />
-    <shortcut fVirt="19" accleleratorKey="72" actionID="EPoly_Hide`Editable Polygon Object" actionTableID="647394" />
+    <shortcut fVirt="19" accleleratorKey="72" actionID="EPoly_UnHide`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="15" accleleratorKey="73" actionID="EPoly_IgnoreBack_Toggle`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="15" accleleratorKey="81" actionID="EPoly_Slice`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="186" actionID="EPoly_Repeat_Last`Editable Polygon Object" actionTableID="647394" />
@@ -574,13 +575,13 @@
     <shortcut fVirt="11" accleleratorKey="109" actionID="PaintSelBrushSizeDown`Selection" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="79" actionID="SESceneExplorer`Scene Explorer" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="77" actionID="basic_material_editor`Medit Tools" actionTableID="647394" />
-    <shortcut fVirt="3" accleleratorKey="77" actionID="advanced_material_editor`Medit Tools" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="87" actionID="UniversalWeld`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="67" actionID="ESpline_VChamfer`Editable Spline Object" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="83" actionID="AutoSavePixGrinder`-- PixGrinder --" actionTableID="647394" />
     <shortcut fVirt="15" accleleratorKey="68" actionID="EditablePoly_RegularizeEdgeLoop`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="79" actionID="LayerPropertiesByLayer`Layers" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="83" actionID="SmoothQuick`-- PixGrinder --" actionTableID="647394" />
+    <shortcut fVirt="3" accleleratorKey="77" actionID="basic_material_editor`Medit Tools" actionTableID="647394" />
     <shortcut fVirt="3" accleleratorKey="86" actionID="Viewports" actionTableID="1261319018" />
     <shortcut fVirt="3" accleleratorKey="96" actionID="Pix_Slate" actionTableID="1261319018" />
     <shortcut fVirt="15" accleleratorKey="83" actionID="Pix_FileMenu" actionTableID="1261319018" />

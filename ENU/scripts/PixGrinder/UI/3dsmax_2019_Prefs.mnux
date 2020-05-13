@@ -1387,6 +1387,9 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ViewFaceAlign`-- PixGrinder --" />
         </Menu>
         <Menu title=" " flags="2">
+            <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="14" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="13" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="59230" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="334" />
@@ -4921,6 +4924,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Linear_Controller_Assign`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listHierarchy`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listSelected`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listSelected_comma`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="listToFile`-- PixGrinder --" />
         </Menu>
         <Menu title="-1-M-">
