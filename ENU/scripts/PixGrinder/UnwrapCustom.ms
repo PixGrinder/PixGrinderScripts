@@ -13,6 +13,6 @@ if classof selection[1].material == MultiMaterial then
 	addModifier selection[1]  (Unwrap_UVW())
 	medit.SetActiveMtlSlot 1 on
 	selection[1].modifiers[1].edit()
-) else (
-	addModifier selection[1]  (Unwrap_UVW())
-)
+) 
+
+if selection[1].modifiers[1] == undefined or classof selection[1].modifiers[1] != Unwrap_UVW then addModifier selection[1]  (Unwrap_UVW())
