@@ -13,21 +13,29 @@ global textureDirVar = undefined
 		prevMaterialDir = ""
 	)
 	local materialDir = getSavePath caption:"Select the Unity project material folder destination..." initialDir:prevMaterialDir
+
+    textureDir = substituteString materialDir "Materials" "maps" 
 	
     if materialDir != undefined then
     (
+        /*
         if prevTextureDir == undefined then
         (
             prevTextureDir = materialDir
         )
         local textureDir = getSavePath caption:"Select the Unity project texture folder..." initialDir:prevTextureDir
+        */
         if textureDir != undefined then
         (
             globalVars.set #materialDirVar materialDir
             globalVars.set #textureDirVar textureDir
 
+            textureDir = 
 			exportUnitySceneMaterials materialDir textureDir
         )
     )
 
 )
+
+
+

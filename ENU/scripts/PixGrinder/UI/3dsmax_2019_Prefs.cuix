@@ -377,6 +377,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="HideTextured`-- PixGrinder --" tip="HideTextured" label="HideTextured" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="0" imageName="NURBSSurface" actionID="Macro6`DragAndDrop" tip="" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Material_ID`Modifiers" tip="Material Modifier" label="Material" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="66" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="MatIdFinder`-- PixGrinder - TPZ Tools --" tip="MatIdFinder" label="MatIdFinder" />
             </Items>
         </Window>
         <Window objectName="Pix-Modeling" name="Pix-Modeling" type="T" cType="1" toolbarRows="1">

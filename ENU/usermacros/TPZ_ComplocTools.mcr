@@ -203,5 +203,26 @@
 	)
 
 
+	macroScript MatIdFinder
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"MatIdFinder"
+	buttonText:"MatIdFinder"
+	--icon:#("Material_Modifiers",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/MatIdFinder.ms"
+	)
+
+	macroScript Material_Unity_Export_Std
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Material_Unity_Export_Std"
+	buttonText:"Material_Unity_Export_Std"
+	--icon:#("Material_Modifiers",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/Unity_Materials/unity_material_export_macro_Standard.ms"
+	)
 
 )

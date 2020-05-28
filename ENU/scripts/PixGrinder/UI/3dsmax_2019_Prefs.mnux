@@ -5080,6 +5080,8 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Physical_to_Standard`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Standard_to_Physical`-- PixGrinder - TPZ Tools --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Material_Unity_Export_Std`-- PixGrinder - TPZ Tools --" />
         </Menu>
         <Menu title="Pix_Detach">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DetachByElt`-- PixGrinder --" />
@@ -5171,7 +5173,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SaveScheme`Customize User Interface" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40047" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="40086" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ExportUnityMaterial`Export" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="GammaSetup`Render" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="toggleOutliner`Outliner" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="1879341591" actionID="0" />

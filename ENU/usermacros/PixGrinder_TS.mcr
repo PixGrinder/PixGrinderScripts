@@ -1134,5 +1134,16 @@
 		Include "$userScripts/PixGrinder/UnwrapCustom.ms"
 	)
 
+	macroScript History_Search
+	category:"-- PixGrinder --"
+	toolTip:"History_Search"
+	buttonText:"History_Search"
+	--icon:#("Material_Modifiers",6)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Objects_History_Search.ms"
+	)
+
 
 )
