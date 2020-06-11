@@ -3,6 +3,16 @@ global textureDirVar = undefined
 	
 -- macroScript ExportUnityMaterial category: "Export" tooltip: "Export scene Physical Materials to Unity material assets"
 (
+    
+    try(DestroyDialog pda_Working) catch()
+
+    rollout pda_Working "Working"
+    (
+        Label lbl1 "Exporting Materials..."
+    )
+
+    CreateDialog pda_Working
+
     include "$userScripts/Unity_Materials/unity_material_export_Standard.ms"
 
     local prevMaterialDir = globalVars.get #materialDirVar
@@ -34,6 +44,8 @@ global textureDirVar = undefined
 			exportUnitySceneMaterials materialDir textureDir
         )
     )
+
+    DestroyDialog pda_Working
 
 )
 
