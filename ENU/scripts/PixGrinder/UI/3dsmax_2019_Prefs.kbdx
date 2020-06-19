@@ -263,6 +263,7 @@
     <shortcut fVirt="27" accleleratorKey="79" actionID="8" actionTableID="427416257" />
     <shortcut fVirt="27" accleleratorKey="80" actionID="9" actionTableID="427416257" />
     <shortcut fVirt="11" accleleratorKey="114" actionID="32653" actionTableID="39081" />
+    <shortcut fVirt="3" accleleratorKey="88" actionID="32653" actionTableID="39081" />
     <shortcut fVirt="7" accleleratorKey="86" actionID="40033" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="192" actionID="40067" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="219" actionID="321" actionTableID="0" />
@@ -374,7 +375,6 @@
     <shortcut fVirt="15" accleleratorKey="88" actionID="401" actionTableID="0" />
     <shortcut fVirt="19" accleleratorKey="74" actionID="370" actionTableID="0" />
     <shortcut fVirt="19" accleleratorKey="13" actionID="40022" actionTableID="0" />
-    <shortcut fVirt="3" accleleratorKey="88" actionID="40105" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="81" actionID="50027" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="117" actionID="550" actionTableID="0" />
     <shortcut fVirt="7" accleleratorKey="118" actionID="40834" actionTableID="0" />
@@ -382,6 +382,7 @@
     <shortcut fVirt="15" accleleratorKey="76" actionID="50010" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="85" actionID="50011" actionTableID="0" />
     <shortcut fVirt="11" accleleratorKey="79" actionID="40003" actionTableID="0" />
+    <shortcut fVirt="7" accleleratorKey="88" actionID="40105" actionTableID="0" />
     <shortcut fVirt="3" accleleratorKey="188" actionID="50020" actionTableID="1" />
     <shortcut fVirt="3" accleleratorKey="190" actionID="50022" actionTableID="1" />
     <shortcut fVirt="11" accleleratorKey="65" actionID="50035" actionTableID="1" />
@@ -550,7 +551,6 @@
     <shortcut fVirt="15" accleleratorKey="66" actionID="EPoly_Bevel`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="15" accleleratorKey="67" actionID="EPoly_Chamfer`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="15" accleleratorKey="69" actionID="EPoly_Connect`Editable Polygon Object" actionTableID="647394" />
-    <shortcut fVirt="7" accleleratorKey="88" actionID="EPoly_Toggle_Edge_Constraint`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="7" accleleratorKey="69" actionID="EPoly_FExtrude`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="11" accleleratorKey="33" actionID="EPoly_Grow`Editable Polygon Object" actionTableID="647394" />
     <shortcut fVirt="19" accleleratorKey="73" actionID="EPoly_Hide_Unselected`Editable Polygon Object" actionTableID="647394" />
