@@ -6,6 +6,7 @@
 -- Comploc_Exporter.ms --
 -- Exports One FBX File by Layer --
 -- V 5.2 --
+-- For later : Add sorting by numFaces : $.numfaces
 
 ---------------------------------------------------------------------
 
