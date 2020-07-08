@@ -98,26 +98,42 @@ fn nextItem =
 
 rollout CompareObjects "Compare Objects"
 (
-	button btn_next "Next"
-	spinner myDist "DistSelect" range:[0.01,100.0,0.1] type:#float scale:0.1 fieldWidth:40 offset:[-10,0]
-	button btn_Compare "Compare"
-	button btnFocusComp "Focus current objects"
-	button btn_HideCompared "Hide Compared"
-	button btn_DelImported "Delete Imported"
-	button btn_ExludeVerified "Exclude from Verified"
+	button btn_next "Next" offset:[0,10]
+	spinner myDist "Radius Select" range:[0.01,100.0,0.1] type:#float scale:0.1 fieldWidth:40 offset:[-10,10]
+	button btn_Compare "Compare" width:100 height:50 offset:[0,10]
+	button btnFocusComp "Focus current objects" offset:[0,10]
+	button btn_HideCompared "Hide Compared" offset:[0,10]
+	button btn_DelImported "Delete Imported" offset:[0,10]
+	button btn_ExludeVerified "Exclude from Verified" offset:[0,10]
+	button btn_unHideRem "Unhide Remaining" offset:[0,10]
 	
 
 	on btn_HideCompared pressed do if SelectionSets["___Verified___"] != undefined then hide SelectionSets["___Verified___"]
+	
+	on btn_unHideRem pressed do 
+	(
+		clearSelection()
+		max unhide all
+		hide SelectionSets["___Verified___"]
+		hide helpers
+	)
 	
 	on btn_ExludeVerified pressed do 
 	(
 		if SelectionSets["___Verified___"] != undefined then
 		( 
-			x1 = SelectionSets["___Verified___"]
+			myAr = #()
+			myVerifiedStack = for obj in SelectionSets["___Verified___"] collect obj
 			-----------------------------------------------
+			blurf = selection as array
+			for obj in blurf do append myAr (findItem myVerifiedStack obj)
+			for rem in myAr do deleteItem myVerifiedStack rem
+			SelectionSets["___Verified___"] = #()
+			SelectionSets["___Verified___"] = myVerifiedStack
 
+			free myVerifiedStack
+			free myAr
 			-----------------------------------------------
-
 		)
 	)
 
