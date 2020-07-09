@@ -110,8 +110,8 @@
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="529" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="450" flat="0" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="473" flat="0" />
-            <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="530" flat="0" />
+            <Item mode="4" modeName="AM_SUBMENU" subMenuID="360" flat="0" customTitle="&amp;Help" />
         </Menu>
         <Menu title="&amp;File">
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="458" flat="0" customTitle="&amp;New" />
@@ -2147,7 +2147,7 @@
         </Menu>
         <Menu title="Views - Shading Viewport Nitrous Label Menu">
             <Item mode="2" modeName="AM_ITEM" actionTableID="-623044237" actionID="4112" />
-            <Item mode="5" modeName="AM_ITEM_SUBMENU" actionTableID="-623044237" actionID="4096" flat="0" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="-623044237" actionID="4096" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="12" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="13" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="-844228238" actionID="14" />
@@ -5067,6 +5067,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Bitmap_AH_Path`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CamFromComp`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CleanGhostLinks`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Layers_Hierarchy_Check`-- PixGrinder - TPZ Tools --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Hide_Collisions`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CustAttribTransfert`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DeleteClComps`-- PixGrinder - TPZ Tools --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="ComplocExporter`-- PixGrinder - TPZ Tools --" />
@@ -5075,6 +5077,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="DelecteCameras`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="VMT_Cam`-- PixGrinder - TPZ Tools --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PBR_Compare`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CAO_OneClickProcess`-- PixGrinder - TPZ Tools --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -5189,6 +5193,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="10" customTitle="Substance To Physical Material" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="5" customTitle="Allegorithmic Website" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="6" customTitle="Substance Source" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="536556512" actionID="13" customTitle="About Substance in 3ds Max" />
         </Menu>
         <QuadMenu>
             <Item menuID="4" title="Common" />
