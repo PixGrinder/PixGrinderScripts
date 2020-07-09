@@ -105,7 +105,7 @@ rollout CompareObjects "Compare Objects"
 	button btn_HideCompared "Hide Compared" offset:[0,10]
 	button btn_DelImported "Delete Imported" offset:[0,10]
 	button btn_ExludeVerified "Exclude from Verified" offset:[0,10]
-	button btn_unHideRem "Unhide Remaining" offset:[0,10]
+	button btn_unHideRem "Show Remaining" offset:[0,10]
 	
 
 	on btn_HideCompared pressed do if SelectionSets["___Verified___"] != undefined then hide SelectionSets["___Verified___"]
