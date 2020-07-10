@@ -29,7 +29,7 @@ autoUndoEnabled:true
 	pda_sort = sort pda_ar
 	pda_x = pda_ar[3]
 
-addModifier $ (UVWMap() )
+modPanel.addModToSelection (UVWMap())
 $.modifiers[1].name	= "UV Box"
 select $
 $.modifiers[1].maptype = 4
