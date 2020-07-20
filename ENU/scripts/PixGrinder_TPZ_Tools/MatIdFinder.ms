@@ -1,4 +1,5 @@
--- MatIdFinder v3--
+-- MatIdFinder v4--
+-- Corrected 1 bug when searching names on undefined materials --
 
 try (DestroyDialog myFinder) catch ()
 
@@ -11,26 +12,32 @@ rollout myFinder ""
 
 	on myBtn pressed do
 	(
-		myVal = #()
-		for i = 1 to (meditMaterials[1].names).count do 
+		if classof meditMaterials[activeMeditSlot] == Multimaterial then
 		(
-			if MatchPattern (meditMaterials[1].materialList[i].name) pattern:("*" + myMatSearch.text + "*") then append myVal ((meditMaterials[1].materialIDList[i] as string) + " - " + (meditMaterials[1].names[i]))
+					myVal = #()
+					for i = 1 to (meditMaterials[activeMeditSlot].names).count do 
+					(
+						if MatchPattern (meditMaterials[activeMeditSlot].names[i]) pattern:("*" + myMatSearch.text + "*") then append myVal ((meditMaterials[activeMeditSlot].materialIDList[i] as string) + " - " + (meditMaterials[activeMeditSlot].names[i]))
+					)
+					clearListener()
+					--myVal
+					if myVal.count > 0 then myFinder.myMatId.items = myVal
 		)
-		clearListener()
-		myVal
-		if myVal.count > 0 then myFinder.myMatId.items = myVal
 	)
 
 	on myMatSearch entered myText do
 	(
-		myVal = #()
-		for i = 1 to (meditMaterials[1].names).count do 
+		if classof meditMaterials[activeMeditSlot] == Multimaterial then
 		(
-			if MatchPattern (meditMaterials[1].materialList[i].name) pattern:("*" + myMatSearch.text + "*") then append myVal ((meditMaterials[1].materialIDList[i] as string) + " - " + (meditMaterials[1].names[i]))
+			myVal = #()
+			for i = 1 to (meditMaterials[activeMeditSlot].names).count do 
+			(
+				if MatchPattern (meditMaterials[activeMeditSlot].names[i]) pattern:("*" + myMatSearch.text + "*") then append myVal ((meditMaterials[activeMeditSlot].materialIDList[i] as string) + " - " + (meditMaterials[activeMeditSlot].names[i]))
+			)
+			clearListener()
+			-- myVal
+			if myVal.count > 0 then myFinder.myMatId.items = myVal
 		)
-		clearListener()
-		myVal
-		if myVal.count > 0 then myFinder.myMatId.items = myVal
 	)
 
 	on myMatId doubleClicked itm do 
@@ -39,8 +46,25 @@ rollout myFinder ""
 		mySep = mySep[1] as integer
 		MatEditor.mode = #basic
 		MatEditor.Open()
-		meditmaterials[2] = meditmaterials[1][mySep]
+		if activeMeditSlot < 24 then meditmaterials[(activeMeditSlot+1)] = meditMaterials[activeMeditSlot][mySep]
 	)
 )
 
 CreateDialog myFinder 500 670 800 150
+
+
+/*
+--------------------------
+clearListener()
+x1 = meditmaterials[1]
+x2 = for obj in x1 collect (classof obj as string)
+x2 = makeUniqueArray x2
+x2
+x1.materialList
+for obj in x1.names do print obj
+for i = 1 to x1.count do format "% - % - %\r" (i as string) (classof x1[i] as string) (x1.materialIDList[i] as string)
+
+
+
+
+
