@@ -1,20 +1,51 @@
 
 
--- Select objects which have keyframe after myStartFrame -- 
+-- Select objects which have keyframe after  -- 
 (
 	clearSelection()
-	myStartFrame = 11000
+	myStartFrame = 10000
 	x1 = geometry as array + helpers as array
 	myPos = for obj in x1 where (numKeys obj.position.controller > 0) and (obj.pos.controller.keys[obj.position.controller.keys.count].time > myStartFrame ) collect obj
 	myRot = for obj in x1 where (numKeys obj.rotation.controller > 0) and (obj.rotation.controller.keys[obj.rotation.controller.keys.count].time > myStartFrame ) collect obj
 	mySca = for obj in x1 where (numKeys obj.scale.controller > 0) and (obj.scale.controller.keys[obj.scale.controller.keys.count].time > myStartFrame ) collect obj
-
 	myAnimated = myPos+myRot+mySca
 	myAnimated = makeUniqueArray myAnimated
-
 	select myAnimated
 )
 
+
+clearSelection()
+mySelec = for obj in objects where obj.layer.on collect obj
+select mySelec
+
+while num <= mySelec.count do
+(
+	select for 
+)
+
+for obj in selection do
+(
+	selectkeys selection 10000f 11000f
+	moveKeys selection -4000f #selection
+)	
+
+
+-- find 1st key time after myStartFrame --
+
+(
+	-- clearSelection()
+	myStartFrame = 10000
+	-- x1 = geometry as array + helpers as array
+	myAr = #()
+	for obj in selection do
+	(
+		append myAr (amin (obj.controller.position.keys as array))
+		append myAr (amin (obj.controller.rotation.keys as array))
+		append myAr (amin (obj.controller.scale.keys as array))
+	) 
+	print amin myAr
+
+)
 
 
 ----------------
@@ -33,6 +64,31 @@
 	select myAnimated
 )
 
+
+-- Select objects with only 1 keyframe
+
+(
+	clearSelection()
+	--myStartFrame = 11000
+	x1 = geometry as array + helpers as array
+	myOneKey = #()
+	for obj in x1 do
+	(
+		if (numKeys obj.position.controller == 1) and (numKeys obj.rotation.controller == 1) and (numKeys obj.scale.controller == 1) then append myOneKey obj
+	)
+
+	myNotAnimated = makeUniqueArray myOneKey
+
+	select myNotAnimated
+
+)
+
+
+
+
+
+
+
 -- select objects without XYZ controller
 (
 	x1 = geometry as array + helpers as array
@@ -45,8 +101,6 @@
 
 
 
-selectkeys selection 24f 100f
-moveKeys selection -10f #selection
 
 
 -------------------------------
