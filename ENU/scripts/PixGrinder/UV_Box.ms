@@ -27,7 +27,8 @@ autoUndoEnabled:true
 	global pda_ar = #()
 	for i = 1 to 3  do  append pda_ar pda_dim[i]
 	pda_sort = sort pda_ar
-	pda_x = pda_ar[3]
+	-- pda_x = pda_ar[3]
+	pda_x = 2.0
 
 modPanel.addModToSelection (UVWMap())
 $.modifiers[1].name	= "UV Box"

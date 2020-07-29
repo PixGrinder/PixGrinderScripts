@@ -1,4 +1,7 @@
 
+-- V3 --
+
+
 
 -- Select objects which have keyframes after  -- 
 /*
@@ -21,18 +24,36 @@
 
 clearListener()
 clearSelection()
-mySelec = for obj in objects where obj.layer.on collect obj
--- myBak = mySelec
 
-fn pdaMoveKeys sFrame eFrame pdaOffSet theArray = 
+rollout pdaMoveAnims "Move Anim Keys"
 (
-	select (for j = 1 to theArray.count collect theArray[j])
-	for obj in selection do
+	label lblS "Start" cross:2
+	label lblE "End"
+
+	spinner sFrame "" range:[-50000,50000,0] type:#integer 
+	spinner eFrame "" range:[-50000,50000,100] type:#integer
+	spinner pdaOffset "Offset" range:[-50000,50000,10] type:#integer
+	button myBtn "Move Keys" width:150
+
+	on myBtn pressed do
 	(
-		selectkeys selection sFrame eFrame
-		moveKeys selection pdaOffSet #selection
+		mySelec = for obj in objects where obj.layer.on collect obj
+		deselectkeys mySelec
+		selectkeys mySelec sFrame.value eFrame.value
+		moveKeys mySelec pdaOffSet.value #selection
 	)
+
 )
+
+createDialog pdaMoveAnims
+
+
+
+
+/*
+
+mySelec = selection as array
+
 
 theThreshold = 50
 
@@ -61,4 +82,4 @@ while myCond == on do
 		myCond = off
 	)
 )
-
+*/

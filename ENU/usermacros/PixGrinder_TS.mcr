@@ -474,8 +474,8 @@
 	
 	macroScript FullNameDisplay
 	category:"-- PixGrinder --"
-	toolTip:"Full Name Display"
-	buttonText:"Full Name Display"
+	toolTip:"Full Name Display - ABC"
+	buttonText:"Full Name Display - ABC"
 	icon:#("Splines",5)
 	silentErrors:false
 	autoUndoEnabled:false

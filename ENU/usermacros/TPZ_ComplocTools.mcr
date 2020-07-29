@@ -225,4 +225,42 @@
 		FileIn "$userScripts/Unity_Materials/unity_material_export_macro_Standard.ms"
 	)
 
+	macroScript Hide_Collisions
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Comploc - Hide Collisions"
+	buttonText:"Hide_Collisions"
+	--icon:#("Material_Modifiers",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/CL_Hide_Collisions.ms"
+	)
+
+
+	macroScript Layers_Hierarchy_Check
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"Layers - Hierarchy Check"
+	buttonText:"Hierarchy Check"
+	--icon:#("Material_Modifiers",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/Layers_Hierarchy_Check.ms"
+	)
+
+
+	macroScript PBR_Compare
+	category:"-- PixGrinder - TPZ Tools --"
+	toolTip:"PBR_Compare"
+	buttonText:"PBR_Compare"
+	--icon:#("Material_Modifiers",1)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		FileIn "$userScripts/PixGrinder_TPZ_Tools/PBR_Compare.ms"
+	)
+
+
+
+
 )
