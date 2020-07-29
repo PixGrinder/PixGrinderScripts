@@ -22,23 +22,23 @@ autoUndoEnabled:true
 */
 
 (
-
+	/*
 	pda_dim = ($.max - $.min) 
 	global pda_ar = #()
 	for i = 1 to 3  do  append pda_ar pda_dim[i]
 	pda_sort = sort pda_ar
-	-- pda_x = pda_ar[3]
+	pda_x = pda_ar[3]
+	*/
 	pda_x = 2.0
 
-modPanel.addModToSelection (UVWMap())
-$.modifiers[1].name	= "UV Box"
-select $
-$.modifiers[1].maptype = 4
-$.modifiers[1].length = pda_x
-$.modifiers[1].width = pda_x
-$.modifiers[1].height = pda_x
+	myMod = UVWMap()
+	myMod.name="UV Box"
+	myMod.maptype = 4
+	myMod.length = pda_x
+	myMod.width = pda_x
+	myMod.height = pda_x
 
-
+	modPanel.addModToSelection (myMod)
 
 	rollout autoMap "Mapping automatique" 
 	(
@@ -48,14 +48,19 @@ $.modifiers[1].height = pda_x
 		button cancel_btn "Cancel" pos:[200,55]
 		on MapValue changed value do 
 		(
+			/*
 			$.modifiers[1].length = MapValue.value
 			$.modifiers[1].width = MapValue.value
 			$.modifiers[1].height = MapValue.value
+			*/
+			myMod.length = MapValue.value
+			myMod.width = MapValue.value
+			myMod.height = MapValue.value
 			
 		)
 		on collapse_btn pressed do 
 		(
-			maxOps.CollapseNodeTo $ 1 off
+			for obj in selection do maxOps.CollapseNodeTo obj 1 off
 			destroyDialog autoMap
 		)
 		
