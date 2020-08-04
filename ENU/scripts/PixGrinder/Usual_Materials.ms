@@ -26,15 +26,18 @@ fn pda_ID_Mod Id =
 
 Rollout UsualMat "Usual Materials"
 (
-	imgTag Chrome "Chrome" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Chrome.jpg" iconSize:[64,64] across:3 --[iconName:<filename>] [iconSize:<point2>] opacity:1.0 transparent:(color 0 0 0)
+	imgTag Chrome "Chrome" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Chrome.jpg" iconSize:[64,64] align:#center across:3 --[iconName:<filename>] [iconSize:<point2>] opacity:1.0 transparent:(color 0 0 0)
 	imgTag VisGrisOpaque "VisGrisOpaque" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisGrisOpaque.jpg" iconSize:[64,64] 	
 	imgTag PasVisChrome "PasVisChrome" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\PasVisChrome.jpg" iconSize:[64,64]
-	imgTag metal9 "Metal 09" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\metal_09.jpg"  iconSize:[64,64]  across:3
+	imgTag metal9 "Metal 09" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\metal_09.jpg"  iconSize:[64,64] across:3
 	imgTag VisChromeTransp "VisChromeTransp" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisChromeTransp.jpg" iconSize:[64,64] 
 	imgTag RedShine "RedShine" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\RedShine.jpg" iconSize:[64,64]
-	imgTag Laiton "Laiton" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Laiton.jpg"  iconSize:[64,64]across:3
+	imgTag Laiton "Laiton" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Laiton.jpg"  iconSize:[64,64] across:3
 	imgTag VisCopper "VisCopper" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisCopper.jpg" iconSize:[64,64]
 	imgTag PasVisCopper "PasVisCopper" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\PasVisCopper.jpg" iconSize:[64,64]
+	imgTag CockpitAtlas "CockpitAtlas" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CockpitAtlas.png" iconSize:[64,64] across:3
+	imgTag BlackScrew "BlackScrew" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackScrew.jpg" iconSize:[64,64]
+	imgTag BlackScrewAlpha "BlackScrewAlpha" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackScrewAlpha.jpg" iconSize:[64,64]
 	imgTag BlackMetal "BlackMetal" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Black_Metal.jpg" iconSize:[64,64] across:3
 	imgTag BlackShine "BlackShine" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Black_Shine.jpg" iconSize:[64,64]
 	imgTag BlackMat "BlackMat" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackMat.jpg" iconSize:[64,64]
@@ -49,8 +52,22 @@ Rollout UsualMat "Usual Materials"
 	imgTag Cntr_Grip "Cntr_Grip" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Cntr_Grip.jpg" iconSize:[64,64] 
 	imgTag CableGreen "CableGreen" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CableGreen.jpg" iconSize:[64,64] across:3
 	imgTag GripStick "GripStick" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\GripStick.jpg" iconSize:[64,64] 
-	imgTag ACE2 "ACE2" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\ACE2.jpg" iconSize:[64,64] 
-	
+	imgTag ACE2 "ACE2" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\ACE2.jpg" iconSize:[64,64]
+	imgTag Pattern "Pattern" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Pattern.jpg" iconSize:[64,64] across:3
+	imgTag Purple "Purple" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Purple.jpg" iconSize:[64,64]
+	imgTag myGrid "myGrid" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\myGrid.jpg" iconSize:[64,64]
+	imgTag DarkMetal "DarkMetal" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\DarkMetal.jpg" iconSize:[64,64] across:3
+	imgTag myHole "myHole" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Hole.jpg" iconSize:[64,64]
+	imgTag Yel01 "Yel01" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel01.jpg" iconSize:[64,64]
+	imgTag Yel03 "Yel03" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel03.jpg" iconSize:[64,64] across:3
+	imgTag Yel04 "Yel04" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel04.jpg" iconSize:[64,64]
+	imgTag Yel02 "Yel02" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel02.jpg" iconSize:[64,64]
+	imgTag Braid "Braid" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Braid.jpg" iconSize:[64,64] across:3
+	imgTag BlackGrip "BlackGrip" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackGrip.jpg" iconSize:[64,64]
+	imgTag myWind "myWind" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\myWind.jpg" iconSize:[64,64]
+	imgTag BrownCntr "BrownCntr" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownCntr.jpg" iconSize:[64,64] across:3
+	imgTag BrownVertical "BrownVertical" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownVertical.jpg" iconSize:[64,64]
+	imgTag BrownGrip "BrownGrip" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownGrip.jpg" iconSize:[64,64]
 
 	
 	on BlackShine mousedown do pda_ID_Mod 7
@@ -77,14 +94,54 @@ Rollout UsualMat "Usual Materials"
 	on CableGreen mousedown do pda_ID_Mod 64
 	on GripStick mousedown do pda_ID_Mod 30
 	on ACE2 mousedown do pda_ID_Mod 225
+	on Pattern mousedown do pda_ID_Mod 171
+	on Purple mousedown do pda_ID_Mod 86
+	on myGrid mousedown do pda_ID_Mod 104
+	on DarkMetal mousedown do pda_ID_Mod 671
+	on myHole mousedown do pda_ID_Mod 702
+	on Yel01 mousedown do pda_ID_Mod 33
+	on Yel02 mousedown do pda_ID_Mod 216
+	on Yel03 mousedown do pda_ID_Mod 809
+	on Yel04 mousedown do pda_ID_Mod 34
+	on Braid mousedown do pda_ID_Mod 71
+	on BlackGrip mousedown do pda_ID_Mod 231
+	on myWind mousedown do pda_ID_Mod 620
+	on BlackScrew mousedown do pda_ID_Mod 236
+	on BlackScrewAlpha mousedown do pda_ID_Mod 14
+	on CockpitAtlas mousedown do pda_ID_Mod 684
+	on BrownCntr mousedown do pda_ID_Mod 97
+	on BrownVertical mousedown do pda_ID_Mod 807
+	on BrownGrip mousedown do pda_ID_Mod 98
 
 )
 
 
-CreateDialog UsualMat 260 600 1550 135
+UsualMatFloater = newRolloutFloater "myMat" 260 500 lockHeight:off lockWidth:off autoLayoutOnResize:on
+addRollout UsualMat UsualMatFloater
 
+
+--CreateDialog UsualMat style:#(#style_resizing, #style_minimizebox, #style_toolwindow) --autoLayoutOnResize:on 260 400 1550 135
+
+cui.RegisterDialogBar UsualMatFloater style:#(#cui_dock_all, #cui_floatable, #cui_handles) --minSize:[260,500] maxSize:[1024,1080]
 
 /*
+
+cui.RegisterDialogBar <RolloutFloater_or_Rollout> \ 
+[minSize:<Point2>] [maxSize:<Point2>] \
+[parent:<HWND>] \
+[style:<Array>]
+
+
+
+CreateDialog <Rollout> [<width> <height> <position_x> <position_y>]\ 
+[pos:<Point2>] [width:<integer>] [height:<integer>] \ 
+[bgcolor:<color>] [fgcolor:<color>] \ 
+[bitmap:<bitmap>] {bmpstyle:<bmpstyle> \ 
+[menu:<RCMenu>] [style:<array>] [modal:<boolean>] \ 
+[escapeEnable:<boolean>] [lockHeight:<boolean>] [lockWidth:<boolean>] \
+[autoLayoutOnResize:<boolean>] [parent:<HWND>]	 
+
+
 UsualMat.pos
 .setMaterialIndex 4
 polyop.getFaceFlags $ 1

@@ -42,7 +42,7 @@ autoUndoEnabled:true
 
 	rollout autoMap "Mapping automatique" 
 	(
-		spinner MapValue "Map Value" type:#float  fieldwidth:50 range:[0.1,1000000,pda_x] pos:[100,20] --align:#center
+		spinner MapValue "Map Value" type:#float  fieldwidth:50 range:[0.001,1000000,pda_x] pos:[100,20] --align:#center
 		button collapse_btn "Collapse" pos:[70,55]
 		button close_btn "Close" pos:[140,55]
 		button cancel_btn "Cancel" pos:[200,55]
