@@ -1,10 +1,10 @@
 -- Find obj by ID -- 
--- v0.2 --
+-- v0.3 --
 
 myID = 6
 myAr = #()
 
-for obj in geometry do
+for obj in geometry where obj.isHidden == off do
 (
 	convertToPoly obj
 	for i = 1 to getnumfaces obj do
