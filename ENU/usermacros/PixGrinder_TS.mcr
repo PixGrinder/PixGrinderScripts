@@ -1145,5 +1145,16 @@
 		Include "$userScripts/PixGrinder/Objects_History_Search.ms"
 	)
 
+	macroScript UVW_Cylinder
+	category:"-- PixGrinder --"
+	toolTip:"UVW_Cylinder"
+	buttonText:"UVW_Cylinder"
+	icon:#("UVWUnwrapTools2",22)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/UVW_Cylinder.ms"
+	)
+
 
 )

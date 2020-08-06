@@ -124,7 +124,31 @@ addRollout UsualMat UsualMatFloater
 
 cui.RegisterDialogBar UsualMatFloater style:#(#cui_dock_all, #cui_floatable, #cui_handles) --minSize:[260,500] maxSize:[1024,1080]
 
+cui.DockDialogBar UsualMatFloater #cui_dock_right
+
 /*
+
+cui.DockDialogBar <RolloutFloater_or_Rollout> <dockflag> 	 This method docks a registered dialog bar to the specified docking area. 
+
+<RolloutFloater_or_Rollout> - This parameter must be a RolloutFloater created with NewRolloutFloater or a Rollout that has been installed in a dialog using CreateDialog, and has been registered using cui.RegisterDialogBar. 
+
+<dockflag> - Specifies the area to dock the dialog bar to. 
+
+Can be one of the following: 
+
+#cui_dock_left - dock to the left 
+
+#cui_dock_top - dock to the top 
+
+#cui_dock_right - dock to the right 
+
+#cui_dock_bottom - dock to the bottom 
+
+NOTE:Attempting to set the <dockflag> to any other value than the listed above will cause unpredictable results. Always dock to one of the four sides. 
+
+
+
+
 
 cui.RegisterDialogBar <RolloutFloater_or_Rollout> \ 
 [minSize:<Point2>] [maxSize:<Point2>] \
