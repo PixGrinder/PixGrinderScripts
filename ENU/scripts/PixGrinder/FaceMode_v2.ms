@@ -18,15 +18,41 @@
 		)
 	)
 	
-	if classof obj == Editable_Poly then 
+	if classof obj == Editable_Poly or classof obj == PolyMeshObject then 
 	(
+		
+		myAction = off
+		if subobjectlevel == 3 then
+		(
+			if obj.modifiers.count > 0 and classof obj.modifiers[1] == Unwrap_UVW then
+			(
+				if myAction == off then
+				(
+					myAction = on
+					subobjectlevel = 0
+				)
+			) else (
+				subobjectlevel = 2
+				myTemp = (polyop.getEdgeSelection obj)
+				if myTemp.count != 0 then mySel = polyop.getFacesUsingEdge obj myTemp
+				subobjectlevel = 4
+				polyop.setFaceSelection obj mySel
+				update obj
+				mySel = undefined
+			)
+		)
+
 		if subobjectlevel == 4 then subobjectlevel = 0
 
 		if subobjectlevel == 0 then 
 		(
 			if obj.modifiers.count > 0 and classof obj.modifiers[1] == Unwrap_UVW then
 			(
-				subobjectlevel = 3
+				if myAction == off then
+				(
+					myAction = on
+					subobjectlevel = 3
+				)
 			) else (
 				subobjectlevel = 4
 			)
@@ -64,16 +90,7 @@
 			)
 		)
 
-		if subobjectlevel == 3 and obj.modifiers.count == 0 then
-		(
-			subobjectlevel = 2
-			myTemp = (polyop.getEdgeSelection obj)
-			if myTemp.count != 0 then mySel = polyop.getFacesUsingEdge obj myTemp
-			subobjectlevel = 4
-			polyop.setFaceSelection obj mySel
-			update obj
-			mySel = undefined
-		)
+
 	)
 
 	
