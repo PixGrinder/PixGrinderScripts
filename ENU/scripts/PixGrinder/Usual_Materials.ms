@@ -59,9 +59,9 @@ Rollout UsualMat "Usual Materials"
 	imgTag DarkMetal "DarkMetal" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\DarkMetal.jpg" iconSize:[64,64] across:3
 	imgTag myHole "myHole" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Hole.jpg" iconSize:[64,64]
 	imgTag Yel01 "Yel01" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel01.jpg" iconSize:[64,64]
-	imgTag Yel03 "Yel03" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel03.jpg" iconSize:[64,64] across:3
-	imgTag Yel04 "Yel04" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel04.jpg" iconSize:[64,64]
-	imgTag Yel02 "Yel02" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel02.jpg" iconSize:[64,64]
+	imgTag Yel03 "Yel03" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel04.jpg" iconSize:[64,64] across:3
+	imgTag Yel04 "Yel04" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel02.jpg" iconSize:[64,64]
+	imgTag Yel02 "Yel02" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel03.jpg" iconSize:[64,64]
 	imgTag Braid "Braid" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Braid.jpg" iconSize:[64,64] across:3
 	imgTag BlackGrip "BlackGrip" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackGrip.jpg" iconSize:[64,64]
 	imgTag myWind "myWind" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\myWind.jpg" iconSize:[64,64]

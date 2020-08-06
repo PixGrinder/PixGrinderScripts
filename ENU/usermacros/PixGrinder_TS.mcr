@@ -166,7 +166,7 @@
 	silentErrors:true
 	autoUndoEnabled:true
 	(
-		Include "$userScripts/PixGrinder/FaceMode_v2.ms"
+		Include "$userScripts/PixGrinder/FaceMode.ms"
 	)
 	
 	macroScript ShapeSelectOptimizer
