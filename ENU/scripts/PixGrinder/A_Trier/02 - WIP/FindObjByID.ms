@@ -1,9 +1,6 @@
 -- Find obj by ID -- 
 -- v0.4 --
 
--- myID = 403
--- 
-
 
 fn searchForID v1 = 
 (

@@ -1,3 +1,4 @@
+-- FaceMode v 3.0 --
 -- Script designed to replace the "4" key on keyboard in order to quickly access face subobject mode , in poly mode, on any geometry object.
 
 
@@ -42,18 +43,20 @@
 			)
 		)
 
-		if subobjectlevel == 4 then subobjectlevel = 0
+		if subobjectlevel == 4 and myAction == off then 
+		(
+			subobjectlevel = 0
+			myAction = on
+		)
 
-		if subobjectlevel == 0 then 
+		if subobjectlevel == 0 and myAction == off then 
 		(
 			if obj.modifiers.count > 0 and classof obj.modifiers[1] == Unwrap_UVW then
 			(
-				if myAction == off then
-				(
-					myAction = on
-					subobjectlevel = 3
-				)
+				myAction = on
+				subobjectlevel = 3
 			) else (
+				myAction = on
 				subobjectlevel = 4
 			)
 		)
@@ -90,7 +93,7 @@
 			)
 		)
 
-
+		if subobjectlevel == 5 then subobjectlevel = 4
 	)
 
 	
