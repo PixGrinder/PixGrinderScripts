@@ -70,3 +70,10 @@ for node in MaxPlus.Core.GetRootNode().Children:
 
 obj = o.GetObject()
 if obj.GetSuperClassID() == SuperClassIds.GeomObject
+
+
+
+# Vu avec Guillaume #
+#----------------------
+for id in dir(MaxPlus.SuperClassIds):
+    print id, getattr(MaxPlus.SuperClassIds, id)
