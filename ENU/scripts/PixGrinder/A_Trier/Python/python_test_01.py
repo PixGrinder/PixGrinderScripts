@@ -77,3 +77,48 @@ if obj.GetSuperClassID() == SuperClassIds.GeomObject
 #----------------------
 for id in dir(MaxPlus.SuperClassIds):
     print id, getattr(MaxPlus.SuperClassIds, id)
+
+
+"""
+
+from MaxPlus import SuperClassIds
+from MaxPlus import SelectionManager
+
+def scene_objects():
+   def list_children(node):
+      list = []
+      for c in node.Children:
+         list.append(c)
+         list = list + list_children(c)
+      return list
+   return list_children(MaxPlus.Core.GetRootNode())
+
+for o in scene_objects():
+   obj = o.GetObject()
+   if obj.GetSuperClassID() == SuperClassIds.Light:
+      SelectionManager.SelectNode(o, False)
+
+
+
+from MaxPlus import SelectionManager 
+SelectionManager.SelectNode(o, False) 
+où "o" est ton node (les éléments de MaxPlus.Core.GetRootNode())
+
+
+en gros, tu iter sur tous les nodes
+pour chaque node, tu récupère le nom. ça te permet de faire une équivalence "nom de l'objet 3D" <-> node dans python
+ensuite tu manipules le node
+ 
+nodes = {}
+for node in MaxPlus.Core.GetRootNode().Children: 
+  nodes[node.GetObject().getName()] = node
+SelectionManager.SelectNode(nodes["Box001"], False)  
+
+un truc dans ce gout ça doit marcher
+
+
+
+
+
+
+"""
