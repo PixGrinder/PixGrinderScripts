@@ -10,9 +10,12 @@
 ---------------------------------------------------------------------
 
 
-(
-	clearListener()
-	
+clearListener()
+
+
+
+try(DestroyDialog myRollout) catch()	
+(	
 	fn searchBitmapTex mySearch =
 	(
 		x1 = getClassInstances Bitmaptexture
@@ -24,7 +27,7 @@
 	)
 	
 	
-	fn searchObject mySearch =
+	fn searchObject mySearch IsolState =
 	(
 -- 		mySearch = "strut" -- String to search
 		pda = #()
@@ -33,8 +36,11 @@
 		(
 			if matchpattern obj.name pattern:("*"+mySearch+"*") == true do appendifunique pda obj
 		)
-
 		select pda
+		-------------------
+		if pda.count > 0 and IsolState == on then FileIn("$userScripts/PixGrinder/Focus_Selected.ms")
+		--------------------
+
 	)
 	
 	
@@ -62,19 +68,27 @@
 		for i = 1 to 24 do try (meditMaterials[i] = theResult[i]) catch()
 	)
 	
-	rollout myRollout "Find Bitmap by name"
+	rollout myRollout "Asset Finder"
 	(
-		radiobuttons radBtn "Asset to search : " labels:#("Filename","BitmapTexture Name","Object(s)","ColorMat") default:3 columns:2 align:#center
-		edittext myText "" pos:[20,75]
-		button myClr "Clear" across:3 pos:[50,100]
-		button myPaste "Paste" across:3 pos:[125,100]
-		button myBtn "Search" pos:[200,100]
-		
-		
+		radiobuttons radBtn "Asset to search : " labels:#("Map Filename","BitmapTexture Name","Object(s)","Color Material") default:3 columns:2 align:#center
+		label lbl "------------------------" align:#center
+		label lbl1 "Isolate object found : "align:#center
+		radiobuttons ItemFocus "" labels:#("On","Off") default:2 align:#center
+		button myUnhide "Revert Hide" align:#center
+		edittext myText "" offset:[0,7]
+		button myClr "Clear" across:3 offset:[0,7]
+		button myPaste "Paste" offset:[0,7]
+		button myBtn "Search" offset:[0,7]
+
+	
 		on myBtn pressed do
 		(
 			if radBtn.state == 4 do pde_getMat myText.text
-			if radBtn.state == 3 do searchObject myText.text
+			if radBtn.state == 3 then
+			(
+				myVis = (for obj in objects where obj.isHidden == false collect obj)
+				if ItemFocus.state == 1 then searchObject myText.text True else searchObject myText.text False
+			)
 			if radBtn.state == 2 do 
 			(
 				searchBitmapTex myText.text 
@@ -93,7 +107,11 @@
 		on myText entered txTemp do
 		(
 			if radBtn.state == 4 do pde_getMat myText.text
-			if radBtn.state == 3 do searchObject myText.text 
+			if radBtn.state == 3 then
+			(
+				myVis = (for obj in objects where obj.isHidden == false collect obj)
+				if ItemFocus.state == 1 then searchObject myText.text True else searchObject myText.text False
+			)
 			if radBtn.state == 2 do 
 			(
 				searchBitmapTex txTemp
@@ -123,7 +141,11 @@
 		(
 			myText.text = getclipboardText()
 			if radBtn.state == 4 do pde_getMat myText.text
-			if radBtn.state == 3 do searchObject myText.text
+			if radBtn.state == 3 then
+			(
+				myVis = (for obj in objects where obj.isHidden == false collect obj)
+				if ItemFocus.state == 1 then searchObject myText.text True else searchObject myText.text False
+			)
 			if radBtn.state == 2 do 
 			(
 				searchBitmapTex myText.text 
@@ -137,13 +159,19 @@
 			--if radBtn.state == 2 do searchFile myText.text 
 			setFocus myRollout.myText
 		)
+
+
+		on myUnhide pressed do myVis.isHidden = off
 		
 		
 	)
-	
-	createDialog myRollout width:300 height:150
-	setFocus myRollout.myText
-	
+
 )
 
+createDialog myRollout width:300 height:215
+setFocus myRollout.myText
+	
 
+
+
+-- myVis = (for obj in objects where obj.isHidden == false collect obj)

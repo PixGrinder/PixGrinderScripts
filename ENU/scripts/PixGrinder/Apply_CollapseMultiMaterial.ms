@@ -113,12 +113,12 @@
 -- 		csom_rollout.what_obj.text = my_obj.name
 		if classof old_mat != Multimaterial then 
 			(
-			MessageBox "Object material is not a Multi/sub-object Material." title:"CollapseSubObjectMaterial"
+			-- MessageBox "Object material is not a Multi/sub-object Material." title:"CollapseSubObjectMaterial"
 			csom_clear_object()
 			)
 		else if (getNumFaces my_obj) == 0 then 
 			(
-			MessageBox "Object does not have any faces, please pick a new object." title:"CollapseSubObjectMaterial"
+			--MessageBox "Object does not have any faces, please pick a new object." title:"CollapseSubObjectMaterial"
 			csom_clear_object()
 			)
 		else
@@ -142,7 +142,7 @@
 		my_obj = obj	
 		if isDeleted my_obj == true then 
 			(
-			MessageBox "Object no longer exists, please pick a new object." title:"CollapseSubObjectMaterial"
+			-- MessageBox "Object no longer exists, please pick a new object." title:"CollapseSubObjectMaterial"
 			csom_clear_object()
 			)
 		else

@@ -40,6 +40,7 @@
 				polyop.setFaceSelection obj mySel
 				update obj
 				mySel = undefined
+				myAction = on
 			)
 		)
 
@@ -57,6 +58,7 @@
 				subobjectlevel = 3
 			) else (
 				myAction = on
+				convertToPoly obj
 				subobjectlevel = 4
 			)
 		)

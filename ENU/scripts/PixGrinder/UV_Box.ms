@@ -29,7 +29,7 @@ autoUndoEnabled:true
 	pda_sort = sort pda_ar
 	pda_x = pda_ar[3]
 	*/
-	pda_x = 2.0
+	pda_x = 1.0
 
 	myMod = UVWMap()
 	myMod.name="UV Box"

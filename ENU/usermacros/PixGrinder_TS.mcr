@@ -1156,5 +1156,50 @@
 		Include "$userScripts/PixGrinder/UVW_Cylinder.ms"
 	)
 
+	macroScript UV_Half
+	category:"-- PixGrinder --"
+	toolTip:"UV_Half"
+	buttonText:"UV_Half"
+	--icon:#("UVWUnwrapTools2",22)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/UV_Half.ms"
+	)
+
+	macroScript MatID_Display
+	category:"-- PixGrinder --"
+	toolTip:"MatID_Display"
+	buttonText:"MatID_Display"
+	--icon:#("UVWUnwrapTools2",22)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/MatID_Display.ms"
+	)
+
+	macroScript FocusSelected
+	category:"-- PixGrinder --"
+	toolTip:"FocusSelected"
+	buttonText:"FocusSelected"
+	--icon:#("UVWUnwrapTools2",22)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Focus_Selected.ms"
+	)
+
+
+	macroScript Unhide_Selected
+	category:"-- PixGrinder --"
+	toolTip:"Unhide Selected"
+	buttonText:"Unhide Selected"
+	--icon:#("UVWUnwrapTools2",22)
+	silentErrors:true
+	autoUndoEnabled:true
+	(
+		Include "$userScripts/PixGrinder/Unhide_Selected.ms"
+	)
+
 
 )

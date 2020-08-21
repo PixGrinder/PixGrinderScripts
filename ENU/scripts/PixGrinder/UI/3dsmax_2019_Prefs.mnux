@@ -166,6 +166,12 @@
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CenterPivot`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UnwrapCustom`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UvBox`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UVW_Cylinder`-- PixGrinder --" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UV_Half`-- PixGrinder --" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LaunchFCurveEditor`Track View" customTitle="Curve Editor..." />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LaunchDopeSheetEditor`Track View" customTitle="Dope Sheet..." />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="paramWire`Parameter Wire" />
@@ -176,6 +182,7 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="276" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="281" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Unhide_Selected`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="277" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="284" />
             <Item mode="1" modeName="AM_SEPARATOR" />

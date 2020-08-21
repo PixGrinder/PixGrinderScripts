@@ -50,12 +50,17 @@
 	FbxExporterSetParam "BakeResampleAnimation" on
 
 
+myFile = maxfilePath + maxFileName
+
+
 ---------------------------
 
 if QueryBox("Did you configure UNITY Importer ?") then
 (
 
 	clearListener()
+
+
 
 	--theLbl = substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max"
 	rollout myEnd "Complete"
@@ -94,78 +99,96 @@ if QueryBox("Did you configure UNITY Importer ?") then
 	--
 	callbacks.removeScripts id:#myPdaSvnUpdate
 	--
-	currentScene = maxfilePath + maxFileName
+	--currentScene = maxfilePath + maxFileName
 	myStdPath = "$exports"
 	exp_path = getSavePath caption:"Export Files To : " initialDir:myStdPath
 	exp_path = append exp_path "\\"
 	allLayers = #()
 	animed = 0
+
+	createDialog myWorking
+
+	myStartTime = localTime
 	
+	saveMaxFile myFile useNewFile:off quiet:on
+
+	FileIn "$userScripts/PixGrinder/Apply_CollapseMultiMaterial.ms"
+
 	--copyfile (maxfilepath+maxfilename) (maxfilepath+substituteString maxfilename ".max" ""+"_EXPORTBACKUP"+".max")
 	
 	disableSceneRedraw()
-	
-	-- supprimer les layers vides
-	
+
+	with quiet on
 	(
-		l_ar = #()
 		
-		-- " (0 Default )" comme layer courant
-		l0 = layermanager.getLayer 0
-		l0.current = true
+		-- supprimer les layers vides
 		
-		-- collecte de tous les layers dans "l_ar"
-		for i = 1 to (layermanager.count-1) do 
 		(
-			x = layermanager.getLayer i
-			append l_ar x.name
+			l_ar = #()
+			
+			-- " (0 Default )" comme layer courant
+			l0 = layermanager.getLayer 0
+			l0.current = true
+			
+			-- collecte de tous les layers dans "l_ar"
+			for i = 1 to (layermanager.count-1) do 
+			(
+				x = layermanager.getLayer i
+				append l_ar x.name
+			)
+			
+			for i = 1 to l_ar.count do
+			(
+				LayerManager.deleteLayerHierarchy l_ar[i] forceDelete:false
+			)
 		)
 		
-		for i = 1 to l_ar.count do
-		(
-			LayerManager.deleteLayerHierarchy l_ar[i] forceDelete:false
-		)
-	)
-	
-	
-	--     Collecte du nom des layers à part hotspots et zz_      --
-	
-	for w = 1 to layermanager.count-1 do 
-	(
-		x1 = LayerManager.getLayer w
-		if matchpattern x1.name pattern:"hotspot*" == false  and matchpattern x1.name pattern:"zz*" == false and x1.on == true do append allLayers x1.name
-	)
-	
-
-createDialog myWorking
-
-	for i = 1 to allLayers.count do
-	(
-		x1 = layerManager.getLayerFromName allLayers[i]
-		x1.current = true
-			-- Display all layers --
 		
--- 		Avirer = for obj in objects where obj.layer != x1 collect obj
--- 		delete Avirer
-		select (for obj in objects where obj.layer == x1 collect obj)
-		myExp = exp_path + x1.name + ".fbx"
-		exportFile  myExp #noPrompt selectedOnly:on using:FBXExp
+		--     Collecte du nom des layers à part hotspots et zz_      --
+		
+		for w = 1 to layermanager.count-1 do 
+		(
+			x1 = LayerManager.getLayer w
+			if matchpattern x1.name pattern:"hotspot*" == false  and matchpattern x1.name pattern:"zz*" == false and x1.on == true do append allLayers x1.name
+		)
+		
 
+		for i = 1 to allLayers.count do
+		(
+			x1 = layerManager.getLayerFromName allLayers[i]
+			x1.current = true
+				-- Display all layers --
+			
+	-- 		Avirer = for obj in objects where obj.layer != x1 collect obj
+	-- 		delete Avirer
+			select (for obj in objects where obj.layer == x1 collect obj)
+			myExp = exp_path + x1.name + ".fbx"
+			exportFile  myExp #noPrompt selectedOnly:on using:FBXExp
+
+		)
+		clearSelection()
+		enableSceneRedraw()
+
+
+		--
+		callbacks.addScript #filePreOpenProcess "pdaSvnUpdate()" id:#myPdaSvnUpdate
+		--
+
+		loadMaxFile myFile quiet:on allowPrompts:off
+
+		gc light:on
+
+		clearListener()
+
+		format "Start  -  %\r" myStartTime
+		format "End at -  %\r" localTime
+
+		destroyDialog myWorking
+
+		messageBox("Export finished !")
+
+		--
 	)
-	clearSelection()
-	enableSceneRedraw()
-
-
-	--
-	callbacks.addScript #filePreOpenProcess "pdaSvnUpdate()" id:#myPdaSvnUpdate
-	--
-
-
-destroyDialog myWorking
-
-
-	--
-
 ) else (messageBox("Export Aborted") )
 
 

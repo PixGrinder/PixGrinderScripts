@@ -16,4 +16,9 @@ if classof meditMaterials[activeMeditSlot] == Multimaterial then
 /*
 updateMTLInMedit ( <material> | <texture> ) 
 
+getSubMtlSlotName <material> <index> 
+This method returns the slot name of the indexed sub material of the material.
+
+
+
 */

@@ -128,6 +128,10 @@ cui.DockDialogBar UsualMatFloater #cui_dock_right
 
 /*
 
+
+select(for obj in geometry where obj.material != meditmaterials[1] collect obj)
+
+
 cui.DockDialogBar <RolloutFloater_or_Rollout> <dockflag> 	 This method docks a registered dialog bar to the specified docking area. 
 
 <RolloutFloater_or_Rollout> - This parameter must be a RolloutFloater created with NewRolloutFloater or a Rollout that has been installed in a dialog using CreateDialog, and has been registered using cui.RegisterDialogBar. 

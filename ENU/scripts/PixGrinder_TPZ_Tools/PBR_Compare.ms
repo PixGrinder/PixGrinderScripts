@@ -131,13 +131,19 @@ rollout CompareObjects "Compare Objects"
 			SelectionSets["___Verified___"] = #()
 			SelectionSets["___Verified___"] = myVerifiedStack
 
-			free myVerifiedStack
-			free myAr
+			myVerifiedStack = undefined
+			myAr = undefined
+			forceCompleteRedraw
 			-----------------------------------------------
 		)
 	)
 
-	on btn_DelImported pressed do delete SelectionSets["__Imported_To_delete__"]
+	on btn_DelImported pressed do 
+	(
+		if selection.count !=0 do subobjectlevel = 0
+		delete SelectionSets["__Imported_To_delete__"]
+	)
+
 	
 	on btnFocusComp pressed do 
 	(

@@ -27,7 +27,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50001" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Move" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50002" helpID="0" orientation="31" captionVisibility="0" iconName="Common/RotateCW" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50003" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UniformScale">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UniformScale" />
                         <Fly iconName="MainUI/NonUniformScale" />
                         <Fly iconName="MainUI/Squash" />
@@ -370,9 +370,10 @@
             <Items>
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UnwrapCustom`-- PixGrinder --" tip="UnwrapCustom" label="UnwrapCustom" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Uvwmap`Modifiers" tip="UVW Map Modifier" label="UVW Map" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UVW_Cylinder`-- PixGrinder --" tip="UVW_Cylinder" label="UVW_Cylinder" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UVW_Xform`Modifiers" tip="UVW XForm Modifier" label="UVW XForm" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UvBox`-- PixGrinder --" tip="UV Box" label="UV Box" />
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="2" imageName="UVWUnwrapOption" actionID="Macro2`DragAndDrop" tip="Macro2" label="" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="46" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="UV_Half`-- PixGrinder --" tip="UV_Half" label="UV_Half" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Usual_Materials`-- PixGrinder --" tip="Usual_Materials" label="Usual_Materials" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="HideTextured`-- PixGrinder --" tip="HideTextured" label="HideTextured" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="0" imageName="NURBSSurface" actionID="Macro6`DragAndDrop" tip="" label="" />
@@ -380,6 +381,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="66" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="MatIdFinder`-- PixGrinder - TPZ Tools --" tip="MatIdFinder" label="MatIdFinder" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="78" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Hide_Collisions`-- PixGrinder - TPZ Tools --" tip="Comploc - Hide Collisions" label="Hide_Collisions" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="76" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="PBR_Compare`-- PixGrinder - TPZ Tools --" tip="PBR_Compare" label="PBR_Compare" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="BS_CollapseMultiMaterial`-- PixGrinder --" tip="Collapse MultiSubObjects Material" label="Collapse MultiMat" />
             </Items>
         </Window>
         <Window objectName="Pix-Modeling" name="Pix-Modeling" type="T" cType="1" toolbarRows="1">
