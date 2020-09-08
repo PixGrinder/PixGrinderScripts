@@ -182,9 +182,10 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="276" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="281" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Unhide_Selected`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="277" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="284" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Unhide_Selected`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="224" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="0" actionID="283" />
@@ -542,6 +543,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeGrid`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawTypeSurface`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawPickButton`Ribbon - Modeling" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="StepModeToggle`PolyTools" />
         </Menu>
         <Menu title=" Conform" flags="2">
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawConform`PolyTools" />
@@ -747,6 +750,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Collapse`Editable Polygon Object" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_UnHide`Editable Polygon Object" customTitle="Unhide All - Poly" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Hide_Unselected`Editable Polygon Object" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="polyOp_BorderFill`PolyOp" />
             <Item mode="1" modeName="AM_SEPARATOR" />
         </Menu>
         <Menu title="Context Edit Poly Tools 2">

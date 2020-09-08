@@ -99,8 +99,11 @@
 		if (getFiles (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")).count == 1 do deleteFile (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
 		if getSaveRequired() == true then
 		(
-			saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
-			copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
+			if maxfilename.count != 0 then
+			(
+				saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
+				copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
+			)
 		)
 	)
 
@@ -139,7 +142,7 @@
 
 	rollout ASPrompt "AutoSave Prompt"
 	(
-		label myQuestion "Save current scene ?" offset:[0,10]
+		label myQuestion "Save current NEW scene ?" offset:[0,10]
 		button pixYes "Yes"  width:100 across:2 offset:[0,20]
 		button pixNo "No"  width:100 across:2 offset:[0,20]
 
@@ -154,9 +157,6 @@
 
 		on pixNo pressed do
 		(
-			--print "Autosave skipped !"
-			pda_AutoSaveProcess()
-			pda_SaveAction()
 			pdaTimer.Start()
 			destroyDialog ASPrompt
 		)

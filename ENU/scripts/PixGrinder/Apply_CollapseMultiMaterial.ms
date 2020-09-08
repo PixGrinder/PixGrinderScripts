@@ -245,7 +245,7 @@
 -- 		convertToPoly bla
 -- 	)
 
-	myMultis = for obj in objects where classof obj.material == multiMaterial collect obj
+	myMultis = for obj in objects where classof obj.material == multiMaterial and obj.layer.on == on collect obj
 
 	myProg = 0
 
