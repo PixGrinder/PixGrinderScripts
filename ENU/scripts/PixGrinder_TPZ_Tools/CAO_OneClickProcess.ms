@@ -1,5 +1,5 @@
 -- CAO - OneClickProcess -- 
-
+/*
 if superclassof selection[1] == GeometryClass then 
 (
 	theWeld = Vertex_Weld ()
@@ -12,11 +12,34 @@ if superclassof selection[1] == GeometryClass then
 	addModifier selection[1] theSmooth
 
 	convertToPoly selection[1]
-	/*
-	ResetXForm selection[1]
-	collapseStack selection[1]
-	*/
+	
+	-- ResetXForm selection[1]
+	-- collapseStack selection[1]
+	
 )
+*/
+----------------------------
+(
+	setCommandPanelTaskMode mode:#modify
+	theWeld = Vertex_Weld ()
+	theWeld.threshold = 0.0001
+	theSmooth = Smooth()
+	theSmooth.autosmooth = on
+	theSmooth.threshold = 45
+
+	select geometry
+
+	modPanel.addModToSelection theWeld
+	modPanel.addModToSelection theSmooth
+
+	convertToPoly geometry
+
+)
+
+
+
+
+
 
 ----------------------------
 /*

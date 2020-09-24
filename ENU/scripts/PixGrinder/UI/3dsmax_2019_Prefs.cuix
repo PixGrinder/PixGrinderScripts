@@ -27,7 +27,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50001" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Move" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50002" helpID="0" orientation="31" captionVisibility="0" iconName="Common/RotateCW" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50003" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UniformScale">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UniformScale" />
                         <Fly iconName="MainUI/NonUniformScale" />
                         <Fly iconName="MainUI/Squash" />
@@ -39,9 +39,9 @@
                         <Fly iconName="MainUI/SelectAndRotate" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="View" />
+                <Item typeID="5" type="CTB_OTHER" width="70" height="200" controlID="30101" helpID="0" orientation="19" vertJustif="2" winStyle="1342177795" controlClassName="ComboBox" winText="Local" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="50009" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/UsePivotPointCenter">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/UsePivotPointCenter" />
                         <Fly iconName="MainUI/UseSelectionCenter" />
                         <Fly iconName="MainUI/UseTransformCoordinateCenter" />
@@ -114,13 +114,12 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50006" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintY" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50007" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintZ" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintXY">
-                    <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
                         <Fly iconName="AxisConstraints/ConstraintXY" />
                         <Fly iconName="AxisConstraints/ConstraintYZ" />
                         <Fly iconName="AxisConstraints/ConstraintZX" />
                     </FlyOffCt>
                 </Item>
-                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40904" tip="Enable Axis Constraints in Snaps Toggle" label="Enable Axis Constraints in Snaps Toggle" />
             </Items>
         </Window>
         <Window objectName="Layers" name="Layers" type="T" cType="1" toolbarRows="1">
@@ -280,6 +279,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="39081" imageID="5" imageName="Helpers" actionID="32653" tip="Launch Global Search" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="MaterialRemove`-- PixGrinder --" tip="Material Remove" label="Material Remove" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="WireColorChanger`-- PixGrinder --" tip="Wire Color Changer" label="WColor" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="0" imageName="Maxscript" actionID="Macro7`DragAndDrop" tip="Macro7" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="PivotAlignator`-- PixGrinder --" tip="Pivot Alignator" label="PivotAlignator" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="0" imageID="1" imageName="SugzTools" actionID="470" tip="Selection/Preview Highlights Toggle" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="BS_CollapseMultiMaterial`-- PixGrinder --" tip="Collapse MultiSubObjects Material" label="Collapse MultiMat" />
@@ -328,6 +328,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="ObjectQuickReset`-- PixGrinder --" tip="Object Quick Reset" label="QuickReset" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="4" macroType="MB_TYPE_ACTION_CUSTOM" actionTableID="647394" imageID="32" imageName="Maintoolbar" actionID="CenterPivot`PolyTools" tip="Center Pivot" label="" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Collapse_Selected`-- PixGrinder --" tip="Collapse Hierarchy on Selection" label="Collapse Selected" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Convert_to_Poly`Modifier Stack" tip="Convert to Editable Polygon" label="Convert to Editable Poly" />
             </Items>
         </Window>
         <Window objectName="PixGrinder - Spline Tools" name="PixGrinder - Spline Tools" type="T" cType="1" toolbarRows="2">
@@ -382,6 +383,7 @@
                 <Item typeID="2" type="CTB_MACROBUTTON" width="78" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="Hide_Collisions`-- PixGrinder - TPZ Tools --" tip="Comploc - Hide Collisions" label="Hide_Collisions" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="76" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="PBR_Compare`-- PixGrinder - TPZ Tools --" tip="PBR_Compare" label="PBR_Compare" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="BS_CollapseMultiMaterial`-- PixGrinder --" tip="Collapse MultiSubObjects Material" label="Collapse MultiMat" />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="77" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="647394" imageID="-1" imageName="" actionID="FocusSelected`-- PixGrinder --" tip="FocusSelected" label="FocusSelected" />
             </Items>
         </Window>
         <Window objectName="Pix-Modeling" name="Pix-Modeling" type="T" cType="1" toolbarRows="1">

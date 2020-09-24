@@ -8,14 +8,17 @@ rollout matId "matId"
 
 	on mySpinner entered do
 	(
-		if meditMaterials[1][mySpinner.value] != undefined then 
+		if classof meditMaterials[activeMeditSlot] == Multimaterial then 
 		(
-			meditMaterials[3] = meditMaterials[1][mySpinner.value]
-			activeMeditSlot = 3
-			if not MatEditor.isOpen() then
+			if meditMaterials[activeMeditSlot][mySpinner.value] != undefined then 
 			(
-				MatEditor.mode = #basic
-				MatEditor.Open()
+				meditMaterials[3] = meditMaterials[activeMeditSlot][mySpinner.value]
+				--activeMeditSlot = 3
+				if not MatEditor.isOpen() then
+				(
+					MatEditor.mode = #basic
+					MatEditor.Open()
+				)
 			)
 		)
 	)

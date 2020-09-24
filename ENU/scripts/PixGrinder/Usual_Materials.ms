@@ -26,48 +26,48 @@ fn pda_ID_Mod Id =
 
 Rollout UsualMat "Usual Materials"
 (
-	imgTag Chrome "Chrome" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Chrome.jpg" iconSize:[64,64] align:#center across:3 --[iconName:<filename>] [iconSize:<point2>] opacity:1.0 transparent:(color 0 0 0)
-	imgTag VisGrisOpaque "VisGrisOpaque" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisGrisOpaque.jpg" iconSize:[64,64] 	
-	imgTag PasVisChrome "PasVisChrome" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\PasVisChrome.jpg" iconSize:[64,64]
-	imgTag metal9 "Metal 09" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\metal_09.jpg"  iconSize:[64,64] across:3
-	imgTag VisChromeTransp "VisChromeTransp" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisChromeTransp.jpg" iconSize:[64,64] 
-	imgTag RedShine "RedShine" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\RedShine.jpg" iconSize:[64,64]
-	imgTag Laiton "Laiton" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Laiton.jpg"  iconSize:[64,64] across:3
-	imgTag VisCopper "VisCopper" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisCopper.jpg" iconSize:[64,64]
-	imgTag PasVisCopper "PasVisCopper" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\PasVisCopper.jpg" iconSize:[64,64]
-	imgTag CockpitAtlas "CockpitAtlas" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CockpitAtlas.png" iconSize:[64,64] across:3
-	imgTag BlackScrew "BlackScrew" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackScrew.jpg" iconSize:[64,64]
-	imgTag BlackScrewAlpha "BlackScrewAlpha" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackScrewAlpha.jpg" iconSize:[64,64]
-	imgTag BlackMetal "BlackMetal" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Black_Metal.jpg" iconSize:[64,64] across:3
-	imgTag BlackShine "BlackShine" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Black_Shine.jpg" iconSize:[64,64]
-	imgTag BlackMat "BlackMat" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackMat.jpg" iconSize:[64,64]
-	imgTag WhitePlastic "WhitePlastic" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\WhitePlastic.jpg" iconSize:[64,64] across:3
-	imgTag Gris "Gris" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Gris.jpg" iconSize:[64,64]
-	imgTag LDG_DarkBlue "LDG_DarkBlue" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\LDG_DarkBlue.jpg" iconSize:[64,64]
-	imgTag Atlas_Etiq "Atlas_Etiq" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Atlas_Etiq.jpg" iconSize:[64,64] across:3
-	imgTag MGB "MGB" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\MGB.jpg" iconSize:[64,64]
-	imgTag BlueBattery "BlueBattery" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlueBattery.jpg" iconSize:[64,64]
-	imgTag AtlasMab "AtlasMab" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Atlas_MAB.jpg" iconSize:[64,64] across:3
-	imgTag CntrChrome "CntrChrome" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CntrChrome.jpg" iconSize:[64,64] 
-	imgTag Cntr_Grip "Cntr_Grip" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Cntr_Grip.jpg" iconSize:[64,64] 
-	imgTag CableGreen "CableGreen" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CableGreen.jpg" iconSize:[64,64] across:3
-	imgTag GripStick "GripStick" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\GripStick.jpg" iconSize:[64,64] 
-	imgTag ACE2 "ACE2" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\ACE2.jpg" iconSize:[64,64]
-	imgTag Pattern "Pattern" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Pattern.jpg" iconSize:[64,64] across:3
-	imgTag Purple "Purple" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Purple.jpg" iconSize:[64,64]
-	imgTag myGrid "myGrid" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\myGrid.jpg" iconSize:[64,64]
-	imgTag DarkMetal "DarkMetal" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\DarkMetal.jpg" iconSize:[64,64] across:3
-	imgTag myHole "myHole" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Hole.jpg" iconSize:[64,64]
-	imgTag Yel01 "Yel01" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel01.jpg" iconSize:[64,64]
-	imgTag Yel03 "Yel03" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel04.jpg" iconSize:[64,64] across:3
-	imgTag Yel04 "Yel04" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel02.jpg" iconSize:[64,64]
-	imgTag Yel02 "Yel02" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel03.jpg" iconSize:[64,64]
-	imgTag Braid "Braid" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Braid.jpg" iconSize:[64,64] across:3
-	imgTag BlackGrip "BlackGrip" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackGrip.jpg" iconSize:[64,64]
-	imgTag myWind "myWind" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\myWind.jpg" iconSize:[64,64]
-	imgTag BrownCntr "BrownCntr" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownCntr.jpg" iconSize:[64,64] across:3
-	imgTag BrownVertical "BrownVertical" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownVertical.jpg" iconSize:[64,64]
-	imgTag BrownGrip "BrownGrip" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownGrip.jpg" iconSize:[64,64]
+	imgTag Chrome "Chrome" tooltip:"ID 4" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Chrome.jpg" iconSize:[64,64] align:#center across:3 --[iconName:<filename>] [iconSize:<point2>] opacity:1.0 transparent:(color 0 0 0)
+	imgTag VisGrisOpaque "VisGrisOpaque" tooltip:"ID 202" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisGrisOpaque.jpg" iconSize:[64,64] 	
+	imgTag PasVisChrome "PasVisChrome" tooltip:"ID 805" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\PasVisChrome.jpg" iconSize:[64,64]
+	imgTag metal9 "Metal 09" tooltip:"ID 9" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\metal_09.jpg"  iconSize:[64,64] across:3
+	imgTag VisChromeTransp "VisChromeTransp" tooltip:"ID 13" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisChromeTransp.jpg" iconSize:[64,64] 
+	imgTag RedShine "RedShine" tooltip:"ID 18" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\RedShine.jpg" iconSize:[64,64]
+	imgTag Laiton "Laiton" tooltip:"ID 19" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Laiton.jpg"  iconSize:[64,64] across:3
+	imgTag VisCopper "VisCopper" tooltip:"ID 213" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\VisCopper.jpg" iconSize:[64,64]
+	imgTag PasVisCopper "PasVisCopper" tooltip:"ID 214" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\PasVisCopper.jpg" iconSize:[64,64]
+	imgTag CockpitAtlas "CockpitAtlas" tooltip:"ID 684" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CockpitAtlas.png" iconSize:[64,64] across:3
+	imgTag BlackScrew "BlackScrew" tooltip:"ID 236" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackScrew.jpg" iconSize:[64,64]
+	imgTag BlackScrewAlpha "BlackScrewAlpha" tooltip:"ID 14" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackScrewAlpha.jpg" iconSize:[64,64]
+	imgTag BlackMetal "BlackMetal" tooltip:"ID 5" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Black_Metal.jpg" iconSize:[64,64] across:3
+	imgTag BlackShine "BlackShine" tooltip:"ID 7" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Black_Shine.jpg" iconSize:[64,64]
+	imgTag BlackMat "BlackMat" tooltip:"ID 6" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackMat.jpg" iconSize:[64,64]
+	imgTag WhitePlastic "WhitePlastic" tooltip:"ID 91" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\WhitePlastic.jpg" iconSize:[64,64] across:3
+	imgTag Gris "Gris" tooltip:"ID 10" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Gris.jpg" iconSize:[64,64]
+	imgTag LDG_DarkBlue "LDG_DarkBlue" tooltip:"ID 209" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\LDG_DarkBlue.jpg" iconSize:[64,64]
+	imgTag Atlas_Etiq "Atlas_Etiq" tooltip:"ID 613" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Atlas_Etiq.jpg" iconSize:[64,64] across:3
+	imgTag MGB "MGB" tooltip:"ID 85" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\MGB.jpg" iconSize:[64,64]
+	imgTag BlueBattery "BlueBattery" tooltip:"ID 812" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlueBattery.jpg" iconSize:[64,64]
+	imgTag AtlasMab "AtlasMab" tooltip:"ID 617" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Atlas_MAB.jpg" iconSize:[64,64] across:3
+	imgTag CntrChrome "CntrChrome" tooltip:"ID 201" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CntrChrome.jpg" iconSize:[64,64] 
+	imgTag Cntr_Grip "Cntr_Grip" tooltip:"ID 72" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Cntr_Grip.jpg" iconSize:[64,64] 
+	imgTag CableGreen "CableGreen" tooltip:"ID 64" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\CableGreen.jpg" iconSize:[64,64] across:3
+	imgTag GripStick "GripStick" tooltip:"ID 30" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\GripStick.jpg" iconSize:[64,64] 
+	imgTag ACE2 "ACE2" tooltip:"ID 225" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\ACE2.jpg" iconSize:[64,64]
+	imgTag Pattern "Pattern" tooltip:"ID 171" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Pattern.jpg" iconSize:[64,64] across:3
+	imgTag Purple "Purple" tooltip:"ID 86" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Purple.jpg" iconSize:[64,64]
+	imgTag myGrid "myGrid" tooltip:"ID 104" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\myGrid.jpg" iconSize:[64,64]
+	imgTag DarkMetal "DarkMetal" tooltip:"ID 671" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\DarkMetal.jpg" iconSize:[64,64] across:3
+	imgTag myHole "myHole" tooltip:"ID 702" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Hole.jpg" iconSize:[64,64]
+	imgTag Yel01 "Yel01" tooltip:"ID 33" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel01.jpg" iconSize:[64,64]
+	imgTag Yel03 "Yel03" tooltip:"ID 809" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel04.jpg" iconSize:[64,64] across:3
+	imgTag Yel04 "Yel04" tooltip:"ID 34" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel02.jpg" iconSize:[64,64]
+	imgTag Yel02 "Yel02" tooltip:"ID 216" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Yel03.jpg" iconSize:[64,64]
+	imgTag Braid "Braid" tooltip:"ID 71" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\Braid.jpg" iconSize:[64,64] across:3
+	imgTag BlackGrip "BlackGrip" tooltip:"ID 231" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BlackGrip.jpg" iconSize:[64,64]
+	imgTag myWind "myWind" tooltip:"ID 620" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\myWind.jpg" iconSize:[64,64]
+	imgTag BrownCntr "BrownCntr" tooltip:"ID 97" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownCntr.jpg" iconSize:[64,64] across:3
+	imgTag BrownVertical "BrownVertical" tooltip:"ID 807" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownVertical.jpg" iconSize:[64,64]
+	imgTag BrownGrip "BrownGrip" tooltip:"ID 98" style:#bmp_center bitmap:@"D:\Travail\SVN3D_H160\H160_Comploc\MAX\COMPLOC_FILES\Materials Screenshots\BrownGrip.jpg" iconSize:[64,64]
 
 	
 	on BlackShine mousedown do pda_ID_Mod 7

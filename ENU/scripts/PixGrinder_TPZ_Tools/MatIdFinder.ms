@@ -42,11 +42,14 @@ rollout myFinder ""
 
 	on myMatId doubleClicked itm do 
 	(
-		mySep = filterString (myFinder.myMatId.items[itm]) " - "
-		mySep = mySep[1] as integer
-		MatEditor.mode = #basic
-		MatEditor.Open()
-		if activeMeditSlot < 24 then meditmaterials[(activeMeditSlot+1)] = meditMaterials[activeMeditSlot][mySep]
+		if classof meditMaterials[activeMeditSlot] == Multimaterial then
+		(
+			mySep = filterString (myFinder.myMatId.items[itm]) " - "
+			mySep = mySep[1] as integer
+			MatEditor.mode = #basic
+			MatEditor.Open()
+			if activeMeditSlot < 24 then meditmaterials[(activeMeditSlot+1)] = meditMaterials[activeMeditSlot][mySep]
+		)
 	)
 )
 

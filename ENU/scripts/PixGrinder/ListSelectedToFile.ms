@@ -38,7 +38,35 @@
 )
 
 
+/*
+
+clearListener()
+for i = 1 to $.material.materialIDList.count do 
+(
+	myTemp = $.material.materialIDList[i]
+	if $.material[myTemp].diffusemap == undefnied then 
+	(
+		format "%; %; %\n" $.material.materialIDList[i] $.material[myTemp].name "undefined"
+	) else (
+		format "%; %; %\n" $.material.materialIDList[i] $.material[myTemp].name (filenamefrompath($.material[myTemp].diffusemap.filename))
+	)
+)
+
+$.material.count
+
+*/
+
+/*
+
+	clearListener()
+	myMat = meditmaterials[1]
+	for i = 1 to myMat.MaterialIdList.count do 
+	(
+		j = myMat.MaterialIdList[i]
+		if myMat[j].specularLevel == 0 then myMat[j].specularLevel = 20
+		if myMat[j].glossiness == 0 then myMat[j].glossiness = 20
+	)
 
 
-
+*/
 
