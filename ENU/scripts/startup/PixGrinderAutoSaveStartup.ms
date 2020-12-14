@@ -54,11 +54,13 @@
 		) else (
 			myFolder = maxfilepath + "_BACKUP_\\"+ substituteString maxfilename ".max" ""+"_autoback"
 			if doesFileExist myFolder == false then makeDir myFolder
-			pda_filesVault = getFiles (myFolder+"\\*.max")
+			pda_filesVault = getFiles (myFolder+"\\*.7z")
 			if pda_filesVault.count == 0 then pda_doCopy = true else pda_doCopy = false
 			if pda_doCopy == true then
 			(
-				copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".max")
+				myCommand = @"C:\Program Files\7-Zip\7z.exe"
+				Hiddendoscommand ("\"" + myCommand + "\"" + " a "+ (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".7z ") + (maxfilepath+maxfilename))
+				--copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".max")
 				pda_doCopy = false
 			) else (
 				for i = 1 to pda_filesVault.count do
@@ -77,7 +79,8 @@
 				)
 				sort pda_temp
 				x2 = pda_temp[pda_temp.count]
-				tst = substring x2 (x2.count-6) 3
+-- 				tst = substring x2 (x2.count-6) 3
+				tst = substring x2 (x2.count-5) 3
 				myNumer =  tst as integer
 				if myNumer <= myTotal then myNumer = myNumer +1 else myNumer = 1
 				myFormatNumer = formattedPrint myNumer format:"03d"
@@ -96,13 +99,16 @@
 	-- Save Action --
 	fn pda_SaveAction = 
 	(
-		if (getFiles (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")).count == 1 do deleteFile (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
+		if (getFiles (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".7z")).count == 1 do deleteFile (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".7z")
 		if getSaveRequired() == true then
 		(
 			if maxfilename.count != 0 then
 			(
 				saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
-				copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
+				--copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
+				myCommand = @"C:\Program Files\7-Zip\7z.exe"
+				Hiddendoscommand ("\"" + myCommand + "\"" + " a "+ (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".7z ") + (maxfilepath+maxfilename))
+-- 				Hiddendoscommand ("\"" + myCommand + "\"" + " a "+ (myMaxPath + myFileName + ".7z ") + (myPathTemp + myFileName + ".max"))
 			)
 		)
 	)
