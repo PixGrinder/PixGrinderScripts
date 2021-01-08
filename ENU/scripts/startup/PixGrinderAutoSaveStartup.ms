@@ -58,9 +58,17 @@
 			if pda_filesVault.count == 0 then pda_doCopy = true else pda_doCopy = false
 			if pda_doCopy == true then
 			(
-				myCommand = @"C:\Program Files\7-Zip\7z.exe"
-				Hiddendoscommand ("\"" + myCommand + "\"" + " a "+ (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".7z ") + (maxfilepath+maxfilename))
-				--copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+"001"+".max")
+				myCompressor = @"C:\Program Files\7-Zip\7z.exe"
+				BackupString = substituteString maxfilename ".max" "" + "_autoback"
+				myZipFile = maxfilepath + @"_BACKUP_\" + BackupString + @"\" + BackupString + "_" +"001" + ".7z"
+				myBAKfolder = maxfilepath + @"_BACKUP_\" + BackupString + @"\"
+				myMaxFile  = maxfilepath + maxfilename
+				myCommand =  "\"" + myCompressor + "\"" + " a " + "\"" + myZipFile + "\"" + " " +  "\"" + myMaxFile + "\""
+				theFile = createFile @"d:\myBatch.bat"
+				format myCommand to:theFile
+				close theFile
+				HiddenDOSCommand @"d:\myBatch.bat" --donotwait:on
+				deleteFile @"d:\myBatch.bat"
 				pda_doCopy = false
 			) else (
 				for i = 1 to pda_filesVault.count do
@@ -105,10 +113,19 @@
 			if maxfilename.count != 0 then
 			(
 				saveMaxFile (maxfilepath+maxfilename) clearNeedSaveFlag:true  useNewFile:true quiet:true
-				--copyfile (maxfilepath+maxfilename) (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".max")
-				myCommand = @"C:\Program Files\7-Zip\7z.exe"
-				Hiddendoscommand ("\"" + myCommand + "\"" + " a "+ (myFolder+"\\"+substituteString maxfilename ".max" ""+"_autoback_"+myFormatNumer+".7z ") + (maxfilepath+maxfilename))
--- 				Hiddendoscommand ("\"" + myCommand + "\"" + " a "+ (myMaxPath + myFileName + ".7z ") + (myPathTemp + myFileName + ".max"))
+				myCompressor = @"C:\Program Files\7-Zip\7z.exe"
+				BackupString = substituteString maxfilename ".max" "" + "_autoback"
+				myZipFile = maxfilepath + @"_BACKUP_\" + BackupString + @"\" + BackupString + "_" + myFormatNumer + ".7z"
+				myBAKfolder = maxfilepath + @"_BACKUP_\" + BackupString + @"\"
+				myMaxFile  = maxfilepath + maxfilename
+				myCommand =  "\"" + myCompressor + "\"" + " a " + "\"" + myZipFile + "\"" + " " +  "\"" + myMaxFile + "\""
+				theFile = createFile @"d:\myBatch.bat"
+				format myCommand to:theFile
+				close theFile
+				HiddenDOSCommand @"d:\myBatch.bat" --donotwait:on
+				deleteFile @"d:\myBatch.bat"
+
+
 			)
 		)
 	)
