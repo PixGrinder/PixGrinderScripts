@@ -68,6 +68,7 @@
                 <Item typeID="3" type="CTB_SEPARATOR" width="6" height="16" orientation="31" visible="1" />
                 <Item typeID="0" type="CTB_PUSHBUTTON" controlID="40210" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Mirror" />
                 <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="40211" tip="Normal Align " label="&amp;Normal Align..." />
+                <Item typeID="2" type="CTB_MACROBUTTON" width="0" height="0" controlID="0" macroTypeID="3" macroType="MB_TYPE_ACTION" actionTableID="0" imageID="-1" imageName="" actionID="414" tip="Align to View" label="Align to &amp;View..." />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50012" helpID="0" orientation="31" captionVisibility="0" iconName="MainUI/Align">
                     <FlyOffCt flyInit="0" flyTimeout="300" flyDir="3">
                         <Fly iconName="MainUI/Align" />
@@ -114,7 +115,7 @@
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50006" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintY" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50007" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintZ" />
                 <Item typeID="1" type="CTB_CHECKBUTTON" controlID="50005" helpID="0" orientation="31" captionVisibility="0" iconName="AxisConstraints/ConstraintXY">
-                    <FlyOffCt flyInit="1" flyTimeout="300" flyDir="3">
+                    <FlyOffCt flyInit="2" flyTimeout="300" flyDir="3">
                         <Fly iconName="AxisConstraints/ConstraintXY" />
                         <Fly iconName="AxisConstraints/ConstraintYZ" />
                         <Fly iconName="AxisConstraints/ConstraintZX" />

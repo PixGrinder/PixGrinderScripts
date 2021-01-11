@@ -1,5 +1,5 @@
 -- Quad Color File
--- Created automatically by Advanced Quad Options Save Startup Command 
+-- Created automatically by C:\Users\guest1182\AppData\Local\Autodesk\3dsMax\2019 - 64bit\ENU\scripts\PixGrinder\UI\3dsmax_2019_Prefs Scheme 
 -- To restore Quad Menu to these settings, simply run this script.
 
 -- Quad number 1 colors 

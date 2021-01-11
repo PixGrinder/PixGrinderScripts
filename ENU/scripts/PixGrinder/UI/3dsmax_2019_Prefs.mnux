@@ -172,10 +172,6 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UVW_Cylinder`-- PixGrinder --" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="UV_Half`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LaunchFCurveEditor`Track View" customTitle="Curve Editor..." />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LaunchDopeSheetEditor`Track View" customTitle="Dope Sheet..." />
-            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="paramWire`Parameter Wire" />
-            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="12" flat="0" customTitle="Convert To:" />
         </Menu>
         <Menu title="display" flags="2">
@@ -439,6 +435,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="StepLoop`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="LoopTools`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SetFlow`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Similar`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SimilarQuick`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
@@ -454,6 +452,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Sphere`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Box`Objects Primitives" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="plane`Objects Primitives" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="CylinderFromSelec`-- PixGrinder --" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="Lines`Objects Shapes" />
             <Item mode="4" modeName="AM_SUBMENU" subMenuID="480" flat="0" />
@@ -532,6 +532,8 @@
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="SwiftLoop`PolyTools" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PaintConnect`PolyTools" />
+            <Item mode="1" modeName="AM_SEPARATOR" />
+            <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="EPoly_Create`Editable Polygon Object" />
             <Item mode="1" modeName="AM_SEPARATOR" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawOptimize`PolyTools" />
             <Item mode="2" modeName="AM_ITEM" actionTableID="647394" actionID="PolyDrawDrag`PolyTools" />
