@@ -26,6 +26,8 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 	CreateDialog pda_Working
 	-- myMult = getclassinstances MultiMaterial
 	myMat = selection[1].material
+	meditmaterials[2] = copy selection[1].material
+	meditmaterials[2].name = meditmaterials[2].name +"_BACKUP"
 	myBackup = meditMaterials[24]
 	meditMaterials[24] = Standardmaterial()
 
@@ -37,7 +39,7 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 			if classof myMat[id] == Physicalmaterial then 
 			(
 				--print id
-				myTempAr = #(myMat[id].base_weight_map, myMat[id].base_color_map, myMat[id].base_color, myMat[id].bump_map, myMat[id].roughness, myMat[id].metalness, myMat[id].emit_color_map, myMat[id].emission, myMat[id].emit_color,myMat[id].cutout_map)
+				myTempAr = #(myMat[id].base_weight_map, myMat[id].base_color_map, myMat[id].base_color, myMat[id].bump_map, myMat[id].roughness, myMat[id].metalness, myMat[id].emit_color_map, myMat[id].emission, myMat[id].emit_color,myMat[id].cutout_map, myMat[id].roughness_map)
 				meditMaterials[24] = Standardmaterial()
 				meditMaterials[24].name = myMat[id].name
 				meditMaterials[24].adTextureLock = off
@@ -45,8 +47,8 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 				meditMaterials[24].ambientMap = myTempAr[1]
 				meditMaterials[24].diffuseMap = myTempAr[2]
 				meditMaterials[24].diffuse = myTempAr[3]
-				meditMaterials[24].specularLevelMap = meditMaterials[24].ambientMap
-				meditMaterials[24].glossinessMap = meditMaterials[24].ambientMap
+				meditMaterials[24].specularLevelMap = myTempAr[11]
+				meditMaterials[24].glossinessMap = meditMaterials[24].specularLevelMap
 				meditMaterials[24].bumpMap = myTempAr[4]
 				meditMaterials[24].bumpMapAmount = 100.0
 				meditMaterials[24].specularLevel = myTempAr[5]*100
@@ -59,6 +61,11 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 				if matchpattern myMat[id].name pattern:"t_*" == true then 
 				(
 					meditMaterials[24].opacityMap = myTempAr[2]
+					try 
+					(
+						meditMaterials[24].opacityMap.alphaSource = 0
+						meditMaterials[24].opacityMap.monoOutput = 1
+					) catch ()
 					if myMat[id].transparency > 0.0 then meditMaterials[24].opacity = (1-myMat[id].transparency)*100
 				)
 
@@ -70,6 +77,7 @@ if selection.count >0 and classof selection[1].material == Multimaterial then
 				meditMaterials[24].glossinessMapEnable = off
 				meditMaterials[24].filterMapEnable = off
 				meditMaterials[24].showInViewport = true
+				if meditMaterials[24].ambientMap != undefined then meditMaterials[24].ambientMap = meditMaterials[24].specularLevelMap
 				myMat[id] = meditMaterials[24]
 			)
 		)
@@ -93,7 +101,7 @@ if selection.count >0 and classof selection[1].material == Physicalmaterial then
 	with redraw off
 	(
 		--print id
-		myTempAr = #(myMat.base_weight_map, myMat.base_color_map, myMat.base_color, myMat.bump_map, myMat.roughness, myMat.metalness, myMat.emit_color_map, myMat.emission, myMat.emit_color,myMat.cutout_map)
+		myTempAr = #(myMat.base_weight_map, myMat.base_color_map, myMat.base_color, myMat.bump_map, myMat.roughness, myMat.metalness, myMat.emit_color_map, myMat.emission, myMat.emit_color,myMat.cutout_map, myMat.roughness_map)
 		meditMaterials[24] = Standardmaterial()
 		meditMaterials[24].name = myMat.name
 		meditMaterials[24].adTextureLock = off
@@ -101,8 +109,8 @@ if selection.count >0 and classof selection[1].material == Physicalmaterial then
 		meditMaterials[24].ambientMap = myTempAr[1]
 		meditMaterials[24].diffuseMap = myTempAr[2]
 		meditMaterials[24].diffuse = myTempAr[3]
-		meditMaterials[24].specularLevelMap = meditMaterials[24].ambientMap
-		meditMaterials[24].glossinessMap = meditMaterials[24].ambientMap
+		meditMaterials[24].specularLevelMap = myTempAr[11]
+		meditMaterials[24].glossinessMap = meditMaterials[24].specularLevelMap
 		meditMaterials[24].bumpMap = myTempAr[4]
 		meditMaterials[24].bumpMapAmount = 100.0
 		meditMaterials[24].specularLevel = myTempAr[5]*100
@@ -113,7 +121,12 @@ if selection.count >0 and classof selection[1].material == Physicalmaterial then
 		meditMaterials[24].filterMap = myTempAr[10]
 		if matchpattern myMat.name pattern:"t_*" == true then 
 		(
-			meditMaterials[24].opacityMap = myTempAr[2]
+			meditMaterials[24].opacityMap = meditMaterials[24].diffuseMap
+			try 
+			(
+				meditMaterials[24].opacityMap.alphaSource = 0
+				meditMaterials[24].opacityMap.monoOutput = 1
+			) catch ()
 			if myMat.transparency > 0.0 then meditMaterials[24].opacity = (1-myMat.transparency)*100
 		)
 			--if meditMaterials[24].diffusemap != undefined and meditMaterials[24].diffusemap.bitmap.hasAlpha then meditMaterials[24].opacityMap = meditMaterials[24].diffuseMap
@@ -125,6 +138,7 @@ if selection.count >0 and classof selection[1].material == Physicalmaterial then
 		meditMaterials[24].glossinessMapEnable = off
 		meditMaterials[24].filterMapEnable = off
 		meditMaterials[24].showInViewport = true
+		if meditMaterials[24].ambientMap != undefined then meditMaterials[24].ambientMap = meditMaterials[24].specularLevelMap
 		selection[1].material = meditMaterials[24]
 	)
 
@@ -136,3 +150,5 @@ if selection.count >0 and classof selection[1].material == Physicalmaterial then
 
 DestroyDialog pda_Working
 messageBox("Conversion Finished")
+
+
